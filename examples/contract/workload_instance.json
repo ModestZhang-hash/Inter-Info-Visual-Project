@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "instance_id": "example-instance-001",
+  "manifest_id": "example-manifest-001",
+  "phase": "fixture",
+  "intensity_label": "example",
+  "environment_seed": 41,
+  "task_generation_seed": 41,
+  "tasks": [
+    {"task_id": "task-001", "arrival_s": 0.0, "compute_cycles": 2000000000, "upload_bytes": 1000000, "return_bytes": 100000},
+    {"task_id": "task-002", "arrival_s": 0.5, "compute_cycles": 900000000, "upload_bytes": 750000, "return_bytes": 75000}
+  ]
+}

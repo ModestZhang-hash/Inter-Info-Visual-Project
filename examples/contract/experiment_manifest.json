@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "example-manifest-001",
+  "phase": "fixture",
+  "topology": {
+    "gateway_node_id": "edge-0",
+    "nodes": [
+      {"node_id": "edge-0", "kind": "edge", "compute_capacity_cycles_per_s": 2000000000, "active_compute_power_increment_w": 5, "link_rate_bps": null, "transfer_energy_j_per_mb": null},
+      {"node_id": "edge-1", "kind": "edge", "compute_capacity_cycles_per_s": 3000000000, "active_compute_power_increment_w": 6, "link_rate_bps": 30000000, "transfer_energy_j_per_mb": 0.2},
+      {"node_id": "edge-2", "kind": "edge", "compute_capacity_cycles_per_s": 4000000000, "active_compute_power_increment_w": 7, "link_rate_bps": 30000000, "transfer_energy_j_per_mb": 0.2},
+      {"node_id": "cloud-0", "kind": "cloud", "compute_capacity_cycles_per_s": 8000000000, "active_compute_power_increment_w": 10, "link_rate_bps": 10000000, "transfer_energy_j_per_mb": 0.3}
+    ]
+  },
+  "queue_rules": {
+    "assignment_at": "task_arrival",
+    "compute_queue": "FIFO_single_server_per_node",
+    "transfer_queue": "FIFO_single_channel_per_nonlocal_node",
+    "preemption": false,
+    "reassignment": false,
+    "future_arrivals_visible": false,
+    "nonlocal_return_required": true
+  },
+  "workload_distribution": {"kind": "manual_fixture", "task_count": 2},
+  "seed_splits": {"fixture": [41], "training": [], "pilot": [], "held_out": []},
+  "policy_configs": [{"policy_config_id": "manual-fixture", "family": "manual_fixture", "parameters": {}}],
+  "software_versions": {"generator": null, "simulator": null, "metrics_calculator": null},
+  "numeric_tolerance": {"absolute": 1e-9, "relative": 1e-9},
+  "raw_data_paths": {
+    "instances": ["workload_instance.json"],
+    "runs": ["run_record.json"],
+    "event_logs": ["task_events.jsonl"]
+  }
+}
