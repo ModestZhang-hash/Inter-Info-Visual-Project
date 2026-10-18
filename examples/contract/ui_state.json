@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "current_instance_id": "example-instance-001",
+  "selected_run_ids": ["example-run-001"],
+  "visible_policy_config_ids": ["manual-fixture"],
+  "axis_ranges": {
+    "makespan_s": {"min": 0.0, "max": 2.0},
+    "energy_j": {"min": 0.0, "max": 10.0},
+    "mean_latency_s": {"min": 0.0, "max": 2.0}
+  },
+  "pareto_reference_run_ids": [],
+  "pareto_reference_status": "fixture_only"
+}
