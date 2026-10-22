@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "3a-demo-run-e",
+  "instance_id": "3a-demo-instance-001",
+  "manifest_id": "3a-manual-demo-001",
+  "policy_config_id": "fixture-e",
+  "policy_seed": null,
+  "simulator_version": null,
+  "dqn_checkpoint_id": null,
+  "record_origin": "manual_fixture",
+  "status": "complete",
+  "failure_reason": null,
+  "task_count": 2,
+  "makespan_s": 0.95,
+  "energy_j": 5.97,
+  "mean_latency_s": 0.6216666666666666,
+  "event_log_path": "task_events.jsonl"
+}

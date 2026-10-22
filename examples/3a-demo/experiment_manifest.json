@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "3a-manual-demo-001",
+  "phase": "fixture",
+  "topology": {
+    "gateway_node_id": "edge-0",
+    "nodes": [
+      {
+        "node_id": "edge-0",
+        "kind": "edge",
+        "compute_capacity_cycles_per_s": 2000000000,
+        "active_compute_power_increment_w": 5,
+        "link_rate_bps": null,
+        "transfer_energy_j_per_mb": null
+      },
+      {
+        "node_id": "edge-1",
+        "kind": "edge",
+        "compute_capacity_cycles_per_s": 3000000000,
+        "active_compute_power_increment_w": 6,
+        "link_rate_bps": 30000000,
+        "transfer_energy_j_per_mb": 0.2
+      },
+      {
+        "node_id": "edge-2",
+        "kind": "edge",
+        "compute_capacity_cycles_per_s": 4000000000,
+        "active_compute_power_increment_w": 7,
+        "link_rate_bps": 30000000,
+        "transfer_energy_j_per_mb": 0.2
+      },
+      {
+        "node_id": "cloud-0",
+        "kind": "cloud",
+        "compute_capacity_cycles_per_s": 8000000000,
+        "active_compute_power_increment_w": 10,
+        "link_rate_bps": 10000000,
+        "transfer_energy_j_per_mb": 0.3
+      }
+    ]
+  },
+  "queue_rules": {
+    "assignment_at": "task_arrival",
+    "compute_queue": "FIFO_single_server_per_node",
+    "transfer_queue": "FIFO_single_channel_per_nonlocal_node",
+    "preemption": false,
+    "reassignment": false,
+    "future_arrivals_visible": false,
+    "nonlocal_return_required": true
+  },
+  "workload_distribution": {
+    "kind": "manual_fixture",
+    "task_count": 2
+  },
+  "seed_splits": {
+    "fixture": [
+      41
+    ],
+    "training": [],
+    "pilot": [],
+    "held_out": []
+  },
+  "policy_configs": [
+    {
+      "policy_config_id": "fixture-a",
+      "family": "manual_fixture",
+      "label": "手工放置 A",
+      "parameters": {
+        "destinations": [
+          "edge-0",
+          "edge-1"
+        ]
+      }
+    },
+    {
+      "policy_config_id": "fixture-b",
+      "family": "manual_fixture",
+      "label": "手工放置 B",
+      "parameters": {
+        "destinations": [
+          "edge-0",
+          "edge-2"
+        ]
+      }
+    },
+    {
+      "policy_config_id": "fixture-c",
+      "family": "manual_fixture",
+      "label": "手工放置 C",
+      "parameters": {
+        "destinations": [
+          "edge-1",
+          "edge-0"
+        ]
+      }
+    },
+    {
+      "policy_config_id": "fixture-d",
+      "family": "manual_fixture",
+      "label": "手工放置 D",
+      "parameters": {
+        "destinations": [
+          "edge-1",
+          "edge-2"
+        ]
+      }
+    },
+    {
+      "policy_config_id": "fixture-e",
+      "family": "manual_fixture",
+      "label": "手工放置 E",
+      "parameters": {
+        "destinations": [
+          "edge-2",
+          "edge-0"
+        ]
+      }
+    },
+    {
+      "policy_config_id": "fixture-f",
+      "family": "manual_fixture",
+      "label": "手工放置 F",
+      "parameters": {
+        "destinations": [
+          "edge-2",
+          "cloud-0"
+        ]
+      }
+    },
+    {
+      "policy_config_id": "fixture-g",
+      "family": "manual_fixture",
+      "label": "手工放置 G",
+      "parameters": {
+        "destinations": [
+          "cloud-0",
+          "edge-2"
+        ]
+      }
+    }
+  ],
+  "software_versions": {
+    "generator": null,
+    "simulator": null,
+    "metrics_calculator": null
+  },
+  "numeric_tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "raw_data_paths": {
+    "instances": [
+      "workload_instance.json"
+    ],
+    "runs": [
+      "run_records/run_a.json",
+      "run_records/run_b.json",
+      "run_records/run_c.json",
+      "run_records/run_d.json",
+      "run_records/run_e.json",
+      "run_records/run_f.json",
+      "run_records/run_g.json"
+    ],
+    "event_logs": [
+      "task_events.jsonl"
+    ]
+  }
+}

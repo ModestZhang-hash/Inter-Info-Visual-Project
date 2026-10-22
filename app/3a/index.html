@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topic 3A · 成对权衡分析</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><p class="eyebrow">CPS 5745 · TOPIC 3A</p><h1>成对权衡分析</h1><p class="subtitle">同一任务流的 makespan、任务相关能耗与平均端到端延迟</p></div>
+    <label class="import">导入 3A bundle.json<input id="bundle-file" type="file" accept="application/json,.json"></label>
+  </header>
+  <main>
+    <section class="notice" id="notice" role="status"></section>
+    <section class="overview" aria-label="数据概览">
+      <div><span class="kicker">实例</span><strong id="instance-id">—</strong></div>
+      <div><span class="kicker">Pareto 参照</span><strong id="reference-status">—</strong></div>
+      <div><span class="kicker">可见 / 完整运行</span><strong id="run-count">—</strong></div>
+      <div><span class="kicker">选中运行</span><strong id="selection-count">—</strong></div>
+    </section>
+    <section class="controls" aria-label="策略筛选与坐标范围">
+      <div class="control-title"><h2>视图控制</h2><div><button id="select-all" type="button">显示全部</button><button id="reset-axes" type="button">重置坐标</button><button id="clear-selection" type="button">清除选择</button></div></div>
+      <div class="control-grid"><fieldset><legend>配置可见性</legend><div id="policy-filters" class="filters"></div></fieldset><fieldset><legend>固定坐标域 <small>筛选不会改动</small></legend><div id="axis-controls" class="axis-controls"></div></fieldset></div>
+    </section>
+    <section class="legend" aria-label="点标记说明"><span><i class="mark projected"></i> 二维投影非支配</span><span><i class="mark full"></i> 三维非支配</span><span><i class="mark selected"></i> 当前选择</span><span class="hint">点击点选择；拖拽空白区域框选；按住 Shift 可追加选择。</span></section>
+    <section id="plots" class="plots" aria-label="三个成对散点图"></section>
+    <section class="details" aria-label="运行详情">
+      <div class="section-heading"><div><p class="eyebrow">TRACEABLE RECORD</p><h2>运行与支配证据</h2></div><button id="export-csv" type="button">导出选中 CSV</button></div>
+      <div id="details-content" class="details-content"></div>
+    </section>
+  </main>
+  <footer>3A 原型 · 所有目标均为最小化 · 能耗不含持续空闲基线</footer>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>
