@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "status": "provisional_not_frozen",
+  "held_out_used": false,
+  "s_M": 21.242007085004264,
+  "s_E": 2.655653085448698,
+  "s_L": 1.6571213496481065,
+  "source_run_ids": [
+    "provisional-training-low-1000-latency-first",
+    "provisional-training-low-1000-random-11",
+    "provisional-training-medium-1001-latency-first",
+    "provisional-training-medium-1001-random-11",
+    "provisional-training-high-1002-latency-first",
+    "provisional-training-high-1002-random-11",
+    "provisional-pilot-low-2000-latency-first",
+    "provisional-pilot-low-2000-random-11",
+    "provisional-pilot-medium-2001-latency-first",
+    "provisional-pilot-medium-2001-random-11",
+    "provisional-pilot-high-2002-latency-first",
+    "provisional-pilot-high-2002-random-11"
+  ],
+  "definitions": {
+    "s_M": "mean makespan_s of the listed training and pilot runs",
+    "s_E": "mean per-task compute_energy_j + transfer_energy_j in those runs",
+    "s_L": "mean per-task completion_s - arrival_s in those runs"
+  },
+  "note": "Six heuristics share one interface. The three balanced configuration IDs stay distinct and belong to family balanced. Scales use training and pilot logs only.",
+  "configs": [
+    {
+      "policy_config_id": "random",
+      "family": "random",
+      "weights": {}
+    },
+    {
+      "policy_config_id": "latency-first",
+      "family": "latency-first",
+      "weights": {}
+    },
+    {
+      "policy_config_id": "energy-first",
+      "family": "energy-first",
+      "weights": {}
+    },
+    {
+      "policy_config_id": "balanced-equal",
+      "family": "balanced",
+      "weights": {
+        "makespan": "1/3",
+        "energy": "1/3",
+        "latency": "1/3"
+      }
+    },
+    {
+      "policy_config_id": "balanced-makespan",
+      "family": "balanced",
+      "weights": {
+        "makespan": "3/5",
+        "energy": "1/5",
+        "latency": "1/5"
+      }
+    },
+    {
+      "policy_config_id": "balanced-energy",
+      "family": "balanced",
+      "weights": {
+        "makespan": "1/5",
+        "energy": "3/5",
+        "latency": "1/5"
+      }
+    }
+  ]
+}
