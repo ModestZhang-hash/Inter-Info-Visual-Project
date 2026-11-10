@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "provisional-held_out-medium-3023-latency-first",
+  "instance_id": "provisional-held_out-medium-3023",
+  "manifest_id": "provisional-workload-held_out-v1",
+  "policy_config_id": "latency-first",
+  "policy_seed": null,
+  "simulator_version": "topic3-simulator-p2-1",
+  "dqn_checkpoint_id": null,
+  "record_origin": "simulation",
+  "status": "complete",
+  "failure_reason": null,
+  "task_count": 80,
+  "makespan_s": 20.038476969208617,
+  "energy_j": 199.90132975275003,
+  "mean_latency_s": 0.7865836515915303,
+  "event_log_path": "../../artifacts/workloads/provisional/events/provisional-held_out-medium-3023-latency-first.jsonl"
+}

@@ -75,6 +75,8 @@ A workload instance is an arrival-ordered stream of independent tasks with a fix
 
 Training, pilot, and held-out evaluation will use disjoint instance seeds. All seven candidates in a comparison set replay the same frozen task stream. The random policy's own seed is logged, and no policy can observe future arrivals.
 
+These frozen streams are the output of a workload generator. From a recorded manifest and seed, the generator writes one instance file containing the arrival times, compute requirements, and upload and return sizes. The simulator reads that file and does not resample the task list. Independent metric checks, the linked views, the bounded DQN and its pilot, the design freeze, the matched held-out runs, and the later Pareto checks and paired analysis all use this generator output or the run records and event logs produced from it. The same file is replayed for every configuration in one comparison set.
+
 ### 5.2 Bounded discrete-event simulator
 
 The proposed topology has three heterogeneous edge nodes and one cloud node; one edge node is colocated with the gateway. An arriving task is assigned to one destination, without preemption or reassignment. Nonlocal tasks upload before computation and complete only after any modeled return transfer. Compute and transfer queues operate first-in, first-out. Each destination's modeled transfer channel and single-server compute queue have declared capacities. The model excludes task dependencies, node failures, background traffic, and shared-bandwidth contention across destinations. These exclusions limit external validity.

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "provisional-pilot-high-2002-latency-first",
+  "instance_id": "provisional-pilot-high-2002",
+  "manifest_id": "provisional-workload-pilot-v1",
+  "policy_config_id": "latency-first",
+  "policy_seed": null,
+  "simulator_version": "topic3-simulator-p2-1",
+  "dqn_checkpoint_id": null,
+  "record_origin": "simulation",
+  "status": "complete",
+  "failure_reason": null,
+  "task_count": 80,
+  "makespan_s": 11.381685941368733,
+  "energy_j": 210.52222149925,
+  "mean_latency_s": 1.5408364199608149,
+  "event_log_path": "../../artifacts/workloads/provisional/events/provisional-pilot-high-2002-latency-first.jsonl"
+}

@@ -22,3 +22,12 @@ python scripts/build_3a_bundle.py --manifest path/to/experiment_manifest.json --
 Import the resulting JSON with the button in the app. The viewer rejects records whose event-log metrics disagree with the run record. It withholds official Pareto labels until all seven declared configurations have complete runs on the same non-fixture instance.
 
 Run all checks with `node --test --test-concurrency=1 tests/3a.test.mjs tests/3a_startup.test.mjs tests/3b.test.mjs` and `python -m unittest discover -s tests -p 'test_*.py'`.
+
+### Merged B-WORK provisional pipeline
+
+The local unified UI includes B-WORK through `2b2bfc7`: workload generation,
+Random/Latency-first provisional simulation, and independent metric checks.
+Open `/app/3a/?bundle=p3-training-low` for the two-run training slice. `/app/`
+redirects to the current unified page while preserving this query. These runs
+are not an official seven-candidate front; formal Pareto labels remain withheld.
+See `docs/integration.md` for merge decisions and validation commands.

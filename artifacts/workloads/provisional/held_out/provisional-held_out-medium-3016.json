@@ -1,0 +1,571 @@
+{
+  "schema_version": "1.0.0",
+  "instance_id": "provisional-held_out-medium-3016",
+  "manifest_id": "provisional-workload-held_out-v1",
+  "phase": "held_out",
+  "intensity_label": "medium",
+  "environment_seed": 7,
+  "task_generation_seed": 3016,
+  "tasks": [
+    {
+      "task_id": "task-001",
+      "arrival_s": 0.0,
+      "compute_cycles": 1955087148,
+      "upload_bytes": 1405100,
+      "return_bytes": 140510
+    },
+    {
+      "task_id": "task-002",
+      "arrival_s": 0.0524604793068072,
+      "compute_cycles": 1605840722,
+      "upload_bytes": 1719824,
+      "return_bytes": 171982
+    },
+    {
+      "task_id": "task-003",
+      "arrival_s": 0.22563699870477744,
+      "compute_cycles": 1521271758,
+      "upload_bytes": 1849541,
+      "return_bytes": 184954
+    },
+    {
+      "task_id": "task-004",
+      "arrival_s": 0.2975955742171931,
+      "compute_cycles": 766676995,
+      "upload_bytes": 937520,
+      "return_bytes": 93752
+    },
+    {
+      "task_id": "task-005",
+      "arrival_s": 0.3341406928122769,
+      "compute_cycles": 1164491763,
+      "upload_bytes": 864744,
+      "return_bytes": 86474
+    },
+    {
+      "task_id": "task-006",
+      "arrival_s": 0.3764840839157819,
+      "compute_cycles": 1587129923,
+      "upload_bytes": 612158,
+      "return_bytes": 61215
+    },
+    {
+      "task_id": "task-007",
+      "arrival_s": 0.41841114309896926,
+      "compute_cycles": 1755566490,
+      "upload_bytes": 872368,
+      "return_bytes": 87236
+    },
+    {
+      "task_id": "task-008",
+      "arrival_s": 1.1028294138313341,
+      "compute_cycles": 1027269793,
+      "upload_bytes": 1636777,
+      "return_bytes": 163677
+    },
+    {
+      "task_id": "task-009",
+      "arrival_s": 1.5506538514722064,
+      "compute_cycles": 556611113,
+      "upload_bytes": 597599,
+      "return_bytes": 59759
+    },
+    {
+      "task_id": "task-010",
+      "arrival_s": 1.6977110476000499,
+      "compute_cycles": 1309443471,
+      "upload_bytes": 1770054,
+      "return_bytes": 177005
+    },
+    {
+      "task_id": "task-011",
+      "arrival_s": 2.012377553219286,
+      "compute_cycles": 1524718631,
+      "upload_bytes": 678248,
+      "return_bytes": 67824
+    },
+    {
+      "task_id": "task-012",
+      "arrival_s": 2.01735612501774,
+      "compute_cycles": 995620560,
+      "upload_bytes": 1921827,
+      "return_bytes": 192182
+    },
+    {
+      "task_id": "task-013",
+      "arrival_s": 2.0195042506287955,
+      "compute_cycles": 1779907615,
+      "upload_bytes": 1700908,
+      "return_bytes": 170090
+    },
+    {
+      "task_id": "task-014",
+      "arrival_s": 2.268706040231372,
+      "compute_cycles": 825260682,
+      "upload_bytes": 1574556,
+      "return_bytes": 157455
+    },
+    {
+      "task_id": "task-015",
+      "arrival_s": 2.285805687308051,
+      "compute_cycles": 1227115224,
+      "upload_bytes": 675737,
+      "return_bytes": 67573
+    },
+    {
+      "task_id": "task-016",
+      "arrival_s": 2.3497309296584103,
+      "compute_cycles": 1911048610,
+      "upload_bytes": 1928084,
+      "return_bytes": 192808
+    },
+    {
+      "task_id": "task-017",
+      "arrival_s": 2.3759450434660536,
+      "compute_cycles": 1468538493,
+      "upload_bytes": 856459,
+      "return_bytes": 85645
+    },
+    {
+      "task_id": "task-018",
+      "arrival_s": 2.480121953499008,
+      "compute_cycles": 1618615153,
+      "upload_bytes": 767216,
+      "return_bytes": 76721
+    },
+    {
+      "task_id": "task-019",
+      "arrival_s": 2.5664525770290894,
+      "compute_cycles": 1881147392,
+      "upload_bytes": 1217460,
+      "return_bytes": 121746
+    },
+    {
+      "task_id": "task-020",
+      "arrival_s": 2.6521818853986305,
+      "compute_cycles": 1194199182,
+      "upload_bytes": 1851321,
+      "return_bytes": 185132
+    },
+    {
+      "task_id": "task-021",
+      "arrival_s": 2.674986634821914,
+      "compute_cycles": 1782010149,
+      "upload_bytes": 688373,
+      "return_bytes": 68837
+    },
+    {
+      "task_id": "task-022",
+      "arrival_s": 2.907269274923199,
+      "compute_cycles": 1998289269,
+      "upload_bytes": 1621796,
+      "return_bytes": 162179
+    },
+    {
+      "task_id": "task-023",
+      "arrival_s": 3.2738868511771777,
+      "compute_cycles": 1285607786,
+      "upload_bytes": 1871177,
+      "return_bytes": 187117
+    },
+    {
+      "task_id": "task-024",
+      "arrival_s": 3.2911015945676816,
+      "compute_cycles": 1737853966,
+      "upload_bytes": 1005396,
+      "return_bytes": 100539
+    },
+    {
+      "task_id": "task-025",
+      "arrival_s": 3.3175973570698534,
+      "compute_cycles": 512330069,
+      "upload_bytes": 1443872,
+      "return_bytes": 144387
+    },
+    {
+      "task_id": "task-026",
+      "arrival_s": 3.351590609068328,
+      "compute_cycles": 695600988,
+      "upload_bytes": 730338,
+      "return_bytes": 73033
+    },
+    {
+      "task_id": "task-027",
+      "arrival_s": 3.3663447409214777,
+      "compute_cycles": 1534251985,
+      "upload_bytes": 1303817,
+      "return_bytes": 130381
+    },
+    {
+      "task_id": "task-028",
+      "arrival_s": 3.4236479154122628,
+      "compute_cycles": 1546756758,
+      "upload_bytes": 1852102,
+      "return_bytes": 185210
+    },
+    {
+      "task_id": "task-029",
+      "arrival_s": 3.5949661449217394,
+      "compute_cycles": 1814098220,
+      "upload_bytes": 1982135,
+      "return_bytes": 198213
+    },
+    {
+      "task_id": "task-030",
+      "arrival_s": 3.651636698116745,
+      "compute_cycles": 1139275538,
+      "upload_bytes": 1011055,
+      "return_bytes": 101105
+    },
+    {
+      "task_id": "task-031",
+      "arrival_s": 3.758361245344523,
+      "compute_cycles": 1387434711,
+      "upload_bytes": 1641444,
+      "return_bytes": 164144
+    },
+    {
+      "task_id": "task-032",
+      "arrival_s": 3.9036008771376416,
+      "compute_cycles": 1817469063,
+      "upload_bytes": 776144,
+      "return_bytes": 77614
+    },
+    {
+      "task_id": "task-033",
+      "arrival_s": 4.099972317252076,
+      "compute_cycles": 1019781102,
+      "upload_bytes": 766981,
+      "return_bytes": 76698
+    },
+    {
+      "task_id": "task-034",
+      "arrival_s": 4.4437114334796,
+      "compute_cycles": 1525215033,
+      "upload_bytes": 1958997,
+      "return_bytes": 195899
+    },
+    {
+      "task_id": "task-035",
+      "arrival_s": 4.484686244073868,
+      "compute_cycles": 1538472294,
+      "upload_bytes": 1365556,
+      "return_bytes": 136555
+    },
+    {
+      "task_id": "task-036",
+      "arrival_s": 4.595125372657943,
+      "compute_cycles": 748873944,
+      "upload_bytes": 1144131,
+      "return_bytes": 114413
+    },
+    {
+      "task_id": "task-037",
+      "arrival_s": 4.746218386579619,
+      "compute_cycles": 1245108195,
+      "upload_bytes": 1762588,
+      "return_bytes": 176258
+    },
+    {
+      "task_id": "task-038",
+      "arrival_s": 4.84129600722516,
+      "compute_cycles": 946637596,
+      "upload_bytes": 753098,
+      "return_bytes": 75309
+    },
+    {
+      "task_id": "task-039",
+      "arrival_s": 4.991647997068426,
+      "compute_cycles": 1619911468,
+      "upload_bytes": 835803,
+      "return_bytes": 83580
+    },
+    {
+      "task_id": "task-040",
+      "arrival_s": 5.396257081575261,
+      "compute_cycles": 1917898405,
+      "upload_bytes": 756635,
+      "return_bytes": 75663
+    },
+    {
+      "task_id": "task-041",
+      "arrival_s": 5.547876896108833,
+      "compute_cycles": 1020129766,
+      "upload_bytes": 1719474,
+      "return_bytes": 171947
+    },
+    {
+      "task_id": "task-042",
+      "arrival_s": 5.560032141468928,
+      "compute_cycles": 1160135479,
+      "upload_bytes": 1231002,
+      "return_bytes": 123100
+    },
+    {
+      "task_id": "task-043",
+      "arrival_s": 5.6185531325766185,
+      "compute_cycles": 1104354438,
+      "upload_bytes": 1397891,
+      "return_bytes": 139789
+    },
+    {
+      "task_id": "task-044",
+      "arrival_s": 5.689902941191852,
+      "compute_cycles": 604031224,
+      "upload_bytes": 1566092,
+      "return_bytes": 156609
+    },
+    {
+      "task_id": "task-045",
+      "arrival_s": 5.973515165259508,
+      "compute_cycles": 1036700665,
+      "upload_bytes": 1580342,
+      "return_bytes": 158034
+    },
+    {
+      "task_id": "task-046",
+      "arrival_s": 5.996312741656311,
+      "compute_cycles": 803760111,
+      "upload_bytes": 1107060,
+      "return_bytes": 110706
+    },
+    {
+      "task_id": "task-047",
+      "arrival_s": 6.011961715329899,
+      "compute_cycles": 994007795,
+      "upload_bytes": 1333673,
+      "return_bytes": 133367
+    },
+    {
+      "task_id": "task-048",
+      "arrival_s": 6.267264457692714,
+      "compute_cycles": 686750356,
+      "upload_bytes": 1037444,
+      "return_bytes": 103744
+    },
+    {
+      "task_id": "task-049",
+      "arrival_s": 6.5952058964867275,
+      "compute_cycles": 756160856,
+      "upload_bytes": 1885109,
+      "return_bytes": 188510
+    },
+    {
+      "task_id": "task-050",
+      "arrival_s": 6.613941198191133,
+      "compute_cycles": 1850357694,
+      "upload_bytes": 643986,
+      "return_bytes": 64398
+    },
+    {
+      "task_id": "task-051",
+      "arrival_s": 6.758809552440895,
+      "compute_cycles": 753325122,
+      "upload_bytes": 1132572,
+      "return_bytes": 113257
+    },
+    {
+      "task_id": "task-052",
+      "arrival_s": 6.817457935954353,
+      "compute_cycles": 727742341,
+      "upload_bytes": 502883,
+      "return_bytes": 50288
+    },
+    {
+      "task_id": "task-053",
+      "arrival_s": 6.917102573338337,
+      "compute_cycles": 1949219064,
+      "upload_bytes": 1301210,
+      "return_bytes": 130121
+    },
+    {
+      "task_id": "task-054",
+      "arrival_s": 6.984075728666861,
+      "compute_cycles": 589576593,
+      "upload_bytes": 1178622,
+      "return_bytes": 117862
+    },
+    {
+      "task_id": "task-055",
+      "arrival_s": 7.0175091734678325,
+      "compute_cycles": 1547014520,
+      "upload_bytes": 1863878,
+      "return_bytes": 186387
+    },
+    {
+      "task_id": "task-056",
+      "arrival_s": 7.083349961849589,
+      "compute_cycles": 1479112574,
+      "upload_bytes": 1065453,
+      "return_bytes": 106545
+    },
+    {
+      "task_id": "task-057",
+      "arrival_s": 7.3336605502625485,
+      "compute_cycles": 1070544341,
+      "upload_bytes": 1081372,
+      "return_bytes": 108137
+    },
+    {
+      "task_id": "task-058",
+      "arrival_s": 7.389844264711139,
+      "compute_cycles": 1811014891,
+      "upload_bytes": 726029,
+      "return_bytes": 72602
+    },
+    {
+      "task_id": "task-059",
+      "arrival_s": 7.589874495681196,
+      "compute_cycles": 879597688,
+      "upload_bytes": 1087541,
+      "return_bytes": 108754
+    },
+    {
+      "task_id": "task-060",
+      "arrival_s": 7.607417669829892,
+      "compute_cycles": 783349029,
+      "upload_bytes": 621313,
+      "return_bytes": 62131
+    },
+    {
+      "task_id": "task-061",
+      "arrival_s": 7.868198891339949,
+      "compute_cycles": 1331731790,
+      "upload_bytes": 1045549,
+      "return_bytes": 104554
+    },
+    {
+      "task_id": "task-062",
+      "arrival_s": 7.920944466194739,
+      "compute_cycles": 1284504393,
+      "upload_bytes": 1272521,
+      "return_bytes": 127252
+    },
+    {
+      "task_id": "task-063",
+      "arrival_s": 8.230540419271497,
+      "compute_cycles": 1494052492,
+      "upload_bytes": 1196710,
+      "return_bytes": 119671
+    },
+    {
+      "task_id": "task-064",
+      "arrival_s": 8.58528955562087,
+      "compute_cycles": 1009548411,
+      "upload_bytes": 1953242,
+      "return_bytes": 195324
+    },
+    {
+      "task_id": "task-065",
+      "arrival_s": 8.810650401019767,
+      "compute_cycles": 1558449742,
+      "upload_bytes": 1286211,
+      "return_bytes": 128621
+    },
+    {
+      "task_id": "task-066",
+      "arrival_s": 8.81561212102632,
+      "compute_cycles": 1966886015,
+      "upload_bytes": 1386861,
+      "return_bytes": 138686
+    },
+    {
+      "task_id": "task-067",
+      "arrival_s": 9.192224806449495,
+      "compute_cycles": 1707657765,
+      "upload_bytes": 1266299,
+      "return_bytes": 126629
+    },
+    {
+      "task_id": "task-068",
+      "arrival_s": 9.45545982377758,
+      "compute_cycles": 1872344419,
+      "upload_bytes": 1856658,
+      "return_bytes": 185665
+    },
+    {
+      "task_id": "task-069",
+      "arrival_s": 9.489500838239566,
+      "compute_cycles": 855216512,
+      "upload_bytes": 974252,
+      "return_bytes": 97425
+    },
+    {
+      "task_id": "task-070",
+      "arrival_s": 9.712969177119165,
+      "compute_cycles": 1703503668,
+      "upload_bytes": 1492477,
+      "return_bytes": 149247
+    },
+    {
+      "task_id": "task-071",
+      "arrival_s": 9.922826239633766,
+      "compute_cycles": 654999853,
+      "upload_bytes": 1495368,
+      "return_bytes": 149536
+    },
+    {
+      "task_id": "task-072",
+      "arrival_s": 10.181535256164986,
+      "compute_cycles": 1019622565,
+      "upload_bytes": 546289,
+      "return_bytes": 54628
+    },
+    {
+      "task_id": "task-073",
+      "arrival_s": 10.271113058499205,
+      "compute_cycles": 845122010,
+      "upload_bytes": 533243,
+      "return_bytes": 53324
+    },
+    {
+      "task_id": "task-074",
+      "arrival_s": 10.342350080026723,
+      "compute_cycles": 1533755430,
+      "upload_bytes": 1462257,
+      "return_bytes": 146225
+    },
+    {
+      "task_id": "task-075",
+      "arrival_s": 10.843567227516475,
+      "compute_cycles": 832986852,
+      "upload_bytes": 1883225,
+      "return_bytes": 188322
+    },
+    {
+      "task_id": "task-076",
+      "arrival_s": 11.018293807684897,
+      "compute_cycles": 1985748066,
+      "upload_bytes": 1837305,
+      "return_bytes": 183730
+    },
+    {
+      "task_id": "task-077",
+      "arrival_s": 11.164389812262858,
+      "compute_cycles": 1103249828,
+      "upload_bytes": 1000780,
+      "return_bytes": 100078
+    },
+    {
+      "task_id": "task-078",
+      "arrival_s": 11.20322558538038,
+      "compute_cycles": 1693805674,
+      "upload_bytes": 1536995,
+      "return_bytes": 153699
+    },
+    {
+      "task_id": "task-079",
+      "arrival_s": 11.277689564520985,
+      "compute_cycles": 1655317014,
+      "upload_bytes": 948502,
+      "return_bytes": 94850
+    },
+    {
+      "task_id": "task-080",
+      "arrival_s": 11.340324196929567,
+      "compute_cycles": 594669318,
+      "upload_bytes": 1680134,
+      "return_bytes": 168013
+    }
+  ]
+}

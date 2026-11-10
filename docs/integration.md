@@ -115,7 +115,7 @@ node --test --test-concurrency=1 tests/3a.test.mjs tests/3a_startup.test.mjs tes
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
-21 JavaScript tests and 9 Python tests pass. Coverage includes atomic comparison
+24 JavaScript tests and 28 Python tests pass after the B-WORK merge. Coverage includes atomic comparison
 limits, duplicate/unknown/failed/foreign IDs, independent filter intersections,
 empty matches, persistence of comparisons outside filters, pagination/search,
 500-run load/restore, aggregate membership and numeric boundary conservation,
@@ -133,3 +133,24 @@ The **Random 10** button replaces the comparison set with an unweighted random s
 Plot clicks and Enter/Space activate `toggleComparison`: inspection is retained even on deselection or an over-limit attempt. Removing a comparison never changes exploration filters, axis ranges, or reference Pareto labels. At 10 comparisons, an additional selection is rejected with feedback above the plots and in the results section. Legacy unbound components retain their original selection API.
 
 The unified page no longer exposes brush filtering or Clear filters. Internal source-filter APIs and unbound component brush callbacks remain for backward compatibility only; current Matrix and parallel views attach no brush handlers or hit regions. Strategy checkboxes, comparison toggles, Random 10, and Pareto evidence remain available.
+
+## B-WORK integration (2026-11-10)
+
+Merged remote B-WORK through `2b2bfc7`. Local comparison interactions take precedence
+where the earlier shared-entry implementation overlaps: Matrix expansion,
+maximum 10 comparisons, Random 10, click toggling, no density or brush UI, English
+copy, and the single-record evidence panel are preserved.
+
+The remote workload generator, provisional simulator (Random and Latency-first),
+independent metrics calculator, configs, archived outputs, and reusable modules
+are included. No DQN training was run and no archived inputs/outputs were regenerated.
+`/app/` now redirects to `/app/3a/` and preserves query parameters. Open
+`/app/3a/?bundle=p3-training-low` (or the equivalent `/app/?bundle=...` URL) to
+load the new two-policy training slice. The incomplete candidate set keeps formal
+Pareto labels withheld. The original 7-run and 500-run demos remain available.
+
+Run all JavaScript suites with `node --test --test-concurrency=1 tests/*.test.mjs`
+and Python checks with `python -m unittest discover -s tests -p "test_*.py"`.
+On Windows, expand the JavaScript glob with `Get-ChildItem` if the shell does not
+expand it. If a restricted runtime blocks its default temporary directory, set
+process-local TEMP and TMP to a writable workspace directory for the Python tests.

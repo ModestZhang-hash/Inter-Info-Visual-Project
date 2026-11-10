@@ -60,7 +60,7 @@ export function drawPairScatter(svg, options) {
     const label = selectedRunIds.includes(run.run_id) ? `<text class="run-id-label" x="${x+13}" y="${y-12}">${xml(run.run_id)}</text>` : "";
     html += `<g class="run-point" data-run-id="${xml(run.run_id)}" tabindex="0" role="button" aria-label="${xml(tip.replaceAll("\n","; "))}">${marker(index,x,y,color,projected?"#153f39":"#ffffff")}<title>${xml(tip)}</title>${label}</g>`;
   }
-  if (!plotted.length && !runs.length) html += `<text class="empty" x="${W/2}" y="${H/2}" text-anchor="middle">No matching runs; enable configurations or use Show all</text>`;
+  if (!plotted.length && !runs.length) html += `<text class="empty" x="${W/2}" y="${H/2}" text-anchor="middle">${xml(options.emptyLabel ?? "No matching runs; enable configurations or use Show all")}</text>`;
   if (onBrush) html += `<rect class="brush" visibility="hidden" x="0" y="0" width="0" height="0"/>`;
   svg.innerHTML=html;
   svg.querySelectorAll("[data-run-id]").forEach((element) => {

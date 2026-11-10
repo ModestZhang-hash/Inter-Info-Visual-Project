@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "provisional-training-high-1002-random-11",
+  "instance_id": "provisional-training-high-1002",
+  "manifest_id": "provisional-workload-training-v1",
+  "policy_config_id": "random",
+  "policy_seed": 11,
+  "simulator_version": "topic3-simulator-p2-1",
+  "dqn_checkpoint_id": null,
+  "record_origin": "simulation",
+  "status": "complete",
+  "failure_reason": null,
+  "task_count": 80,
+  "makespan_s": 18.168089934240495,
+  "energy_j": 203.67936190674996,
+  "mean_latency_s": 3.7742938515108784,
+  "event_log_path": "../../artifacts/workloads/provisional/events/provisional-training-high-1002-random-11.jsonl"
+}
