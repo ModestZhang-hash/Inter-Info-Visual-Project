@@ -49,7 +49,7 @@ export function drawPairScatter(svg, options) {
     const tip=tooltip(run,projected,full);
     html += `<g class="run-point" data-run-id="${xml(run.run_id)}" tabindex="0" role="button" aria-label="${xml(tip.replaceAll("\n","; "))}">${marker(index,x,y,color,projected?"#153f39":"#ffffff")}<title>${xml(tip)}</title></g>`;
   }
-  if (!plotted.length) html += `<text class="empty" x="${W/2}" y="${H/2}" text-anchor="middle">当前坐标范围或筛选下没有可见点</text>`;
+  if (!plotted.length) html += `<text class="empty" x="${W/2}" y="${H/2}" text-anchor="middle">${xml(options.emptyLabel || "当前坐标范围或筛选下没有可见点")}</text>`;
   html += `<rect class="brush" visibility="hidden" x="0" y="0" width="0" height="0"/>`;
   svg.innerHTML=html;
   svg.querySelectorAll("[data-run-id]").forEach((element) => {

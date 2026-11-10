@@ -1,4 +1,5 @@
 import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs";
+import { text } from "../shared/copy.mjs";
 
 export const VIEW3D = {
   width: 720,
@@ -12,12 +13,6 @@ export const VIEW3D = {
 };
 
 export const OVERLAP_PX = 14;
-
-const AXIS_LABELS = {
-  makespan_s: "M (s) ↓",
-  energy_j: "E (J) ↓",
-  mean_latency_s: "L (s) ↓",
-};
 
 function element(tag, className) {
   const node = document.createElementNS("http://www.w3.org/2000/svg", tag);
@@ -66,14 +61,15 @@ export function coincidentIds(runs, ranges, runId) {
     .sort();
 }
 
-export function mountView3d(container, model, sharedState) {
+export function mountView3d(container, model, sharedState, options = {}) {
   if (!container) throw new Error("3D container is required");
+  const copy = text(options.lang);
   const render = (snapshot) => {
     const { width, height } = VIEW3D;
     const svg = element("svg");
     svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
     svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", "固定斜投影的三维参考视图：M、E、L 均最小化，不能旋转。");
+    svg.setAttribute("aria-label", copy.view3dLabel);
     const runs = visibleRuns(model, snapshot);
     const axes = [
       ["makespan_s", projectNormalized(1, 0, 0)],
@@ -91,7 +87,7 @@ export function mountView3d(container, model, sharedState) {
       label.setAttribute("x", end.x + (key === "energy_j" ? -8 : 8));
       label.setAttribute("y", end.y + (key === "energy_j" ? -6 : 16));
       label.setAttribute("text-anchor", key === "energy_j" ? "end" : "start");
-      label.textContent = AXIS_LABELS[key];
+      label.textContent = copy.axes[key].label;
       svg.append(line, label);
     }
     const placed = runs.map((run) => ({ run, point: projectRun(run, snapshot.axis_ranges) }));
@@ -112,10 +108,10 @@ export function mountView3d(container, model, sharedState) {
       group.setAttribute("tabindex", "0");
       group.setAttribute("role", "button");
       const title = element("title");
-      const overlap = cluster.length > 1 ? `\n同一投影位置：${cluster.join("，")}` : "";
-      title.textContent = `${config?.label ?? run.policy_config_id} | ${run.run_id}\n`
+      const overlap = copy.overlapLine(cluster);
+      title.textContent = `${copy.displayName(config?.label, run.policy_config_id)} | ${run.run_id}\n`
         + `M=${formatRaw(run.makespan_s)} s, E=${formatRaw(run.energy_j)} J, L=${formatRaw(run.mean_latency_s)} s`
-        + `${full ? "\n三维：非支配" : "\n三维：被支配"}${overlap}`;
+        + `\n${copy.fullStatus(!full)}${overlap}`;
       if (full) {
         const halo = element("circle", "view3d-full");
         halo.setAttribute("cx", point.x);
@@ -158,7 +154,7 @@ export function mountView3d(container, model, sharedState) {
       empty.setAttribute("x", String(width / 2));
       empty.setAttribute("y", String(height / 2));
       empty.setAttribute("text-anchor", "middle");
-      empty.textContent = "当前筛选下没有可见的完整运行";
+      empty.textContent = copy.emptyRuns;
       svg.append(empty);
     }
     container.replaceChildren(svg);

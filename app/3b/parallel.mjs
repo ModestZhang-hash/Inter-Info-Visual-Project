@@ -1,11 +1,6 @@
 import { OBJECTIVES } from "../3a/pareto.mjs";
 import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs";
-
-const META = {
-  makespan_s: { short: "M", unit: "s", label: "总完成时间 M (s) ↓" },
-  energy_j: { short: "E", unit: "J", label: "任务相关能耗 E (J) ↓" },
-  mean_latency_s: { short: "L", unit: "s", label: "平均端到端延迟 L (s) ↓" },
-};
+import { text } from "../shared/copy.mjs";
 
 export const PARALLEL_LAYOUT = { width: 920, height: 420, top: 58, bottom: 356, left: 86, right: 884 };
 
@@ -52,8 +47,9 @@ function axisX(index) {
   return left + index * (right - left) / (OBJECTIVES.length - 1);
 }
 
-export function mountParallel(container, model, sharedState) {
+export function mountParallel(container, model, sharedState, options = {}) {
   if (!container) throw new Error("Parallel container is required");
+  const copy = text(options.lang);
   const brushes = new Map();
   let brushOrigin = null;
   let drag = null;
@@ -68,7 +64,7 @@ export function mountParallel(container, model, sharedState) {
     const svg = element("svg");
     svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
     svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", "平行坐标：M、E、L 均最小化。折线位置按坐标域绘制，悬停文字保留原始值。");
+    svg.setAttribute("aria-label", copy.parallelLabel);
     const runs = visibleRuns(model, snapshot);
     OBJECTIVES.forEach((key, index) => {
       const x = axisX(index);
@@ -90,7 +86,7 @@ export function mountParallel(container, model, sharedState) {
       name.setAttribute("x", index === 0 ? x - 46 : index === OBJECTIVES.length - 1 ? x + 46 : x);
       name.setAttribute("y", "22");
       name.setAttribute("text-anchor", anchor);
-      name.textContent = META[key].label;
+      name.textContent = copy.axes[key].label;
       const tickAnchor = index === OBJECTIVES.length - 1 ? "end" : "start";
       const tickX = index === OBJECTIVES.length - 1 ? x - 8 : x + 8;
       const maxLabel = element("text", "pc-tick");
@@ -142,7 +138,7 @@ export function mountParallel(container, model, sharedState) {
       group.setAttribute("tabindex", "0");
       group.setAttribute("role", "button");
       const title = element("title");
-      title.textContent = `${config?.label ?? run.policy_config_id} | ${run.run_id}\n`
+      title.textContent = `${copy.displayName(config?.label, run.policy_config_id)} | ${run.run_id}\n`
         + `M=${formatRaw(run.makespan_s)} s, E=${formatRaw(run.energy_j)} J, L=${formatRaw(run.mean_latency_s)} s`;
       const path = element("path");
       path.setAttribute("d", `M${points.join(" L")}`);
@@ -174,7 +170,7 @@ export function mountParallel(container, model, sharedState) {
       empty.setAttribute("x", String(width / 2));
       empty.setAttribute("y", String(height / 2));
       empty.setAttribute("text-anchor", "middle");
-      empty.textContent = "当前筛选下没有可见的完整运行";
+      empty.textContent = copy.emptyRuns;
       svg.append(empty);
     }
     svg.addEventListener("pointermove", (event) => {
