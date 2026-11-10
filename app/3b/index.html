@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topic 3B · 矩阵、平行坐标与 3D</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">CPS 5745 · TOPIC 3B</p>
+      <h1>散点图矩阵、平行坐标与 3D</h1>
+      <p class="subtitle">同一任务流的 makespan、任务相关能耗与平均端到端延迟</p>
+    </div>
+    <label class="import">导入 bundle.json<input id="bundle-file" type="file" accept="application/json,.json"></label>
+  </header>
+  <main>
+    <section class="notice" id="notice" role="status"></section>
+    <p class="provenance" id="provenance"></p>
+    <section class="overview" aria-label="数据概览">
+      <div><span class="kicker">实例</span><strong id="instance-id">—</strong></div>
+      <div><span class="kicker">Pareto 参照</span><strong id="reference-status">—</strong></div>
+      <div><span class="kicker">正式参照 run_id</span><strong id="reference-ids">—</strong></div>
+      <div><span class="kicker">可见 / 完整运行</span><strong id="run-count">—</strong></div>
+      <div><span class="kicker">选中运行</span><strong id="selection-count">—</strong></div>
+      <div><span class="kicker">选中 run_id</span><strong id="selection-ids">—</strong></div>
+    </section>
+    <section class="controls" aria-label="策略筛选与坐标范围">
+      <div class="control-title">
+        <h2>视图控制</h2>
+        <div>
+          <button id="select-all" type="button">显示全部</button>
+          <button id="reset-axes" type="button">重置坐标</button>
+          <button id="clear-selection" type="button">清除选择</button>
+        </div>
+      </div>
+      <div class="control-grid">
+        <fieldset>
+          <legend>配置可见性</legend>
+          <div id="policy-filters" class="filters"></div>
+        </fieldset>
+        <fieldset>
+          <legend>固定坐标域 <small>筛选不会改动</small></legend>
+          <div id="axis-controls" class="axis-controls"></div>
+        </fieldset>
+      </div>
+    </section>
+    <section class="legend" aria-label="点标记说明">
+      <span><i class="mark projected"></i> 二维投影非支配</span>
+      <span><i class="mark full"></i> 三维非支配</span>
+      <span><i class="mark selected"></i> 当前选择</span>
+      <span class="hint">矩阵：点击点选择，拖拽空白区域框选。平行坐标：点击折线选择，在轴上拖拽只改变选择。3D：点击投影点选择；重叠位置会选中该处的全部 run_id。按住 Shift 可追加。投影和归一化只用于绘制，悬停和详情保留原始值。</span>
+    </section>
+    <section class="view-block">
+      <h2>散点图矩阵</h2>
+      <section id="matrix" class="matrix" aria-label="散点图矩阵"></section>
+    </section>
+    <section class="view-block">
+      <h2>平行坐标</h2>
+      <p class="cell-note">三轴均为最小化。轴上的刷选只写入选中的 run_id，不改变可见配置、坐标域或 Pareto 标签。折线位置按当前坐标域排列，悬停文字使用未舍入的原始值。</p>
+      <section id="parallel" class="parallel" aria-label="平行坐标"></section>
+    </section>
+    <section class="view-block">
+      <h2>简洁 3D 参考视图</h2>
+      <p class="cell-note">固定斜投影，不含旋转。横轴方向主要对应 M，向上主要对应 E，斜向对应 L，三者都最小化。金色虚线圈表示三维非支配。点击重叠点会选中该投影位置上的全部 run_id。</p>
+      <section id="view3d" class="view3d" aria-label="简洁 3D 参考视图"></section>
+    </section>
+    <section class="details" aria-label="运行详情">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">TRACEABLE RECORD</p>
+          <h2>运行与支配证据</h2>
+        </div>
+      </div>
+      <div id="details-content" class="details-content"></div>
+    </section>
+  </main>
+  <footer>3B 散点图矩阵、平行坐标与固定 3D 投影 · 所有目标均为最小化 · 能耗不含持续空闲基线</footer>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>
