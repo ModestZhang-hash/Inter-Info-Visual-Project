@@ -53,12 +53,12 @@ test("3A application initializes three plots from the archived demo bundle", asy
     assert.equal(elements.get("plots").children.length, 3);
     assert.equal(elements.get("instance-id").textContent, "3a-demo-instance-001");
     assert.equal(elements.get("run-count").textContent, "7 / 7");
-    assert.doesNotMatch(elements.get("notice").textContent, /无法载入|导入失败/);
+    assert.doesNotMatch(elements.get("notice").textContent, /Unable to load|Import failed/);
     const firstSvg = elements.get("plots").children[0].children[2];
     firstSvg.markers.find((marker) => marker.dataset.runId === "3a-demo-run-f").listeners.click({ shiftKey: false });
     assert.equal(elements.get("selection-count").textContent, "1");
     assert.match(elements.get("details-content").innerHTML, /3a-demo-run-g/);
-    assert.match(elements.get("details-content").innerHTML, /严格更优/);
+    assert.match(elements.get("details-content").innerHTML, /Strictly better/);
     const nextSvg = elements.get("plots").children[0].children[2];
     nextSvg.listeners.pointerdown({ target: { closest: () => null }, clientX: 0, clientY: 0, pointerId: 1 });
     nextSvg.listeners.pointermove({ clientX: 600, clientY: 390 });

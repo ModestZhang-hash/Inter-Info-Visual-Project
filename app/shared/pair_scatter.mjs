@@ -22,7 +22,7 @@ export function drawPairScatter(svg, options) {
   const py = (v) => H-BOTTOM - (v-yRange.min)/(yRange.max-yRange.min)*(H-TOP-BOTTOM);
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.setAttribute("role", "img");
-  svg.setAttribute("aria-label", `${axisLabels[xKey]} 与 ${axisLabels[yKey]} 成对散点图`);
+  svg.setAttribute("aria-label", `${axisLabels[xKey]} vs. ${axisLabels[yKey]} pairwise scatterplot`);
   let html = `<rect x="${LEFT}" y="${TOP}" width="${W-LEFT-RIGHT}" height="${H-TOP-BOTTOM}" fill="#fbfdfb"/>`;
   for (let i=0;i<=4;i++) {
     const x=LEFT+i/4*(W-LEFT-RIGHT), y=H-BOTTOM-i/4*(H-TOP-BOTTOM);
@@ -49,7 +49,7 @@ export function drawPairScatter(svg, options) {
     const tip=tooltip(run,projected,full);
     html += `<g class="run-point" data-run-id="${xml(run.run_id)}" tabindex="0" role="button" aria-label="${xml(tip.replaceAll("\n","; "))}">${marker(index,x,y,color,projected?"#153f39":"#ffffff")}<title>${xml(tip)}</title></g>`;
   }
-  if (!plotted.length) html += `<text class="empty" x="${W/2}" y="${H/2}" text-anchor="middle">当前坐标范围或筛选下没有可见点</text>`;
+  if (!plotted.length) html += `<text class="empty" x="${W/2}" y="${H/2}" text-anchor="middle">No visible points within the current axes and filters</text>`;
   html += `<rect class="brush" visibility="hidden" x="0" y="0" width="0" height="0"/>`;
   svg.innerHTML=html;
   svg.querySelectorAll("[data-run-id]").forEach((element) => {
