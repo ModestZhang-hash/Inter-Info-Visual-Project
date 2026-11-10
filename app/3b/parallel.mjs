@@ -1,10 +1,12 @@
+import { filteredRuns, comparisonRuns } from "../shared/state.mjs?v=workflow-1";
+import { runLabel } from "../shared/labels.mjs";
 import { OBJECTIVES } from "../3a/pareto.mjs";
 import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs";
 
 const META = {
-  makespan_s: { short: "M", unit: "s", label: "总完成时间 M (s) ↓" },
-  energy_j: { short: "E", unit: "J", label: "任务相关能耗 E (J) ↓" },
-  mean_latency_s: { short: "L", unit: "s", label: "平均端到端延迟 L (s) ↓" },
+  makespan_s: { short: "M", unit: "s", label: "Makespan M (s) ↓" },
+  energy_j: { short: "E", unit: "J", label: "Task-related energy E (J) ↓" },
+  mean_latency_s: { short: "L", unit: "s", label: "Mean end-to-end latency L (s) ↓" },
 };
 
 export const PARALLEL_LAYOUT = { width: 920, height: 420, top: 58, bottom: 356, left: 86, right: 884 };
@@ -33,6 +35,7 @@ function pointerY(svg, event) {
 }
 
 function visibleRuns(model, snapshot) {
+  if (snapshot.filtered_run_ids) return filteredRuns(model, snapshot);
   return model.runs.filter((run) =>
     run.instance_id === snapshot.current_instance_id &&
     run.status === "complete" &&
@@ -52,24 +55,53 @@ function axisX(index) {
   return left + index * (right - left) / (OBJECTIVES.length - 1);
 }
 
-export function mountParallel(container, model, sharedState) {
+export function mountParallel(container, model, sharedState, controls = {}) {
   if (!container) throw new Error("Parallel container is required");
+  const workflow = Boolean(sharedState.filterRuns);
+  const { onlySelectedInput, summary, brushSummary, clearBrushButton } = controls;
+  let onlySelected = workflow;
+  if (onlySelectedInput) onlySelectedInput.checked = onlySelected;
   const brushes = new Map();
   let brushOrigin = null;
   let drag = null;
+  let contextKey = null;
+
+  const updateBrushSummary = (snapshot, bands = brushes, preview = false) => {
+    const candidates = workflow ? filteredRuns(model, snapshot, "parallel") : visibleRuns(model, snapshot);
+    if (brushSummary) brushSummary.textContent = bands.size
+      ? `${preview ? "Brush preview" : "Brush matches"}: ${matchingRuns(candidates, bands).length} / ${candidates.length} filter-visible runs · ${bands.size} active ${bands.size === 1 ? "axis" : "axes"} (intersection). Shift adds matches to the shared selection.`
+      : "No active axis brushes. Drag along an axis to select runs.";
+    if (workflow && brushSummary) brushSummary.textContent = bands.size
+      ? `${preview ? "Brush preview" : "Brush matches"}: ${matchingRuns(candidates, bands).length} / ${candidates.length} candidates · ${bands.size} active axes (intersection). Comparisons are unchanged.`
+      : snapshot.run_filters.parallel ? `Parallel filter active · ${snapshot.filtered_run_ids.length} matching runs. Add comparisons from the results list.` : "Drag along an axis to filter runs; comparisons are unchanged.";
+    if (clearBrushButton) clearBrushButton.disabled = workflow ? !snapshot.run_filters.parallel && !brushes.size : brushes.size === 0;
+  };
 
   const render = (snapshot) => {
+    const nextContext = JSON.stringify([snapshot.current_instance_id, snapshot.visible_policy_config_ids, snapshot.axis_ranges]);
     const selectedKey = snapshot.selected_run_ids.join("|");
-    if (brushOrigin !== null && selectedKey !== brushOrigin) {
+    if ((contextKey !== null && nextContext !== contextKey) || (!workflow && brushOrigin !== null && selectedKey !== brushOrigin) || (workflow && !snapshot.run_filters.parallel)) {
       brushes.clear();
       brushOrigin = null;
+      drag = null;
     }
+    contextKey = nextContext;
     const { width, height, top, bottom } = PARALLEL_LAYOUT;
     const svg = element("svg");
     svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
     svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", "平行坐标：M、E、L 均最小化。折线位置按坐标域绘制，悬停文字保留原始值。");
-    const runs = visibleRuns(model, snapshot);
+    svg.setAttribute("aria-label", "Parallel coordinates: minimize M, E, and L. Positions use axis ranges; tooltips preserve raw values.");
+    const candidates = visibleRuns(model, snapshot);
+    const selectedIds = new Set(snapshot.selected_run_ids);
+    const selectedVisible = workflow ? comparisonRuns(model, snapshot) : candidates.filter(run => selectedIds.has(run.run_id));
+    const inside = run => OBJECTIVES.every(key => run[key] >= snapshot.axis_ranges[key].min && run[key] <= snapshot.axis_ranges[key].max);
+    const runs = (onlySelected ? selectedVisible : workflow
+      ? [...new Map([...candidates, ...selectedVisible].map(run => [run.run_id, run])).values()] : candidates).slice()
+      .sort((a, b) => Number(selectedIds.has(a.run_id)) - Number(selectedIds.has(b.run_id)));
+    if (summary) summary.textContent = workflow
+      ? `Matching: ${candidates.length} runs · Comparing: ${selectedIds.size} / 10 · ${onlySelected ? "Comparison lines" : "Displayed lines"}: ${runs.length} · ${selectedVisible.filter(run => !inside(run)).length} comparisons outside displayed axes`
+      : `Selected: ${selectedIds.size} total · ${selectedVisible.length} / ${candidates.length} filter-visible · Displayed: ${runs.length} lines${selectedIds.size > selectedVisible.length ? ` · ${selectedIds.size - selectedVisible.length} selected hidden by filters` : ""}`;
+    if (!workflow) updateBrushSummary(snapshot);
     OBJECTIVES.forEach((key, index) => {
       const x = axisX(index);
       const range = snapshot.axis_ranges[key];
@@ -103,6 +135,8 @@ export function mountParallel(container, model, sharedState) {
       minLabel.setAttribute("y", bottom + 4);
       minLabel.setAttribute("text-anchor", tickAnchor);
       minLabel.textContent = displayTick(range.min);
+      axis.append(stem, name, maxLabel, minLabel);
+      if (!workflow) {
       const preview = element("rect", "pc-brush");
       preview.dataset.brushPreview = key;
       preview.setAttribute("visibility", "hidden");
@@ -127,34 +161,38 @@ export function mountParallel(container, model, sharedState) {
         drag = { key, startY: pointerY(svg, event) };
         svg.setPointerCapture?.(event.pointerId);
       });
-      axis.append(stem, name, maxLabel, minLabel, preview, hit);
+      axis.append(preview, hit);
+      }
       svg.append(axis);
     });
     for (const run of runs) {
       const slot = stableConfigIndex(model.configs, run.policy_config_id);
       const color = POLICY_COLORS[slot % POLICY_COLORS.length];
-      const selected = snapshot.selected_run_ids.includes(run.run_id);
-      const config = model.configs.find((item) => item.policy_config_id === run.policy_config_id);
+      const selected = selectedIds.has(run.run_id);
       const points = OBJECTIVES.map((key, position) => `${axisX(position)},${valueToAxisY(run[key], snapshot.axis_ranges[key])}`);
       const group = element("g", selected ? "pc-line selected" : "pc-line");
       group.dataset.runId = run.run_id;
       group.dataset.selected = selected ? "true" : "false";
       group.setAttribute("tabindex", "0");
       group.setAttribute("role", "button");
+      group.style.setProperty?.("--policy-color", color);
       const title = element("title");
-      title.textContent = `${config?.label ?? run.policy_config_id} | ${run.run_id}\n`
+      title.textContent = `${runLabel(model, run)} | ${run.run_id}\n`
         + `M=${formatRaw(run.makespan_s)} s, E=${formatRaw(run.energy_j)} J, L=${formatRaw(run.mean_latency_s)} s`;
+      group.setAttribute("aria-label", title.textContent);
       const path = element("path");
       path.setAttribute("d", `M${points.join(" L")}`);
       path.setAttribute("fill", "none");
-      path.setAttribute("stroke", color);
-      path.setAttribute("stroke-width", selected ? "3.5" : "1.7");
+      path.setAttribute("stroke", selected ? color : "#84938e");
+      path.setAttribute("stroke-opacity", selected ? "1" : "0.22");
+      path.setAttribute("stroke-width", selected ? "3.5" : "1");
       const glyph = element("text", "pc-shape");
       glyph.setAttribute("x", String(axisX(0) - 28));
       glyph.setAttribute("y", String(valueToAxisY(run.makespan_s, snapshot.axis_ranges.makespan_s) + 4));
       glyph.textContent = POLICY_SHAPES[slot % POLICY_SHAPES.length];
       group.append(title, path, glyph);
       const choose = (shift) => {
+        if (workflow) { sharedState.toggleComparison(run.run_id); return; }
         brushes.clear();
         brushOrigin = null;
         const ids = shift ? [...sharedState.get().selected_run_ids, run.run_id] : [run.run_id];
@@ -174,9 +212,12 @@ export function mountParallel(container, model, sharedState) {
       empty.setAttribute("x", String(width / 2));
       empty.setAttribute("y", String(height / 2));
       empty.setAttribute("text-anchor", "middle");
-      empty.textContent = "当前筛选下没有可见的完整运行";
+      empty.textContent = onlySelected
+        ? workflow ? "No comparisons yet. Use Random 10, add runs from the results list, or turn off Only comparisons." : "No selected runs to display. Select runs in another view, brush an axis, or turn off Only selected."
+        : "No complete runs within the current filters and displayed axes";
       svg.append(empty);
     }
+    if (!workflow) {
     svg.addEventListener("pointermove", (event) => {
       if (!drag) return;
       const y = pointerY(svg, event);
@@ -188,6 +229,12 @@ export function mountParallel(container, model, sharedState) {
       preview.setAttribute("y", String(Math.min(drag.startY, y)));
       preview.setAttribute("width", "32");
       preview.setAttribute("height", String(Math.max(Math.abs(y - drag.startY), 1)));
+      const snapshot = sharedState.get();
+      const range = snapshot.axis_ranges[drag.key];
+      const bands = new Map(brushes);
+      const a = axisYToValue(drag.startY, range), b = axisYToValue(y, range);
+      bands.set(drag.key, { lo: Math.min(a, b), hi: Math.max(a, b) });
+      updateBrushSummary(snapshot, bands, true);
     });
     svg.addEventListener("pointerup", (event) => {
       if (!drag) return;
@@ -198,6 +245,7 @@ export function mountParallel(container, model, sharedState) {
       if (Math.abs(endY - startY) <= 5) {
         brushes.delete(key);
         if (brushes.size) commit(sharedState, model, brushes, event.shiftKey, (value) => { brushOrigin = value; });
+        else { brushOrigin = null; if (workflow) sharedState.clearFilters("parallel"); else render(sharedState.get()); }
         return;
       }
       const lo = Math.min(axisYToValue(startY, range), axisYToValue(endY, range));
@@ -205,9 +253,20 @@ export function mountParallel(container, model, sharedState) {
       brushes.set(key, { lo, hi });
       commit(sharedState, model, brushes, event.shiftKey, (value) => { brushOrigin = value; });
     });
+    svg.addEventListener("pointercancel", () => { drag = null; render(sharedState.get()); });
+    }
     container.replaceChildren(svg);
   };
-  return sharedState.subscribe(render);
+  const toggle = () => { onlySelected = onlySelectedInput.checked; render(sharedState.get()); };
+  const clear = () => { brushes.clear(); brushOrigin = null; drag = null; if (workflow) sharedState.clearFilters("parallel"); else render(sharedState.get()); };
+  onlySelectedInput?.addEventListener("change", toggle);
+  clearBrushButton?.addEventListener("click", clear);
+  const unsubscribe = sharedState.subscribe(render);
+  return () => {
+    unsubscribe();
+    onlySelectedInput?.removeEventListener("change", toggle);
+    clearBrushButton?.removeEventListener("click", clear);
+  };
 }
 
 function findBrushPreview(svg, key) {
@@ -219,10 +278,14 @@ function findBrushPreview(svg, key) {
   return null;
 }
 
+function matchingRuns(runs, brushes) {
+  return runs.filter(run => [...brushes].every(([key, band]) => run[key] >= band.lo && run[key] <= band.hi));
+}
+
 function commit(sharedState, model, brushes, shift, setOrigin) {
   const snapshot = sharedState.get();
-  const matched = visibleRuns(model, snapshot).filter((run) =>
-    [...brushes].every(([key, band]) => run[key] >= band.lo && run[key] <= band.hi)).map((run) => run.run_id);
+  const matched = matchingRuns(visibleRuns(model, sharedState.filterRuns ? { ...snapshot, run_filters: {} } : snapshot), brushes).map(run => run.run_id);
+  if (sharedState.filterRuns) { sharedState.filterRuns(matched, { source: "parallel" }); return; }
   const merged = [...new Set(shift ? [...snapshot.selected_run_ids, ...matched] : matched)];
   setOrigin(merged.join("|"));
   sharedState.selectRuns(merged);

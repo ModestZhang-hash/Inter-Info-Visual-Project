@@ -1,8 +1,12 @@
 import { OBJECTIVES, PAIRS } from "./pareto.mjs";
 import { defaultAxisRanges, readBundle } from "./model.mjs";
-import { createViewState } from "../shared/state.mjs";
-import { drawPairScatter } from "../shared/pair_scatter.mjs?v=20261110-en";
+import { createViewState } from "../shared/state.mjs?v=click-toggle-1";
+import { mountRunList } from "../shared/run_list.mjs?v=random-10-1";
 import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs";
+import { configLabel, runLabel } from "../shared/labels.mjs";
+import { mountMatrix, renderFocusedPair } from "../3b/matrix.mjs?v=no-brush-1";
+import { mountParallel } from "../3b/parallel.mjs?v=no-brush-1";
+import { mountView3d } from "../3b/view3d.mjs?v=click-toggle-1";
 
 const META = {
   makespan_s: { short: "M", label: "Makespan M (s) ↓" },
@@ -12,24 +16,15 @@ const META = {
 let model;
 let state;
 let unsubscribe;
+let unmountViews = [];
+let focusedPair = null;
 
 const $ = (id) => document.getElementById(id);
 const safe = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
 const number = (value) => Number.isFinite(value) ? Number(value.toPrecision(7)).toString() : "—";
 const fullNumber = (value) => Number.isFinite(value) ? String(value) : "—";
-const configFor = (run) => model.configs.find((item) => item.policy_config_id === run.policy_config_id);
-const configIndex = (run) => stableConfigIndex(model.configs, run.policy_config_id);
-// Translate bundled demo names for display without changing archived records.
-const configName = (config) => {
-  if (model.manifest.manifest_id === "3a-manual-demo-001" && /^fixture-[a-g]$/.test(config.policy_config_id)) {
-    return `Manual placement ${config.policy_config_id.slice(-1).toUpperCase()}`;
-  }
-  return config.label || config.policy_config_id;
-};
-const runName = (run) => {
-  const config = configFor(run);
-  return config ? configName(config) : run.policy_config_id;
-};
+const configName = (config) => configLabel(model, config);
+const runName = (run) => runLabel(model, run);
 
 function notice(message, error = false) {
   $("notice").textContent = message;
@@ -40,7 +35,12 @@ function loadBundle(bundle) {
   const next = readBundle(bundle);
   const axisRanges = defaultAxisRanges(next.runs);
   if (unsubscribe) unsubscribe();
+  unmountViews.forEach(unmount => unmount());
   model = next;
+  $("controls-feedback").textContent = "";
+  $("parallel-title").textContent = next.instance.intensity_label === "synthetic-stress-test" && next.manifest.phase === "fixture"
+    ? `Parallel coordinates · SYNTHETIC TEST DATA (${next.runs.length} runs)` : "Parallel coordinates";
+  closeFocusedPair();
   state = createViewState({
     schema_version: "1.0.0",
     current_instance_id: next.instance.instance_id,
@@ -49,10 +49,25 @@ function loadBundle(bundle) {
     axis_ranges: axisRanges,
     pareto_reference_run_ids: next.referenceStatus === "complete" ? next.referenceRuns.map((run) => run.run_id) : [],
     pareto_reference_status: next.referenceStatus,
-  });
+  }, { runs: model.runs });
   renderControls();
+  // All four view types subscribe to this one model/state pair.
+  unmountViews = [
+    mountMatrix($("matrix"), model, state, { onExpand: openFocusedPair }),
+    mountParallel($("parallel"), model, state, {
+      onlySelectedInput: $("parallel-only-selected"),
+      summary: $("parallel-count"),
+    }),
+    mountView3d($("view3d"), model, state),
+    mountRunList($("run-list"), model, state, {
+      searchInput: $("run-search"), scopeInput: $("run-scope"), prevButton: $("runs-prev"), nextButton: $("runs-next"),
+      pageSummary: $("runs-page"), basket: $("comparison-basket"), message: $("comparison-message"), compareMatchesButton: $("compare-matches"),
+      randomCompareButton: $("random-compare"),
+    }),
+  ];
   unsubscribe = state.subscribe(render);
-  if (next.referenceStatus === "fixture_only") notice("Manual demo data: seven fixed placements for checking interactions and dominance calculations. These are not scheduler outputs or formal experimental results.");
+  if (next.instance.intensity_label === "synthetic-stress-test" && next.referenceStatus === "fixture_only") notice(`SYNTHETIC TEST DATA — ${next.runs.length} generated runs on one test instance. For visualization stress testing only; not scheduler outputs or algorithm comparisons. Pareto labels and witnesses are not calculated for this dataset.`);
+  else if (next.referenceStatus === "fixture_only") notice(`Manual demo data: ${next.runs.length} fixed placements for checking interactions and dominance calculations. These are not scheduler outputs or formal experimental results.`);
   else if (next.referenceStatus === "incomplete_candidates") notice("Incomplete reference set: runs and event records are available, but default seven-candidate Pareto labels are withheld.");
   else notice("Seven complete candidates share one frozen instance. Dominance uses unrounded values and manifest tolerances; filters do not change the reference set.");
 }
@@ -111,61 +126,34 @@ function renderControls() {
 }
 
 function render(snapshot) {
+  $("controls-feedback").textContent = snapshot.comparison_error;
   $("instance-id").textContent = snapshot.current_instance_id;
   $("reference-status").textContent = {
     complete: "Seven candidates · Complete",
     incomplete_candidates: "Incomplete reference set",
-    fixture_only: "Manual demo · Not an experimental front",
+    fixture_only: model.labels.full.size ? "Manual demo · Not an experimental front" : "Test fixtures · Pareto not calculated",
   }[snapshot.pareto_reference_status];
   const completeRuns = model.runs.filter((run) => run.status === "complete");
   const visible = completeRuns.filter((run) => snapshot.visible_policy_config_ids.includes(run.policy_config_id));
   $("run-count").textContent = `${visible.length} / ${completeRuns.length}`;
-  $("selection-count").textContent = String(snapshot.selected_run_ids.length);
+  $("selection-count").textContent = `${snapshot.comparison_run_ids.length} / 10`;
+  $("matching-count").textContent = String(snapshot.filtered_run_ids.length);
+  $("selection-ids").textContent = snapshot.selected_run_ids.join(", ") || "None";
+  $("reference-ids").textContent = snapshot.pareto_reference_run_ids.join(", ") || "None (demo or incomplete set)";
   for (const input of $("policy-filters").querySelectorAll("input")) input.checked = snapshot.visible_policy_config_ids.includes(input.dataset.configId);
   for (const input of $("axis-controls").querySelectorAll("input")) input.value = number(snapshot.axis_ranges[input.dataset.axis][input.dataset.side]);
-  renderPlots(snapshot, visible);
+  if (focusedPair) renderFocusedPair($("focused-plot"), model, state, ...focusedPair);
   renderDetails(snapshot);
-}
-
-function renderPlots(snapshot, visible) {
-  const container = $("plots");
-  container.replaceChildren();
-  for (const pair of PAIRS) {
-    const [xKey, yKey] = pair;
-    const card = document.createElement("article");
-    card.className = "plot";
-    const heading = document.createElement("h3");
-    heading.textContent = `${META[xKey].short} – ${META[yKey].short}`;
-    const subtitle = document.createElement("p");
-    subtitle.textContent = model.referenceStatus === "complete" ? "Dark outline: non-dominated in this 2D projection. Dashed gold ring: non-dominated in full 3D." : model.referenceStatus === "fixture_only" ? "Dominance demonstration using manual data; not an experimental front." : "Incomplete reference set; dominance labels are not shown.";
-    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    drawPairScatter(svg, {
-      runs: visible,
-      xKey, yKey,
-      xRange: snapshot.axis_ranges[xKey],
-      yRange: snapshot.axis_ranges[yKey],
-      selectedRunIds: snapshot.selected_run_ids,
-      projectedLabels: model.labels.pairs.get(pair.join("|")),
-      fullLabels: model.labels.full,
-      axisLabels: Object.fromEntries(OBJECTIVES.map((key) => [key, META[key].label])),
-      encodeRun: (run) => ({ index: configIndex(run), color: POLICY_COLORS[configIndex(run) % POLICY_COLORS.length] }),
-      tooltip: (run, projected, full) => `${runName(run)} | ${run.run_id}\nM=${fullNumber(run.makespan_s)} s, E=${fullNumber(run.energy_j)} J, L=${fullNumber(run.mean_latency_s)} s\n2D: ${projected === undefined ? "Not calculated" : projected ? "Non-dominated" : "Dominated"}; 3D: ${full === undefined ? "Not calculated" : full ? "Non-dominated" : "Dominated"}`,
-      onSelect: (id, shift) => state.selectRuns(shift ? [...state.get().selected_run_ids, id] : [id]),
-      onBrush: (ids, shift) => state.selectRuns(shift ? [...state.get().selected_run_ids, ...ids] : ids),
-      formatValue: number,
-    });
-    card.append(heading, subtitle, svg);
-    container.append(card);
-  }
 }
 
 function statusText(entry) { return entry ? entry.nonDominated ? "Non-dominated" : "Dominated" : "Not calculated"; }
 
 function renderDetails(snapshot) {
   const box = $("details-content");
-  const selected = snapshot.selected_run_ids.map((id) => model.runs.find((run) => run.run_id === id)).filter(Boolean);
-  if (!selected.length) { box.innerHTML = `<p class="muted">Select a run to inspect its full metric values, 2D and 3D status, dominance evidence, and task events. Plot labels are rounded for display only.</p>`; return; }
-  box.innerHTML = `<div class="details-grid">${selected.map((run) => detailCard(run)).join("")}</div>`;
+  const run = model.runs.find(run => run.run_id === snapshot.inspected_run_id);
+  if (!run) { box.innerHTML = `<p class="muted">Click a point or line to toggle its comparison membership and open its evidence. View evidence in the results list opens a record without changing comparisons.</p>`; return; }
+  box.innerHTML = detailCard(run);
+
 }
 
 function detailCard(run) {
@@ -180,7 +168,7 @@ function detailCard(run) {
   return `<article class="detail-card"><h3>${safe(runName(run))} <span class="muted">${safe(run.run_id)}</span></h3>
     <div class="metrics"><span>M <strong>${fullNumber(run.makespan_s)} s</strong></span><span>E <strong>${fullNumber(run.energy_j)} J</strong></span><span>L <strong>${fullNumber(run.mean_latency_s)} s</strong></span></div>
     <p class="muted">Instance ${safe(run.instance_id)} · Configuration ${safe(run.policy_config_id)} · ${safe(run.record_origin)}</p>
-    <p class="${model.referenceStatus === "complete" ? "" : "warning"}">${model.referenceStatus === "complete" ? "Reference set: seven complete candidates for the same instance. Filters do not change the labels." : model.referenceStatus === "fixture_only" ? "Dominance calculated from manual examples; not an experimental front." : "Incomplete reference set; no formal dominance labels."}</p>
+    <p class="${model.referenceStatus === "complete" ? "" : "warning"}">${model.referenceStatus === "complete" ? "Reference set: seven complete candidates for the same instance. Filters do not change the labels." : model.referenceStatus === "fixture_only" ? model.labels.full.size ? "Dominance calculated from manual examples; not an experimental front." : "TEST DATA ONLY — not scheduler results. Pareto labels and witnesses are not calculated for this dataset." : "Incomplete reference set; no formal dominance labels."}</p>
     <ul class="status-list">${rows}<li><strong>Full 3D M–E–L: </strong>${statusText(full)}${full?.witnesses.length ? witness(full) : ""}</li></ul>
     <div class="table-wrap"><table><thead><tr><th>Task</th><th>Node</th><th>Upload (s)</th><th>Compute (s)</th><th>Return (s)</th><th>Completion (s)</th><th>Energy J (compute + transfer)</th></tr></thead><tbody>${taskRows}</tbody></table></div></article>`;
 }
@@ -196,6 +184,51 @@ function witness(classification) {
   return `<div class="witness">Dominance witness (first by run_id lexicographic order): <strong>${safe(entry.witnessRunId)}</strong> (${safe(runName(candidate))}). Compared objectives ${safe(entry.comparedObjectives.map((key) => META[key].short).join("–"))}: ${safe(dimensions)}.<br>Selected run: ${safe(target)}<br>Witness run: ${safe(source)}${others}</div>`;
 }
 
+// Presentation switches keep all mounted views on the same model and state.
+function showView(active) {
+  for (const view of ["scatter", "parallel", "view3d"]) {
+    $(`${view}-section`).hidden = view !== active;
+    $(`show-${view}`).setAttribute("aria-pressed", String(view === active));
+  }
+}
+function openFocusedPair(xKey, yKey) {
+  focusedPair = [xKey, yKey];
+  $("matrix-section").hidden = true;
+  $("focused-section").hidden = false;
+  $("focused-title").textContent = `X: ${META[xKey].short} · Y: ${META[yKey].short}`;
+  renderFocusedPair($("focused-plot"), model, state, xKey, yKey);
+  $("back-to-matrix").focus?.();
+}
+function closeFocusedPair() {
+  focusedPair = null;
+  $("matrix-section").hidden = false;
+  $("focused-section").hidden = true;
+  $("focused-plot").replaceChildren();
+}
+for (const view of ["scatter", "parallel", "view3d"]) {
+  $(`show-${view}`).addEventListener("click", () => showView(view));
+}
+$("back-to-matrix").addEventListener("click", () => {
+  closeFocusedPair();
+  $("show-scatter").focus?.();
+});
+showView("scatter");
+closeFocusedPair();
+
+async function loadDemo(path, view) {
+  const controls = [$("load-stress-demo"), $("load-small-demo"), $("bundle-file")];
+  controls.forEach(control => { control.disabled = true; });
+  try {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    loadBundle(await response.json());
+    showView(view);
+  } catch (error) { notice(`Demo load failed: ${error.message}`, true); }
+  finally { controls.forEach(control => { control.disabled = false; }); }
+}
+$("load-stress-demo").addEventListener("click", () => loadDemo("../../examples/synthetic-stress-500/bundle.json", "parallel"));
+$("load-small-demo").addEventListener("click", () => loadDemo("../../examples/3a-demo/bundle.json", "scatter"));
+
 $("bundle-file").addEventListener("change", async (event) => {
   const file = event.target.files?.[0];
   if (!file) return;
@@ -203,20 +236,30 @@ $("bundle-file").addEventListener("change", async (event) => {
   catch (error) { notice(`Import failed: ${error.message}`, true); }
   event.target.value = "";
 });
-$("select-all").addEventListener("click", () => state?.setVisibleConfigs(model.configs.map((item) => item.policy_config_id)));
-$("clear-selection").addEventListener("click", () => state?.selectRuns([]));
-$("reset-axes").addEventListener("click", () => { if (state) for (const [key, range] of Object.entries(defaultAxisRanges(model.runs))) state.setAxisRange(key, range); });
+$("select-all").addEventListener("click", () => {
+  if (!state) return;
+  state.showAllRuns(defaultAxisRanges(model.runs));
+  $("controls-feedback").textContent = "Showing all runs in Matrix. Filters and comparisons cleared; axis ranges restored. Pareto evidence is unchanged.";
+});
+$("clear-selection").addEventListener("click", () => state?.compareRuns([]));
+$("reset-axes").addEventListener("click", () => {
+  if (!state) return;
+  const ranges = defaultAxisRanges(model.runs), before = state.get();
+  const changed = Object.entries(ranges).some(([key, range]) => before.axis_ranges[key].min !== range.min || before.axis_ranges[key].max !== range.max);
+  for (const [key, range] of Object.entries(ranges)) state.setAxisRange(key, range);
+  $("controls-feedback").textContent = `${changed ? "Axis ranges restored." : "Axis ranges were already at their defaults."} Comparisons and visible configurations are unchanged; use Show all to restore all Matrix points.`;
+});
 $("export-csv").addEventListener("click", () => {
   if (!model || !state) return;
   const selected = new Set(state.get().selected_run_ids);
   const rows = model.runs.filter((run) => selected.has(run.run_id));
-  if (!rows.length) { notice("Select at least one run before exporting.", true); return; }
+  if (!rows.length) { notice("Add at least one run to comparison before exporting.", true); return; }
   const columns = ["instance_id", "run_id", "policy_config_id", "status", ...OBJECTIVES];
   const csv = [columns.join(","), ...rows.map((run) => columns.map((key) => `"${String(run[key] ?? "").replaceAll('"', '""')}"`).join(","))].join("\r\n") + "\r\n";
   const url = URL.createObjectURL(new Blob(["\ufeff", csv], { type: "text/csv;charset=utf-8" }));
   const link = document.createElement("a");
   link.href = url;
-  link.download = `topic3a-${model.instance.instance_id}-selected.csv`;
+  link.download = `topic3a-${model.instance.instance_id}-comparison.csv`;
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 });

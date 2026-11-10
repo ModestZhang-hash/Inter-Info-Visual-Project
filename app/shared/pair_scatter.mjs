@@ -1,4 +1,5 @@
 /** Reusable pairwise SVG renderer. The owning view supplies records, labels and state callbacks. */
+import { binPairs } from "./pair_density.mjs";
 const W = 600, H = 390, LEFT = 68, RIGHT = 25, TOP = 26, BOTTOM = 58;
 const xml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
 
@@ -33,24 +34,34 @@ export function drawPairScatter(svg, options) {
   html += `<line class="axis" x1="${LEFT}" y1="${H-BOTTOM}" x2="${W-RIGHT}" y2="${H-BOTTOM}"/><line class="axis" x1="${LEFT}" y1="${TOP}" x2="${LEFT}" y2="${H-BOTTOM}"/>`;
   html += `<text class="axis-label" x="${(LEFT+W-RIGHT)/2}" y="${H-10}" text-anchor="middle">${xml(axisLabels[xKey])}</text>`;
   html += `<text class="axis-label" transform="translate(16 ${(TOP+H-BOTTOM)/2}) rotate(-90)" text-anchor="middle">${xml(axisLabels[yKey])}</text>`;
-  const plotted = [];
+  const bins = options.overviewRuns ? binPairs(options.overviewRuns, xKey, yKey, xRange, yRange) : [];
+  const maxCount = Math.max(0, ...bins.map(bin => bin.count));
+  for (const [index, bin] of bins.entries()) {
+    const cw = (W-LEFT-RIGHT)/20, ch = (H-TOP-BOTTOM)/20;
+    const shade = Math.log1p(bin.count)/Math.log1p(maxCount);
+    const fill = `rgb(${[244,248,251].map((v,i)=>Math.round(v+([42,79,115][i]-v)*shade)).join(",")})`;
+    const tip = `AGGREGATE: ${bin.count} runs in this 2D bin. Click to filter source runs; not a single run or Pareto result.`;
+    html += `<rect class="pair-density-bin" data-bin-index="${index}" data-count="${bin.count}" x="${LEFT+bin.col*cw}" y="${H-BOTTOM-(bin.row+1)*ch}" width="${cw}" height="${ch}" fill="${fill}" tabindex="0" role="button" aria-label="${xml(tip)}"><title>${xml(tip)}</title></rect>`;
+  }
+  if (options.overviewRuns) html += `<text class="tick" x="${W-RIGHT}" y="14" text-anchor="end">Bin counts: 0–${maxCount} (log scale)</text>`;
+  const plotted = (options.brushRuns ?? runs).map(run=>({id:run.run_id,x:px(run[xKey]),y:py(run[yKey])}))
+    .filter(p=>p.x>=LEFT&&p.x<=W-RIGHT&&p.y>=TOP&&p.y<=H-BOTTOM);
   for (const run of runs) {
     const x=px(run[xKey]), y=py(run[yKey]);
     if (x<LEFT || x>W-RIGHT || y<TOP || y>H-BOTTOM) continue;
-    plotted.push({ id: run.run_id, x, y });
     const projected=projectedLabels?.get(run.run_id)?.nonDominated;
     const full=fullLabels?.get(run.run_id)?.nonDominated;
     if (full) html += `<circle cx="${x}" cy="${y}" r="15" fill="none" stroke="#b8751a" stroke-width="2.5" stroke-dasharray="4 3"/>`;
     if (selectedRunIds.includes(run.run_id)) {
       html += `<circle cx="${x}" cy="${y}" r="19" fill="none" stroke="#d79a2a" stroke-width="3"/>`;
-      html += `<text class="run-id-label" x="${x+13}" y="${y-12}">${xml(run.run_id)}</text>`;
     }
     const { index, color }=encodeRun(run);
     const tip=tooltip(run,projected,full);
-    html += `<g class="run-point" data-run-id="${xml(run.run_id)}" tabindex="0" role="button" aria-label="${xml(tip.replaceAll("\n","; "))}">${marker(index,x,y,color,projected?"#153f39":"#ffffff")}<title>${xml(tip)}</title></g>`;
+    const label = selectedRunIds.includes(run.run_id) ? `<text class="run-id-label" x="${x+13}" y="${y-12}">${xml(run.run_id)}</text>` : "";
+    html += `<g class="run-point" data-run-id="${xml(run.run_id)}" tabindex="0" role="button" aria-label="${xml(tip.replaceAll("\n","; "))}">${marker(index,x,y,color,projected?"#153f39":"#ffffff")}<title>${xml(tip)}</title>${label}</g>`;
   }
-  if (!plotted.length) html += `<text class="empty" x="${W/2}" y="${H/2}" text-anchor="middle">No visible points within the current axes and filters</text>`;
-  html += `<rect class="brush" visibility="hidden" x="0" y="0" width="0" height="0"/>`;
+  if (!plotted.length && !runs.length) html += `<text class="empty" x="${W/2}" y="${H/2}" text-anchor="middle">No matching runs; enable configurations or use Show all</text>`;
+  if (onBrush) html += `<rect class="brush" visibility="hidden" x="0" y="0" width="0" height="0"/>`;
   svg.innerHTML=html;
   svg.querySelectorAll("[data-run-id]").forEach((element) => {
     element.addEventListener("click", (event) => onSelect(element.dataset.runId,event.shiftKey));
@@ -58,21 +69,33 @@ export function drawPairScatter(svg, options) {
       if (event.key==="Enter" || event.key===" ") { event.preventDefault(); onSelect(element.dataset.runId,event.shiftKey); }
     });
   });
-  attachBrush(svg,plotted,onBrush);
+  const wasDragged = onBrush ? attachBrush(svg,plotted,onBrush,options.onBackgroundClick) : () => false;
+  if (options.overviewRuns) svg.querySelectorAll("[data-bin-index]").forEach(element => {
+    const choose = () => options.onBin?.(bins[Number(element.dataset.binIndex)].runIds);
+    element.addEventListener("click", () => { if (!wasDragged()) choose(); });
+    element.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); choose(); } });
+  });
 }
 
-function attachBrush(svg,plotted,onBrush) {
+function attachBrush(svg,plotted,onBrush,onBackgroundClick) {
   let start=null;
+  let lastDragged=false;
+  let startedOnBin=false;
   const brush=svg.querySelector(".brush");
   const point=(event) => { const rect=svg.getBoundingClientRect(); return { x:(event.clientX-rect.left)*W/rect.width, y:(event.clientY-rect.top)*H/rect.height }; };
   svg.addEventListener("pointerdown", (event) => {
     if (event.target.closest("[data-run-id]")) return;
+    lastDragged=false;
+    startedOnBin=Boolean(event.target.closest("[data-bin-index]"));
     start=point(event);
-    svg.setPointerCapture(event.pointerId);
+    // A plain bin click must reach the bin itself. Capture only after a drag
+    // starts, otherwise browsers retarget the click to the SVG container.
+    if (!startedOnBin) svg.setPointerCapture(event.pointerId);
   });
   svg.addEventListener("pointermove", (event) => {
     if (!start) return;
     const end=point(event);
+    if (startedOnBin && (Math.abs(start.x-end.x)>5 || Math.abs(start.y-end.y)>5)) svg.setPointerCapture(event.pointerId);
     brush.setAttribute("x",Math.min(start.x,end.x));
     brush.setAttribute("y",Math.min(start.y,end.y));
     brush.setAttribute("width",Math.abs(start.x-end.x));
@@ -83,9 +106,12 @@ function attachBrush(svg,plotted,onBrush) {
     if (!start) return;
     const end=point(event), x0=Math.min(start.x,end.x), x1=Math.max(start.x,end.x), y0=Math.min(start.y,end.y), y1=Math.max(start.y,end.y);
     const dragged=Math.abs(start.x-end.x)>5 || Math.abs(start.y-end.y)>5;
+    lastDragged=dragged;
     start=null;
     brush.setAttribute("visibility","hidden");
     if (dragged) onBrush(plotted.filter((p)=>p.x>=x0&&p.x<=x1&&p.y>=y0&&p.y<=y1).map((p)=>p.id),event.shiftKey);
+    else if (!startedOnBin) onBackgroundClick?.();
   });
   svg.addEventListener("pointercancel",()=>{start=null;brush.setAttribute("visibility","hidden");});
+  return () => lastDragged;
 }

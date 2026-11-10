@@ -1,3 +1,5 @@
+import { runLabel } from "../shared/labels.mjs";
+import { comparisonRuns } from "../shared/state.mjs?v=workflow-1";
 import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs";
 
 export const VIEW3D = {
@@ -73,8 +75,8 @@ export function mountView3d(container, model, sharedState) {
     const svg = element("svg");
     svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
     svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", "固定斜投影的三维参考视图：M、E、L 均最小化，不能旋转。");
-    const runs = visibleRuns(model, snapshot);
+    svg.setAttribute("aria-label", "Fixed oblique 3D reference: minimize M, E, and L. Rotation is not available.");
+    const runs = sharedState.filterRuns ? comparisonRuns(model, snapshot) : visibleRuns(model, snapshot);
     const axes = [
       ["makespan_s", projectNormalized(1, 0, 0)],
       ["energy_j", projectNormalized(0, 1, 0)],
@@ -101,7 +103,6 @@ export function mountView3d(container, model, sharedState) {
       const selected = snapshot.selected_run_ids.includes(run.run_id);
       const full = model.labels.full.get(run.run_id)?.nonDominated;
       const cluster = coincidentIds(runs, snapshot.axis_ranges, run.run_id);
-      const config = model.configs.find((item) => item.policy_config_id === run.policy_config_id);
       const group = element("g", selected ? "view3d-point selected" : "view3d-point");
       group.dataset.runId = run.run_id;
       group.dataset.selected = selected ? "true" : "false";
@@ -112,10 +113,10 @@ export function mountView3d(container, model, sharedState) {
       group.setAttribute("tabindex", "0");
       group.setAttribute("role", "button");
       const title = element("title");
-      const overlap = cluster.length > 1 ? `\n同一投影位置：${cluster.join("，")}` : "";
-      title.textContent = `${config?.label ?? run.policy_config_id} | ${run.run_id}\n`
+      const overlap = cluster.length > 1 ? `\nOverlapping projected runs: ${cluster.join(", ")}` : "";
+      title.textContent = `${runLabel(model, run)} | ${run.run_id}\n`
         + `M=${formatRaw(run.makespan_s)} s, E=${formatRaw(run.energy_j)} J, L=${formatRaw(run.mean_latency_s)} s`
-        + `${full ? "\n三维：非支配" : "\n三维：被支配"}${overlap}`;
+        + `\n3D: ${full === undefined ? "Not calculated" : full ? "Non-dominated" : "Dominated"}${overlap}`;
       if (full) {
         const halo = element("circle", "view3d-full");
         halo.setAttribute("cx", point.x);
@@ -141,6 +142,7 @@ export function mountView3d(container, model, sharedState) {
       glyph.textContent = POLICY_SHAPES[slot % POLICY_SHAPES.length];
       group.append(title, mark, glyph);
       const choose = (shift) => {
+        if (sharedState.filterRuns) { sharedState.toggleComparison(run.run_id); return; }
         const ids = shift ? [...sharedState.get().selected_run_ids, ...cluster] : cluster;
         sharedState.selectRuns(ids);
       };
@@ -158,7 +160,7 @@ export function mountView3d(container, model, sharedState) {
       empty.setAttribute("x", String(width / 2));
       empty.setAttribute("y", String(height / 2));
       empty.setAttribute("text-anchor", "middle");
-      empty.textContent = "当前筛选下没有可见的完整运行";
+      empty.textContent = sharedState.filterRuns ? "Add up to 10 runs from the results list to compare in 3D" : "No complete runs are visible under the current filters";
       svg.append(empty);
     }
     container.replaceChildren(svg);
