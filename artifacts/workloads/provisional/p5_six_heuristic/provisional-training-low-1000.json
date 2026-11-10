@@ -1,0 +1,662 @@
+{
+  "schema_version": "1.0.0",
+  "instance_id": "provisional-training-low-1000",
+  "official_seven_candidate_front": false,
+  "reference_status": "incomplete_candidates",
+  "missing_policy_config_ids": [
+    "dqn-fixed"
+  ],
+  "filter_does_not_recompute_reference": true,
+  "note": "Dominance among the six heuristics on one training instance. DQN is absent, so this is not an official seven-candidate front. Filtering must not replace this reference set.",
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "reference_run_ids": [
+    "provisional-training-low-1000-random-11",
+    "provisional-training-low-1000-latency-first",
+    "provisional-training-low-1000-energy-first",
+    "provisional-training-low-1000-balanced-equal",
+    "provisional-training-low-1000-balanced-makespan",
+    "provisional-training-low-1000-balanced-energy"
+  ],
+  "failed_run_ids": [],
+  "classification": {
+    "full": {
+      "provisional-training-low-1000-balanced-energy": {
+        "non_dominated": true,
+        "witness_run_ids": [],
+        "witnesses": []
+      },
+      "provisional-training-low-1000-balanced-equal": {
+        "non_dominated": true,
+        "witness_run_ids": [],
+        "witnesses": []
+      },
+      "provisional-training-low-1000-balanced-makespan": {
+        "non_dominated": true,
+        "witness_run_ids": [],
+        "witnesses": []
+      },
+      "provisional-training-low-1000-energy-first": {
+        "non_dominated": true,
+        "witness_run_ids": [],
+        "witnesses": []
+      },
+      "provisional-training-low-1000-latency-first": {
+        "non_dominated": true,
+        "witness_run_ids": [],
+        "witnesses": []
+      },
+      "provisional-training-low-1000-random-11": {
+        "non_dominated": false,
+        "witness_run_ids": [
+          "provisional-training-low-1000-balanced-equal",
+          "provisional-training-low-1000-balanced-makespan"
+        ],
+        "witnesses": [
+          {
+            "witness_run_id": "provisional-training-low-1000-balanced-equal",
+            "compared_objectives": [
+              "makespan_s",
+              "energy_j",
+              "mean_latency_s"
+            ],
+            "target_metrics": {
+              "makespan_s": 30.22914623491747,
+              "energy_j": 218.11395408725005,
+              "mean_latency_s": 1.2317791211359455
+            },
+            "witness_metrics": {
+              "makespan_s": 29.643847107500804,
+              "energy_j": 197.54583172050005,
+              "mean_latency_s": 0.8962293465268685
+            },
+            "relations": {
+              "makespan_s": "strict_improvement",
+              "energy_j": "strict_improvement",
+              "mean_latency_s": "strict_improvement"
+            }
+          },
+          {
+            "witness_run_id": "provisional-training-low-1000-balanced-makespan",
+            "compared_objectives": [
+              "makespan_s",
+              "energy_j",
+              "mean_latency_s"
+            ],
+            "target_metrics": {
+              "makespan_s": 30.22914623491747,
+              "energy_j": 218.11395408725005,
+              "mean_latency_s": 1.2317791211359455
+            },
+            "witness_metrics": {
+              "makespan_s": 29.672735724298764,
+              "energy_j": 200.14311986000007,
+              "mean_latency_s": 0.863674324301195
+            },
+            "relations": {
+              "makespan_s": "strict_improvement",
+              "energy_j": "strict_improvement",
+              "mean_latency_s": "strict_improvement"
+            }
+          }
+        ]
+      }
+    },
+    "pairs": {
+      "makespan_s|energy_j": {
+        "provisional-training-low-1000-balanced-energy": {
+          "non_dominated": true,
+          "witness_run_ids": [],
+          "witnesses": []
+        },
+        "provisional-training-low-1000-balanced-equal": {
+          "non_dominated": true,
+          "witness_run_ids": [],
+          "witnesses": []
+        },
+        "provisional-training-low-1000-balanced-makespan": {
+          "non_dominated": false,
+          "witness_run_ids": [
+            "provisional-training-low-1000-balanced-equal"
+          ],
+          "witnesses": [
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-equal",
+              "compared_objectives": [
+                "makespan_s",
+                "energy_j"
+              ],
+              "target_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 200.14311986000007,
+                "mean_latency_s": 0.863674324301195
+              },
+              "witness_metrics": {
+                "makespan_s": 29.643847107500804,
+                "energy_j": 197.54583172050005,
+                "mean_latency_s": 0.8962293465268685
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "energy_j": "strict_improvement"
+              }
+            }
+          ]
+        },
+        "provisional-training-low-1000-energy-first": {
+          "non_dominated": true,
+          "witness_run_ids": [],
+          "witnesses": []
+        },
+        "provisional-training-low-1000-latency-first": {
+          "non_dominated": false,
+          "witness_run_ids": [
+            "provisional-training-low-1000-balanced-equal",
+            "provisional-training-low-1000-balanced-makespan"
+          ],
+          "witnesses": [
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-equal",
+              "compared_objectives": [
+                "makespan_s",
+                "energy_j"
+              ],
+              "target_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 224.40593276250007,
+                "mean_latency_s": 0.7107555760815206
+              },
+              "witness_metrics": {
+                "makespan_s": 29.643847107500804,
+                "energy_j": 197.54583172050005,
+                "mean_latency_s": 0.8962293465268685
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "energy_j": "strict_improvement"
+              }
+            },
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-makespan",
+              "compared_objectives": [
+                "makespan_s",
+                "energy_j"
+              ],
+              "target_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 224.40593276250007,
+                "mean_latency_s": 0.7107555760815206
+              },
+              "witness_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 200.14311986000007,
+                "mean_latency_s": 0.863674324301195
+              },
+              "relations": {
+                "makespan_s": "equal",
+                "energy_j": "strict_improvement"
+              }
+            }
+          ]
+        },
+        "provisional-training-low-1000-random-11": {
+          "non_dominated": false,
+          "witness_run_ids": [
+            "provisional-training-low-1000-balanced-energy",
+            "provisional-training-low-1000-balanced-equal",
+            "provisional-training-low-1000-balanced-makespan"
+          ],
+          "witnesses": [
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-energy",
+              "compared_objectives": [
+                "makespan_s",
+                "energy_j"
+              ],
+              "target_metrics": {
+                "makespan_s": 30.22914623491747,
+                "energy_j": 218.11395408725005,
+                "mean_latency_s": 1.2317791211359455
+              },
+              "witness_metrics": {
+                "makespan_s": 29.911045336090428,
+                "energy_j": 185.70063008125004,
+                "mean_latency_s": 1.3852447216033472
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "energy_j": "strict_improvement"
+              }
+            },
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-equal",
+              "compared_objectives": [
+                "makespan_s",
+                "energy_j"
+              ],
+              "target_metrics": {
+                "makespan_s": 30.22914623491747,
+                "energy_j": 218.11395408725005,
+                "mean_latency_s": 1.2317791211359455
+              },
+              "witness_metrics": {
+                "makespan_s": 29.643847107500804,
+                "energy_j": 197.54583172050005,
+                "mean_latency_s": 0.8962293465268685
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "energy_j": "strict_improvement"
+              }
+            },
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-makespan",
+              "compared_objectives": [
+                "makespan_s",
+                "energy_j"
+              ],
+              "target_metrics": {
+                "makespan_s": 30.22914623491747,
+                "energy_j": 218.11395408725005,
+                "mean_latency_s": 1.2317791211359455
+              },
+              "witness_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 200.14311986000007,
+                "mean_latency_s": 0.863674324301195
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "energy_j": "strict_improvement"
+              }
+            }
+          ]
+        }
+      },
+      "makespan_s|mean_latency_s": {
+        "provisional-training-low-1000-balanced-energy": {
+          "non_dominated": false,
+          "witness_run_ids": [
+            "provisional-training-low-1000-balanced-equal",
+            "provisional-training-low-1000-balanced-makespan",
+            "provisional-training-low-1000-latency-first"
+          ],
+          "witnesses": [
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-equal",
+              "compared_objectives": [
+                "makespan_s",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 29.911045336090428,
+                "energy_j": 185.70063008125004,
+                "mean_latency_s": 1.3852447216033472
+              },
+              "witness_metrics": {
+                "makespan_s": 29.643847107500804,
+                "energy_j": 197.54583172050005,
+                "mean_latency_s": 0.8962293465268685
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            },
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-makespan",
+              "compared_objectives": [
+                "makespan_s",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 29.911045336090428,
+                "energy_j": 185.70063008125004,
+                "mean_latency_s": 1.3852447216033472
+              },
+              "witness_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 200.14311986000007,
+                "mean_latency_s": 0.863674324301195
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            },
+            {
+              "witness_run_id": "provisional-training-low-1000-latency-first",
+              "compared_objectives": [
+                "makespan_s",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 29.911045336090428,
+                "energy_j": 185.70063008125004,
+                "mean_latency_s": 1.3852447216033472
+              },
+              "witness_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 224.40593276250007,
+                "mean_latency_s": 0.7107555760815206
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            }
+          ]
+        },
+        "provisional-training-low-1000-balanced-equal": {
+          "non_dominated": true,
+          "witness_run_ids": [],
+          "witnesses": []
+        },
+        "provisional-training-low-1000-balanced-makespan": {
+          "non_dominated": false,
+          "witness_run_ids": [
+            "provisional-training-low-1000-latency-first"
+          ],
+          "witnesses": [
+            {
+              "witness_run_id": "provisional-training-low-1000-latency-first",
+              "compared_objectives": [
+                "makespan_s",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 200.14311986000007,
+                "mean_latency_s": 0.863674324301195
+              },
+              "witness_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 224.40593276250007,
+                "mean_latency_s": 0.7107555760815206
+              },
+              "relations": {
+                "makespan_s": "equal",
+                "mean_latency_s": "strict_improvement"
+              }
+            }
+          ]
+        },
+        "provisional-training-low-1000-energy-first": {
+          "non_dominated": false,
+          "witness_run_ids": [
+            "provisional-training-low-1000-balanced-energy",
+            "provisional-training-low-1000-balanced-equal",
+            "provisional-training-low-1000-balanced-makespan",
+            "provisional-training-low-1000-latency-first",
+            "provisional-training-low-1000-random-11"
+          ],
+          "witnesses": [
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-energy",
+              "compared_objectives": [
+                "makespan_s",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 87.54876720000001,
+                "energy_j": 163.22729631124972,
+                "mean_latency_s": 56.349947117309476
+              },
+              "witness_metrics": {
+                "makespan_s": 29.911045336090428,
+                "energy_j": 185.70063008125004,
+                "mean_latency_s": 1.3852447216033472
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            },
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-equal",
+              "compared_objectives": [
+                "makespan_s",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 87.54876720000001,
+                "energy_j": 163.22729631124972,
+                "mean_latency_s": 56.349947117309476
+              },
+              "witness_metrics": {
+                "makespan_s": 29.643847107500804,
+                "energy_j": 197.54583172050005,
+                "mean_latency_s": 0.8962293465268685
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            },
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-makespan",
+              "compared_objectives": [
+                "makespan_s",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 87.54876720000001,
+                "energy_j": 163.22729631124972,
+                "mean_latency_s": 56.349947117309476
+              },
+              "witness_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 200.14311986000007,
+                "mean_latency_s": 0.863674324301195
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            },
+            {
+              "witness_run_id": "provisional-training-low-1000-latency-first",
+              "compared_objectives": [
+                "makespan_s",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 87.54876720000001,
+                "energy_j": 163.22729631124972,
+                "mean_latency_s": 56.349947117309476
+              },
+              "witness_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 224.40593276250007,
+                "mean_latency_s": 0.7107555760815206
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            },
+            {
+              "witness_run_id": "provisional-training-low-1000-random-11",
+              "compared_objectives": [
+                "makespan_s",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 87.54876720000001,
+                "energy_j": 163.22729631124972,
+                "mean_latency_s": 56.349947117309476
+              },
+              "witness_metrics": {
+                "makespan_s": 30.22914623491747,
+                "energy_j": 218.11395408725005,
+                "mean_latency_s": 1.2317791211359455
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            }
+          ]
+        },
+        "provisional-training-low-1000-latency-first": {
+          "non_dominated": true,
+          "witness_run_ids": [],
+          "witnesses": []
+        },
+        "provisional-training-low-1000-random-11": {
+          "non_dominated": false,
+          "witness_run_ids": [
+            "provisional-training-low-1000-balanced-equal",
+            "provisional-training-low-1000-balanced-makespan",
+            "provisional-training-low-1000-latency-first"
+          ],
+          "witnesses": [
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-equal",
+              "compared_objectives": [
+                "makespan_s",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 30.22914623491747,
+                "energy_j": 218.11395408725005,
+                "mean_latency_s": 1.2317791211359455
+              },
+              "witness_metrics": {
+                "makespan_s": 29.643847107500804,
+                "energy_j": 197.54583172050005,
+                "mean_latency_s": 0.8962293465268685
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            },
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-makespan",
+              "compared_objectives": [
+                "makespan_s",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 30.22914623491747,
+                "energy_j": 218.11395408725005,
+                "mean_latency_s": 1.2317791211359455
+              },
+              "witness_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 200.14311986000007,
+                "mean_latency_s": 0.863674324301195
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            },
+            {
+              "witness_run_id": "provisional-training-low-1000-latency-first",
+              "compared_objectives": [
+                "makespan_s",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 30.22914623491747,
+                "energy_j": 218.11395408725005,
+                "mean_latency_s": 1.2317791211359455
+              },
+              "witness_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 224.40593276250007,
+                "mean_latency_s": 0.7107555760815206
+              },
+              "relations": {
+                "makespan_s": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            }
+          ]
+        }
+      },
+      "energy_j|mean_latency_s": {
+        "provisional-training-low-1000-balanced-energy": {
+          "non_dominated": true,
+          "witness_run_ids": [],
+          "witnesses": []
+        },
+        "provisional-training-low-1000-balanced-equal": {
+          "non_dominated": true,
+          "witness_run_ids": [],
+          "witnesses": []
+        },
+        "provisional-training-low-1000-balanced-makespan": {
+          "non_dominated": true,
+          "witness_run_ids": [],
+          "witnesses": []
+        },
+        "provisional-training-low-1000-energy-first": {
+          "non_dominated": true,
+          "witness_run_ids": [],
+          "witnesses": []
+        },
+        "provisional-training-low-1000-latency-first": {
+          "non_dominated": true,
+          "witness_run_ids": [],
+          "witnesses": []
+        },
+        "provisional-training-low-1000-random-11": {
+          "non_dominated": false,
+          "witness_run_ids": [
+            "provisional-training-low-1000-balanced-equal",
+            "provisional-training-low-1000-balanced-makespan"
+          ],
+          "witnesses": [
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-equal",
+              "compared_objectives": [
+                "energy_j",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 30.22914623491747,
+                "energy_j": 218.11395408725005,
+                "mean_latency_s": 1.2317791211359455
+              },
+              "witness_metrics": {
+                "makespan_s": 29.643847107500804,
+                "energy_j": 197.54583172050005,
+                "mean_latency_s": 0.8962293465268685
+              },
+              "relations": {
+                "energy_j": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            },
+            {
+              "witness_run_id": "provisional-training-low-1000-balanced-makespan",
+              "compared_objectives": [
+                "energy_j",
+                "mean_latency_s"
+              ],
+              "target_metrics": {
+                "makespan_s": 30.22914623491747,
+                "energy_j": 218.11395408725005,
+                "mean_latency_s": 1.2317791211359455
+              },
+              "witness_metrics": {
+                "makespan_s": 29.672735724298764,
+                "energy_j": 200.14311986000007,
+                "mean_latency_s": 0.863674324301195
+              },
+              "relations": {
+                "energy_j": "strict_improvement",
+                "mean_latency_s": "strict_improvement"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
