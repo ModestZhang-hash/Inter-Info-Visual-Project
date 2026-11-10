@@ -157,8 +157,15 @@ $("reset-axes").addEventListener("click", () => {
   showStatusNotice();
 });
 
+const bundleKey = globalThis.location?.search
+  ? new URLSearchParams(globalThis.location.search).get("bundle")
+  : null;
+const bundleUrl = bundleKey === "p3-training-low"
+  ? "../examples/p3-training-low/bundle.json"
+  : "../examples/3a-demo/bundle.json";
+
 try {
-  const response = await fetch("../examples/3a-demo/bundle.json");
+  const response = await fetch(bundleUrl);
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   loadBundle(await response.json());
 } catch (error) {

@@ -95,7 +95,8 @@ export function mountView3d(container, model, sharedState, options = {}) {
       const slot = stableConfigIndex(model.configs, run.policy_config_id);
       const color = POLICY_COLORS[slot % POLICY_COLORS.length];
       const selected = snapshot.selected_run_ids.includes(run.run_id);
-      const full = model.labels.full.get(run.run_id)?.nonDominated;
+      const recorded = model.labels.full.get(run.run_id);
+      const full = recorded?.nonDominated;
       const cluster = coincidentIds(runs, snapshot.axis_ranges, run.run_id);
       const config = model.configs.find((item) => item.policy_config_id === run.policy_config_id);
       const group = element("g", selected ? "view3d-point selected" : "view3d-point");
@@ -111,7 +112,7 @@ export function mountView3d(container, model, sharedState, options = {}) {
       const overlap = copy.overlapLine(cluster);
       title.textContent = `${copy.displayName(config?.label, run.policy_config_id)} | ${run.run_id}\n`
         + `M=${formatRaw(run.makespan_s)} s, E=${formatRaw(run.energy_j)} J, L=${formatRaw(run.mean_latency_s)} s`
-        + `\n${copy.fullStatus(!full)}${overlap}`;
+        + `\n${recorded ? copy.fullStatus(full === false) : `${copy.pairFull}: ${copy.status(undefined)}`}${overlap}`;
       if (full) {
         const halo = element("circle", "view3d-full");
         halo.setAttribute("cx", point.x);
