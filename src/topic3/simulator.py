@@ -13,6 +13,7 @@ import heapq
 import math
 from dataclasses import dataclass, field
 
+from topic3.policies import projected_task_energy
 from topic3.workload import SCHEMA_VERSION
 
 SIMULATOR_VERSION = "topic3-simulator-p2-1"
@@ -96,11 +97,32 @@ class Simulator:
     def _choose(self, task, policy) -> str:
         arrived = [old["task_id"] for old, _destination in self.history]
         arrived.append(task["task_id"])
+        assigned_max = self._history_max_completion()
+        min_arrival = min([old["arrival_s"] for old, _destination in self.history] + [task["arrival_s"]])
+
+        def predict_completion(destination, current=task):
+            return self._predict(current, destination)
+
+        def predict_energy(destination, current=task):
+            if destination not in self.nodes:
+                return None
+            return projected_task_energy(current, self.nodes[destination], self.gateway)
+
+        def predict_makespan_increase(destination, current=task):
+            completion = predict_completion(destination)
+            if completion is None:
+                return None
+            if assigned_max is None:
+                return completion - min_arrival
+            return (max(assigned_max, completion) - min_arrival) - (assigned_max - min_arrival)
+
         observable = {
             "now_s": task["arrival_s"],
             "destination_ids": list(self.node_order),
             "arrived_task_ids": arrived,
-            "predict_completion_s": lambda destination, current=task: self._predict(current, destination),
+            "predict_completion_s": predict_completion,
+            "predict_task_energy_j": predict_energy,
+            "predict_makespan_increase_s": predict_makespan_increase,
         }
         return policy.choose(task, observable)
 
@@ -116,6 +138,19 @@ class Simulator:
         if progress is None or progress.status != "complete":
             return None
         return progress.completion
+
+    def _history_max_completion(self):
+        if not self.history:
+            return None
+        clone = Simulator(self.manifest, deadline_s=self.deadline_s)
+        for old_task, old_destination in self.history:
+            clone._drain_until(old_task["arrival_s"])
+            clone._start_task(old_task, old_destination, old_task["arrival_s"])
+        clone._drain_until(math.inf)
+        completions = [item.completion for item in clone.progress.values() if item.status == "complete" and item.completion is not None]
+        if not completions:
+            return None
+        return max(completions)
 
     def _start_task(self, task, destination: str, now: float) -> None:
         known = destination if destination in self.nodes else None
