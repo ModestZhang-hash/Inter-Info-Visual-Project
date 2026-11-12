@@ -267,7 +267,10 @@ $("export-csv").addEventListener("click", () => {
 try {
   const bundleKey = new URLSearchParams(globalThis.location?.search ?? "").get("bundle");
   const path = bundleKey === "p3-training-low"
-    ? "../../examples/p3-training-low/bundle.json" : "../../examples/3a-demo/bundle.json";
+    ? "../../examples/p3-training-low/bundle.json"
+    : bundleKey === "p6-six-heuristic"
+      ? "../../examples/p6-six-heuristic/bundle.json"
+      : "../../examples/3a-demo/bundle.json";
   const response = await fetch(path);
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   loadBundle(await response.json());
