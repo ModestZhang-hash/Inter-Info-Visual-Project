@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "3A": {
+    "owner": "member A",
+    "scope": "Pairwise scatterplots, projected non-dominated marks, and dominance witnesses.",
+    "materials": ["app/shared/pair_scatter.mjs", "app/3a/pareto.mjs", "docs/3a.md", "docs/workbench-design.md"]
+  },
+  "3B": {
+    "owner": "member B",
+    "scope": "Scatterplot matrix, parallel coordinates, and the compact 3D reference on the same run records.",
+    "materials": ["app/3b/matrix.mjs", "app/3b/parallel.mjs", "app/3b/view3d.mjs", "docs/3b.md", "artifacts/workloads/provisional/p12_acceptance/view_check.json"]
+  },
+  "3C": {
+    "owner": "both members",
+    "scope": "Frozen workloads, simulator, six heuristics, one DQN checkpoint, held-out runs, and paired summaries.",
+    "materials": [
+      "configs/freeze/design_freeze_v1.json",
+      "artifacts/workloads/provisional/p8d_training/provisional-dqn-seed8-episode500-weights.json",
+      "artifacts/workloads/provisional/p10_held_out/index.json",
+      "artifacts/workloads/provisional/p11_analysis/summary.json"
+    ]
+  },
+  "limits": {
+    "energy": "E sums task compute and transfer energy. Idle baseline electricity is excluded.",
+    "dqn": "One network, seed 8, and the online weights after episode 500. It is non-dominated in the full space on 1 of 36 held-out instances.",
+    "participants": "No external participants or domain experts. The checks cover computation, interaction consistency, and the tested simulator runs.",
+    "external_validity": "The topology has three edge nodes and one cloud node, tasks are synthetic and independent, and queues are FIFO."
+  }
+}

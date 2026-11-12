@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "simulator_version": "topic3-simulator-p2-1",
+  "python_version": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "checkpoint_id": "provisional-dqn-seed8-episode500",
+  "tolerance_absolute": 1e-09,
+  "runs_recomputed": 252,
+  "metric_mismatches": [],
+  "pareto_label_mismatches": [],
+  "replay_event_mismatches": [],
+  "failure_count": 0,
+  "pooled_pareto": false,
+  "objectives_match": true,
+  "pareto_labels_match": true,
+  "replay_matches": true
+}

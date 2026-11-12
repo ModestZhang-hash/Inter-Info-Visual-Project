@@ -270,7 +270,9 @@ try {
     ? "../../examples/p3-training-low/bundle.json"
     : bundleKey === "p6-six-heuristic"
       ? "../../examples/p6-six-heuristic/bundle.json"
-      : "../../examples/3a-demo/bundle.json";
+      : bundleKey === "p11-held-out-low-3000"
+        ? "../../examples/p11-held-out-low-3000/bundle.json"
+        : "../../examples/3a-demo/bundle.json";
   const response = await fetch(path);
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   loadBundle(await response.json());

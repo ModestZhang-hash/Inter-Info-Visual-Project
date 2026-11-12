@@ -123,8 +123,36 @@ class Simulator:
             "predict_completion_s": predict_completion,
             "predict_task_energy_j": predict_energy,
             "predict_makespan_increase_s": predict_makespan_increase,
+            "decision_features": self._decision_features(task),
         }
         return policy.choose(task, observable)
+
+    def _decision_features(self, task) -> dict:
+        """Raw snapshot at arrival. Heuristics do not read it. The current task is not yet queued."""
+        now = task["arrival_s"]
+        nodes = []
+        for node_id in self.node_order:
+            cpu_queue, cpu_busy = _server_snapshot(self.cpu[node_id], now)
+            if node_id == self.gateway:
+                channel_queue, channel_busy = 0, 0.0
+            else:
+                channel_queue, channel_busy = _server_snapshot(self.channel[node_id], now)
+            nodes.append({
+                "node_id": node_id,
+                "cpu_queue_length": cpu_queue,
+                "cpu_remaining_busy_s": cpu_busy,
+                "channel_queue_length": channel_queue,
+                "channel_remaining_busy_s": channel_busy,
+                "projected_completion_s": self._predict(task, node_id),
+                "projected_task_energy_j": projected_task_energy(task, self.nodes[node_id], self.gateway),
+            })
+        return {
+            "task_id": task["task_id"],
+            "compute_cycles": task["compute_cycles"],
+            "upload_bytes": task["upload_bytes"],
+            "return_bytes": task["return_bytes"],
+            "nodes": nodes,
+        }
 
     def _predict(self, task, destination: str):
         clone = Simulator(self.manifest, deadline_s=self.deadline_s)
@@ -265,6 +293,16 @@ class Simulator:
             "compute_energy_j": progress.compute_energy,
             "transfer_energy_j": progress.transfer_energy,
         }
+
+
+def _server_snapshot(server: _Server, now: float) -> tuple[int, float]:
+    """Waiting jobs, excluding the running job, and seconds until the server is idle."""
+    remaining = 0.0
+    if server.running is not None and server.running.end is not None:
+        remaining += max(0.0, server.running.end - now)
+    for job in server.queue:
+        remaining += job.duration
+    return len(server.queue), remaining
 
 
 def _compute_seconds(cycles, node) -> float:

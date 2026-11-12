@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-11-12",
+  "held_out_results_read": false,
+  "entries": [
+    {
+      "id": "held-out-unread",
+      "decision": "Held-out scheduling results were not read or run.",
+      "evidence": "Pilot file reads are the three pilot instances, pilot manifest, feature scales, and the provisional checkpoint."
+    },
+    {
+      "id": "checkpoint-rule",
+      "decision": "Keep the pre-registered checkpoint: online weights after training episode 500.",
+      "changed": false,
+      "evidence": "Changing it because training episode 500 had high latency would select on training outcomes. Pilot inference is recorded separately and does not replace that rule."
+    },
+    {
+      "id": "pilot-checks",
+      "decision": "Adopt the listed simulator, policy, seed, tolerance, and case rules.",
+      "evidence": "21 of 21 pilot runs completed with accounting and reward checks."
+    },
+    {
+      "id": "latency-ceiling",
+      "decision": "Freeze the latency ceiling as the median of the 18 heuristic pilot mean latencies.",
+      "value_s": 1.5315414806069878
+    }
+  ],
+  "seed_splits": {
+    "training": [
+      1000,
+      1001,
+      1002
+    ],
+    "pilot": [
+      2000,
+      2001,
+      2002
+    ],
+    "held_out": [
+      3000,
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008,
+      3009,
+      3010,
+      3011,
+      3012,
+      3013,
+      3014,
+      3015,
+      3016,
+      3017,
+      3018,
+      3019,
+      3020,
+      3021,
+      3022,
+      3023,
+      3024,
+      3025,
+      3026,
+      3027,
+      3028,
+      3029,
+      3030,
+      3031,
+      3032,
+      3033,
+      3034,
+      3035
+    ]
+  }
+}

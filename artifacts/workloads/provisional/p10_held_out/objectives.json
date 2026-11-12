@@ -1,0 +1,2526 @@
+{
+  "schema_version": "1.0.0",
+  "metrics_source": "topic3.metrics.recompute_objectives",
+  "runs": [
+    {
+      "run_id": "provisional-held_out-low-3000-random-11",
+      "instance_id": "provisional-held_out-low-3000",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 38.12875862839066,
+      "energy_j": 208.21464558799994,
+      "mean_latency_s": 1.0302125993297822,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3000-latency-first",
+      "instance_id": "provisional-held_out-low-3000",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 37.34925503501566,
+      "energy_j": 217.86356038574996,
+      "mean_latency_s": 0.695156189225454,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3000-energy-first",
+      "instance_id": "provisional-held_out-low-3000",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 92.08242320000004,
+      "energy_j": 157.3702416337499,
+      "mean_latency_s": 54.99707155364306,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3000-balanced-equal",
+      "instance_id": "provisional-held_out-low-3000",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 37.497193697265665,
+      "energy_j": 188.82712306174997,
+      "mean_latency_s": 0.8063509990359325,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3000-balanced-makespan",
+      "instance_id": "provisional-held_out-low-3000",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 37.497193697265665,
+      "energy_j": 189.42357371649996,
+      "mean_latency_s": 0.789587983486368,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3000-balanced-energy",
+      "instance_id": "provisional-held_out-low-3000",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 37.497193697265665,
+      "energy_j": 177.24648869350005,
+      "mean_latency_s": 1.267959085258367,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3000-dqn-fixed-8",
+      "instance_id": "provisional-held_out-low-3000",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 37.34925503501566,
+      "energy_j": 207.66035211274993,
+      "mean_latency_s": 1.1994817589502929,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-low-3001-random-11",
+      "instance_id": "provisional-held_out-low-3001",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 39.80954442386909,
+      "energy_j": 201.6271636580001,
+      "mean_latency_s": 1.0400942974632115,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3001-latency-first",
+      "instance_id": "provisional-held_out-low-3001",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 39.38059854936908,
+      "energy_j": 214.72207859875,
+      "mean_latency_s": 0.6526509470157672,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3001-energy-first",
+      "instance_id": "provisional-held_out-low-3001",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 93.7393256000001,
+      "energy_j": 156.29078141125004,
+      "mean_latency_s": 50.43718350422718,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3001-balanced-equal",
+      "instance_id": "provisional-held_out-low-3001",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 39.80954442386909,
+      "energy_j": 186.98444352900003,
+      "mean_latency_s": 0.7505226141557881,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3001-balanced-makespan",
+      "instance_id": "provisional-held_out-low-3001",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 39.80954442386909,
+      "energy_j": 190.3299008950001,
+      "mean_latency_s": 0.73157406315962,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3001-balanced-energy",
+      "instance_id": "provisional-held_out-low-3001",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 39.91162296996118,
+      "energy_j": 175.1152248597501,
+      "mean_latency_s": 1.1875791713854005,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3001-dqn-fixed-8",
+      "instance_id": "provisional-held_out-low-3001",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 40.03508510227739,
+      "energy_j": 208.00787472074998,
+      "mean_latency_s": 1.120881546462949,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-low-3002-random-11",
+      "instance_id": "provisional-held_out-low-3002",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 28.46926096838701,
+      "energy_j": 191.09530830224995,
+      "mean_latency_s": 1.0543246178814514,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3002-latency-first",
+      "instance_id": "provisional-held_out-low-3002",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 27.87689491738576,
+      "energy_j": 195.84716390674998,
+      "mean_latency_s": 0.6880951846712825,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3002-energy-first",
+      "instance_id": "provisional-held_out-low-3002",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 92.05740560000002,
+      "energy_j": 145.71117637499975,
+      "mean_latency_s": 63.30833665208691,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3002-balanced-equal",
+      "instance_id": "provisional-held_out-low-3002",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 28.128947523135402,
+      "energy_j": 179.79594137925002,
+      "mean_latency_s": 0.7342232559929736,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3002-balanced-makespan",
+      "instance_id": "provisional-held_out-low-3002",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 28.128947523135402,
+      "energy_j": 181.499829623,
+      "mean_latency_s": 0.7000459034056015,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3002-balanced-energy",
+      "instance_id": "provisional-held_out-low-3002",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 28.346762944302064,
+      "energy_j": 166.44755837825,
+      "mean_latency_s": 1.165326318036252,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3002-dqn-fixed-8",
+      "instance_id": "provisional-held_out-low-3002",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 28.733754502957755,
+      "energy_j": 189.3168583947499,
+      "mean_latency_s": 1.213964068007992,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-low-3003-random-11",
+      "instance_id": "provisional-held_out-low-3003",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 34.988538018905366,
+      "energy_j": 210.93816057449993,
+      "mean_latency_s": 1.0256959691089391,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3003-latency-first",
+      "instance_id": "provisional-held_out-low-3003",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 34.05808158540537,
+      "energy_j": 218.36218410475004,
+      "mean_latency_s": 0.6961545309830524,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3003-energy-first",
+      "instance_id": "provisional-held_out-low-3003",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 87.28431280000005,
+      "energy_j": 158.83059858500005,
+      "mean_latency_s": 50.993346885892954,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3003-balanced-equal",
+      "instance_id": "provisional-held_out-low-3003",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 34.19341106154411,
+      "energy_j": 192.11716162200005,
+      "mean_latency_s": 0.824702706063943,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3003-balanced-makespan",
+      "instance_id": "provisional-held_out-low-3003",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 34.18315307440536,
+      "energy_j": 194.02076135249996,
+      "mean_latency_s": 0.8013494705973001,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3003-balanced-energy",
+      "instance_id": "provisional-held_out-low-3003",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 34.89826916323761,
+      "energy_j": 180.5415958935,
+      "mean_latency_s": 1.3565070653652234,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3003-dqn-fixed-8",
+      "instance_id": "provisional-held_out-low-3003",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 35.13921072221079,
+      "energy_j": 212.04775972175005,
+      "mean_latency_s": 1.1839920276642875,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-low-3004-random-11",
+      "instance_id": "provisional-held_out-low-3004",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 34.181761153563876,
+      "energy_j": 198.72009879174996,
+      "mean_latency_s": 1.056723286171482,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3004-latency-first",
+      "instance_id": "provisional-held_out-low-3004",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 33.261104715438876,
+      "energy_j": 201.59869239949984,
+      "mean_latency_s": 0.6614492715759674,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3004-energy-first",
+      "instance_id": "provisional-held_out-low-3004",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 86.96880560000005,
+      "energy_j": 149.83061842250024,
+      "mean_latency_s": 53.30270740035284,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3004-balanced-equal",
+      "instance_id": "provisional-held_out-low-3004",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 33.332099674188875,
+      "energy_j": 181.77817237349998,
+      "mean_latency_s": 0.7130572007135022,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3004-balanced-makespan",
+      "instance_id": "provisional-held_out-low-3004",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 33.332099674188875,
+      "energy_j": 183.01303397349994,
+      "mean_latency_s": 0.7063113136156834,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3004-balanced-energy",
+      "instance_id": "provisional-held_out-low-3004",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 34.35079056888817,
+      "energy_j": 167.60943029599997,
+      "mean_latency_s": 1.1899438456811453,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3004-dqn-fixed-8",
+      "instance_id": "provisional-held_out-low-3004",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 33.48936002127221,
+      "energy_j": 192.2344907717501,
+      "mean_latency_s": 1.2245911609995834,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-low-3005-random-11",
+      "instance_id": "provisional-held_out-low-3005",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 33.11970822788371,
+      "energy_j": 198.61695985124993,
+      "mean_latency_s": 1.1020474349675438,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3005-latency-first",
+      "instance_id": "provisional-held_out-low-3005",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 32.434820853758715,
+      "energy_j": 205.79120259425005,
+      "mean_latency_s": 0.6462944230788297,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3005-energy-first",
+      "instance_id": "provisional-held_out-low-3005",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 88.82718239999996,
+      "energy_j": 151.0347236237498,
+      "mean_latency_s": 54.62750371778968,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3005-balanced-equal",
+      "instance_id": "provisional-held_out-low-3005",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 32.57229803650871,
+      "energy_j": 181.30377546074996,
+      "mean_latency_s": 0.7204562052432675,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3005-balanced-makespan",
+      "instance_id": "provisional-held_out-low-3005",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 32.57229803650871,
+      "energy_j": 182.73732417549996,
+      "mean_latency_s": 0.7009784531429843,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3005-balanced-energy",
+      "instance_id": "provisional-held_out-low-3005",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 32.89695789880154,
+      "energy_j": 168.4725337169998,
+      "mean_latency_s": 1.1651755567457207,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3005-dqn-fixed-8",
+      "instance_id": "provisional-held_out-low-3005",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 33.06758845317057,
+      "energy_j": 200.03372710899993,
+      "mean_latency_s": 1.1522627001568704,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-low-3006-random-11",
+      "instance_id": "provisional-held_out-low-3006",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 33.16093977166066,
+      "energy_j": 189.15074877025006,
+      "mean_latency_s": 0.997335889971486,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3006-latency-first",
+      "instance_id": "provisional-held_out-low-3006",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 32.52529730899109,
+      "energy_j": 193.71272282700008,
+      "mean_latency_s": 0.6119128929688766,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3006-energy-first",
+      "instance_id": "provisional-held_out-low-3006",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 83.12014960000002,
+      "energy_j": 142.5809144299999,
+      "mean_latency_s": 49.544103135415774,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3006-balanced-equal",
+      "instance_id": "provisional-held_out-low-3006",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 32.64302709753804,
+      "energy_j": 173.46205408224998,
+      "mean_latency_s": 0.7434600634905053,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3006-balanced-makespan",
+      "instance_id": "provisional-held_out-low-3006",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 32.64302709753804,
+      "energy_j": 174.03581992825,
+      "mean_latency_s": 0.7407228173872059,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3006-balanced-energy",
+      "instance_id": "provisional-held_out-low-3006",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 32.75404615037447,
+      "energy_j": 159.73255741525006,
+      "mean_latency_s": 1.1879441516675993,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3006-dqn-fixed-8",
+      "instance_id": "provisional-held_out-low-3006",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 32.66659472815776,
+      "energy_j": 193.32527871200003,
+      "mean_latency_s": 1.0368294582376238,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-low-3007-random-11",
+      "instance_id": "provisional-held_out-low-3007",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 30.74665527344159,
+      "energy_j": 204.35348614000003,
+      "mean_latency_s": 1.1649845527203928,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3007-latency-first",
+      "instance_id": "provisional-held_out-low-3007",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 30.424282033998843,
+      "energy_j": 211.64510247525004,
+      "mean_latency_s": 0.6958147210460832,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3007-energy-first",
+      "instance_id": "provisional-held_out-low-3007",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 88.30980240000005,
+      "energy_j": 155.24500861499982,
+      "mean_latency_s": 54.39027309541232,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3007-balanced-equal",
+      "instance_id": "provisional-held_out-low-3007",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 30.582686412123845,
+      "energy_j": 190.20623210500014,
+      "mean_latency_s": 0.8167579042864267,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3007-balanced-makespan",
+      "instance_id": "provisional-held_out-low-3007",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 30.582686412123845,
+      "energy_j": 191.57367218550007,
+      "mean_latency_s": 0.7890035942646692,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3007-balanced-energy",
+      "instance_id": "provisional-held_out-low-3007",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 31.752213151345575,
+      "energy_j": 176.51420076424995,
+      "mean_latency_s": 1.3980725164295038,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3007-dqn-fixed-8",
+      "instance_id": "provisional-held_out-low-3007",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 31.26444623689609,
+      "energy_j": 206.13078657075,
+      "mean_latency_s": 1.2176463195245995,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-low-3008-random-11",
+      "instance_id": "provisional-held_out-low-3008",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 37.54016509663611,
+      "energy_j": 210.82809177349984,
+      "mean_latency_s": 1.0316280451482072,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3008-latency-first",
+      "instance_id": "provisional-held_out-low-3008",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 37.081712378386115,
+      "energy_j": 216.2380161487499,
+      "mean_latency_s": 0.6388546348577303,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3008-energy-first",
+      "instance_id": "provisional-held_out-low-3008",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 85.33227301053928,
+      "energy_j": 157.33346823500014,
+      "mean_latency_s": 46.55185562132306,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3008-balanced-equal",
+      "instance_id": "provisional-held_out-low-3008",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 37.54016509663611,
+      "energy_j": 189.5664247582499,
+      "mean_latency_s": 0.7900633601635529,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3008-balanced-makespan",
+      "instance_id": "provisional-held_out-low-3008",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 37.081712378386115,
+      "energy_j": 192.90512948899996,
+      "mean_latency_s": 0.7473711743262555,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3008-balanced-energy",
+      "instance_id": "provisional-held_out-low-3008",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 37.54016509663611,
+      "energy_j": 177.62082421199995,
+      "mean_latency_s": 1.2626362170215784,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3008-dqn-fixed-8",
+      "instance_id": "provisional-held_out-low-3008",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 37.20959414188611,
+      "energy_j": 210.56219198800005,
+      "mean_latency_s": 1.358549920443616,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-low-3009-random-11",
+      "instance_id": "provisional-held_out-low-3009",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 32.56987645960541,
+      "energy_j": 215.22596591475013,
+      "mean_latency_s": 1.0175227504600342,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3009-latency-first",
+      "instance_id": "provisional-held_out-low-3009",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 32.17093321348041,
+      "energy_j": 219.66786555775,
+      "mean_latency_s": 0.6837546086993394,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3009-energy-first",
+      "instance_id": "provisional-held_out-low-3009",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 83.68457360000004,
+      "energy_j": 158.77482379624985,
+      "mean_latency_s": 49.46634823215116,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3009-balanced-equal",
+      "instance_id": "provisional-held_out-low-3009",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 32.30968454577114,
+      "energy_j": 191.4139898807501,
+      "mean_latency_s": 0.7991623592356394,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3009-balanced-makespan",
+      "instance_id": "provisional-held_out-low-3009",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 32.30968454577114,
+      "energy_j": 192.38845207775012,
+      "mean_latency_s": 0.7798612596212348,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3009-balanced-energy",
+      "instance_id": "provisional-held_out-low-3009",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 32.777487673793715,
+      "energy_j": 179.7964453447501,
+      "mean_latency_s": 1.3468056980064789,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3009-dqn-fixed-8",
+      "instance_id": "provisional-held_out-low-3009",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 32.58553281152114,
+      "energy_j": 213.3111433815001,
+      "mean_latency_s": 1.222996901301147,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-low-3010-random-11",
+      "instance_id": "provisional-held_out-low-3010",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 27.30093654628075,
+      "energy_j": 213.30913798499995,
+      "mean_latency_s": 1.2961068937929765,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3010-latency-first",
+      "instance_id": "provisional-held_out-low-3010",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 26.731812852322413,
+      "energy_j": 218.06468129125003,
+      "mean_latency_s": 0.6986141230302978,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3010-energy-first",
+      "instance_id": "provisional-held_out-low-3010",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 84.84234800000007,
+      "energy_j": 159.01398451125007,
+      "mean_latency_s": 56.49455827305657,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3010-balanced-equal",
+      "instance_id": "provisional-held_out-low-3010",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 26.654308937020595,
+      "energy_j": 191.43615160724994,
+      "mean_latency_s": 0.9061430773195319,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3010-balanced-makespan",
+      "instance_id": "provisional-held_out-low-3010",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 26.654308937020595,
+      "energy_j": 194.31844848599994,
+      "mean_latency_s": 0.8401074693126382,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3010-balanced-energy",
+      "instance_id": "provisional-held_out-low-3010",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 26.82764761665869,
+      "energy_j": 182.0048357724999,
+      "mean_latency_s": 1.3669112204858371,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3010-dqn-fixed-8",
+      "instance_id": "provisional-held_out-low-3010",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 27.816265690273113,
+      "energy_j": 211.90441475024997,
+      "mean_latency_s": 1.4742991516679997,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-low-3011-random-11",
+      "instance_id": "provisional-held_out-low-3011",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 36.25396489158085,
+      "energy_j": 191.5392204407499,
+      "mean_latency_s": 1.0168763812821209,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3011-latency-first",
+      "instance_id": "provisional-held_out-low-3011",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 35.67983079845585,
+      "energy_j": 199.1856077317501,
+      "mean_latency_s": 0.604839363923712,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3011-energy-first",
+      "instance_id": "provisional-held_out-low-3011",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 83.99902489211414,
+      "energy_j": 145.49860798999978,
+      "mean_latency_s": 46.727254250232036,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3011-balanced-equal",
+      "instance_id": "provisional-held_out-low-3011",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 35.74979312504634,
+      "energy_j": 172.51224479374986,
+      "mean_latency_s": 0.7549041685346317,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3011-balanced-makespan",
+      "instance_id": "provisional-held_out-low-3011",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 35.74979312504634,
+      "energy_j": 175.41483979549986,
+      "mean_latency_s": 0.7162361216388843,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3011-balanced-energy",
+      "instance_id": "provisional-held_out-low-3011",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 36.261988430037206,
+      "energy_j": 161.73558429100004,
+      "mean_latency_s": 1.2136078824838914,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-low-3011-dqn-fixed-8",
+      "instance_id": "provisional-held_out-low-3011",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 35.97083179990731,
+      "energy_j": 192.47189761374997,
+      "mean_latency_s": 1.1194207774234815,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-medium-3012-random-11",
+      "instance_id": "provisional-held_out-medium-3012",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 21.597564996233192,
+      "energy_j": 212.51175579649993,
+      "mean_latency_s": 2.0380041593041267,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3012-latency-first",
+      "instance_id": "provisional-held_out-medium-3012",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 17.84556275489815,
+      "energy_j": 213.11121142424994,
+      "mean_latency_s": 0.775910770687179,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3012-energy-first",
+      "instance_id": "provisional-held_out-medium-3012",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 85.31848879999997,
+      "energy_j": 157.80055540999982,
+      "mean_latency_s": 62.78396577950673,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3012-balanced-equal",
+      "instance_id": "provisional-held_out-medium-3012",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 17.9502813328279,
+      "energy_j": 196.6285928214999,
+      "mean_latency_s": 0.8585155125677156,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3012-balanced-makespan",
+      "instance_id": "provisional-held_out-medium-3012",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 17.947141332827897,
+      "energy_j": 197.6744500199999,
+      "mean_latency_s": 0.836924539332107,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3012-balanced-energy",
+      "instance_id": "provisional-held_out-medium-3012",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 18.23610621670574,
+      "energy_j": 186.72478208674997,
+      "mean_latency_s": 1.5267413746167178,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3012-dqn-fixed-8",
+      "instance_id": "provisional-held_out-medium-3012",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 18.802790455994565,
+      "energy_j": 205.744781728,
+      "mean_latency_s": 1.297797994234034,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-medium-3013-random-11",
+      "instance_id": "provisional-held_out-medium-3013",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 18.30460876476043,
+      "energy_j": 214.7311144177501,
+      "mean_latency_s": 2.26913062858418,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3013-latency-first",
+      "instance_id": "provisional-held_out-medium-3013",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 14.978774390085617,
+      "energy_j": 213.50194223675004,
+      "mean_latency_s": 0.9840505548065366,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3013-energy-first",
+      "instance_id": "provisional-held_out-medium-3013",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 87.22243920000003,
+      "energy_j": 159.43373122250017,
+      "mean_latency_s": 70.99171180490943,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3013-balanced-equal",
+      "instance_id": "provisional-held_out-medium-3013",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 14.937634689239832,
+      "energy_j": 196.73791640200002,
+      "mean_latency_s": 1.0838017247998208,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3013-balanced-makespan",
+      "instance_id": "provisional-held_out-medium-3013",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 14.937634689239832,
+      "energy_j": 196.60491732275003,
+      "mean_latency_s": 1.0681260065232723,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3013-balanced-energy",
+      "instance_id": "provisional-held_out-medium-3013",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 15.432499084739494,
+      "energy_j": 190.80899597274998,
+      "mean_latency_s": 1.7843716550575024,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3013-dqn-fixed-8",
+      "instance_id": "provisional-held_out-medium-3013",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 15.63344731879642,
+      "energy_j": 207.63030315274997,
+      "mean_latency_s": 1.8432481651646888,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-medium-3014-random-11",
+      "instance_id": "provisional-held_out-medium-3014",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 18.09974799305625,
+      "energy_j": 210.3674758282499,
+      "mean_latency_s": 1.4764310375365992,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3014-latency-first",
+      "instance_id": "provisional-held_out-medium-3014",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 16.587508243873067,
+      "energy_j": 204.6831475755001,
+      "mean_latency_s": 0.8840185220752627,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3014-energy-first",
+      "instance_id": "provisional-held_out-medium-3014",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 83.98454960000004,
+      "energy_j": 155.55931139375005,
+      "mean_latency_s": 65.19149430276667,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3014-balanced-equal",
+      "instance_id": "provisional-held_out-medium-3014",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 16.59699741337363,
+      "energy_j": 191.68206919725003,
+      "mean_latency_s": 1.0334059901805257,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3014-balanced-makespan",
+      "instance_id": "provisional-held_out-medium-3014",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 16.59699741337363,
+      "energy_j": 192.37396343175004,
+      "mean_latency_s": 0.9458775233222706,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3014-balanced-energy",
+      "instance_id": "provisional-held_out-medium-3014",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 18.20599629049294,
+      "energy_j": 183.66616413800008,
+      "mean_latency_s": 1.5467125851219081,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3014-dqn-fixed-8",
+      "instance_id": "provisional-held_out-medium-3014",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 18.255308741660127,
+      "energy_j": 201.11135022599998,
+      "mean_latency_s": 1.562851935679069,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-medium-3015-random-11",
+      "instance_id": "provisional-held_out-medium-3015",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 17.753554667355292,
+      "energy_j": 203.11993338374992,
+      "mean_latency_s": 1.6107084410292933,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3015-latency-first",
+      "instance_id": "provisional-held_out-medium-3015",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 17.22361610752976,
+      "energy_j": 206.55057453649994,
+      "mean_latency_s": 0.8496167225549174,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3015-energy-first",
+      "instance_id": "provisional-held_out-medium-3015",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 89.10433680000003,
+      "energy_j": 153.9494679524995,
+      "mean_latency_s": 70.92731400153203,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3015-balanced-equal",
+      "instance_id": "provisional-held_out-medium-3015",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 17.254585702421736,
+      "energy_j": 189.0045133509999,
+      "mean_latency_s": 0.9438358535004558,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3015-balanced-makespan",
+      "instance_id": "provisional-held_out-medium-3015",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 17.254585702421736,
+      "energy_j": 190.2149801709999,
+      "mean_latency_s": 0.9083645559103231,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3015-balanced-energy",
+      "instance_id": "provisional-held_out-medium-3015",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 18.242470381823107,
+      "energy_j": 182.63927680524998,
+      "mean_latency_s": 1.4778115760577084,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3015-dqn-fixed-8",
+      "instance_id": "provisional-held_out-medium-3015",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 17.30318612280127,
+      "energy_j": 202.47327517799997,
+      "mean_latency_s": 1.6481094019785598,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-medium-3016-random-11",
+      "instance_id": "provisional-held_out-medium-3016",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 19.4736674506288,
+      "energy_j": 219.28123224725,
+      "mean_latency_s": 3.038611154340484,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3016-latency-first",
+      "instance_id": "provisional-held_out-medium-3016",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 12.319285791270985,
+      "energy_j": 215.671461038,
+      "mean_latency_s": 1.2877805312431971,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3016-energy-first",
+      "instance_id": "provisional-held_out-medium-3016",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 89.25552319999996,
+      "energy_j": 163.21893822625023,
+      "mean_latency_s": 75.11393740456681,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3016-balanced-equal",
+      "instance_id": "provisional-held_out-medium-3016",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 12.44380141101823,
+      "energy_j": 206.15647499350004,
+      "mean_latency_s": 1.2482156797992356,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3016-balanced-makespan",
+      "instance_id": "provisional-held_out-medium-3016",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 12.44380141101823,
+      "energy_j": 207.78075618175,
+      "mean_latency_s": 1.3019022594652276,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3016-balanced-energy",
+      "instance_id": "provisional-held_out-medium-3016",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 14.014596799999998,
+      "energy_j": 202.20243765850003,
+      "mean_latency_s": 1.9425376119134832,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3016-dqn-fixed-8",
+      "instance_id": "provisional-held_out-medium-3016",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 13.128922835137642,
+      "energy_j": 216.99804970524994,
+      "mean_latency_s": 2.099602795996633,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-medium-3017-random-11",
+      "instance_id": "provisional-held_out-medium-3017",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 18.110818105098293,
+      "energy_j": 202.5153805157499,
+      "mean_latency_s": 1.9102745594616142,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3017-latency-first",
+      "instance_id": "provisional-held_out-medium-3017",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 16.252325081205274,
+      "energy_j": 203.02787591924994,
+      "mean_latency_s": 1.0781573735230565,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3017-energy-first",
+      "instance_id": "provisional-held_out-medium-3017",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 91.87689920000003,
+      "energy_j": 153.5201970975001,
+      "mean_latency_s": 74.20483402454813,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3017-balanced-equal",
+      "instance_id": "provisional-held_out-medium-3017",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 16.370382009413607,
+      "energy_j": 192.8053515877499,
+      "mean_latency_s": 1.098315325389996,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3017-balanced-makespan",
+      "instance_id": "provisional-held_out-medium-3017",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 16.370382009413607,
+      "energy_j": 193.16054272599996,
+      "mean_latency_s": 1.130028666302171,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3017-balanced-energy",
+      "instance_id": "provisional-held_out-medium-3017",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 17.216785516682066,
+      "energy_j": 184.94516527974997,
+      "mean_latency_s": 1.5880061865475374,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3017-dqn-fixed-8",
+      "instance_id": "provisional-held_out-medium-3017",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 16.631714889769015,
+      "energy_j": 198.30961610974998,
+      "mean_latency_s": 1.9642573416197457,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-medium-3018-random-11",
+      "instance_id": "provisional-held_out-medium-3018",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 18.880996891666086,
+      "energy_j": 211.5971842142499,
+      "mean_latency_s": 2.4195241537584335,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3018-latency-first",
+      "instance_id": "provisional-held_out-medium-3018",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 13.340287335527862,
+      "energy_j": 212.53522628474997,
+      "mean_latency_s": 1.0803086759069802,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3018-energy-first",
+      "instance_id": "provisional-held_out-medium-3018",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 88.24184479999998,
+      "energy_j": 159.46562246375007,
+      "mean_latency_s": 70.60250631382192,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3018-balanced-equal",
+      "instance_id": "provisional-held_out-medium-3018",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 13.40433145217971,
+      "energy_j": 197.90987750125,
+      "mean_latency_s": 1.1174455960440965,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3018-balanced-makespan",
+      "instance_id": "provisional-held_out-medium-3018",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 13.40433145217971,
+      "energy_j": 199.87684443924996,
+      "mean_latency_s": 1.0339807303963577,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3018-balanced-energy",
+      "instance_id": "provisional-held_out-medium-3018",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 14.1758448,
+      "energy_j": 194.49403856599997,
+      "mean_latency_s": 1.82744946615743,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3018-dqn-fixed-8",
+      "instance_id": "provisional-held_out-medium-3018",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 15.762501670207058,
+      "energy_j": 208.94659442824997,
+      "mean_latency_s": 2.0112062125896104,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-medium-3019-random-11",
+      "instance_id": "provisional-held_out-medium-3019",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 17.996703799839224,
+      "energy_j": 222.9540232735,
+      "mean_latency_s": 2.0576969821641895,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3019-latency-first",
+      "instance_id": "provisional-held_out-medium-3019",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 16.420746505812886,
+      "energy_j": 216.79860500999996,
+      "mean_latency_s": 0.9622640207967773,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3019-energy-first",
+      "instance_id": "provisional-held_out-medium-3019",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 83.78448720000004,
+      "energy_j": 162.91033790250052,
+      "mean_latency_s": 66.39363253200332,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3019-balanced-equal",
+      "instance_id": "provisional-held_out-medium-3019",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 16.644743814917483,
+      "energy_j": 201.12733024099995,
+      "mean_latency_s": 1.0478290546625,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3019-balanced-makespan",
+      "instance_id": "provisional-held_out-medium-3019",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 16.644743814917483,
+      "energy_j": 201.7126405815,
+      "mean_latency_s": 1.0187795496352883,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3019-balanced-energy",
+      "instance_id": "provisional-held_out-medium-3019",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 16.95826258975,
+      "energy_j": 193.65413375424998,
+      "mean_latency_s": 1.6477484196612135,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3019-dqn-fixed-8",
+      "instance_id": "provisional-held_out-medium-3019",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 17.608553416805194,
+      "energy_j": 217.93726167574997,
+      "mean_latency_s": 1.657793393310003,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-medium-3020-random-11",
+      "instance_id": "provisional-held_out-medium-3020",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 20.223742398486593,
+      "energy_j": 199.40711449475006,
+      "mean_latency_s": 1.7552023351909884,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3020-latency-first",
+      "instance_id": "provisional-held_out-medium-3020",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 16.84558125238507,
+      "energy_j": 206.60541714574995,
+      "mean_latency_s": 0.8495064434709919,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3020-energy-first",
+      "instance_id": "provisional-held_out-medium-3020",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 90.97390720000007,
+      "energy_j": 152.18148405874985,
+      "mean_latency_s": 71.57681571373668,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3020-balanced-equal",
+      "instance_id": "provisional-held_out-medium-3020",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 16.809951966902158,
+      "energy_j": 188.25450974675007,
+      "mean_latency_s": 0.9685147125483162,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3020-balanced-makespan",
+      "instance_id": "provisional-held_out-medium-3020",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 16.657025742647196,
+      "energy_j": 190.54286876775006,
+      "mean_latency_s": 0.9217746088038614,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3020-balanced-energy",
+      "instance_id": "provisional-held_out-medium-3020",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 17.66613917950209,
+      "energy_j": 181.40135975225004,
+      "mean_latency_s": 1.3648648770956844,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3020-dqn-fixed-8",
+      "instance_id": "provisional-held_out-medium-3020",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 17.312491542260823,
+      "energy_j": 198.95950785875002,
+      "mean_latency_s": 1.458500987062504,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-medium-3021-random-11",
+      "instance_id": "provisional-held_out-medium-3021",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 16.565055908754832,
+      "energy_j": 215.75942814475,
+      "mean_latency_s": 1.7226706009580917,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3021-latency-first",
+      "instance_id": "provisional-held_out-medium-3021",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 14.923530036373904,
+      "energy_j": 216.38381353025002,
+      "mean_latency_s": 0.9157171651988392,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3021-energy-first",
+      "instance_id": "provisional-held_out-medium-3021",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 84.6318368,
+      "energy_j": 159.93202147625,
+      "mean_latency_s": 68.9033910546646,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3021-balanced-equal",
+      "instance_id": "provisional-held_out-medium-3021",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 15.25972818560338,
+      "energy_j": 200.5933530712501,
+      "mean_latency_s": 1.0031986414162826,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3021-balanced-makespan",
+      "instance_id": "provisional-held_out-medium-3021",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 15.25972818560338,
+      "energy_j": 200.9653672847501,
+      "mean_latency_s": 0.979199493412966,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3021-balanced-energy",
+      "instance_id": "provisional-held_out-medium-3021",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 15.713928945375,
+      "energy_j": 194.39555066600005,
+      "mean_latency_s": 1.6970058525243192,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3021-dqn-fixed-8",
+      "instance_id": "provisional-held_out-medium-3021",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 15.819118868875762,
+      "energy_j": 214.77610557699992,
+      "mean_latency_s": 1.5338496332704745,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-medium-3022-random-11",
+      "instance_id": "provisional-held_out-medium-3022",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 20.039642647407874,
+      "energy_j": 219.7209878625,
+      "mean_latency_s": 1.442979528615132,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3022-latency-first",
+      "instance_id": "provisional-held_out-medium-3022",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 19.256643659860593,
+      "energy_j": 222.9781461475,
+      "mean_latency_s": 0.8236790934567197,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3022-energy-first",
+      "instance_id": "provisional-held_out-medium-3022",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 87.03895200000005,
+      "energy_j": 164.08461899000005,
+      "mean_latency_s": 66.55070563434516,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3022-balanced-equal",
+      "instance_id": "provisional-held_out-medium-3022",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 19.370724704185534,
+      "energy_j": 201.63028308174992,
+      "mean_latency_s": 0.9719173035360441,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3022-balanced-makespan",
+      "instance_id": "provisional-held_out-medium-3022",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 19.548397076537032,
+      "energy_j": 201.0247029685,
+      "mean_latency_s": 0.9624692860203906,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3022-balanced-energy",
+      "instance_id": "provisional-held_out-medium-3022",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 20.076953022782877,
+      "energy_j": 192.27648577750006,
+      "mean_latency_s": 1.6749428378019673,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3022-dqn-fixed-8",
+      "instance_id": "provisional-held_out-medium-3022",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 19.88546254476887,
+      "energy_j": 217.71816148275002,
+      "mean_latency_s": 1.5393185399518634,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-medium-3023-random-11",
+      "instance_id": "provisional-held_out-medium-3023",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 23.327638036512237,
+      "energy_j": 200.64492758150004,
+      "mean_latency_s": 1.744615218781945,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3023-latency-first",
+      "instance_id": "provisional-held_out-medium-3023",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 20.038476969208617,
+      "energy_j": 199.90132975275012,
+      "mean_latency_s": 0.7865836515915303,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3023-energy-first",
+      "instance_id": "provisional-held_out-medium-3023",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 88.00073040000004,
+      "energy_j": 150.64015902874976,
+      "mean_latency_s": 63.16865690025086,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3023-balanced-equal",
+      "instance_id": "provisional-held_out-medium-3023",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 20.21826105712528,
+      "energy_j": 185.12109509225002,
+      "mean_latency_s": 0.9249229308224889,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3023-balanced-makespan",
+      "instance_id": "provisional-held_out-medium-3023",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 20.21826105712528,
+      "energy_j": 189.47778322124998,
+      "mean_latency_s": 0.8697796877818886,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3023-balanced-energy",
+      "instance_id": "provisional-held_out-medium-3023",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 20.63267149726263,
+      "energy_j": 176.57074406474996,
+      "mean_latency_s": 1.3637223437825932,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-medium-3023-dqn-fixed-8",
+      "instance_id": "provisional-held_out-medium-3023",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 20.449692116720932,
+      "energy_j": 191.4596305085,
+      "mean_latency_s": 1.3307878945220597,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-high-3024-random-11",
+      "instance_id": "provisional-held_out-high-3024",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 18.72629420348383,
+      "energy_j": 208.66138325224998,
+      "mean_latency_s": 2.801697594563552,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3024-latency-first",
+      "instance_id": "provisional-held_out-high-3024",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 12.69128537624131,
+      "energy_j": 207.39165589774996,
+      "mean_latency_s": 1.136115667411526,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3024-energy-first",
+      "instance_id": "provisional-held_out-high-3024",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 92.90965119999996,
+      "energy_j": 157.37831608499977,
+      "mean_latency_s": 77.02745418489927,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3024-balanced-equal",
+      "instance_id": "provisional-held_out-high-3024",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 12.5109864834967,
+      "energy_j": 199.03299967799992,
+      "mean_latency_s": 1.141022647561576,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3024-balanced-makespan",
+      "instance_id": "provisional-held_out-high-3024",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 12.514640325356968,
+      "energy_j": 199.98686439300002,
+      "mean_latency_s": 1.0638534616645143,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3024-balanced-energy",
+      "instance_id": "provisional-held_out-high-3024",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 13.4329952,
+      "energy_j": 193.41734385674994,
+      "mean_latency_s": 1.7862638724769877,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3024-dqn-fixed-8",
+      "instance_id": "provisional-held_out-high-3024",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 14.689818974588082,
+      "energy_j": 208.740871599,
+      "mean_latency_s": 2.068636280973016,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-high-3025-random-11",
+      "instance_id": "provisional-held_out-high-3025",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 17.027405865739865,
+      "energy_j": 213.32058380899994,
+      "mean_latency_s": 3.0730746491542464,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3025-latency-first",
+      "instance_id": "provisional-held_out-high-3025",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 11.119593900685357,
+      "energy_j": 205.31664614824993,
+      "mean_latency_s": 1.3722815431497402,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3025-energy-first",
+      "instance_id": "provisional-held_out-high-3025",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 88.852072,
+      "energy_j": 158.7655025874999,
+      "mean_latency_s": 75.95174484806782,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3025-balanced-equal",
+      "instance_id": "provisional-held_out-high-3025",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 10.893186152250003,
+      "energy_j": 198.8721803814999,
+      "mean_latency_s": 1.3666826974331265,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3025-balanced-makespan",
+      "instance_id": "provisional-held_out-high-3025",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 10.880213360974853,
+      "energy_j": 199.51762152499992,
+      "mean_latency_s": 1.3354008130130275,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3025-balanced-energy",
+      "instance_id": "provisional-held_out-high-3025",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 12.043777711000002,
+      "energy_j": 195.19129760874995,
+      "mean_latency_s": 1.889861456918819,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3025-dqn-fixed-8",
+      "instance_id": "provisional-held_out-high-3025",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 15.910833864866705,
+      "energy_j": 215.18763091924995,
+      "mean_latency_s": 2.705653860263226,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-high-3026-random-11",
+      "instance_id": "provisional-held_out-high-3026",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 18.76472024537632,
+      "energy_j": 213.24045993249996,
+      "mean_latency_s": 3.7953855308731925,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3026-latency-first",
+      "instance_id": "provisional-held_out-high-3026",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 10.84204977033601,
+      "energy_j": 207.21867494225006,
+      "mean_latency_s": 2.087545301520078,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3026-energy-first",
+      "instance_id": "provisional-held_out-high-3026",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 94.67355439999997,
+      "energy_j": 159.82471875874992,
+      "mean_latency_s": 82.12685668917007,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3026-balanced-equal",
+      "instance_id": "provisional-held_out-high-3026",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 10.968719736023553,
+      "energy_j": 204.89808374475007,
+      "mean_latency_s": 2.0830721977277515,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3026-balanced-makespan",
+      "instance_id": "provisional-held_out-high-3026",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 10.831378136023554,
+      "energy_j": 205.4089584625,
+      "mean_latency_s": 2.08021913546409,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3026-balanced-energy",
+      "instance_id": "provisional-held_out-high-3026",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 12.227331880237019,
+      "energy_j": 201.45127730425,
+      "mean_latency_s": 2.6088461521054196,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3026-dqn-fixed-8",
+      "instance_id": "provisional-held_out-high-3026",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 14.366601305169338,
+      "energy_j": 216.20253679550007,
+      "mean_latency_s": 3.6117777587853537,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-high-3027-random-11",
+      "instance_id": "provisional-held_out-high-3027",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 18.927088744232638,
+      "energy_j": 208.35252554974988,
+      "mean_latency_s": 2.9994910980948677,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3027-latency-first",
+      "instance_id": "provisional-held_out-high-3027",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 11.545125575152221,
+      "energy_j": 207.40317128975,
+      "mean_latency_s": 1.3826788087996156,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3027-energy-first",
+      "instance_id": "provisional-held_out-high-3027",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 89.3434856,
+      "energy_j": 158.14087137999982,
+      "mean_latency_s": 73.70302867481729,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3027-balanced-equal",
+      "instance_id": "provisional-held_out-high-3027",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 11.368518201395148,
+      "energy_j": 198.99746696374996,
+      "mean_latency_s": 1.292592381408646,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3027-balanced-makespan",
+      "instance_id": "provisional-held_out-high-3027",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 11.368518201395148,
+      "energy_j": 199.01865664274996,
+      "mean_latency_s": 1.2899947769358575,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3027-balanced-energy",
+      "instance_id": "provisional-held_out-high-3027",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 12.49386,
+      "energy_j": 196.37737975399992,
+      "mean_latency_s": 1.8585295239200046,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3027-dqn-fixed-8",
+      "instance_id": "provisional-held_out-high-3027",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 14.005921863076663,
+      "energy_j": 210.14571395200002,
+      "mean_latency_s": 2.239000885250662,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-high-3028-random-11",
+      "instance_id": "provisional-held_out-high-3028",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 15.480629439697772,
+      "energy_j": 203.57183323849992,
+      "mean_latency_s": 3.196162100440305,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3028-latency-first",
+      "instance_id": "provisional-held_out-high-3028",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 10.225323355090646,
+      "energy_j": 199.73963141149991,
+      "mean_latency_s": 1.9405111369252903,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3028-energy-first",
+      "instance_id": "provisional-held_out-high-3028",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 88.5885584,
+      "energy_j": 153.99611255999972,
+      "mean_latency_s": 77.36145821710628,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3028-balanced-equal",
+      "instance_id": "provisional-held_out-high-3028",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 9.995211621757315,
+      "energy_j": 197.86740272825,
+      "mean_latency_s": 1.7491873939460192,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3028-balanced-makespan",
+      "instance_id": "provisional-held_out-high-3028",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 10.407968811178135,
+      "energy_j": 198.15326512525002,
+      "mean_latency_s": 1.7821448922804417,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3028-balanced-energy",
+      "instance_id": "provisional-held_out-high-3028",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 10.9316824,
+      "energy_j": 193.85817235150003,
+      "mean_latency_s": 2.239361266264001,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3028-dqn-fixed-8",
+      "instance_id": "provisional-held_out-high-3028",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 15.651051509200903,
+      "energy_j": 211.40408337599993,
+      "mean_latency_s": 3.419360770192134,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-high-3029-random-11",
+      "instance_id": "provisional-held_out-high-3029",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 15.586144114205746,
+      "energy_j": 213.07374042874991,
+      "mean_latency_s": 2.490411632386763,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3029-latency-first",
+      "instance_id": "provisional-held_out-high-3029",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 11.954714177549885,
+      "energy_j": 210.53002168299997,
+      "mean_latency_s": 1.564947527978265,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3029-energy-first",
+      "instance_id": "provisional-held_out-high-3029",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 90.270368,
+      "energy_j": 161.6734636974997,
+      "mean_latency_s": 75.79447627824125,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3029-balanced-equal",
+      "instance_id": "provisional-held_out-high-3029",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 11.766195170023742,
+      "energy_j": 205.32236954425,
+      "mean_latency_s": 1.5747661146367256,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3029-balanced-makespan",
+      "instance_id": "provisional-held_out-high-3029",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 11.895743661707966,
+      "energy_j": 205.18361374250003,
+      "mean_latency_s": 1.5085890774407855,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3029-balanced-energy",
+      "instance_id": "provisional-held_out-high-3029",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 12.972323199999998,
+      "energy_j": 201.09680348799998,
+      "mean_latency_s": 2.2117040262726015,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3029-dqn-fixed-8",
+      "instance_id": "provisional-held_out-high-3029",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 16.00490667910075,
+      "energy_j": 213.91928479325003,
+      "mean_latency_s": 2.6250766661685714,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-high-3030-random-11",
+      "instance_id": "provisional-held_out-high-3030",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 17.355644684650127,
+      "energy_j": 212.27973816800005,
+      "mean_latency_s": 2.5750581212198234,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3030-latency-first",
+      "instance_id": "provisional-held_out-high-3030",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 11.723213687507137,
+      "energy_j": 210.89926021350016,
+      "mean_latency_s": 1.1218886656859206,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3030-energy-first",
+      "instance_id": "provisional-held_out-high-3030",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 86.787792,
+      "energy_j": 160.58227263999999,
+      "mean_latency_s": 73.71438139546737,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3030-balanced-equal",
+      "instance_id": "provisional-held_out-high-3030",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 11.751354149679168,
+      "energy_j": 204.4374207685,
+      "mean_latency_s": 1.2583257644868155,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3030-balanced-makespan",
+      "instance_id": "provisional-held_out-high-3030",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 11.853997770929167,
+      "energy_j": 202.83060414650004,
+      "mean_latency_s": 1.2644458930502518,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3030-balanced-energy",
+      "instance_id": "provisional-held_out-high-3030",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 13.216972135509522,
+      "energy_j": 197.59232261050005,
+      "mean_latency_s": 1.9138881009922297,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3030-dqn-fixed-8",
+      "instance_id": "provisional-held_out-high-3030",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 14.382606860797965,
+      "energy_j": 215.36657978350004,
+      "mean_latency_s": 1.988998146843636,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-high-3031-random-11",
+      "instance_id": "provisional-held_out-high-3031",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 17.68421839539609,
+      "energy_j": 212.545997424,
+      "mean_latency_s": 4.279055475377242,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3031-latency-first",
+      "instance_id": "provisional-held_out-high-3031",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 10.352675517236788,
+      "energy_j": 204.05903607375,
+      "mean_latency_s": 2.4945755728301817,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3031-energy-first",
+      "instance_id": "provisional-held_out-high-3031",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 88.95852400000008,
+      "energy_j": 158.45524886874995,
+      "mean_latency_s": 78.07221124755331,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3031-balanced-equal",
+      "instance_id": "provisional-held_out-high-3031",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 10.048621522833333,
+      "energy_j": 202.53317957825007,
+      "mean_latency_s": 2.0754547714681473,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3031-balanced-makespan",
+      "instance_id": "provisional-held_out-high-3031",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 10.048621522833333,
+      "energy_j": 202.53317957825007,
+      "mean_latency_s": 2.0754547714681473,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3031-balanced-energy",
+      "instance_id": "provisional-held_out-high-3031",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 11.134000000000002,
+      "energy_j": 200.53361583125002,
+      "mean_latency_s": 2.4331828785378073,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3031-dqn-fixed-8",
+      "instance_id": "provisional-held_out-high-3031",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 12.779321548619777,
+      "energy_j": 209.734945811,
+      "mean_latency_s": 3.7620111597792003,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-high-3032-random-11",
+      "instance_id": "provisional-held_out-high-3032",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 16.511280323011686,
+      "energy_j": 208.69075328325002,
+      "mean_latency_s": 3.62924144175447,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3032-latency-first",
+      "instance_id": "provisional-held_out-high-3032",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 10.131498432574913,
+      "energy_j": 204.75238799875007,
+      "mean_latency_s": 2.103527198979009,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3032-energy-first",
+      "instance_id": "provisional-held_out-high-3032",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 87.73659679999999,
+      "energy_j": 157.08088809624985,
+      "mean_latency_s": 76.72165510822364,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3032-balanced-equal",
+      "instance_id": "provisional-held_out-high-3032",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 10.046069095246128,
+      "energy_j": 201.99873196625003,
+      "mean_latency_s": 2.0113872270204936,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3032-balanced-makespan",
+      "instance_id": "provisional-held_out-high-3032",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 9.931841151246125,
+      "energy_j": 201.80916931199997,
+      "mean_latency_s": 1.857438801034991,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3032-balanced-energy",
+      "instance_id": "provisional-held_out-high-3032",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 11.337120112375,
+      "energy_j": 198.93341872,
+      "mean_latency_s": 2.153165631067518,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3032-dqn-fixed-8",
+      "instance_id": "provisional-held_out-high-3032",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 16.269546916790475,
+      "energy_j": 215.99903437624988,
+      "mean_latency_s": 3.4091791125425246,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-high-3033-random-11",
+      "instance_id": "provisional-held_out-high-3033",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 19.32633650758902,
+      "energy_j": 234.40293090900002,
+      "mean_latency_s": 3.2796085811714226,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3033-latency-first",
+      "instance_id": "provisional-held_out-high-3033",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 12.282772835931967,
+      "energy_j": 227.81486896925003,
+      "mean_latency_s": 1.7966038038029741,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3033-energy-first",
+      "instance_id": "provisional-held_out-high-3033",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 88.03479279999999,
+      "energy_j": 172.38300555749987,
+      "mean_latency_s": 75.12771059285856,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3033-balanced-equal",
+      "instance_id": "provisional-held_out-high-3033",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 12.368447355295679,
+      "energy_j": 220.09739724375007,
+      "mean_latency_s": 1.7511031225894946,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3033-balanced-makespan",
+      "instance_id": "provisional-held_out-high-3033",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 12.201059836420677,
+      "energy_j": 220.6835355782501,
+      "mean_latency_s": 1.6735084752344314,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3033-balanced-energy",
+      "instance_id": "provisional-held_out-high-3033",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 13.932594621835795,
+      "energy_j": 215.5543464765001,
+      "mean_latency_s": 2.4718052239385804,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3033-dqn-fixed-8",
+      "instance_id": "provisional-held_out-high-3033",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 17.12527434102116,
+      "energy_j": 234.40030972149995,
+      "mean_latency_s": 3.077708794328628,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-high-3034-random-11",
+      "instance_id": "provisional-held_out-high-3034",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 16.58970839549295,
+      "energy_j": 216.43698236499992,
+      "mean_latency_s": 2.462273056701542,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3034-latency-first",
+      "instance_id": "provisional-held_out-high-3034",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 12.491174999904537,
+      "energy_j": 213.8978989782499,
+      "mean_latency_s": 1.2284446619520237,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3034-energy-first",
+      "instance_id": "provisional-held_out-high-3034",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 90.93211760000003,
+      "energy_j": 162.52061565499963,
+      "mean_latency_s": 77.15481014998093,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3034-balanced-equal",
+      "instance_id": "provisional-held_out-high-3034",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 12.966781224434476,
+      "energy_j": 206.15544285149997,
+      "mean_latency_s": 1.2050046626630428,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3034-balanced-makespan",
+      "instance_id": "provisional-held_out-high-3034",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 12.956594601071203,
+      "energy_j": 206.7379131712499,
+      "mean_latency_s": 1.1960695214866526,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3034-balanced-energy",
+      "instance_id": "provisional-held_out-high-3034",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 14.227648,
+      "energy_j": 199.94813245824994,
+      "mean_latency_s": 1.7809521165592272,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3034-dqn-fixed-8",
+      "instance_id": "provisional-held_out-high-3034",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 14.895253781442472,
+      "energy_j": 216.5753410589999,
+      "mean_latency_s": 2.3353411680888465,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "run_id": "provisional-held_out-high-3035-random-11",
+      "instance_id": "provisional-held_out-high-3035",
+      "policy_config_id": "random",
+      "status": "complete",
+      "makespan_s": 16.67938740791183,
+      "energy_j": 209.34690990825013,
+      "mean_latency_s": 2.7345361896875917,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3035-latency-first",
+      "instance_id": "provisional-held_out-high-3035",
+      "policy_config_id": "latency-first",
+      "status": "complete",
+      "makespan_s": 11.515267633904378,
+      "energy_j": 203.74019872249997,
+      "mean_latency_s": 1.2200790463836875,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3035-energy-first",
+      "instance_id": "provisional-held_out-high-3035",
+      "policy_config_id": "energy-first",
+      "status": "complete",
+      "makespan_s": 83.96517279999998,
+      "energy_j": 155.02390162500006,
+      "mean_latency_s": 70.2372300268578,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3035-balanced-equal",
+      "instance_id": "provisional-held_out-high-3035",
+      "policy_config_id": "balanced-equal",
+      "status": "complete",
+      "makespan_s": 11.579466450145652,
+      "energy_j": 196.28581560325003,
+      "mean_latency_s": 1.2433363561784732,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3035-balanced-makespan",
+      "instance_id": "provisional-held_out-high-3035",
+      "policy_config_id": "balanced-makespan",
+      "status": "complete",
+      "makespan_s": 11.500513383478985,
+      "energy_j": 197.48648170500005,
+      "mean_latency_s": 1.2252741509389335,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3035-balanced-energy",
+      "instance_id": "provisional-held_out-high-3035",
+      "policy_config_id": "balanced-energy",
+      "status": "complete",
+      "makespan_s": 12.893218672999998,
+      "energy_j": 193.01630070675,
+      "mean_latency_s": 1.8233202680242075,
+      "checkpoint_id": null
+    },
+    {
+      "run_id": "provisional-held_out-high-3035-dqn-fixed-8",
+      "instance_id": "provisional-held_out-high-3035",
+      "policy_config_id": "dqn-fixed",
+      "status": "complete",
+      "makespan_s": 13.200300883676176,
+      "energy_j": 205.52224787225,
+      "mean_latency_s": 2.5408244786263814,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    }
+  ]
+}

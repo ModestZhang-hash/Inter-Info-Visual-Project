@@ -1,0 +1,645 @@
+{
+  "schema_version": "1.0.0",
+  "freeze_version": "1",
+  "checkpoint_id": "provisional-dqn-seed8-episode500",
+  "checkpoint_source": "artifacts/workloads/provisional/p8d_training/provisional-dqn-seed8-episode500-weights.json",
+  "retrained": false,
+  "weights_updated": false,
+  "simulator_version": "topic3-simulator-p2-1",
+  "runs_expected": 252,
+  "runs_complete": 252,
+  "failure_count": 0,
+  "instances": 36,
+  "same_task_list_for_each_instance": true,
+  "intensities": {
+    "low": [
+      3000,
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008,
+      3009,
+      3010,
+      3011
+    ],
+    "medium": [
+      3012,
+      3013,
+      3014,
+      3015,
+      3016,
+      3017,
+      3018,
+      3019,
+      3020,
+      3021,
+      3022,
+      3023
+    ],
+    "high": [
+      3024,
+      3025,
+      3026,
+      3027,
+      3028,
+      3029,
+      3030,
+      3031,
+      3032,
+      3033,
+      3034,
+      3035
+    ]
+  },
+  "configurations": [
+    "random",
+    "latency-first",
+    "energy-first",
+    "balanced-equal",
+    "balanced-makespan",
+    "balanced-energy",
+    "dqn-fixed"
+  ],
+  "instances_detail": [
+    {
+      "instance_id": "provisional-held_out-low-3000",
+      "intensity": "low",
+      "task_generation_seed": 3000,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-low-3000-random-11",
+        "provisional-held_out-low-3000-latency-first",
+        "provisional-held_out-low-3000-energy-first",
+        "provisional-held_out-low-3000-balanced-equal",
+        "provisional-held_out-low-3000-balanced-makespan",
+        "provisional-held_out-low-3000-balanced-energy",
+        "provisional-held_out-low-3000-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-low-3001",
+      "intensity": "low",
+      "task_generation_seed": 3001,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-low-3001-random-11",
+        "provisional-held_out-low-3001-latency-first",
+        "provisional-held_out-low-3001-energy-first",
+        "provisional-held_out-low-3001-balanced-equal",
+        "provisional-held_out-low-3001-balanced-makespan",
+        "provisional-held_out-low-3001-balanced-energy",
+        "provisional-held_out-low-3001-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-low-3002",
+      "intensity": "low",
+      "task_generation_seed": 3002,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-low-3002-random-11",
+        "provisional-held_out-low-3002-latency-first",
+        "provisional-held_out-low-3002-energy-first",
+        "provisional-held_out-low-3002-balanced-equal",
+        "provisional-held_out-low-3002-balanced-makespan",
+        "provisional-held_out-low-3002-balanced-energy",
+        "provisional-held_out-low-3002-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-low-3003",
+      "intensity": "low",
+      "task_generation_seed": 3003,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-low-3003-random-11",
+        "provisional-held_out-low-3003-latency-first",
+        "provisional-held_out-low-3003-energy-first",
+        "provisional-held_out-low-3003-balanced-equal",
+        "provisional-held_out-low-3003-balanced-makespan",
+        "provisional-held_out-low-3003-balanced-energy",
+        "provisional-held_out-low-3003-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-low-3004",
+      "intensity": "low",
+      "task_generation_seed": 3004,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-low-3004-random-11",
+        "provisional-held_out-low-3004-latency-first",
+        "provisional-held_out-low-3004-energy-first",
+        "provisional-held_out-low-3004-balanced-equal",
+        "provisional-held_out-low-3004-balanced-makespan",
+        "provisional-held_out-low-3004-balanced-energy",
+        "provisional-held_out-low-3004-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-low-3005",
+      "intensity": "low",
+      "task_generation_seed": 3005,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-low-3005-random-11",
+        "provisional-held_out-low-3005-latency-first",
+        "provisional-held_out-low-3005-energy-first",
+        "provisional-held_out-low-3005-balanced-equal",
+        "provisional-held_out-low-3005-balanced-makespan",
+        "provisional-held_out-low-3005-balanced-energy",
+        "provisional-held_out-low-3005-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-low-3006",
+      "intensity": "low",
+      "task_generation_seed": 3006,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-low-3006-random-11",
+        "provisional-held_out-low-3006-latency-first",
+        "provisional-held_out-low-3006-energy-first",
+        "provisional-held_out-low-3006-balanced-equal",
+        "provisional-held_out-low-3006-balanced-makespan",
+        "provisional-held_out-low-3006-balanced-energy",
+        "provisional-held_out-low-3006-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-low-3007",
+      "intensity": "low",
+      "task_generation_seed": 3007,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-low-3007-random-11",
+        "provisional-held_out-low-3007-latency-first",
+        "provisional-held_out-low-3007-energy-first",
+        "provisional-held_out-low-3007-balanced-equal",
+        "provisional-held_out-low-3007-balanced-makespan",
+        "provisional-held_out-low-3007-balanced-energy",
+        "provisional-held_out-low-3007-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-low-3008",
+      "intensity": "low",
+      "task_generation_seed": 3008,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-low-3008-random-11",
+        "provisional-held_out-low-3008-latency-first",
+        "provisional-held_out-low-3008-energy-first",
+        "provisional-held_out-low-3008-balanced-equal",
+        "provisional-held_out-low-3008-balanced-makespan",
+        "provisional-held_out-low-3008-balanced-energy",
+        "provisional-held_out-low-3008-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-low-3009",
+      "intensity": "low",
+      "task_generation_seed": 3009,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-low-3009-random-11",
+        "provisional-held_out-low-3009-latency-first",
+        "provisional-held_out-low-3009-energy-first",
+        "provisional-held_out-low-3009-balanced-equal",
+        "provisional-held_out-low-3009-balanced-makespan",
+        "provisional-held_out-low-3009-balanced-energy",
+        "provisional-held_out-low-3009-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-low-3010",
+      "intensity": "low",
+      "task_generation_seed": 3010,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-low-3010-random-11",
+        "provisional-held_out-low-3010-latency-first",
+        "provisional-held_out-low-3010-energy-first",
+        "provisional-held_out-low-3010-balanced-equal",
+        "provisional-held_out-low-3010-balanced-makespan",
+        "provisional-held_out-low-3010-balanced-energy",
+        "provisional-held_out-low-3010-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-low-3011",
+      "intensity": "low",
+      "task_generation_seed": 3011,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-low-3011-random-11",
+        "provisional-held_out-low-3011-latency-first",
+        "provisional-held_out-low-3011-energy-first",
+        "provisional-held_out-low-3011-balanced-equal",
+        "provisional-held_out-low-3011-balanced-makespan",
+        "provisional-held_out-low-3011-balanced-energy",
+        "provisional-held_out-low-3011-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3012",
+      "intensity": "medium",
+      "task_generation_seed": 3012,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-medium-3012-random-11",
+        "provisional-held_out-medium-3012-latency-first",
+        "provisional-held_out-medium-3012-energy-first",
+        "provisional-held_out-medium-3012-balanced-equal",
+        "provisional-held_out-medium-3012-balanced-makespan",
+        "provisional-held_out-medium-3012-balanced-energy",
+        "provisional-held_out-medium-3012-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3013",
+      "intensity": "medium",
+      "task_generation_seed": 3013,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-medium-3013-random-11",
+        "provisional-held_out-medium-3013-latency-first",
+        "provisional-held_out-medium-3013-energy-first",
+        "provisional-held_out-medium-3013-balanced-equal",
+        "provisional-held_out-medium-3013-balanced-makespan",
+        "provisional-held_out-medium-3013-balanced-energy",
+        "provisional-held_out-medium-3013-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3014",
+      "intensity": "medium",
+      "task_generation_seed": 3014,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-medium-3014-random-11",
+        "provisional-held_out-medium-3014-latency-first",
+        "provisional-held_out-medium-3014-energy-first",
+        "provisional-held_out-medium-3014-balanced-equal",
+        "provisional-held_out-medium-3014-balanced-makespan",
+        "provisional-held_out-medium-3014-balanced-energy",
+        "provisional-held_out-medium-3014-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3015",
+      "intensity": "medium",
+      "task_generation_seed": 3015,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-medium-3015-random-11",
+        "provisional-held_out-medium-3015-latency-first",
+        "provisional-held_out-medium-3015-energy-first",
+        "provisional-held_out-medium-3015-balanced-equal",
+        "provisional-held_out-medium-3015-balanced-makespan",
+        "provisional-held_out-medium-3015-balanced-energy",
+        "provisional-held_out-medium-3015-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3016",
+      "intensity": "medium",
+      "task_generation_seed": 3016,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-medium-3016-random-11",
+        "provisional-held_out-medium-3016-latency-first",
+        "provisional-held_out-medium-3016-energy-first",
+        "provisional-held_out-medium-3016-balanced-equal",
+        "provisional-held_out-medium-3016-balanced-makespan",
+        "provisional-held_out-medium-3016-balanced-energy",
+        "provisional-held_out-medium-3016-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3017",
+      "intensity": "medium",
+      "task_generation_seed": 3017,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-medium-3017-random-11",
+        "provisional-held_out-medium-3017-latency-first",
+        "provisional-held_out-medium-3017-energy-first",
+        "provisional-held_out-medium-3017-balanced-equal",
+        "provisional-held_out-medium-3017-balanced-makespan",
+        "provisional-held_out-medium-3017-balanced-energy",
+        "provisional-held_out-medium-3017-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3018",
+      "intensity": "medium",
+      "task_generation_seed": 3018,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-medium-3018-random-11",
+        "provisional-held_out-medium-3018-latency-first",
+        "provisional-held_out-medium-3018-energy-first",
+        "provisional-held_out-medium-3018-balanced-equal",
+        "provisional-held_out-medium-3018-balanced-makespan",
+        "provisional-held_out-medium-3018-balanced-energy",
+        "provisional-held_out-medium-3018-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3019",
+      "intensity": "medium",
+      "task_generation_seed": 3019,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-medium-3019-random-11",
+        "provisional-held_out-medium-3019-latency-first",
+        "provisional-held_out-medium-3019-energy-first",
+        "provisional-held_out-medium-3019-balanced-equal",
+        "provisional-held_out-medium-3019-balanced-makespan",
+        "provisional-held_out-medium-3019-balanced-energy",
+        "provisional-held_out-medium-3019-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3020",
+      "intensity": "medium",
+      "task_generation_seed": 3020,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-medium-3020-random-11",
+        "provisional-held_out-medium-3020-latency-first",
+        "provisional-held_out-medium-3020-energy-first",
+        "provisional-held_out-medium-3020-balanced-equal",
+        "provisional-held_out-medium-3020-balanced-makespan",
+        "provisional-held_out-medium-3020-balanced-energy",
+        "provisional-held_out-medium-3020-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3021",
+      "intensity": "medium",
+      "task_generation_seed": 3021,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-medium-3021-random-11",
+        "provisional-held_out-medium-3021-latency-first",
+        "provisional-held_out-medium-3021-energy-first",
+        "provisional-held_out-medium-3021-balanced-equal",
+        "provisional-held_out-medium-3021-balanced-makespan",
+        "provisional-held_out-medium-3021-balanced-energy",
+        "provisional-held_out-medium-3021-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3022",
+      "intensity": "medium",
+      "task_generation_seed": 3022,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-medium-3022-random-11",
+        "provisional-held_out-medium-3022-latency-first",
+        "provisional-held_out-medium-3022-energy-first",
+        "provisional-held_out-medium-3022-balanced-equal",
+        "provisional-held_out-medium-3022-balanced-makespan",
+        "provisional-held_out-medium-3022-balanced-energy",
+        "provisional-held_out-medium-3022-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3023",
+      "intensity": "medium",
+      "task_generation_seed": 3023,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-medium-3023-random-11",
+        "provisional-held_out-medium-3023-latency-first",
+        "provisional-held_out-medium-3023-energy-first",
+        "provisional-held_out-medium-3023-balanced-equal",
+        "provisional-held_out-medium-3023-balanced-makespan",
+        "provisional-held_out-medium-3023-balanced-energy",
+        "provisional-held_out-medium-3023-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-high-3024",
+      "intensity": "high",
+      "task_generation_seed": 3024,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-high-3024-random-11",
+        "provisional-held_out-high-3024-latency-first",
+        "provisional-held_out-high-3024-energy-first",
+        "provisional-held_out-high-3024-balanced-equal",
+        "provisional-held_out-high-3024-balanced-makespan",
+        "provisional-held_out-high-3024-balanced-energy",
+        "provisional-held_out-high-3024-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-high-3025",
+      "intensity": "high",
+      "task_generation_seed": 3025,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-high-3025-random-11",
+        "provisional-held_out-high-3025-latency-first",
+        "provisional-held_out-high-3025-energy-first",
+        "provisional-held_out-high-3025-balanced-equal",
+        "provisional-held_out-high-3025-balanced-makespan",
+        "provisional-held_out-high-3025-balanced-energy",
+        "provisional-held_out-high-3025-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-high-3026",
+      "intensity": "high",
+      "task_generation_seed": 3026,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-high-3026-random-11",
+        "provisional-held_out-high-3026-latency-first",
+        "provisional-held_out-high-3026-energy-first",
+        "provisional-held_out-high-3026-balanced-equal",
+        "provisional-held_out-high-3026-balanced-makespan",
+        "provisional-held_out-high-3026-balanced-energy",
+        "provisional-held_out-high-3026-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-high-3027",
+      "intensity": "high",
+      "task_generation_seed": 3027,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-high-3027-random-11",
+        "provisional-held_out-high-3027-latency-first",
+        "provisional-held_out-high-3027-energy-first",
+        "provisional-held_out-high-3027-balanced-equal",
+        "provisional-held_out-high-3027-balanced-makespan",
+        "provisional-held_out-high-3027-balanced-energy",
+        "provisional-held_out-high-3027-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-high-3028",
+      "intensity": "high",
+      "task_generation_seed": 3028,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-high-3028-random-11",
+        "provisional-held_out-high-3028-latency-first",
+        "provisional-held_out-high-3028-energy-first",
+        "provisional-held_out-high-3028-balanced-equal",
+        "provisional-held_out-high-3028-balanced-makespan",
+        "provisional-held_out-high-3028-balanced-energy",
+        "provisional-held_out-high-3028-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-high-3029",
+      "intensity": "high",
+      "task_generation_seed": 3029,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-high-3029-random-11",
+        "provisional-held_out-high-3029-latency-first",
+        "provisional-held_out-high-3029-energy-first",
+        "provisional-held_out-high-3029-balanced-equal",
+        "provisional-held_out-high-3029-balanced-makespan",
+        "provisional-held_out-high-3029-balanced-energy",
+        "provisional-held_out-high-3029-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-high-3030",
+      "intensity": "high",
+      "task_generation_seed": 3030,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-high-3030-random-11",
+        "provisional-held_out-high-3030-latency-first",
+        "provisional-held_out-high-3030-energy-first",
+        "provisional-held_out-high-3030-balanced-equal",
+        "provisional-held_out-high-3030-balanced-makespan",
+        "provisional-held_out-high-3030-balanced-energy",
+        "provisional-held_out-high-3030-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-high-3031",
+      "intensity": "high",
+      "task_generation_seed": 3031,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-high-3031-random-11",
+        "provisional-held_out-high-3031-latency-first",
+        "provisional-held_out-high-3031-energy-first",
+        "provisional-held_out-high-3031-balanced-equal",
+        "provisional-held_out-high-3031-balanced-makespan",
+        "provisional-held_out-high-3031-balanced-energy",
+        "provisional-held_out-high-3031-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-high-3032",
+      "intensity": "high",
+      "task_generation_seed": 3032,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-high-3032-random-11",
+        "provisional-held_out-high-3032-latency-first",
+        "provisional-held_out-high-3032-energy-first",
+        "provisional-held_out-high-3032-balanced-equal",
+        "provisional-held_out-high-3032-balanced-makespan",
+        "provisional-held_out-high-3032-balanced-energy",
+        "provisional-held_out-high-3032-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-high-3033",
+      "intensity": "high",
+      "task_generation_seed": 3033,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-high-3033-random-11",
+        "provisional-held_out-high-3033-latency-first",
+        "provisional-held_out-high-3033-energy-first",
+        "provisional-held_out-high-3033-balanced-equal",
+        "provisional-held_out-high-3033-balanced-makespan",
+        "provisional-held_out-high-3033-balanced-energy",
+        "provisional-held_out-high-3033-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-high-3034",
+      "intensity": "high",
+      "task_generation_seed": 3034,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-high-3034-random-11",
+        "provisional-held_out-high-3034-latency-first",
+        "provisional-held_out-high-3034-energy-first",
+        "provisional-held_out-high-3034-balanced-equal",
+        "provisional-held_out-high-3034-balanced-makespan",
+        "provisional-held_out-high-3034-balanced-energy",
+        "provisional-held_out-high-3034-dqn-fixed-8"
+      ]
+    },
+    {
+      "instance_id": "provisional-held_out-high-3035",
+      "intensity": "high",
+      "task_generation_seed": 3035,
+      "task_count": 80,
+      "same_task_list": true,
+      "run_ids": [
+        "provisional-held_out-high-3035-random-11",
+        "provisional-held_out-high-3035-latency-first",
+        "provisional-held_out-high-3035-energy-first",
+        "provisional-held_out-high-3035-balanced-equal",
+        "provisional-held_out-high-3035-balanced-makespan",
+        "provisional-held_out-high-3035-balanced-energy",
+        "provisional-held_out-high-3035-dqn-fixed-8"
+      ]
+    }
+  ]
+}

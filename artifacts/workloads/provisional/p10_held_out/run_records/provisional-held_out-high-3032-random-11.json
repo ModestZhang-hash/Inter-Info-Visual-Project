@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "provisional-held_out-high-3032-random-11",
+  "instance_id": "provisional-held_out-high-3032",
+  "manifest_id": "provisional-workload-held_out-v1",
+  "policy_config_id": "random",
+  "policy_seed": 11,
+  "simulator_version": "topic3-simulator-p2-1",
+  "dqn_checkpoint_id": null,
+  "record_origin": "simulation",
+  "status": "complete",
+  "failure_reason": null,
+  "task_count": 80,
+  "makespan_s": 16.511280323011686,
+  "energy_j": 208.69075328325002,
+  "mean_latency_s": 3.62924144175447,
+  "event_log_path": "events/provisional-held_out-high-3032-random-11.jsonl",
+  "metrics_source": "topic3.metrics.recompute_objectives"
+}

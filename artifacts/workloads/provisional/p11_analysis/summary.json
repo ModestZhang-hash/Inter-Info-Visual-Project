@@ -1,0 +1,4677 @@
+{
+  "schema_version": "1.0.0",
+  "source": "artifacts/workloads/provisional/p10_held_out",
+  "failure_count": 0,
+  "bootstrap_intervals": false,
+  "pooled_pareto": false,
+  "paired_differences": [
+    {
+      "instance_id": "provisional-held_out-low-3000",
+      "intensity": "low",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-low-3000-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3000-random-11",
+      "makespan_s": -0.7795035933750043,
+      "energy_j": -0.5542934752500059,
+      "mean_latency_s": 0.1692691596205107
+    },
+    {
+      "instance_id": "provisional-held_out-low-3000",
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-low-3000-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3000-latency-first",
+      "makespan_s": 0.0,
+      "energy_j": -10.20320827300003,
+      "mean_latency_s": 0.5043255697248389
+    },
+    {
+      "instance_id": "provisional-held_out-low-3000",
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-low-3000-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3000-energy-first",
+      "makespan_s": -54.73316816498438,
+      "energy_j": 50.29011047900002,
+      "mean_latency_s": -53.79758979469277
+    },
+    {
+      "instance_id": "provisional-held_out-low-3000",
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-low-3000-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3000-balanced-equal",
+      "makespan_s": -0.14793866225000585,
+      "energy_j": 18.83322905099996,
+      "mean_latency_s": 0.3931307599143603
+    },
+    {
+      "instance_id": "provisional-held_out-low-3000",
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-low-3000-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3000-balanced-makespan",
+      "makespan_s": -0.14793866225000585,
+      "energy_j": 18.236778396249974,
+      "mean_latency_s": 0.4098937754639248
+    },
+    {
+      "instance_id": "provisional-held_out-low-3000",
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-low-3000-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3000-balanced-energy",
+      "makespan_s": -0.14793866225000585,
+      "energy_j": 30.41386341924988,
+      "mean_latency_s": -0.06847732630807424
+    },
+    {
+      "instance_id": "provisional-held_out-low-3001",
+      "intensity": "low",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-low-3001-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3001-random-11",
+      "makespan_s": 0.22554067840830072,
+      "energy_j": 6.380711062749896,
+      "mean_latency_s": 0.08078724899973744
+    },
+    {
+      "instance_id": "provisional-held_out-low-3001",
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-low-3001-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3001-latency-first",
+      "makespan_s": 0.6544865529083097,
+      "energy_j": -6.714203878000006,
+      "mean_latency_s": 0.4682305994471817
+    },
+    {
+      "instance_id": "provisional-held_out-low-3001",
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-low-3001-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3001-energy-first",
+      "makespan_s": -53.70424049772271,
+      "energy_j": 51.717093309499944,
+      "mean_latency_s": -49.31630195776423
+    },
+    {
+      "instance_id": "provisional-held_out-low-3001",
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-low-3001-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3001-balanced-equal",
+      "makespan_s": 0.22554067840830072,
+      "energy_j": 21.02343119174995,
+      "mean_latency_s": 0.37035893230716077
+    },
+    {
+      "instance_id": "provisional-held_out-low-3001",
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-low-3001-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3001-balanced-makespan",
+      "makespan_s": 0.22554067840830072,
+      "energy_j": 17.677973825749888,
+      "mean_latency_s": 0.38930748330332887
+    },
+    {
+      "instance_id": "provisional-held_out-low-3001",
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-low-3001-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3001-balanced-energy",
+      "makespan_s": 0.12346213231621306,
+      "energy_j": 32.89264986099988,
+      "mean_latency_s": -0.06669762492245157
+    },
+    {
+      "instance_id": "provisional-held_out-low-3002",
+      "intensity": "low",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-low-3002-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3002-random-11",
+      "makespan_s": 0.2644935345707431,
+      "energy_j": -1.778449907500061,
+      "mean_latency_s": 0.15963945012654057
+    },
+    {
+      "instance_id": "provisional-held_out-low-3002",
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-low-3002-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3002-latency-first",
+      "makespan_s": 0.8568595855719963,
+      "energy_j": -6.530305512000098,
+      "mean_latency_s": 0.5258688833367094
+    },
+    {
+      "instance_id": "provisional-held_out-low-3002",
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-low-3002-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3002-energy-first",
+      "makespan_s": -63.32365109704227,
+      "energy_j": 43.605682019750134,
+      "mean_latency_s": -62.09437258407892
+    },
+    {
+      "instance_id": "provisional-held_out-low-3002",
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-low-3002-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3002-balanced-equal",
+      "makespan_s": 0.604806979822353,
+      "energy_j": 9.520917015499862,
+      "mean_latency_s": 0.4797408120150184
+    },
+    {
+      "instance_id": "provisional-held_out-low-3002",
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-low-3002-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3002-balanced-makespan",
+      "makespan_s": 0.604806979822353,
+      "energy_j": 7.817028771749875,
+      "mean_latency_s": 0.5139181646023905
+    },
+    {
+      "instance_id": "provisional-held_out-low-3002",
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-low-3002-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3002-balanced-energy",
+      "makespan_s": 0.3869915586556907,
+      "energy_j": 22.869300016499892,
+      "mean_latency_s": 0.04863774997173986
+    },
+    {
+      "instance_id": "provisional-held_out-low-3003",
+      "intensity": "low",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-low-3003-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3003-random-11",
+      "makespan_s": 0.1506727033054247,
+      "energy_j": 1.1095991472501225,
+      "mean_latency_s": 0.15829605855534834
+    },
+    {
+      "instance_id": "provisional-held_out-low-3003",
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-low-3003-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3003-latency-first",
+      "makespan_s": 1.0811291368054228,
+      "energy_j": -6.314424382999988,
+      "mean_latency_s": 0.4878374966812351
+    },
+    {
+      "instance_id": "provisional-held_out-low-3003",
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-low-3003-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3003-energy-first",
+      "makespan_s": -52.14510207778926,
+      "energy_j": 53.21716113675001,
+      "mean_latency_s": -49.809354858228666
+    },
+    {
+      "instance_id": "provisional-held_out-low-3003",
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-low-3003-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3003-balanced-equal",
+      "makespan_s": 0.9457996606666796,
+      "energy_j": 19.93059809975,
+      "mean_latency_s": 0.35928932160034444
+    },
+    {
+      "instance_id": "provisional-held_out-low-3003",
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-low-3003-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3003-balanced-makespan",
+      "makespan_s": 0.9560576478054301,
+      "energy_j": 18.026998369250094,
+      "mean_latency_s": 0.38264255706698735
+    },
+    {
+      "instance_id": "provisional-held_out-low-3003",
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-low-3003-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3003-balanced-energy",
+      "makespan_s": 0.2409415589731836,
+      "energy_j": 31.506163828250067,
+      "mean_latency_s": -0.1725150377009359
+    },
+    {
+      "instance_id": "provisional-held_out-low-3004",
+      "intensity": "low",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-low-3004-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3004-random-11",
+      "makespan_s": -0.6924011322916641,
+      "energy_j": -6.485608019999859,
+      "mean_latency_s": 0.1678678748281015
+    },
+    {
+      "instance_id": "provisional-held_out-low-3004",
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-low-3004-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3004-latency-first",
+      "makespan_s": 0.2282553058333363,
+      "energy_j": -9.364201627749736,
+      "mean_latency_s": 0.563141889423616
+    },
+    {
+      "instance_id": "provisional-held_out-low-3004",
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-low-3004-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3004-energy-first",
+      "makespan_s": -53.47944557872784,
+      "energy_j": 42.403872349249866,
+      "mean_latency_s": -52.07811623935326
+    },
+    {
+      "instance_id": "provisional-held_out-low-3004",
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-low-3004-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3004-balanced-equal",
+      "makespan_s": 0.15726034708333714,
+      "energy_j": 10.456318398250119,
+      "mean_latency_s": 0.5115339602860812
+    },
+    {
+      "instance_id": "provisional-held_out-low-3004",
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-low-3004-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3004-balanced-makespan",
+      "makespan_s": 0.15726034708333714,
+      "energy_j": 9.22145679825016,
+      "mean_latency_s": 0.5182798473839
+    },
+    {
+      "instance_id": "provisional-held_out-low-3004",
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-low-3004-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3004-balanced-energy",
+      "makespan_s": -0.86143054761596,
+      "energy_j": 24.625060475750132,
+      "mean_latency_s": 0.03464731531843812
+    },
+    {
+      "instance_id": "provisional-held_out-low-3005",
+      "intensity": "low",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-low-3005-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3005-random-11",
+      "makespan_s": -0.052119774713141,
+      "energy_j": 1.4167672577499957,
+      "mean_latency_s": 0.05021526518932662
+    },
+    {
+      "instance_id": "provisional-held_out-low-3005",
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-low-3005-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3005-latency-first",
+      "makespan_s": 0.6327675994118565,
+      "energy_j": -5.757475485250126,
+      "mean_latency_s": 0.5059682770780407
+    },
+    {
+      "instance_id": "provisional-held_out-low-3005",
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-low-3005-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3005-energy-first",
+      "makespan_s": -55.75959394682938,
+      "energy_j": 48.999003485250114,
+      "mean_latency_s": -53.47524101763281
+    },
+    {
+      "instance_id": "provisional-held_out-low-3005",
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-low-3005-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3005-balanced-equal",
+      "makespan_s": 0.49529041666185947,
+      "energy_j": 18.729951648249966,
+      "mean_latency_s": 0.4318064949136029
+    },
+    {
+      "instance_id": "provisional-held_out-low-3005",
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-low-3005-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3005-balanced-makespan",
+      "makespan_s": 0.49529041666185947,
+      "energy_j": 17.296402933499962,
+      "mean_latency_s": 0.45128424701388603
+    },
+    {
+      "instance_id": "provisional-held_out-low-3005",
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-low-3005-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3005-balanced-energy",
+      "makespan_s": 0.1706305543690334,
+      "energy_j": 31.56119339200012,
+      "mean_latency_s": -0.01291285658885033
+    },
+    {
+      "instance_id": "provisional-held_out-low-3006",
+      "intensity": "low",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-low-3006-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3006-random-11",
+      "makespan_s": -0.49434504350289643,
+      "energy_j": 4.174529941749967,
+      "mean_latency_s": 0.03949356826613781
+    },
+    {
+      "instance_id": "provisional-held_out-low-3006",
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-low-3006-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3006-latency-first",
+      "makespan_s": 0.14129741916666916,
+      "energy_j": -0.3874441150000507,
+      "mean_latency_s": 0.4249165652687472
+    },
+    {
+      "instance_id": "provisional-held_out-low-3006",
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-low-3006-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3006-energy-first",
+      "makespan_s": -50.45355487184226,
+      "energy_j": 50.744364282000134,
+      "mean_latency_s": -48.50727367717815
+    },
+    {
+      "instance_id": "provisional-held_out-low-3006",
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-low-3006-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3006-balanced-equal",
+      "makespan_s": 0.023567630619723445,
+      "energy_j": 19.86322462975005,
+      "mean_latency_s": 0.29336939474711854
+    },
+    {
+      "instance_id": "provisional-held_out-low-3006",
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-low-3006-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3006-balanced-makespan",
+      "makespan_s": 0.023567630619723445,
+      "energy_j": 19.289458783750035,
+      "mean_latency_s": 0.29610664085041793
+    },
+    {
+      "instance_id": "provisional-held_out-low-3006",
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-low-3006-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3006-balanced-energy",
+      "makespan_s": -0.08745142221670932,
+      "energy_j": 33.59272129674997,
+      "mean_latency_s": -0.1511146934299754
+    },
+    {
+      "instance_id": "provisional-held_out-low-3007",
+      "intensity": "low",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-low-3007-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3007-random-11",
+      "makespan_s": 0.5177909634545017,
+      "energy_j": 1.7773004307499605,
+      "mean_latency_s": 0.052661766804206644
+    },
+    {
+      "instance_id": "provisional-held_out-low-3007",
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-low-3007-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3007-latency-first",
+      "makespan_s": 0.8401642028972489,
+      "energy_j": -5.514315904500052,
+      "mean_latency_s": 0.5218315984785162
+    },
+    {
+      "instance_id": "provisional-held_out-low-3007",
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-low-3007-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3007-energy-first",
+      "makespan_s": -57.04535616310396,
+      "energy_j": 50.88577795575017,
+      "mean_latency_s": -53.17262677588772
+    },
+    {
+      "instance_id": "provisional-held_out-low-3007",
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-low-3007-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3007-balanced-equal",
+      "makespan_s": 0.6817598247722465,
+      "energy_j": 15.92455446574985,
+      "mean_latency_s": 0.40088841523817276
+    },
+    {
+      "instance_id": "provisional-held_out-low-3007",
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-low-3007-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3007-balanced-makespan",
+      "makespan_s": 0.6817598247722465,
+      "energy_j": 14.557114385249918,
+      "mean_latency_s": 0.4286427252599303
+    },
+    {
+      "instance_id": "provisional-held_out-low-3007",
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-low-3007-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3007-balanced-energy",
+      "makespan_s": -0.48776691444948383,
+      "energy_j": 29.61658580650004,
+      "mean_latency_s": -0.18042619690490436
+    },
+    {
+      "instance_id": "provisional-held_out-low-3008",
+      "intensity": "low",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-low-3008-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3008-random-11",
+      "makespan_s": -0.33057095475000153,
+      "energy_j": -0.26589978549978355,
+      "mean_latency_s": 0.32692187529540884
+    },
+    {
+      "instance_id": "provisional-held_out-low-3008",
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-low-3008-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3008-latency-first",
+      "makespan_s": 0.12788176349999247,
+      "energy_j": -5.6758241607498405,
+      "mean_latency_s": 0.7196952855858857
+    },
+    {
+      "instance_id": "provisional-held_out-low-3008",
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-low-3008-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3008-energy-first",
+      "makespan_s": -48.122678868653175,
+      "energy_j": 53.22872375299991,
+      "mean_latency_s": -45.19330570087944
+    },
+    {
+      "instance_id": "provisional-held_out-low-3008",
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-low-3008-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3008-balanced-equal",
+      "makespan_s": -0.33057095475000153,
+      "energy_j": 20.995767229750157,
+      "mean_latency_s": 0.5684865602800631
+    },
+    {
+      "instance_id": "provisional-held_out-low-3008",
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-low-3008-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3008-balanced-makespan",
+      "makespan_s": 0.12788176349999247,
+      "energy_j": 17.65706249900009,
+      "mean_latency_s": 0.6111787461173604
+    },
+    {
+      "instance_id": "provisional-held_out-low-3008",
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-low-3008-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3008-balanced-energy",
+      "makespan_s": -0.33057095475000153,
+      "energy_j": 32.94136777600011,
+      "mean_latency_s": 0.09591370342203764
+    },
+    {
+      "instance_id": "provisional-held_out-low-3009",
+      "intensity": "low",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-low-3009-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3009-random-11",
+      "makespan_s": 0.015656351915730227,
+      "energy_j": -1.9148225332500317,
+      "mean_latency_s": 0.20547415084111287
+    },
+    {
+      "instance_id": "provisional-held_out-low-3009",
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-low-3009-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3009-latency-first",
+      "makespan_s": 0.41459959804073065,
+      "energy_j": -6.356722176249889,
+      "mean_latency_s": 0.5392422926018077
+    },
+    {
+      "instance_id": "provisional-held_out-low-3009",
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-low-3009-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3009-energy-first",
+      "makespan_s": -51.099040788478895,
+      "energy_j": 54.536319585250254,
+      "mean_latency_s": -48.24335133085002
+    },
+    {
+      "instance_id": "provisional-held_out-low-3009",
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-low-3009-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3009-balanced-equal",
+      "makespan_s": 0.27584826574999965,
+      "energy_j": 21.897153500749994,
+      "mean_latency_s": 0.42383454206550764
+    },
+    {
+      "instance_id": "provisional-held_out-low-3009",
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-low-3009-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3009-balanced-makespan",
+      "makespan_s": 0.27584826574999965,
+      "energy_j": 20.922691303749986,
+      "mean_latency_s": 0.44313564167991226
+    },
+    {
+      "instance_id": "provisional-held_out-low-3009",
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-low-3009-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3009-balanced-energy",
+      "makespan_s": -0.1919548622725742,
+      "energy_j": 33.51469803674999,
+      "mean_latency_s": -0.12380879670533185
+    },
+    {
+      "instance_id": "provisional-held_out-low-3010",
+      "intensity": "low",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-low-3010-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3010-random-11",
+      "makespan_s": 0.5153291439923642,
+      "energy_j": -1.40472323474998,
+      "mean_latency_s": 0.17819225787502324
+    },
+    {
+      "instance_id": "provisional-held_out-low-3010",
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-low-3010-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3010-latency-first",
+      "makespan_s": 1.0844528379506997,
+      "energy_j": -6.160266541000055,
+      "mean_latency_s": 0.775685028637702
+    },
+    {
+      "instance_id": "provisional-held_out-low-3010",
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-low-3010-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3010-energy-first",
+      "makespan_s": -57.02608230972696,
+      "energy_j": 52.8904302389999,
+      "mean_latency_s": -55.02025912138857
+    },
+    {
+      "instance_id": "provisional-held_out-low-3010",
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-low-3010-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3010-balanced-equal",
+      "makespan_s": 1.1619567532525181,
+      "energy_j": 20.46826314300003,
+      "mean_latency_s": 0.5681560743484678
+    },
+    {
+      "instance_id": "provisional-held_out-low-3010",
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-low-3010-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3010-balanced-makespan",
+      "makespan_s": 1.1619567532525181,
+      "energy_j": 17.585966264250033,
+      "mean_latency_s": 0.6341916823553615
+    },
+    {
+      "instance_id": "provisional-held_out-low-3010",
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-low-3010-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3010-balanced-energy",
+      "makespan_s": 0.9886180736144219,
+      "energy_j": 29.89957897775008,
+      "mean_latency_s": 0.10738793118216261
+    },
+    {
+      "instance_id": "provisional-held_out-low-3011",
+      "intensity": "low",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-low-3011-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3011-random-11",
+      "makespan_s": -0.28313309167354106,
+      "energy_j": 0.9326771730000871,
+      "mean_latency_s": 0.10254439614136057
+    },
+    {
+      "instance_id": "provisional-held_out-low-3011",
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-low-3011-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3011-latency-first",
+      "makespan_s": 0.29100100145145547,
+      "energy_j": -6.713710118000137,
+      "mean_latency_s": 0.5145814134997695
+    },
+    {
+      "instance_id": "provisional-held_out-low-3011",
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-low-3011-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3011-energy-first",
+      "makespan_s": -48.02819309220683,
+      "energy_j": 46.97328962375019,
+      "mean_latency_s": -45.60783347280856
+    },
+    {
+      "instance_id": "provisional-held_out-low-3011",
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-low-3011-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3011-balanced-equal",
+      "makespan_s": 0.22103867486097073,
+      "energy_j": 19.959652820000116,
+      "mean_latency_s": 0.36451660888884974
+    },
+    {
+      "instance_id": "provisional-held_out-low-3011",
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-low-3011-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3011-balanced-makespan",
+      "makespan_s": 0.22103867486097073,
+      "energy_j": 17.057057818250115,
+      "mean_latency_s": 0.40318465578459717
+    },
+    {
+      "instance_id": "provisional-held_out-low-3011",
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-low-3011-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-low-3011-balanced-energy",
+      "makespan_s": -0.29115663012989756,
+      "energy_j": 30.736313322749936,
+      "mean_latency_s": -0.09418710506040995
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3012",
+      "intensity": "medium",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-medium-3012-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3012-random-11",
+      "makespan_s": -2.7947745402386275,
+      "energy_j": -6.766974068499934,
+      "mean_latency_s": -0.7402061650700926
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3012",
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-medium-3012-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3012-latency-first",
+      "makespan_s": 0.9572277010964143,
+      "energy_j": -7.366429696249952,
+      "mean_latency_s": 0.5218872235468551
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3012",
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-medium-3012-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3012-energy-first",
+      "makespan_s": -66.5156983440054,
+      "energy_j": 47.944226318000176,
+      "mean_latency_s": -61.4861677852727
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3012",
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-medium-3012-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3012-balanced-equal",
+      "makespan_s": 0.8525091231666657,
+      "energy_j": 9.1161889065001,
+      "mean_latency_s": 0.43928248166631845
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3012",
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-medium-3012-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3012-balanced-makespan",
+      "makespan_s": 0.8556491231666676,
+      "energy_j": 8.070331708000083,
+      "mean_latency_s": 0.4608734549019271
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3012",
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-medium-3012-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3012-balanced-energy",
+      "makespan_s": 0.5666842392888256,
+      "energy_j": 19.019999641250024,
+      "mean_latency_s": -0.2289433803826837
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3013",
+      "intensity": "medium",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-medium-3013-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3013-random-11",
+      "makespan_s": -2.6711614459640103,
+      "energy_j": -7.100811265000118,
+      "mean_latency_s": -0.4258824634194911
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3013",
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-medium-3013-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3013-latency-first",
+      "makespan_s": 0.654672928710804,
+      "energy_j": -5.871639084000066,
+      "mean_latency_s": 0.8591976103581522
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3013",
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-medium-3013-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3013-energy-first",
+      "makespan_s": -71.58899188120361,
+      "energy_j": 48.1965719302498,
+      "mean_latency_s": -69.14846363974473
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3013",
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-medium-3013-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3013-balanced-equal",
+      "makespan_s": 0.6958126295565883,
+      "energy_j": 10.89238675074995,
+      "mean_latency_s": 0.759446440364868
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3013",
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-medium-3013-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3013-balanced-makespan",
+      "makespan_s": 0.6958126295565883,
+      "energy_j": 11.025385829999948,
+      "mean_latency_s": 0.7751221586414165
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3013",
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-medium-3013-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3013-balanced-energy",
+      "makespan_s": 0.20094823405692708,
+      "energy_j": 16.82130717999999,
+      "mean_latency_s": 0.05887651010718642
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3014",
+      "intensity": "medium",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-medium-3014-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3014-random-11",
+      "makespan_s": 0.15556074860387525,
+      "energy_j": -9.25612560224991,
+      "mean_latency_s": 0.08642089814246989
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3014",
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-medium-3014-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3014-latency-first",
+      "makespan_s": 1.6678004977870593,
+      "energy_j": -3.571797349500116,
+      "mean_latency_s": 0.6788334136038064
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3014",
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-medium-3014-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3014-energy-first",
+      "makespan_s": -65.7292408583399,
+      "energy_j": 45.552038832249934,
+      "mean_latency_s": -63.6286423670876
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3014",
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-medium-3014-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3014-balanced-equal",
+      "makespan_s": 1.6583113282864979,
+      "energy_j": 9.429281028749955,
+      "mean_latency_s": 0.5294459454985434
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3014",
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-medium-3014-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3014-balanced-makespan",
+      "makespan_s": 1.6583113282864979,
+      "energy_j": 8.737386794249943,
+      "mean_latency_s": 0.6169744123567985
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3014",
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-medium-3014-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3014-balanced-energy",
+      "makespan_s": 0.049312451167185856,
+      "energy_j": 17.4451860879999,
+      "mean_latency_s": 0.01613935055716098
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3015",
+      "intensity": "medium",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-medium-3015-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3015-random-11",
+      "makespan_s": -0.45036854455402064,
+      "energy_j": -0.6466582057499579,
+      "mean_latency_s": 0.03740096094926648
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3015",
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-medium-3015-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3015-latency-first",
+      "makespan_s": 0.07957001527151064,
+      "energy_j": -4.077299358499971,
+      "mean_latency_s": 0.7984926794236424
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3015",
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-medium-3015-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3015-energy-first",
+      "makespan_s": -71.80115067719876,
+      "energy_j": 48.52380722550046,
+      "mean_latency_s": -69.27920459955347
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3015",
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-medium-3015-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3015-balanced-equal",
+      "makespan_s": 0.04860042037953605,
+      "energy_j": 13.468761827000066,
+      "mean_latency_s": 0.704273548478104
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3015",
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-medium-3015-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3015-balanced-makespan",
+      "makespan_s": 0.04860042037953605,
+      "energy_j": 12.258295007000072,
+      "mean_latency_s": 0.7397448460682368
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3015",
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-medium-3015-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3015-balanced-energy",
+      "makespan_s": -0.9392842590218358,
+      "energy_j": 19.83399837274999,
+      "mean_latency_s": 0.1702978259208514
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3016",
+      "intensity": "medium",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-medium-3016-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3016-random-11",
+      "makespan_s": -6.344744615491157,
+      "energy_j": -2.2831825420000484,
+      "mean_latency_s": -0.9390083583438509
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3016",
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-medium-3016-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3016-latency-first",
+      "makespan_s": 0.8096370438666565,
+      "energy_j": 1.3265886672499505,
+      "mean_latency_s": 0.8118222647534359
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3016",
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-medium-3016-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3016-energy-first",
+      "makespan_s": -76.12660036486231,
+      "energy_j": 53.77911147899971,
+      "mean_latency_s": -73.01433460857018
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3016",
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-medium-3016-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3016-balanced-equal",
+      "makespan_s": 0.6851214241194121,
+      "energy_j": 10.8415747117499,
+      "mean_latency_s": 0.8513871161973974
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3016",
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-medium-3016-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3016-balanced-makespan",
+      "makespan_s": 0.6851214241194121,
+      "energy_j": 9.217293523499933,
+      "mean_latency_s": 0.7977005365314054
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3016",
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-medium-3016-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3016-balanced-energy",
+      "makespan_s": -0.885673964862356,
+      "energy_j": 14.795612046749909,
+      "mean_latency_s": 0.15706518408314984
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3017",
+      "intensity": "medium",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-medium-3017-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3017-random-11",
+      "makespan_s": -1.4791032153292782,
+      "energy_j": -4.205764405999929,
+      "mean_latency_s": 0.05398278215813157
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3017",
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-medium-3017-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3017-latency-first",
+      "makespan_s": 0.37938980856374016,
+      "energy_j": -4.718259809499955,
+      "mean_latency_s": 0.8860999680966892
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3017",
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-medium-3017-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3017-energy-first",
+      "makespan_s": -75.24518431023101,
+      "energy_j": 44.78941901224988,
+      "mean_latency_s": -72.24057668292839
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3017",
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-medium-3017-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3017-balanced-equal",
+      "makespan_s": 0.2613328803554076,
+      "energy_j": 5.504264522000085,
+      "mean_latency_s": 0.8659420162297498
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3017",
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-medium-3017-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3017-balanced-makespan",
+      "makespan_s": 0.2613328803554076,
+      "energy_j": 5.1490733837500215,
+      "mean_latency_s": 0.8342286753175747
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3017",
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-medium-3017-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3017-balanced-energy",
+      "makespan_s": -0.5850706269130512,
+      "energy_j": 13.36445083000001,
+      "mean_latency_s": 0.3762511550722083
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3018",
+      "intensity": "medium",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-medium-3018-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3018-random-11",
+      "makespan_s": -3.1184952214590282,
+      "energy_j": -2.6505897859999266,
+      "mean_latency_s": -0.40831794116882314
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3018",
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-medium-3018-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3018-latency-first",
+      "makespan_s": 2.4222143346791967,
+      "energy_j": -3.588631856500001,
+      "mean_latency_s": 0.9308975366826302
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3018",
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-medium-3018-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3018-energy-first",
+      "makespan_s": -72.47934312979292,
+      "energy_j": 49.4809719644999,
+      "mean_latency_s": -68.5913001012323
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3018",
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-medium-3018-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3018-balanced-equal",
+      "makespan_s": 2.3581702180273485,
+      "energy_j": 11.036716926999958,
+      "mean_latency_s": 0.8937606165455139
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3018",
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-medium-3018-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3018-balanced-makespan",
+      "makespan_s": 2.3581702180273485,
+      "energy_j": 9.069749989000002,
+      "mean_latency_s": 0.9772254821932527
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3018",
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-medium-3018-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3018-balanced-energy",
+      "makespan_s": 1.586656870207058,
+      "energy_j": 14.452555862249994,
+      "mean_latency_s": 0.18375674643218032
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3019",
+      "intensity": "medium",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-medium-3019-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3019-random-11",
+      "makespan_s": -0.3881503830340307,
+      "energy_j": -5.0167615977500475,
+      "mean_latency_s": -0.3999035888541864
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3019",
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-medium-3019-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3019-latency-first",
+      "makespan_s": 1.1878069109923075,
+      "energy_j": 1.1386566657500055,
+      "mean_latency_s": 0.6955293725132258
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3019",
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-medium-3019-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3019-energy-first",
+      "makespan_s": -66.17593378319485,
+      "energy_j": 55.02692377324945,
+      "mean_latency_s": -64.73583913869332
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3019",
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-medium-3019-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3019-balanced-equal",
+      "makespan_s": 0.9638096018877107,
+      "energy_j": 16.809931434750013,
+      "mean_latency_s": 0.6099643386475031
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3019",
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-medium-3019-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3019-balanced-makespan",
+      "makespan_s": 0.9638096018877107,
+      "energy_j": 16.224621094249954,
+      "mean_latency_s": 0.6390138436747148
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3019",
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-medium-3019-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3019-balanced-energy",
+      "makespan_s": 0.6502908270551941,
+      "energy_j": 24.283127921499982,
+      "mean_latency_s": 0.010044973648789535
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3020",
+      "intensity": "medium",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-medium-3020-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3020-random-11",
+      "makespan_s": -2.91125085622577,
+      "energy_j": -0.4476066360000459,
+      "mean_latency_s": -0.29670134812848437
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3020",
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-medium-3020-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3020-latency-first",
+      "makespan_s": 0.4669102898757522,
+      "energy_j": -7.645909286999938,
+      "mean_latency_s": 0.6089945435915122
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3020",
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-medium-3020-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3020-energy-first",
+      "makespan_s": -73.66141565773924,
+      "energy_j": 46.77802380000017,
+      "mean_latency_s": -70.11831472667417
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3020",
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-medium-3020-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3020-balanced-equal",
+      "makespan_s": 0.5025395753586643,
+      "energy_j": 10.704998111999942,
+      "mean_latency_s": 0.48998627451418786
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3020",
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-medium-3020-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3020-balanced-makespan",
+      "makespan_s": 0.6554657996136264,
+      "energy_j": 8.41663909099995,
+      "mean_latency_s": 0.5367263782586427
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3020",
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-medium-3020-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3020-balanced-energy",
+      "makespan_s": -0.35364763724126647,
+      "energy_j": 17.55814810649997,
+      "mean_latency_s": 0.0936361099668197
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3021",
+      "intensity": "medium",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-medium-3021-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3021-random-11",
+      "makespan_s": -0.7459370398790703,
+      "energy_j": -0.983322567750065,
+      "mean_latency_s": -0.18882096768761714
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3021",
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-medium-3021-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3021-latency-first",
+      "makespan_s": 0.8955888325018577,
+      "energy_j": -1.6077079532500989,
+      "mean_latency_s": 0.6181324680716354
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3021",
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-medium-3021-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3021-energy-first",
+      "makespan_s": -68.81271793112424,
+      "energy_j": 54.84408410074994,
+      "mean_latency_s": -67.36954142139412
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3021",
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-medium-3021-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3021-balanced-equal",
+      "makespan_s": 0.5593906832723814,
+      "energy_j": 14.182752505749818,
+      "mean_latency_s": 0.530650991854192
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3021",
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-medium-3021-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3021-balanced-makespan",
+      "makespan_s": 0.5593906832723814,
+      "energy_j": 13.810738292249823,
+      "mean_latency_s": 0.5546501398575086
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3021",
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-medium-3021-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3021-balanced-energy",
+      "makespan_s": 0.1051899235007614,
+      "energy_j": 20.380554910999876,
+      "mean_latency_s": -0.16315621925384471
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3022",
+      "intensity": "medium",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-medium-3022-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3022-random-11",
+      "makespan_s": -0.15418010263900328,
+      "energy_j": -2.0028263797499903,
+      "mean_latency_s": 0.0963390113367315
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3022",
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-medium-3022-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3022-latency-first",
+      "makespan_s": 0.6288188849082772,
+      "energy_j": -5.259984664749993,
+      "mean_latency_s": 0.7156394464951437
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3022",
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-medium-3022-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3022-energy-first",
+      "makespan_s": -67.15348945523118,
+      "energy_j": 53.63354249274997,
+      "mean_latency_s": -65.0113870943933
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3022",
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-medium-3022-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3022-balanced-equal",
+      "makespan_s": 0.5147378405833365,
+      "energy_j": 16.087878401000097,
+      "mean_latency_s": 0.5674012364158193
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3022",
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-medium-3022-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3022-balanced-makespan",
+      "makespan_s": 0.33706546823183814,
+      "energy_j": 16.69345851425001,
+      "mean_latency_s": 0.5768492539314728
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3022",
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-medium-3022-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3022-balanced-energy",
+      "makespan_s": -0.19149047801400698,
+      "energy_j": 25.441675705249963,
+      "mean_latency_s": -0.13562429785010388
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3023",
+      "intensity": "medium",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-medium-3023-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3023-random-11",
+      "makespan_s": -2.877945919791305,
+      "energy_j": -9.185297073000044,
+      "mean_latency_s": -0.41382732425988533
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3023",
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-medium-3023-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3023-latency-first",
+      "makespan_s": 0.4112151475123156,
+      "energy_j": -8.441699244250117,
+      "mean_latency_s": 0.5442042429305294
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3023",
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-medium-3023-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3023-energy-first",
+      "makespan_s": -67.5510382832791,
+      "energy_j": 40.819471479750234,
+      "mean_latency_s": -61.8378690057288
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3023",
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-medium-3023-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3023-balanced-equal",
+      "makespan_s": 0.23143105959565347,
+      "energy_j": 6.338535416249982,
+      "mean_latency_s": 0.4058649636995708
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3023",
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-medium-3023-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3023-balanced-makespan",
+      "makespan_s": 0.23143105959565347,
+      "energy_j": 1.9818472872500195,
+      "mean_latency_s": 0.46100820674017107
+    },
+    {
+      "instance_id": "provisional-held_out-medium-3023",
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-medium-3023-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-medium-3023-balanced-energy",
+      "makespan_s": -0.18297938054169904,
+      "energy_j": 14.888886443750039,
+      "mean_latency_s": -0.03293444926053346
+    },
+    {
+      "instance_id": "provisional-held_out-high-3024",
+      "intensity": "high",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-high-3024-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3024-random-11",
+      "makespan_s": -4.036475228895746,
+      "energy_j": 0.07948834675002558,
+      "mean_latency_s": -0.733061313590536
+    },
+    {
+      "instance_id": "provisional-held_out-high-3024",
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-high-3024-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3024-latency-first",
+      "makespan_s": 1.9985335983467714,
+      "energy_j": 1.3492157012500456,
+      "mean_latency_s": 0.9325206135614901
+    },
+    {
+      "instance_id": "provisional-held_out-high-3024",
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-high-3024-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3024-energy-first",
+      "makespan_s": -78.21983222541188,
+      "energy_j": 51.362555514000235,
+      "mean_latency_s": -74.95881790392626
+    },
+    {
+      "instance_id": "provisional-held_out-high-3024",
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-high-3024-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3024-balanced-equal",
+      "makespan_s": 2.1788324910913826,
+      "energy_j": 9.707871921000077,
+      "mean_latency_s": 0.9276136334114402
+    },
+    {
+      "instance_id": "provisional-held_out-high-3024",
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-high-3024-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3024-balanced-makespan",
+      "makespan_s": 2.175178649231114,
+      "energy_j": 8.754007205999983,
+      "mean_latency_s": 1.0047828193085018
+    },
+    {
+      "instance_id": "provisional-held_out-high-3024",
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-high-3024-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3024-balanced-energy",
+      "makespan_s": 1.2568237745880815,
+      "energy_j": 15.323527742250064,
+      "mean_latency_s": 0.2823724084960284
+    },
+    {
+      "instance_id": "provisional-held_out-high-3025",
+      "intensity": "high",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-high-3025-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3025-random-11",
+      "makespan_s": -1.1165720008731608,
+      "energy_j": 1.867047110250013,
+      "mean_latency_s": -0.3674207888910206
+    },
+    {
+      "instance_id": "provisional-held_out-high-3025",
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-high-3025-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3025-latency-first",
+      "makespan_s": 4.791239964181347,
+      "energy_j": 9.870984771000025,
+      "mean_latency_s": 1.3333723171134857
+    },
+    {
+      "instance_id": "provisional-held_out-high-3025",
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-high-3025-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3025-energy-first",
+      "makespan_s": -72.9412381351333,
+      "energy_j": 56.42212833175006,
+      "mean_latency_s": -73.24609098780459
+    },
+    {
+      "instance_id": "provisional-held_out-high-3025",
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-high-3025-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3025-balanced-equal",
+      "makespan_s": 5.017647712616702,
+      "energy_j": 16.315450537750053,
+      "mean_latency_s": 1.3389711628300993
+    },
+    {
+      "instance_id": "provisional-held_out-high-3025",
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-high-3025-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3025-balanced-makespan",
+      "makespan_s": 5.030620503891852,
+      "energy_j": 15.67000939425003,
+      "mean_latency_s": 1.3702530472501984
+    },
+    {
+      "instance_id": "provisional-held_out-high-3025",
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-high-3025-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3025-balanced-energy",
+      "makespan_s": 3.8670561538667023,
+      "energy_j": 19.996333310500006,
+      "mean_latency_s": 0.8157924033444068
+    },
+    {
+      "instance_id": "provisional-held_out-high-3026",
+      "intensity": "high",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-high-3026-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3026-random-11",
+      "makespan_s": -4.398118940206983,
+      "energy_j": 2.9620768630001066,
+      "mean_latency_s": -0.18360777208783885
+    },
+    {
+      "instance_id": "provisional-held_out-high-3026",
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-high-3026-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3026-latency-first",
+      "makespan_s": 3.5245515348333285,
+      "energy_j": 8.983861853250005,
+      "mean_latency_s": 1.524232457265276
+    },
+    {
+      "instance_id": "provisional-held_out-high-3026",
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-high-3026-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3026-energy-first",
+      "makespan_s": -80.30695309483063,
+      "energy_j": 56.37781803675014,
+      "mean_latency_s": -78.51507893038472
+    },
+    {
+      "instance_id": "provisional-held_out-high-3026",
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-high-3026-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3026-balanced-equal",
+      "makespan_s": 3.3978815691457847,
+      "energy_j": 11.304453050749999,
+      "mean_latency_s": 1.5287055610576021
+    },
+    {
+      "instance_id": "provisional-held_out-high-3026",
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-high-3026-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3026-balanced-makespan",
+      "makespan_s": 3.535223169145784,
+      "energy_j": 10.793578333000056,
+      "mean_latency_s": 1.5315586233212635
+    },
+    {
+      "instance_id": "provisional-held_out-high-3026",
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-high-3026-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3026-balanced-energy",
+      "makespan_s": 2.139269424932319,
+      "energy_j": 14.751259491250067,
+      "mean_latency_s": 1.002931606679934
+    },
+    {
+      "instance_id": "provisional-held_out-high-3027",
+      "intensity": "high",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-high-3027-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3027-random-11",
+      "makespan_s": -4.921166881155974,
+      "energy_j": 1.7931884022501379,
+      "mean_latency_s": -0.7604902128442057
+    },
+    {
+      "instance_id": "provisional-held_out-high-3027",
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-high-3027-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3027-latency-first",
+      "makespan_s": 2.460796287924442,
+      "energy_j": 2.742542662250031,
+      "mean_latency_s": 0.8563220764510464
+    },
+    {
+      "instance_id": "provisional-held_out-high-3027",
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-high-3027-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3027-energy-first",
+      "makespan_s": -75.33756373692333,
+      "energy_j": 52.0048425720002,
+      "mean_latency_s": -71.46402778956663
+    },
+    {
+      "instance_id": "provisional-held_out-high-3027",
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-high-3027-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3027-balanced-equal",
+      "makespan_s": 2.6374036616815157,
+      "energy_j": 11.148246988250065,
+      "mean_latency_s": 0.946408503842016
+    },
+    {
+      "instance_id": "provisional-held_out-high-3027",
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-high-3027-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3027-balanced-makespan",
+      "makespan_s": 2.6374036616815157,
+      "energy_j": 11.127057309250063,
+      "mean_latency_s": 0.9490061083148045
+    },
+    {
+      "instance_id": "provisional-held_out-high-3027",
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-high-3027-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3027-balanced-energy",
+      "makespan_s": 1.5120618630766636,
+      "energy_j": 13.768334198000105,
+      "mean_latency_s": 0.3804713613306574
+    },
+    {
+      "instance_id": "provisional-held_out-high-3028",
+      "intensity": "high",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-high-3028-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3028-random-11",
+      "makespan_s": 0.17042206950313066,
+      "energy_j": 7.8322501375000115,
+      "mean_latency_s": 0.22319866975182867
+    },
+    {
+      "instance_id": "provisional-held_out-high-3028",
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-high-3028-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3028-latency-first",
+      "makespan_s": 5.425728154110256,
+      "energy_j": 11.664451964500017,
+      "mean_latency_s": 1.4788496332668435
+    },
+    {
+      "instance_id": "provisional-held_out-high-3028",
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-high-3028-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3028-energy-first",
+      "makespan_s": -72.9375068907991,
+      "energy_j": 57.407970816000216,
+      "mean_latency_s": -73.94209744691415
+    },
+    {
+      "instance_id": "provisional-held_out-high-3028",
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-high-3028-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3028-balanced-equal",
+      "makespan_s": 5.655839887443587,
+      "energy_j": 13.536680647749932,
+      "mean_latency_s": 1.6701733762461146
+    },
+    {
+      "instance_id": "provisional-held_out-high-3028",
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-high-3028-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3028-balanced-makespan",
+      "makespan_s": 5.243082698022768,
+      "energy_j": 13.250818250749916,
+      "mean_latency_s": 1.637215877911692
+    },
+    {
+      "instance_id": "provisional-held_out-high-3028",
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-high-3028-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3028-balanced-energy",
+      "makespan_s": 4.719369109200903,
+      "energy_j": 17.5459110244999,
+      "mean_latency_s": 1.179999503928133
+    },
+    {
+      "instance_id": "provisional-held_out-high-3029",
+      "intensity": "high",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-high-3029-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3029-random-11",
+      "makespan_s": 0.41876256489500285,
+      "energy_j": 0.8455443645001139,
+      "mean_latency_s": 0.1346650337818085
+    },
+    {
+      "instance_id": "provisional-held_out-high-3029",
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-high-3029-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3029-latency-first",
+      "makespan_s": 4.050192501550864,
+      "energy_j": 3.389263110250056,
+      "mean_latency_s": 1.0601291381903064
+    },
+    {
+      "instance_id": "provisional-held_out-high-3029",
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-high-3029-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3029-energy-first",
+      "makespan_s": -74.26546132089925,
+      "energy_j": 52.24582109575033,
+      "mean_latency_s": -73.16939961207268
+    },
+    {
+      "instance_id": "provisional-held_out-high-3029",
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-high-3029-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3029-balanced-equal",
+      "makespan_s": 4.238711509077007,
+      "energy_j": 8.596915249000034,
+      "mean_latency_s": 1.0503105515318458
+    },
+    {
+      "instance_id": "provisional-held_out-high-3029",
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-high-3029-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3029-balanced-makespan",
+      "makespan_s": 4.109163017392783,
+      "energy_j": 8.73567105075,
+      "mean_latency_s": 1.1164875887277859
+    },
+    {
+      "instance_id": "provisional-held_out-high-3029",
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-high-3029-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3029-balanced-energy",
+      "makespan_s": 3.032583479100751,
+      "energy_j": 12.82248130525005,
+      "mean_latency_s": 0.41337263989596984
+    },
+    {
+      "instance_id": "provisional-held_out-high-3030",
+      "intensity": "high",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-high-3030-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3030-random-11",
+      "makespan_s": -2.9730378238521613,
+      "energy_j": 3.086841615499992,
+      "mean_latency_s": -0.5860599743761874
+    },
+    {
+      "instance_id": "provisional-held_out-high-3030",
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-high-3030-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3030-latency-first",
+      "makespan_s": 2.6593931732908285,
+      "energy_j": 4.467319569999887,
+      "mean_latency_s": 0.8671094811577154
+    },
+    {
+      "instance_id": "provisional-held_out-high-3030",
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-high-3030-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3030-energy-first",
+      "makespan_s": -72.40518513920203,
+      "energy_j": 54.78430714350006,
+      "mean_latency_s": -71.72538324862373
+    },
+    {
+      "instance_id": "provisional-held_out-high-3030",
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-high-3030-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3030-balanced-equal",
+      "makespan_s": 2.6312527111187975,
+      "energy_j": 10.929159015000039,
+      "mean_latency_s": 0.7306723823568204
+    },
+    {
+      "instance_id": "provisional-held_out-high-3030",
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-high-3030-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3030-balanced-makespan",
+      "makespan_s": 2.528609089868798,
+      "energy_j": 12.535975637000007,
+      "mean_latency_s": 0.7245522537933842
+    },
+    {
+      "instance_id": "provisional-held_out-high-3030",
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-high-3030-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3030-balanced-energy",
+      "makespan_s": 1.1656347252884434,
+      "energy_j": 17.774257172999995,
+      "mean_latency_s": 0.07511004585140624
+    },
+    {
+      "instance_id": "provisional-held_out-high-3031",
+      "intensity": "high",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-high-3031-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3031-random-11",
+      "makespan_s": -4.904896846776314,
+      "energy_j": -2.811051613000018,
+      "mean_latency_s": -0.5170443155980418
+    },
+    {
+      "instance_id": "provisional-held_out-high-3031",
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-high-3031-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3031-latency-first",
+      "makespan_s": 2.4266460313829885,
+      "energy_j": 5.675909737249981,
+      "mean_latency_s": 1.2674355869490186
+    },
+    {
+      "instance_id": "provisional-held_out-high-3031",
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-high-3031-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3031-energy-first",
+      "makespan_s": -76.1792024513803,
+      "energy_j": 51.27969694225004,
+      "mean_latency_s": -74.3102000877741
+    },
+    {
+      "instance_id": "provisional-held_out-high-3031",
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-high-3031-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3031-balanced-equal",
+      "makespan_s": 2.7307000257864438,
+      "energy_j": 7.201766232749918,
+      "mean_latency_s": 1.686556388311053
+    },
+    {
+      "instance_id": "provisional-held_out-high-3031",
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-high-3031-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3031-balanced-makespan",
+      "makespan_s": 2.7307000257864438,
+      "energy_j": 7.201766232749918,
+      "mean_latency_s": 1.686556388311053
+    },
+    {
+      "instance_id": "provisional-held_out-high-3031",
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-high-3031-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3031-balanced-energy",
+      "makespan_s": 1.6453215486197745,
+      "energy_j": 9.201329979749971,
+      "mean_latency_s": 1.328828281241393
+    },
+    {
+      "instance_id": "provisional-held_out-high-3032",
+      "intensity": "high",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-high-3032-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3032-random-11",
+      "makespan_s": -0.2417334062212113,
+      "energy_j": 7.308281092999863,
+      "mean_latency_s": -0.22006232921194524
+    },
+    {
+      "instance_id": "provisional-held_out-high-3032",
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-high-3032-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3032-latency-first",
+      "makespan_s": 6.138048484215561,
+      "energy_j": 11.246646377499815,
+      "mean_latency_s": 1.3056519135635156
+    },
+    {
+      "instance_id": "provisional-held_out-high-3032",
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-high-3032-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3032-energy-first",
+      "makespan_s": -71.46704988320951,
+      "energy_j": 58.91814628000003,
+      "mean_latency_s": -73.31247599568113
+    },
+    {
+      "instance_id": "provisional-held_out-high-3032",
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-high-3032-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3032-balanced-equal",
+      "makespan_s": 6.223477821544346,
+      "energy_j": 14.000302409999847,
+      "mean_latency_s": 1.397791885522031
+    },
+    {
+      "instance_id": "provisional-held_out-high-3032",
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-high-3032-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3032-balanced-makespan",
+      "makespan_s": 6.337705765544349,
+      "energy_j": 14.189865064249915,
+      "mean_latency_s": 1.5517403115075337
+    },
+    {
+      "instance_id": "provisional-held_out-high-3032",
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-high-3032-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3032-balanced-energy",
+      "makespan_s": 4.932426804415474,
+      "energy_j": 17.06561565624989,
+      "mean_latency_s": 1.2560134814750068
+    },
+    {
+      "instance_id": "provisional-held_out-high-3033",
+      "intensity": "high",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-high-3033-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3033-random-11",
+      "makespan_s": -2.2010621665678585,
+      "energy_j": -0.002621187500068345,
+      "mean_latency_s": -0.20189978684279453
+    },
+    {
+      "instance_id": "provisional-held_out-high-3033",
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-high-3033-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3033-latency-first",
+      "makespan_s": 4.842501505089194,
+      "energy_j": 6.585440752249923,
+      "mean_latency_s": 1.281104990525654
+    },
+    {
+      "instance_id": "provisional-held_out-high-3033",
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-high-3033-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3033-energy-first",
+      "makespan_s": -70.90951845897882,
+      "energy_j": 62.01730416400008,
+      "mean_latency_s": -72.05000179852993
+    },
+    {
+      "instance_id": "provisional-held_out-high-3033",
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-high-3033-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3033-balanced-equal",
+      "makespan_s": 4.756826985725482,
+      "energy_j": 14.302912477749885,
+      "mean_latency_s": 1.3266056717391335
+    },
+    {
+      "instance_id": "provisional-held_out-high-3033",
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-high-3033-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3033-balanced-makespan",
+      "makespan_s": 4.924214504600483,
+      "energy_j": 13.716774143249864,
+      "mean_latency_s": 1.4042003190941967
+    },
+    {
+      "instance_id": "provisional-held_out-high-3033",
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-high-3033-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3033-balanced-energy",
+      "makespan_s": 3.1926797191853655,
+      "energy_j": 18.845963244999865,
+      "mean_latency_s": 0.6059035703900477
+    },
+    {
+      "instance_id": "provisional-held_out-high-3034",
+      "intensity": "high",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-high-3034-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3034-random-11",
+      "makespan_s": -1.6944546140504766,
+      "energy_j": 0.1383586939999759,
+      "mean_latency_s": -0.12693188861269533
+    },
+    {
+      "instance_id": "provisional-held_out-high-3034",
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-high-3034-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3034-latency-first",
+      "makespan_s": 2.404078781537935,
+      "energy_j": 2.6774420807499837,
+      "mean_latency_s": 1.1068965061368228
+    },
+    {
+      "instance_id": "provisional-held_out-high-3034",
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-high-3034-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3034-energy-first",
+      "makespan_s": -76.03686381855755,
+      "energy_j": 54.054725404000266,
+      "mean_latency_s": -74.81946898189209
+    },
+    {
+      "instance_id": "provisional-held_out-high-3034",
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-high-3034-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3034-balanced-equal",
+      "makespan_s": 1.9284725570079964,
+      "energy_j": 10.419898207499926,
+      "mean_latency_s": 1.1303365054258037
+    },
+    {
+      "instance_id": "provisional-held_out-high-3034",
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-high-3034-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3034-balanced-makespan",
+      "makespan_s": 1.9386591803712694,
+      "energy_j": 9.83742788775001,
+      "mean_latency_s": 1.139271646602194
+    },
+    {
+      "instance_id": "provisional-held_out-high-3034",
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-high-3034-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3034-balanced-energy",
+      "makespan_s": 0.6676057814424716,
+      "energy_j": 16.627208600749952,
+      "mean_latency_s": 0.5543890515296193
+    },
+    {
+      "instance_id": "provisional-held_out-high-3035",
+      "intensity": "high",
+      "heuristic": "random",
+      "dqn_run_id": "provisional-held_out-high-3035-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3035-random-11",
+      "makespan_s": -3.479086524235653,
+      "energy_j": -3.8246620360001202,
+      "mean_latency_s": -0.19371171106121032
+    },
+    {
+      "instance_id": "provisional-held_out-high-3035",
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "dqn_run_id": "provisional-held_out-high-3035-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3035-latency-first",
+      "makespan_s": 1.6850332497717986,
+      "energy_j": 1.782049149750037,
+      "mean_latency_s": 1.320745432242694
+    },
+    {
+      "instance_id": "provisional-held_out-high-3035",
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "dqn_run_id": "provisional-held_out-high-3035-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3035-energy-first",
+      "makespan_s": -70.7648719163238,
+      "energy_j": 50.49834624724994,
+      "mean_latency_s": -67.69640554823143
+    },
+    {
+      "instance_id": "provisional-held_out-high-3035",
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "dqn_run_id": "provisional-held_out-high-3035-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3035-balanced-equal",
+      "makespan_s": 1.6208344335305238,
+      "energy_j": 9.236432268999977,
+      "mean_latency_s": 1.2974881224479082
+    },
+    {
+      "instance_id": "provisional-held_out-high-3035",
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "dqn_run_id": "provisional-held_out-high-3035-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3035-balanced-makespan",
+      "makespan_s": 1.699787500197191,
+      "energy_j": 8.03576616724996,
+      "mean_latency_s": 1.3155503276874478
+    },
+    {
+      "instance_id": "provisional-held_out-high-3035",
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "dqn_run_id": "provisional-held_out-high-3035-dqn-fixed-8",
+      "heuristic_run_id": "provisional-held_out-high-3035-balanced-energy",
+      "makespan_s": 0.30708221067617814,
+      "energy_j": 12.505947165500004,
+      "mean_latency_s": 0.7175042106021738
+    }
+  ],
+  "paired_summaries": [
+    {
+      "intensity": "low",
+      "heuristic": "random",
+      "instance_ids": [
+        "provisional-held_out-low-3000",
+        "provisional-held_out-low-3001",
+        "provisional-held_out-low-3002",
+        "provisional-held_out-low-3003",
+        "provisional-held_out-low-3004",
+        "provisional-held_out-low-3005",
+        "provisional-held_out-low-3006",
+        "provisional-held_out-low-3007",
+        "provisional-held_out-low-3008",
+        "provisional-held_out-low-3009",
+        "provisional-held_out-low-3010",
+        "provisional-held_out-low-3011"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": -0.412457999126449,
+        "median": -0.018231711398705386,
+        "q3": 0.2450171064895219,
+        "iqr": 0.6574751056159709
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": -1.5915865711250206,
+        "median": 0.3333886937501518,
+        "q3": 1.597033844249978,
+        "iqr": 3.1886204153749986
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": 0.06672450790197204,
+        "median": 0.15896775434094446,
+        "q3": 0.17373070874776697,
+        "iqr": 0.10700620084579493
+      }
+    },
+    {
+      "intensity": "low",
+      "heuristic": "latency-first",
+      "instance_ids": [
+        "provisional-held_out-low-3000",
+        "provisional-held_out-low-3001",
+        "provisional-held_out-low-3002",
+        "provisional-held_out-low-3003",
+        "provisional-held_out-low-3004",
+        "provisional-held_out-low-3005",
+        "provisional-held_out-low-3006",
+        "provisional-held_out-low-3007",
+        "provisional-held_out-low-3008",
+        "provisional-held_out-low-3009",
+        "provisional-held_out-low-3010",
+        "provisional-held_out-low-3011"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": 0.18477636250000273,
+        "median": 0.5236835987262936,
+        "q3": 0.8485118942346226,
+        "iqr": 0.6637355317346199
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": -6.7139569980000715,
+        "median": -6.335573279624938,
+        "q3": -5.716649822999983,
+        "iqr": 0.9973071750000884
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": 0.496081533203037,
+        "median": 0.5182065059891429,
+        "q3": 0.5511920910127118,
+        "iqr": 0.05511055780967483
+      }
+    },
+    {
+      "intensity": "low",
+      "heuristic": "energy-first",
+      "instance_ids": [
+        "provisional-held_out-low-3000",
+        "provisional-held_out-low-3001",
+        "provisional-held_out-low-3002",
+        "provisional-held_out-low-3003",
+        "provisional-held_out-low-3004",
+        "provisional-held_out-low-3005",
+        "provisional-held_out-low-3006",
+        "provisional-held_out-low-3007",
+        "provisional-held_out-low-3008",
+        "provisional-held_out-low-3009",
+        "provisional-held_out-low-3010",
+        "provisional-held_out-low-3011"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": -56.39283812827817,
+        "median": -53.59184303822528,
+        "q3": -50.77629783016057,
+        "iqr": 5.616540298117599
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 47.98614655450015,
+        "median": 50.81507111887515,
+        "q3": 53.05379568787495,
+        "iqr": 5.0676491333748
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": -53.63641540616279,
+        "median": -50.94373554879096,
+        "q3": -48.37531250401408,
+        "iqr": 5.261102902148707
+      }
+    },
+    {
+      "intensity": "low",
+      "heuristic": "balanced-equal",
+      "instance_ids": [
+        "provisional-held_out-low-3000",
+        "provisional-held_out-low-3001",
+        "provisional-held_out-low-3002",
+        "provisional-held_out-low-3003",
+        "provisional-held_out-low-3004",
+        "provisional-held_out-low-3005",
+        "provisional-held_out-low-3006",
+        "provisional-held_out-low-3007",
+        "provisional-held_out-low-3008",
+        "provisional-held_out-low-3009",
+        "provisional-held_out-low-3010",
+        "provisional-held_out-low-3011"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": 0.09041398885153029,
+        "median": 0.2506944720791502,
+        "q3": 0.6432834022972997,
+        "iqr": 0.5528694134457695
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 17.327253056999908,
+        "median": 19.896911364750025,
+        "q3": 20.732015186375094,
+        "iqr": 3.404762129375186
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": 0.36743777059800525,
+        "median": 0.4123614786518402,
+        "q3": 0.4956373861505498,
+        "iqr": 0.12819961555254455
+      }
+    },
+    {
+      "intensity": "low",
+      "heuristic": "balanced-makespan",
+      "instance_ids": [
+        "provisional-held_out-low-3000",
+        "provisional-held_out-low-3001",
+        "provisional-held_out-low-3002",
+        "provisional-held_out-low-3003",
+        "provisional-held_out-low-3004",
+        "provisional-held_out-low-3005",
+        "provisional-held_out-low-3006",
+        "provisional-held_out-low-3007",
+        "provisional-held_out-low-3008",
+        "provisional-held_out-low-3009",
+        "provisional-held_out-low-3010",
+        "provisional-held_out-low-3011"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": 0.1425710552916648,
+        "median": 0.2506944720791502,
+        "q3": 0.6432834022972997,
+        "iqr": 0.5007123470056349
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 15.807086101750016,
+        "median": 17.62151438162506,
+        "q3": 18.131888382750034,
+        "iqr": 2.324802281000018
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": 0.396246069543963,
+        "median": 0.4358891834699213,
+        "q3": 0.5160990059931452,
+        "iqr": 0.11985293644918216
+      }
+    },
+    {
+      "intensity": "low",
+      "heuristic": "balanced-energy",
+      "instance_ids": [
+        "provisional-held_out-low-3000",
+        "provisional-held_out-low-3001",
+        "provisional-held_out-low-3002",
+        "provisional-held_out-low-3003",
+        "provisional-held_out-low-3004",
+        "provisional-held_out-low-3005",
+        "provisional-held_out-low-3006",
+        "provisional-held_out-low-3007",
+        "provisional-held_out-low-3008",
+        "provisional-held_out-low-3009",
+        "provisional-held_out-low-3010",
+        "provisional-held_out-low-3011"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": -0.31086379243994955,
+        "median": -0.11769504223335758,
+        "q3": 0.2057860566711085,
+        "iqr": 0.516649849111058
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 29.75808239212506,
+        "median": 31.1212385755,
+        "q3": 32.917008818499994,
+        "iqr": 3.158926426374933
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": -0.13746174506765363,
+        "median": -0.0675874756152629,
+        "q3": 0.04164253264508899,
+        "iqr": 0.17910427771274262
+      }
+    },
+    {
+      "intensity": "medium",
+      "heuristic": "random",
+      "instance_ids": [
+        "provisional-held_out-medium-3012",
+        "provisional-held_out-medium-3013",
+        "provisional-held_out-medium-3014",
+        "provisional-held_out-medium-3015",
+        "provisional-held_out-medium-3016",
+        "provisional-held_out-medium-3017",
+        "provisional-held_out-medium-3018",
+        "provisional-held_out-medium-3019",
+        "provisional-held_out-medium-3020",
+        "provisional-held_out-medium-3021",
+        "provisional-held_out-medium-3022",
+        "provisional-held_out-medium-3023"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": -2.8945983880085375,
+        "median": -2.0751323306466443,
+        "q3": -0.4192594637940257,
+        "iqr": 2.475338924214512
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": -6.933892666750026,
+        "median": -3.428177095999928,
+        "q3": -1.4930744737500277,
+        "iqr": 5.440818192999998
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": -0.4198548938396882,
+        "median": -0.3483024684913354,
+        "q3": 0.045691871553699026,
+        "iqr": 0.46554676539338724
+      }
+    },
+    {
+      "intensity": "medium",
+      "heuristic": "latency-first",
+      "instance_ids": [
+        "provisional-held_out-medium-3012",
+        "provisional-held_out-medium-3013",
+        "provisional-held_out-medium-3014",
+        "provisional-held_out-medium-3015",
+        "provisional-held_out-medium-3016",
+        "provisional-held_out-medium-3017",
+        "provisional-held_out-medium-3018",
+        "provisional-held_out-medium-3019",
+        "provisional-held_out-medium-3020",
+        "provisional-held_out-medium-3021",
+        "provisional-held_out-medium-3022",
+        "provisional-held_out-medium-3023"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": 0.4390627186940339,
+        "median": 0.7321549862887302,
+        "q3": 1.072517306044361,
+        "iqr": 0.633454587350327
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": -6.619034390125009,
+        "median": -4.397779583999963,
+        "q3": -2.5897526513751075,
+        "iqr": 4.029281738749901
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": 0.6135635058315738,
+        "median": 0.7055844095041848,
+        "q3": 0.8355099375557941,
+        "iqr": 0.22194643172422024
+      }
+    },
+    {
+      "intensity": "medium",
+      "heuristic": "energy-first",
+      "instance_ids": [
+        "provisional-held_out-medium-3012",
+        "provisional-held_out-medium-3013",
+        "provisional-held_out-medium-3014",
+        "provisional-held_out-medium-3015",
+        "provisional-held_out-medium-3016",
+        "provisional-held_out-medium-3017",
+        "provisional-held_out-medium-3018",
+        "provisional-held_out-medium-3019",
+        "provisional-held_out-medium-3020",
+        "provisional-held_out-medium-3021",
+        "provisional-held_out-medium-3022",
+        "provisional-held_out-medium-3023"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": -73.07037939376607,
+        "median": -70.20085490616393,
+        "q3": -66.83459389961828,
+        "iqr": 6.235785494147791
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 46.16503131612505,
+        "median": 48.36018957787513,
+        "q3": 53.70632698587484,
+        "iqr": 7.541295669749786
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": -69.69875966311382,
+        "median": -67.98042076131321,
+        "q3": -64.18224075289046,
+        "iqr": 5.516518910223354
+      }
+    },
+    {
+      "intensity": "medium",
+      "heuristic": "balanced-equal",
+      "instance_ids": [
+        "provisional-held_out-medium-3012",
+        "provisional-held_out-medium-3013",
+        "provisional-held_out-medium-3014",
+        "provisional-held_out-medium-3015",
+        "provisional-held_out-medium-3016",
+        "provisional-held_out-medium-3017",
+        "provisional-held_out-medium-3018",
+        "provisional-held_out-medium-3019",
+        "provisional-held_out-medium-3020",
+        "provisional-held_out-medium-3021",
+        "provisional-held_out-medium-3022",
+        "provisional-held_out-medium-3023"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": 0.38193622785703596,
+        "median": 0.6222560536958968,
+        "q3": 0.9081593625271882,
+        "iqr": 0.5262231346701522
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 9.272734967625027,
+        "median": 10.866980731249924,
+        "q3": 13.825757166374942,
+        "iqr": 4.553022198749915
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": 0.5097161100063656,
+        "median": 0.5886827875316611,
+        "q3": 0.8054167782811327,
+        "iqr": 0.29570066827476704
+      }
+    },
+    {
+      "intensity": "medium",
+      "heuristic": "balanced-makespan",
+      "instance_ids": [
+        "provisional-held_out-medium-3012",
+        "provisional-held_out-medium-3013",
+        "provisional-held_out-medium-3014",
+        "provisional-held_out-medium-3015",
+        "provisional-held_out-medium-3016",
+        "provisional-held_out-medium-3017",
+        "provisional-held_out-medium-3018",
+        "provisional-held_out-medium-3019",
+        "provisional-held_out-medium-3020",
+        "provisional-held_out-medium-3021",
+        "provisional-held_out-medium-3022",
+        "provisional-held_out-medium-3023"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": 0.29919917429362286,
+        "median": 0.6702936118665193,
+        "q3": 0.9097293625271892,
+        "iqr": 0.6105301882335663
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 8.243485399500017,
+        "median": 9.143521756249967,
+        "q3": 13.034516649624948,
+        "iqr": 4.791031250124931
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": 0.5456882590580756,
+        "median": 0.6279941280157566,
+        "q3": 0.786411347586411,
+        "iqr": 0.24072308852833535
+      }
+    },
+    {
+      "intensity": "medium",
+      "heuristic": "balanced-energy",
+      "instance_ids": [
+        "provisional-held_out-medium-3012",
+        "provisional-held_out-medium-3013",
+        "provisional-held_out-medium-3014",
+        "provisional-held_out-medium-3015",
+        "provisional-held_out-medium-3016",
+        "provisional-held_out-medium-3017",
+        "provisional-held_out-medium-3018",
+        "provisional-held_out-medium-3019",
+        "provisional-held_out-medium-3020",
+        "provisional-held_out-medium-3021",
+        "provisional-held_out-medium-3022",
+        "provisional-held_out-medium-3023"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": -0.46935913207715885,
+        "median": -0.0668334646872566,
+        "q3": 0.38381623667287634,
+        "iqr": 0.8531753687500352
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 14.842249245249974,
+        "median": 17.501667097249936,
+        "q3": 20.107276641874932,
+        "iqr": 5.2650273966249586
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": -0.08427937355531867,
+        "median": 0.0375079303321737,
+        "q3": 0.16368150500200063,
+        "iqr": 0.2479608785573193
+      }
+    },
+    {
+      "intensity": "high",
+      "heuristic": "random",
+      "instance_ids": [
+        "provisional-held_out-high-3024",
+        "provisional-held_out-high-3025",
+        "provisional-held_out-high-3026",
+        "provisional-held_out-high-3027",
+        "provisional-held_out-high-3028",
+        "provisional-held_out-high-3029",
+        "provisional-held_out-high-3030",
+        "provisional-held_out-high-3031",
+        "provisional-held_out-high-3032",
+        "provisional-held_out-high-3033",
+        "provisional-held_out-high-3034",
+        "provisional-held_out-high-3035"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": -4.217297084551364,
+        "median": -2.58704999521001,
+        "q3": -0.679152703547186,
+        "iqr": 3.5381443810041784
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 0.03843357962497862,
+        "median": 1.319366383375126,
+        "q3": 3.0244592392500493,
+        "iqr": 2.9860256596250707
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": -0.5515521449871146,
+        "median": -0.21098105802736988,
+        "q3": -0.1552698303502671,
+        "iqr": 0.3962823146368475
+      }
+    },
+    {
+      "intensity": "high",
+      "heuristic": "latency-first",
+      "instance_ids": [
+        "provisional-held_out-high-3024",
+        "provisional-held_out-high-3025",
+        "provisional-held_out-high-3026",
+        "provisional-held_out-high-3027",
+        "provisional-held_out-high-3028",
+        "provisional-held_out-high-3029",
+        "provisional-held_out-high-3030",
+        "provisional-held_out-high-3031",
+        "provisional-held_out-high-3032",
+        "provisional-held_out-high-3033",
+        "provisional-held_out-high-3034",
+        "provisional-held_out-high-3035"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": 2.4153624064604617,
+        "median": 3.0919723540620785,
+        "q3": 4.816870734635271,
+        "iqr": 2.401508328174809
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 2.7099923715000074,
+        "median": 5.071614653624934,
+        "q3": 9.427423312125015,
+        "iqr": 6.7174309406250075
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": 0.9963248758758982,
+        "median": 1.2742702887373363,
+        "q3": 1.3270588746780898,
+        "iqr": 0.33073399880219156
+      }
+    },
+    {
+      "intensity": "high",
+      "heuristic": "energy-first",
+      "instance_ids": [
+        "provisional-held_out-high-3024",
+        "provisional-held_out-high-3025",
+        "provisional-held_out-high-3026",
+        "provisional-held_out-high-3027",
+        "provisional-held_out-high-3028",
+        "provisional-held_out-high-3029",
+        "provisional-held_out-high-3030",
+        "provisional-held_out-high-3031",
+        "provisional-held_out-high-3032",
+        "provisional-held_out-high-3033",
+        "provisional-held_out-high-3034",
+        "provisional-held_out-high-3035"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": -76.10803313496893,
+        "median": -73.60334972801627,
+        "q3": -71.93611751120577,
+        "iqr": 4.171915623763169
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 51.68369904300022,
+        "median": 54.41951627375016,
+        "q3": 56.91504957387514,
+        "iqr": 5.23135053087492
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": -74.5648345348331,
+        "median": -73.27928349174286,
+        "q3": -71.88769252357683,
+        "iqr": 2.677142011256265
+      }
+    },
+    {
+      "intensity": "high",
+      "heuristic": "balanced-equal",
+      "instance_ids": [
+        "provisional-held_out-high-3024",
+        "provisional-held_out-high-3025",
+        "provisional-held_out-high-3026",
+        "provisional-held_out-high-3027",
+        "provisional-held_out-high-3028",
+        "provisional-held_out-high-3029",
+        "provisional-held_out-high-3030",
+        "provisional-held_out-high-3031",
+        "provisional-held_out-high-3032",
+        "provisional-held_out-high-3033",
+        "provisional-held_out-high-3034",
+        "provisional-held_out-high-3035"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": 2.40504260110509,
+        "median": 3.064290797466114,
+        "q3": 4.887237349171092,
+        "iqr": 2.482194748066002
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 9.472152095000027,
+        "median": 11.038703001625052,
+        "q3": 13.76849152887489,
+        "iqr": 4.296339433874863
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": 0.9983595276869309,
+        "median": 1.3120468970935208,
+        "q3": 1.4632487232898166,
+        "iqr": 0.46488919560288566
+      }
+    },
+    {
+      "intensity": "high",
+      "heuristic": "balanced-makespan",
+      "instance_ids": [
+        "provisional-held_out-high-3024",
+        "provisional-held_out-high-3025",
+        "provisional-held_out-high-3026",
+        "provisional-held_out-high-3027",
+        "provisional-held_out-high-3028",
+        "provisional-held_out-high-3029",
+        "provisional-held_out-high-3030",
+        "provisional-held_out-high-3031",
+        "provisional-held_out-high-3032",
+        "provisional-held_out-high-3033",
+        "provisional-held_out-high-3034",
+        "provisional-held_out-high-3035"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": 2.351893869549956,
+        "median": 3.132961597466114,
+        "q3": 4.9774175042461675,
+        "iqr": 2.6255236346962114
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 8.744839128374991,
+        "median": 10.96031782112506,
+        "q3": 13.48379619699989,
+        "iqr": 4.738957068624899
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": 1.0606352040181437,
+        "median": 1.342901687468823,
+        "q3": 1.5416494674143986,
+        "iqr": 0.48101426339625486
+      }
+    },
+    {
+      "intensity": "high",
+      "heuristic": "balanced-energy",
+      "instance_ids": [
+        "provisional-held_out-high-3024",
+        "provisional-held_out-high-3025",
+        "provisional-held_out-high-3026",
+        "provisional-held_out-high-3027",
+        "provisional-held_out-high-3028",
+        "provisional-held_out-high-3029",
+        "provisional-held_out-high-3030",
+        "provisional-held_out-high-3031",
+        "provisional-held_out-high-3032",
+        "provisional-held_out-high-3033",
+        "provisional-held_out-high-3034",
+        "provisional-held_out-high-3035"
+      ],
+      "makespan_s": {
+        "n": 12,
+        "q1": 1.2112292499382624,
+        "median": 1.8922954867760469,
+        "q3": 3.529867936526034,
+        "iqr": 2.3186386865877715
+      },
+      "energy_j": {
+        "n": 12,
+        "q1": 13.295407751625078,
+        "median": 15.975368171500008,
+        "q3": 17.660084098749948,
+        "iqr": 4.36467634712487
+      },
+      "mean_latency_s": {
+        "n": 12,
+        "q1": 0.3969220006133136,
+        "median": 0.6617038904961108,
+        "q3": 1.0914655553040336,
+        "iqr": 0.6945435546907199
+      }
+    }
+  ],
+  "non_dominated_counts": {
+    "space": "full",
+    "instance_count": 36,
+    "by_policy": [
+      {
+        "policy_config_id": "random",
+        "count": 0,
+        "instance_ids": []
+      },
+      {
+        "policy_config_id": "latency-first",
+        "count": 27,
+        "instance_ids": [
+          "provisional-held_out-low-3000",
+          "provisional-held_out-low-3001",
+          "provisional-held_out-low-3002",
+          "provisional-held_out-low-3003",
+          "provisional-held_out-low-3004",
+          "provisional-held_out-low-3005",
+          "provisional-held_out-low-3006",
+          "provisional-held_out-low-3007",
+          "provisional-held_out-low-3008",
+          "provisional-held_out-low-3009",
+          "provisional-held_out-low-3010",
+          "provisional-held_out-low-3011",
+          "provisional-held_out-medium-3012",
+          "provisional-held_out-medium-3013",
+          "provisional-held_out-medium-3014",
+          "provisional-held_out-medium-3015",
+          "provisional-held_out-medium-3016",
+          "provisional-held_out-medium-3017",
+          "provisional-held_out-medium-3018",
+          "provisional-held_out-medium-3019",
+          "provisional-held_out-medium-3020",
+          "provisional-held_out-medium-3021",
+          "provisional-held_out-medium-3022",
+          "provisional-held_out-medium-3023",
+          "provisional-held_out-high-3030",
+          "provisional-held_out-high-3034",
+          "provisional-held_out-high-3035"
+        ]
+      },
+      {
+        "policy_config_id": "energy-first",
+        "count": 36,
+        "instance_ids": [
+          "provisional-held_out-low-3000",
+          "provisional-held_out-low-3001",
+          "provisional-held_out-low-3002",
+          "provisional-held_out-low-3003",
+          "provisional-held_out-low-3004",
+          "provisional-held_out-low-3005",
+          "provisional-held_out-low-3006",
+          "provisional-held_out-low-3007",
+          "provisional-held_out-low-3008",
+          "provisional-held_out-low-3009",
+          "provisional-held_out-low-3010",
+          "provisional-held_out-low-3011",
+          "provisional-held_out-medium-3012",
+          "provisional-held_out-medium-3013",
+          "provisional-held_out-medium-3014",
+          "provisional-held_out-medium-3015",
+          "provisional-held_out-medium-3016",
+          "provisional-held_out-medium-3017",
+          "provisional-held_out-medium-3018",
+          "provisional-held_out-medium-3019",
+          "provisional-held_out-medium-3020",
+          "provisional-held_out-medium-3021",
+          "provisional-held_out-medium-3022",
+          "provisional-held_out-medium-3023",
+          "provisional-held_out-high-3024",
+          "provisional-held_out-high-3025",
+          "provisional-held_out-high-3026",
+          "provisional-held_out-high-3027",
+          "provisional-held_out-high-3028",
+          "provisional-held_out-high-3029",
+          "provisional-held_out-high-3030",
+          "provisional-held_out-high-3031",
+          "provisional-held_out-high-3032",
+          "provisional-held_out-high-3033",
+          "provisional-held_out-high-3034",
+          "provisional-held_out-high-3035"
+        ]
+      },
+      {
+        "policy_config_id": "balanced-equal",
+        "count": 34,
+        "instance_ids": [
+          "provisional-held_out-low-3000",
+          "provisional-held_out-low-3001",
+          "provisional-held_out-low-3002",
+          "provisional-held_out-low-3003",
+          "provisional-held_out-low-3004",
+          "provisional-held_out-low-3005",
+          "provisional-held_out-low-3006",
+          "provisional-held_out-low-3007",
+          "provisional-held_out-low-3008",
+          "provisional-held_out-low-3009",
+          "provisional-held_out-low-3010",
+          "provisional-held_out-low-3011",
+          "provisional-held_out-medium-3012",
+          "provisional-held_out-medium-3014",
+          "provisional-held_out-medium-3015",
+          "provisional-held_out-medium-3016",
+          "provisional-held_out-medium-3017",
+          "provisional-held_out-medium-3018",
+          "provisional-held_out-medium-3019",
+          "provisional-held_out-medium-3020",
+          "provisional-held_out-medium-3021",
+          "provisional-held_out-medium-3022",
+          "provisional-held_out-medium-3023",
+          "provisional-held_out-high-3024",
+          "provisional-held_out-high-3025",
+          "provisional-held_out-high-3026",
+          "provisional-held_out-high-3027",
+          "provisional-held_out-high-3028",
+          "provisional-held_out-high-3029",
+          "provisional-held_out-high-3030",
+          "provisional-held_out-high-3031",
+          "provisional-held_out-high-3033",
+          "provisional-held_out-high-3034",
+          "provisional-held_out-high-3035"
+        ]
+      },
+      {
+        "policy_config_id": "balanced-makespan",
+        "count": 33,
+        "instance_ids": [
+          "provisional-held_out-low-3000",
+          "provisional-held_out-low-3001",
+          "provisional-held_out-low-3002",
+          "provisional-held_out-low-3003",
+          "provisional-held_out-low-3004",
+          "provisional-held_out-low-3005",
+          "provisional-held_out-low-3006",
+          "provisional-held_out-low-3007",
+          "provisional-held_out-low-3008",
+          "provisional-held_out-low-3009",
+          "provisional-held_out-low-3010",
+          "provisional-held_out-low-3011",
+          "provisional-held_out-medium-3012",
+          "provisional-held_out-medium-3013",
+          "provisional-held_out-medium-3014",
+          "provisional-held_out-medium-3015",
+          "provisional-held_out-medium-3018",
+          "provisional-held_out-medium-3019",
+          "provisional-held_out-medium-3020",
+          "provisional-held_out-medium-3021",
+          "provisional-held_out-medium-3022",
+          "provisional-held_out-medium-3023",
+          "provisional-held_out-high-3024",
+          "provisional-held_out-high-3025",
+          "provisional-held_out-high-3026",
+          "provisional-held_out-high-3027",
+          "provisional-held_out-high-3029",
+          "provisional-held_out-high-3030",
+          "provisional-held_out-high-3031",
+          "provisional-held_out-high-3032",
+          "provisional-held_out-high-3033",
+          "provisional-held_out-high-3034",
+          "provisional-held_out-high-3035"
+        ]
+      },
+      {
+        "policy_config_id": "balanced-energy",
+        "count": 36,
+        "instance_ids": [
+          "provisional-held_out-low-3000",
+          "provisional-held_out-low-3001",
+          "provisional-held_out-low-3002",
+          "provisional-held_out-low-3003",
+          "provisional-held_out-low-3004",
+          "provisional-held_out-low-3005",
+          "provisional-held_out-low-3006",
+          "provisional-held_out-low-3007",
+          "provisional-held_out-low-3008",
+          "provisional-held_out-low-3009",
+          "provisional-held_out-low-3010",
+          "provisional-held_out-low-3011",
+          "provisional-held_out-medium-3012",
+          "provisional-held_out-medium-3013",
+          "provisional-held_out-medium-3014",
+          "provisional-held_out-medium-3015",
+          "provisional-held_out-medium-3016",
+          "provisional-held_out-medium-3017",
+          "provisional-held_out-medium-3018",
+          "provisional-held_out-medium-3019",
+          "provisional-held_out-medium-3020",
+          "provisional-held_out-medium-3021",
+          "provisional-held_out-medium-3022",
+          "provisional-held_out-medium-3023",
+          "provisional-held_out-high-3024",
+          "provisional-held_out-high-3025",
+          "provisional-held_out-high-3026",
+          "provisional-held_out-high-3027",
+          "provisional-held_out-high-3028",
+          "provisional-held_out-high-3029",
+          "provisional-held_out-high-3030",
+          "provisional-held_out-high-3031",
+          "provisional-held_out-high-3032",
+          "provisional-held_out-high-3033",
+          "provisional-held_out-high-3034",
+          "provisional-held_out-high-3035"
+        ]
+      },
+      {
+        "policy_config_id": "dqn-fixed",
+        "count": 1,
+        "instance_ids": [
+          "provisional-held_out-low-3000"
+        ]
+      }
+    ]
+  },
+  "cases": {
+    "energy_under_latency_ceiling": [
+      {
+        "instance_id": "provisional-held_out-low-3000",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-low-3000-balanced-energy",
+          "provisional-held_out-low-3000-balanced-equal",
+          "provisional-held_out-low-3000-balanced-makespan",
+          "provisional-held_out-low-3000-dqn-fixed-8",
+          "provisional-held_out-low-3000-latency-first",
+          "provisional-held_out-low-3000-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-low-3000-balanced-energy",
+        "energy_j": 177.24648869350005,
+        "mean_latency_s": 1.267959085258367
+      },
+      {
+        "instance_id": "provisional-held_out-low-3001",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-low-3001-balanced-energy",
+          "provisional-held_out-low-3001-balanced-equal",
+          "provisional-held_out-low-3001-balanced-makespan",
+          "provisional-held_out-low-3001-dqn-fixed-8",
+          "provisional-held_out-low-3001-latency-first",
+          "provisional-held_out-low-3001-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-low-3001-balanced-energy",
+        "energy_j": 175.1152248597501,
+        "mean_latency_s": 1.1875791713854005
+      },
+      {
+        "instance_id": "provisional-held_out-low-3002",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-low-3002-balanced-energy",
+          "provisional-held_out-low-3002-balanced-equal",
+          "provisional-held_out-low-3002-balanced-makespan",
+          "provisional-held_out-low-3002-dqn-fixed-8",
+          "provisional-held_out-low-3002-latency-first",
+          "provisional-held_out-low-3002-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-low-3002-balanced-energy",
+        "energy_j": 166.44755837825,
+        "mean_latency_s": 1.165326318036252
+      },
+      {
+        "instance_id": "provisional-held_out-low-3003",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-low-3003-balanced-energy",
+          "provisional-held_out-low-3003-balanced-equal",
+          "provisional-held_out-low-3003-balanced-makespan",
+          "provisional-held_out-low-3003-dqn-fixed-8",
+          "provisional-held_out-low-3003-latency-first",
+          "provisional-held_out-low-3003-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-low-3003-balanced-energy",
+        "energy_j": 180.5415958935,
+        "mean_latency_s": 1.3565070653652234
+      },
+      {
+        "instance_id": "provisional-held_out-low-3004",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-low-3004-balanced-energy",
+          "provisional-held_out-low-3004-balanced-equal",
+          "provisional-held_out-low-3004-balanced-makespan",
+          "provisional-held_out-low-3004-dqn-fixed-8",
+          "provisional-held_out-low-3004-latency-first",
+          "provisional-held_out-low-3004-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-low-3004-balanced-energy",
+        "energy_j": 167.60943029599997,
+        "mean_latency_s": 1.1899438456811453
+      },
+      {
+        "instance_id": "provisional-held_out-low-3005",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-low-3005-balanced-energy",
+          "provisional-held_out-low-3005-balanced-equal",
+          "provisional-held_out-low-3005-balanced-makespan",
+          "provisional-held_out-low-3005-dqn-fixed-8",
+          "provisional-held_out-low-3005-latency-first",
+          "provisional-held_out-low-3005-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-low-3005-balanced-energy",
+        "energy_j": 168.4725337169998,
+        "mean_latency_s": 1.1651755567457207
+      },
+      {
+        "instance_id": "provisional-held_out-low-3006",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-low-3006-balanced-energy",
+          "provisional-held_out-low-3006-balanced-equal",
+          "provisional-held_out-low-3006-balanced-makespan",
+          "provisional-held_out-low-3006-dqn-fixed-8",
+          "provisional-held_out-low-3006-latency-first",
+          "provisional-held_out-low-3006-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-low-3006-balanced-energy",
+        "energy_j": 159.73255741525006,
+        "mean_latency_s": 1.1879441516675993
+      },
+      {
+        "instance_id": "provisional-held_out-low-3007",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-low-3007-balanced-energy",
+          "provisional-held_out-low-3007-balanced-equal",
+          "provisional-held_out-low-3007-balanced-makespan",
+          "provisional-held_out-low-3007-dqn-fixed-8",
+          "provisional-held_out-low-3007-latency-first",
+          "provisional-held_out-low-3007-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-low-3007-balanced-energy",
+        "energy_j": 176.51420076424995,
+        "mean_latency_s": 1.3980725164295038
+      },
+      {
+        "instance_id": "provisional-held_out-low-3008",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-low-3008-balanced-energy",
+          "provisional-held_out-low-3008-balanced-equal",
+          "provisional-held_out-low-3008-balanced-makespan",
+          "provisional-held_out-low-3008-dqn-fixed-8",
+          "provisional-held_out-low-3008-latency-first",
+          "provisional-held_out-low-3008-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-low-3008-balanced-energy",
+        "energy_j": 177.62082421199995,
+        "mean_latency_s": 1.2626362170215784
+      },
+      {
+        "instance_id": "provisional-held_out-low-3009",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-low-3009-balanced-energy",
+          "provisional-held_out-low-3009-balanced-equal",
+          "provisional-held_out-low-3009-balanced-makespan",
+          "provisional-held_out-low-3009-dqn-fixed-8",
+          "provisional-held_out-low-3009-latency-first",
+          "provisional-held_out-low-3009-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-low-3009-balanced-energy",
+        "energy_j": 179.7964453447501,
+        "mean_latency_s": 1.3468056980064789
+      },
+      {
+        "instance_id": "provisional-held_out-low-3010",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-low-3010-balanced-energy",
+          "provisional-held_out-low-3010-balanced-equal",
+          "provisional-held_out-low-3010-balanced-makespan",
+          "provisional-held_out-low-3010-dqn-fixed-8",
+          "provisional-held_out-low-3010-latency-first",
+          "provisional-held_out-low-3010-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-low-3010-balanced-energy",
+        "energy_j": 182.0048357724999,
+        "mean_latency_s": 1.3669112204858371
+      },
+      {
+        "instance_id": "provisional-held_out-low-3011",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-low-3011-balanced-energy",
+          "provisional-held_out-low-3011-balanced-equal",
+          "provisional-held_out-low-3011-balanced-makespan",
+          "provisional-held_out-low-3011-dqn-fixed-8",
+          "provisional-held_out-low-3011-latency-first",
+          "provisional-held_out-low-3011-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-low-3011-balanced-energy",
+        "energy_j": 161.73558429100004,
+        "mean_latency_s": 1.2136078824838914
+      },
+      {
+        "instance_id": "provisional-held_out-medium-3012",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-medium-3012-balanced-energy",
+          "provisional-held_out-medium-3012-balanced-equal",
+          "provisional-held_out-medium-3012-balanced-makespan",
+          "provisional-held_out-medium-3012-dqn-fixed-8",
+          "provisional-held_out-medium-3012-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-medium-3012-balanced-energy",
+        "energy_j": 186.72478208674997,
+        "mean_latency_s": 1.5267413746167178
+      },
+      {
+        "instance_id": "provisional-held_out-medium-3013",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-medium-3013-balanced-equal",
+          "provisional-held_out-medium-3013-balanced-makespan",
+          "provisional-held_out-medium-3013-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-medium-3013-balanced-makespan",
+        "energy_j": 196.60491732275003,
+        "mean_latency_s": 1.0681260065232723
+      },
+      {
+        "instance_id": "provisional-held_out-medium-3014",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-medium-3014-balanced-equal",
+          "provisional-held_out-medium-3014-balanced-makespan",
+          "provisional-held_out-medium-3014-latency-first",
+          "provisional-held_out-medium-3014-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-medium-3014-balanced-equal",
+        "energy_j": 191.68206919725003,
+        "mean_latency_s": 1.0334059901805257
+      },
+      {
+        "instance_id": "provisional-held_out-medium-3015",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-medium-3015-balanced-energy",
+          "provisional-held_out-medium-3015-balanced-equal",
+          "provisional-held_out-medium-3015-balanced-makespan",
+          "provisional-held_out-medium-3015-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-medium-3015-balanced-energy",
+        "energy_j": 182.63927680524998,
+        "mean_latency_s": 1.4778115760577084
+      },
+      {
+        "instance_id": "provisional-held_out-medium-3016",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-medium-3016-balanced-equal",
+          "provisional-held_out-medium-3016-balanced-makespan",
+          "provisional-held_out-medium-3016-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-medium-3016-balanced-equal",
+        "energy_j": 206.15647499350004,
+        "mean_latency_s": 1.2482156797992356
+      },
+      {
+        "instance_id": "provisional-held_out-medium-3017",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-medium-3017-balanced-equal",
+          "provisional-held_out-medium-3017-balanced-makespan",
+          "provisional-held_out-medium-3017-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-medium-3017-balanced-equal",
+        "energy_j": 192.8053515877499,
+        "mean_latency_s": 1.098315325389996
+      },
+      {
+        "instance_id": "provisional-held_out-medium-3018",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-medium-3018-balanced-equal",
+          "provisional-held_out-medium-3018-balanced-makespan",
+          "provisional-held_out-medium-3018-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-medium-3018-balanced-equal",
+        "energy_j": 197.90987750125,
+        "mean_latency_s": 1.1174455960440965
+      },
+      {
+        "instance_id": "provisional-held_out-medium-3019",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-medium-3019-balanced-equal",
+          "provisional-held_out-medium-3019-balanced-makespan",
+          "provisional-held_out-medium-3019-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-medium-3019-balanced-equal",
+        "energy_j": 201.12733024099995,
+        "mean_latency_s": 1.0478290546625
+      },
+      {
+        "instance_id": "provisional-held_out-medium-3020",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-medium-3020-balanced-energy",
+          "provisional-held_out-medium-3020-balanced-equal",
+          "provisional-held_out-medium-3020-balanced-makespan",
+          "provisional-held_out-medium-3020-dqn-fixed-8",
+          "provisional-held_out-medium-3020-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-medium-3020-balanced-energy",
+        "energy_j": 181.40135975225004,
+        "mean_latency_s": 1.3648648770956844
+      },
+      {
+        "instance_id": "provisional-held_out-medium-3021",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-medium-3021-balanced-equal",
+          "provisional-held_out-medium-3021-balanced-makespan",
+          "provisional-held_out-medium-3021-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-medium-3021-balanced-equal",
+        "energy_j": 200.5933530712501,
+        "mean_latency_s": 1.0031986414162826
+      },
+      {
+        "instance_id": "provisional-held_out-medium-3022",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-medium-3022-balanced-equal",
+          "provisional-held_out-medium-3022-balanced-makespan",
+          "provisional-held_out-medium-3022-latency-first",
+          "provisional-held_out-medium-3022-random-11"
+        ],
+        "selected_run_id": "provisional-held_out-medium-3022-balanced-makespan",
+        "energy_j": 201.0247029685,
+        "mean_latency_s": 0.9624692860203906
+      },
+      {
+        "instance_id": "provisional-held_out-medium-3023",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-medium-3023-balanced-energy",
+          "provisional-held_out-medium-3023-balanced-equal",
+          "provisional-held_out-medium-3023-balanced-makespan",
+          "provisional-held_out-medium-3023-dqn-fixed-8",
+          "provisional-held_out-medium-3023-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-medium-3023-balanced-energy",
+        "energy_j": 176.57074406474996,
+        "mean_latency_s": 1.3637223437825932
+      },
+      {
+        "instance_id": "provisional-held_out-high-3024",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-high-3024-balanced-equal",
+          "provisional-held_out-high-3024-balanced-makespan",
+          "provisional-held_out-high-3024-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-high-3024-balanced-equal",
+        "energy_j": 199.03299967799992,
+        "mean_latency_s": 1.141022647561576
+      },
+      {
+        "instance_id": "provisional-held_out-high-3025",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-high-3025-balanced-equal",
+          "provisional-held_out-high-3025-balanced-makespan",
+          "provisional-held_out-high-3025-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-high-3025-balanced-equal",
+        "energy_j": 198.8721803814999,
+        "mean_latency_s": 1.3666826974331265
+      },
+      {
+        "instance_id": "provisional-held_out-high-3026",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [],
+        "selected_run_id": null,
+        "energy_j": null,
+        "mean_latency_s": null
+      },
+      {
+        "instance_id": "provisional-held_out-high-3027",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-high-3027-balanced-equal",
+          "provisional-held_out-high-3027-balanced-makespan",
+          "provisional-held_out-high-3027-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-high-3027-balanced-equal",
+        "energy_j": 198.99746696374996,
+        "mean_latency_s": 1.292592381408646
+      },
+      {
+        "instance_id": "provisional-held_out-high-3028",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [],
+        "selected_run_id": null,
+        "energy_j": null,
+        "mean_latency_s": null
+      },
+      {
+        "instance_id": "provisional-held_out-high-3029",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-high-3029-balanced-makespan"
+        ],
+        "selected_run_id": "provisional-held_out-high-3029-balanced-makespan",
+        "energy_j": 205.18361374250003,
+        "mean_latency_s": 1.5085890774407855
+      },
+      {
+        "instance_id": "provisional-held_out-high-3030",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-high-3030-balanced-equal",
+          "provisional-held_out-high-3030-balanced-makespan",
+          "provisional-held_out-high-3030-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-high-3030-balanced-makespan",
+        "energy_j": 202.83060414650004,
+        "mean_latency_s": 1.2644458930502518
+      },
+      {
+        "instance_id": "provisional-held_out-high-3031",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [],
+        "selected_run_id": null,
+        "energy_j": null,
+        "mean_latency_s": null
+      },
+      {
+        "instance_id": "provisional-held_out-high-3032",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [],
+        "selected_run_id": null,
+        "energy_j": null,
+        "mean_latency_s": null
+      },
+      {
+        "instance_id": "provisional-held_out-high-3033",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [],
+        "selected_run_id": null,
+        "energy_j": null,
+        "mean_latency_s": null
+      },
+      {
+        "instance_id": "provisional-held_out-high-3034",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-high-3034-balanced-equal",
+          "provisional-held_out-high-3034-balanced-makespan",
+          "provisional-held_out-high-3034-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-high-3034-balanced-equal",
+        "energy_j": 206.15544285149997,
+        "mean_latency_s": 1.2050046626630428
+      },
+      {
+        "instance_id": "provisional-held_out-high-3035",
+        "threshold_s": 1.5315414806069878,
+        "eligible_run_ids": [
+          "provisional-held_out-high-3035-balanced-equal",
+          "provisional-held_out-high-3035-balanced-makespan",
+          "provisional-held_out-high-3035-latency-first"
+        ],
+        "selected_run_id": "provisional-held_out-high-3035-balanced-equal",
+        "energy_j": 196.28581560325003,
+        "mean_latency_s": 1.2433363561784732
+      }
+    ],
+    "dqn_versus_heuristics_on_one_instance": {
+      "status": "instance_not_preregistered",
+      "statement": "The freeze describes this case on one instance but does not name a held-out instance. No instance was selected after the held-out results were known."
+    },
+    "pair_versus_full": {
+      "status": "reported",
+      "instance_id": "provisional-held_out-low-3000",
+      "run_id": "provisional-held_out-low-3000-latency-first",
+      "pair": "makespan_s|energy_j",
+      "pair_non_dominated": false,
+      "full_non_dominated": true,
+      "third_objective": "mean_latency_s",
+      "target_value": 0.695156189225454,
+      "witness_run_id": "provisional-held_out-low-3000-dqn-fixed-8",
+      "witness_value": 1.1994817589502929,
+      "explanation": "provisional-held_out-low-3000-latency-first is dominated on makespan_s|energy_j by provisional-held_out-low-3000-dqn-fixed-8. It remains non-dominated in the full space because L is 0.695156189225454 for this run and 1.1994817589502929 for the witness; lower is better, and the witness is not strictly better on L."
+    },
+    "intensity_comparison": [
+      {
+        "intensity": "low",
+        "instance_ids": [
+          "provisional-held_out-low-3000",
+          "provisional-held_out-low-3001",
+          "provisional-held_out-low-3002",
+          "provisional-held_out-low-3003",
+          "provisional-held_out-low-3004",
+          "provisional-held_out-low-3005",
+          "provisional-held_out-low-3006",
+          "provisional-held_out-low-3007",
+          "provisional-held_out-low-3008",
+          "provisional-held_out-low-3009",
+          "provisional-held_out-low-3010",
+          "provisional-held_out-low-3011"
+        ],
+        "paired_summaries": [
+          {
+            "intensity": "low",
+            "heuristic": "random",
+            "instance_ids": [
+              "provisional-held_out-low-3000",
+              "provisional-held_out-low-3001",
+              "provisional-held_out-low-3002",
+              "provisional-held_out-low-3003",
+              "provisional-held_out-low-3004",
+              "provisional-held_out-low-3005",
+              "provisional-held_out-low-3006",
+              "provisional-held_out-low-3007",
+              "provisional-held_out-low-3008",
+              "provisional-held_out-low-3009",
+              "provisional-held_out-low-3010",
+              "provisional-held_out-low-3011"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": -0.412457999126449,
+              "median": -0.018231711398705386,
+              "q3": 0.2450171064895219,
+              "iqr": 0.6574751056159709
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": -1.5915865711250206,
+              "median": 0.3333886937501518,
+              "q3": 1.597033844249978,
+              "iqr": 3.1886204153749986
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": 0.06672450790197204,
+              "median": 0.15896775434094446,
+              "q3": 0.17373070874776697,
+              "iqr": 0.10700620084579493
+            }
+          },
+          {
+            "intensity": "low",
+            "heuristic": "latency-first",
+            "instance_ids": [
+              "provisional-held_out-low-3000",
+              "provisional-held_out-low-3001",
+              "provisional-held_out-low-3002",
+              "provisional-held_out-low-3003",
+              "provisional-held_out-low-3004",
+              "provisional-held_out-low-3005",
+              "provisional-held_out-low-3006",
+              "provisional-held_out-low-3007",
+              "provisional-held_out-low-3008",
+              "provisional-held_out-low-3009",
+              "provisional-held_out-low-3010",
+              "provisional-held_out-low-3011"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": 0.18477636250000273,
+              "median": 0.5236835987262936,
+              "q3": 0.8485118942346226,
+              "iqr": 0.6637355317346199
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": -6.7139569980000715,
+              "median": -6.335573279624938,
+              "q3": -5.716649822999983,
+              "iqr": 0.9973071750000884
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": 0.496081533203037,
+              "median": 0.5182065059891429,
+              "q3": 0.5511920910127118,
+              "iqr": 0.05511055780967483
+            }
+          },
+          {
+            "intensity": "low",
+            "heuristic": "energy-first",
+            "instance_ids": [
+              "provisional-held_out-low-3000",
+              "provisional-held_out-low-3001",
+              "provisional-held_out-low-3002",
+              "provisional-held_out-low-3003",
+              "provisional-held_out-low-3004",
+              "provisional-held_out-low-3005",
+              "provisional-held_out-low-3006",
+              "provisional-held_out-low-3007",
+              "provisional-held_out-low-3008",
+              "provisional-held_out-low-3009",
+              "provisional-held_out-low-3010",
+              "provisional-held_out-low-3011"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": -56.39283812827817,
+              "median": -53.59184303822528,
+              "q3": -50.77629783016057,
+              "iqr": 5.616540298117599
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 47.98614655450015,
+              "median": 50.81507111887515,
+              "q3": 53.05379568787495,
+              "iqr": 5.0676491333748
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": -53.63641540616279,
+              "median": -50.94373554879096,
+              "q3": -48.37531250401408,
+              "iqr": 5.261102902148707
+            }
+          },
+          {
+            "intensity": "low",
+            "heuristic": "balanced-equal",
+            "instance_ids": [
+              "provisional-held_out-low-3000",
+              "provisional-held_out-low-3001",
+              "provisional-held_out-low-3002",
+              "provisional-held_out-low-3003",
+              "provisional-held_out-low-3004",
+              "provisional-held_out-low-3005",
+              "provisional-held_out-low-3006",
+              "provisional-held_out-low-3007",
+              "provisional-held_out-low-3008",
+              "provisional-held_out-low-3009",
+              "provisional-held_out-low-3010",
+              "provisional-held_out-low-3011"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": 0.09041398885153029,
+              "median": 0.2506944720791502,
+              "q3": 0.6432834022972997,
+              "iqr": 0.5528694134457695
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 17.327253056999908,
+              "median": 19.896911364750025,
+              "q3": 20.732015186375094,
+              "iqr": 3.404762129375186
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": 0.36743777059800525,
+              "median": 0.4123614786518402,
+              "q3": 0.4956373861505498,
+              "iqr": 0.12819961555254455
+            }
+          },
+          {
+            "intensity": "low",
+            "heuristic": "balanced-makespan",
+            "instance_ids": [
+              "provisional-held_out-low-3000",
+              "provisional-held_out-low-3001",
+              "provisional-held_out-low-3002",
+              "provisional-held_out-low-3003",
+              "provisional-held_out-low-3004",
+              "provisional-held_out-low-3005",
+              "provisional-held_out-low-3006",
+              "provisional-held_out-low-3007",
+              "provisional-held_out-low-3008",
+              "provisional-held_out-low-3009",
+              "provisional-held_out-low-3010",
+              "provisional-held_out-low-3011"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": 0.1425710552916648,
+              "median": 0.2506944720791502,
+              "q3": 0.6432834022972997,
+              "iqr": 0.5007123470056349
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 15.807086101750016,
+              "median": 17.62151438162506,
+              "q3": 18.131888382750034,
+              "iqr": 2.324802281000018
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": 0.396246069543963,
+              "median": 0.4358891834699213,
+              "q3": 0.5160990059931452,
+              "iqr": 0.11985293644918216
+            }
+          },
+          {
+            "intensity": "low",
+            "heuristic": "balanced-energy",
+            "instance_ids": [
+              "provisional-held_out-low-3000",
+              "provisional-held_out-low-3001",
+              "provisional-held_out-low-3002",
+              "provisional-held_out-low-3003",
+              "provisional-held_out-low-3004",
+              "provisional-held_out-low-3005",
+              "provisional-held_out-low-3006",
+              "provisional-held_out-low-3007",
+              "provisional-held_out-low-3008",
+              "provisional-held_out-low-3009",
+              "provisional-held_out-low-3010",
+              "provisional-held_out-low-3011"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": -0.31086379243994955,
+              "median": -0.11769504223335758,
+              "q3": 0.2057860566711085,
+              "iqr": 0.516649849111058
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 29.75808239212506,
+              "median": 31.1212385755,
+              "q3": 32.917008818499994,
+              "iqr": 3.158926426374933
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": -0.13746174506765363,
+              "median": -0.0675874756152629,
+              "q3": 0.04164253264508899,
+              "iqr": 0.17910427771274262
+            }
+          }
+        ],
+        "within_instance_fronts": [
+          {
+            "instance_id": "provisional-held_out-low-3000",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-low-3000-latency-first",
+              "provisional-held_out-low-3000-energy-first",
+              "provisional-held_out-low-3000-balanced-equal",
+              "provisional-held_out-low-3000-balanced-makespan",
+              "provisional-held_out-low-3000-balanced-energy",
+              "provisional-held_out-low-3000-dqn-fixed-8"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-low-3001",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-low-3001-latency-first",
+              "provisional-held_out-low-3001-energy-first",
+              "provisional-held_out-low-3001-balanced-equal",
+              "provisional-held_out-low-3001-balanced-makespan",
+              "provisional-held_out-low-3001-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-low-3002",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-low-3002-latency-first",
+              "provisional-held_out-low-3002-energy-first",
+              "provisional-held_out-low-3002-balanced-equal",
+              "provisional-held_out-low-3002-balanced-makespan",
+              "provisional-held_out-low-3002-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-low-3003",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-low-3003-latency-first",
+              "provisional-held_out-low-3003-energy-first",
+              "provisional-held_out-low-3003-balanced-equal",
+              "provisional-held_out-low-3003-balanced-makespan",
+              "provisional-held_out-low-3003-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-low-3004",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-low-3004-latency-first",
+              "provisional-held_out-low-3004-energy-first",
+              "provisional-held_out-low-3004-balanced-equal",
+              "provisional-held_out-low-3004-balanced-makespan",
+              "provisional-held_out-low-3004-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-low-3005",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-low-3005-latency-first",
+              "provisional-held_out-low-3005-energy-first",
+              "provisional-held_out-low-3005-balanced-equal",
+              "provisional-held_out-low-3005-balanced-makespan",
+              "provisional-held_out-low-3005-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-low-3006",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-low-3006-latency-first",
+              "provisional-held_out-low-3006-energy-first",
+              "provisional-held_out-low-3006-balanced-equal",
+              "provisional-held_out-low-3006-balanced-makespan",
+              "provisional-held_out-low-3006-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-low-3007",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-low-3007-latency-first",
+              "provisional-held_out-low-3007-energy-first",
+              "provisional-held_out-low-3007-balanced-equal",
+              "provisional-held_out-low-3007-balanced-makespan",
+              "provisional-held_out-low-3007-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-low-3008",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-low-3008-latency-first",
+              "provisional-held_out-low-3008-energy-first",
+              "provisional-held_out-low-3008-balanced-equal",
+              "provisional-held_out-low-3008-balanced-makespan",
+              "provisional-held_out-low-3008-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-low-3009",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-low-3009-latency-first",
+              "provisional-held_out-low-3009-energy-first",
+              "provisional-held_out-low-3009-balanced-equal",
+              "provisional-held_out-low-3009-balanced-makespan",
+              "provisional-held_out-low-3009-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-low-3010",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-low-3010-latency-first",
+              "provisional-held_out-low-3010-energy-first",
+              "provisional-held_out-low-3010-balanced-equal",
+              "provisional-held_out-low-3010-balanced-makespan",
+              "provisional-held_out-low-3010-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-low-3011",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-low-3011-latency-first",
+              "provisional-held_out-low-3011-energy-first",
+              "provisional-held_out-low-3011-balanced-equal",
+              "provisional-held_out-low-3011-balanced-makespan",
+              "provisional-held_out-low-3011-balanced-energy"
+            ]
+          }
+        ]
+      },
+      {
+        "intensity": "medium",
+        "instance_ids": [
+          "provisional-held_out-medium-3012",
+          "provisional-held_out-medium-3013",
+          "provisional-held_out-medium-3014",
+          "provisional-held_out-medium-3015",
+          "provisional-held_out-medium-3016",
+          "provisional-held_out-medium-3017",
+          "provisional-held_out-medium-3018",
+          "provisional-held_out-medium-3019",
+          "provisional-held_out-medium-3020",
+          "provisional-held_out-medium-3021",
+          "provisional-held_out-medium-3022",
+          "provisional-held_out-medium-3023"
+        ],
+        "paired_summaries": [
+          {
+            "intensity": "medium",
+            "heuristic": "random",
+            "instance_ids": [
+              "provisional-held_out-medium-3012",
+              "provisional-held_out-medium-3013",
+              "provisional-held_out-medium-3014",
+              "provisional-held_out-medium-3015",
+              "provisional-held_out-medium-3016",
+              "provisional-held_out-medium-3017",
+              "provisional-held_out-medium-3018",
+              "provisional-held_out-medium-3019",
+              "provisional-held_out-medium-3020",
+              "provisional-held_out-medium-3021",
+              "provisional-held_out-medium-3022",
+              "provisional-held_out-medium-3023"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": -2.8945983880085375,
+              "median": -2.0751323306466443,
+              "q3": -0.4192594637940257,
+              "iqr": 2.475338924214512
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": -6.933892666750026,
+              "median": -3.428177095999928,
+              "q3": -1.4930744737500277,
+              "iqr": 5.440818192999998
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": -0.4198548938396882,
+              "median": -0.3483024684913354,
+              "q3": 0.045691871553699026,
+              "iqr": 0.46554676539338724
+            }
+          },
+          {
+            "intensity": "medium",
+            "heuristic": "latency-first",
+            "instance_ids": [
+              "provisional-held_out-medium-3012",
+              "provisional-held_out-medium-3013",
+              "provisional-held_out-medium-3014",
+              "provisional-held_out-medium-3015",
+              "provisional-held_out-medium-3016",
+              "provisional-held_out-medium-3017",
+              "provisional-held_out-medium-3018",
+              "provisional-held_out-medium-3019",
+              "provisional-held_out-medium-3020",
+              "provisional-held_out-medium-3021",
+              "provisional-held_out-medium-3022",
+              "provisional-held_out-medium-3023"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": 0.4390627186940339,
+              "median": 0.7321549862887302,
+              "q3": 1.072517306044361,
+              "iqr": 0.633454587350327
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": -6.619034390125009,
+              "median": -4.397779583999963,
+              "q3": -2.5897526513751075,
+              "iqr": 4.029281738749901
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": 0.6135635058315738,
+              "median": 0.7055844095041848,
+              "q3": 0.8355099375557941,
+              "iqr": 0.22194643172422024
+            }
+          },
+          {
+            "intensity": "medium",
+            "heuristic": "energy-first",
+            "instance_ids": [
+              "provisional-held_out-medium-3012",
+              "provisional-held_out-medium-3013",
+              "provisional-held_out-medium-3014",
+              "provisional-held_out-medium-3015",
+              "provisional-held_out-medium-3016",
+              "provisional-held_out-medium-3017",
+              "provisional-held_out-medium-3018",
+              "provisional-held_out-medium-3019",
+              "provisional-held_out-medium-3020",
+              "provisional-held_out-medium-3021",
+              "provisional-held_out-medium-3022",
+              "provisional-held_out-medium-3023"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": -73.07037939376607,
+              "median": -70.20085490616393,
+              "q3": -66.83459389961828,
+              "iqr": 6.235785494147791
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 46.16503131612505,
+              "median": 48.36018957787513,
+              "q3": 53.70632698587484,
+              "iqr": 7.541295669749786
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": -69.69875966311382,
+              "median": -67.98042076131321,
+              "q3": -64.18224075289046,
+              "iqr": 5.516518910223354
+            }
+          },
+          {
+            "intensity": "medium",
+            "heuristic": "balanced-equal",
+            "instance_ids": [
+              "provisional-held_out-medium-3012",
+              "provisional-held_out-medium-3013",
+              "provisional-held_out-medium-3014",
+              "provisional-held_out-medium-3015",
+              "provisional-held_out-medium-3016",
+              "provisional-held_out-medium-3017",
+              "provisional-held_out-medium-3018",
+              "provisional-held_out-medium-3019",
+              "provisional-held_out-medium-3020",
+              "provisional-held_out-medium-3021",
+              "provisional-held_out-medium-3022",
+              "provisional-held_out-medium-3023"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": 0.38193622785703596,
+              "median": 0.6222560536958968,
+              "q3": 0.9081593625271882,
+              "iqr": 0.5262231346701522
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 9.272734967625027,
+              "median": 10.866980731249924,
+              "q3": 13.825757166374942,
+              "iqr": 4.553022198749915
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": 0.5097161100063656,
+              "median": 0.5886827875316611,
+              "q3": 0.8054167782811327,
+              "iqr": 0.29570066827476704
+            }
+          },
+          {
+            "intensity": "medium",
+            "heuristic": "balanced-makespan",
+            "instance_ids": [
+              "provisional-held_out-medium-3012",
+              "provisional-held_out-medium-3013",
+              "provisional-held_out-medium-3014",
+              "provisional-held_out-medium-3015",
+              "provisional-held_out-medium-3016",
+              "provisional-held_out-medium-3017",
+              "provisional-held_out-medium-3018",
+              "provisional-held_out-medium-3019",
+              "provisional-held_out-medium-3020",
+              "provisional-held_out-medium-3021",
+              "provisional-held_out-medium-3022",
+              "provisional-held_out-medium-3023"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": 0.29919917429362286,
+              "median": 0.6702936118665193,
+              "q3": 0.9097293625271892,
+              "iqr": 0.6105301882335663
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 8.243485399500017,
+              "median": 9.143521756249967,
+              "q3": 13.034516649624948,
+              "iqr": 4.791031250124931
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": 0.5456882590580756,
+              "median": 0.6279941280157566,
+              "q3": 0.786411347586411,
+              "iqr": 0.24072308852833535
+            }
+          },
+          {
+            "intensity": "medium",
+            "heuristic": "balanced-energy",
+            "instance_ids": [
+              "provisional-held_out-medium-3012",
+              "provisional-held_out-medium-3013",
+              "provisional-held_out-medium-3014",
+              "provisional-held_out-medium-3015",
+              "provisional-held_out-medium-3016",
+              "provisional-held_out-medium-3017",
+              "provisional-held_out-medium-3018",
+              "provisional-held_out-medium-3019",
+              "provisional-held_out-medium-3020",
+              "provisional-held_out-medium-3021",
+              "provisional-held_out-medium-3022",
+              "provisional-held_out-medium-3023"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": -0.46935913207715885,
+              "median": -0.0668334646872566,
+              "q3": 0.38381623667287634,
+              "iqr": 0.8531753687500352
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 14.842249245249974,
+              "median": 17.501667097249936,
+              "q3": 20.107276641874932,
+              "iqr": 5.2650273966249586
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": -0.08427937355531867,
+              "median": 0.0375079303321737,
+              "q3": 0.16368150500200063,
+              "iqr": 0.2479608785573193
+            }
+          }
+        ],
+        "within_instance_fronts": [
+          {
+            "instance_id": "provisional-held_out-medium-3012",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-medium-3012-latency-first",
+              "provisional-held_out-medium-3012-energy-first",
+              "provisional-held_out-medium-3012-balanced-equal",
+              "provisional-held_out-medium-3012-balanced-makespan",
+              "provisional-held_out-medium-3012-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-medium-3013",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-medium-3013-latency-first",
+              "provisional-held_out-medium-3013-energy-first",
+              "provisional-held_out-medium-3013-balanced-makespan",
+              "provisional-held_out-medium-3013-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-medium-3014",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-medium-3014-latency-first",
+              "provisional-held_out-medium-3014-energy-first",
+              "provisional-held_out-medium-3014-balanced-equal",
+              "provisional-held_out-medium-3014-balanced-makespan",
+              "provisional-held_out-medium-3014-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-medium-3015",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-medium-3015-latency-first",
+              "provisional-held_out-medium-3015-energy-first",
+              "provisional-held_out-medium-3015-balanced-equal",
+              "provisional-held_out-medium-3015-balanced-makespan",
+              "provisional-held_out-medium-3015-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-medium-3016",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-medium-3016-latency-first",
+              "provisional-held_out-medium-3016-energy-first",
+              "provisional-held_out-medium-3016-balanced-equal",
+              "provisional-held_out-medium-3016-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-medium-3017",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-medium-3017-latency-first",
+              "provisional-held_out-medium-3017-energy-first",
+              "provisional-held_out-medium-3017-balanced-equal",
+              "provisional-held_out-medium-3017-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-medium-3018",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-medium-3018-latency-first",
+              "provisional-held_out-medium-3018-energy-first",
+              "provisional-held_out-medium-3018-balanced-equal",
+              "provisional-held_out-medium-3018-balanced-makespan",
+              "provisional-held_out-medium-3018-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-medium-3019",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-medium-3019-latency-first",
+              "provisional-held_out-medium-3019-energy-first",
+              "provisional-held_out-medium-3019-balanced-equal",
+              "provisional-held_out-medium-3019-balanced-makespan",
+              "provisional-held_out-medium-3019-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-medium-3020",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-medium-3020-latency-first",
+              "provisional-held_out-medium-3020-energy-first",
+              "provisional-held_out-medium-3020-balanced-equal",
+              "provisional-held_out-medium-3020-balanced-makespan",
+              "provisional-held_out-medium-3020-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-medium-3021",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-medium-3021-latency-first",
+              "provisional-held_out-medium-3021-energy-first",
+              "provisional-held_out-medium-3021-balanced-equal",
+              "provisional-held_out-medium-3021-balanced-makespan",
+              "provisional-held_out-medium-3021-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-medium-3022",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-medium-3022-latency-first",
+              "provisional-held_out-medium-3022-energy-first",
+              "provisional-held_out-medium-3022-balanced-equal",
+              "provisional-held_out-medium-3022-balanced-makespan",
+              "provisional-held_out-medium-3022-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-medium-3023",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-medium-3023-latency-first",
+              "provisional-held_out-medium-3023-energy-first",
+              "provisional-held_out-medium-3023-balanced-equal",
+              "provisional-held_out-medium-3023-balanced-makespan",
+              "provisional-held_out-medium-3023-balanced-energy"
+            ]
+          }
+        ]
+      },
+      {
+        "intensity": "high",
+        "instance_ids": [
+          "provisional-held_out-high-3024",
+          "provisional-held_out-high-3025",
+          "provisional-held_out-high-3026",
+          "provisional-held_out-high-3027",
+          "provisional-held_out-high-3028",
+          "provisional-held_out-high-3029",
+          "provisional-held_out-high-3030",
+          "provisional-held_out-high-3031",
+          "provisional-held_out-high-3032",
+          "provisional-held_out-high-3033",
+          "provisional-held_out-high-3034",
+          "provisional-held_out-high-3035"
+        ],
+        "paired_summaries": [
+          {
+            "intensity": "high",
+            "heuristic": "random",
+            "instance_ids": [
+              "provisional-held_out-high-3024",
+              "provisional-held_out-high-3025",
+              "provisional-held_out-high-3026",
+              "provisional-held_out-high-3027",
+              "provisional-held_out-high-3028",
+              "provisional-held_out-high-3029",
+              "provisional-held_out-high-3030",
+              "provisional-held_out-high-3031",
+              "provisional-held_out-high-3032",
+              "provisional-held_out-high-3033",
+              "provisional-held_out-high-3034",
+              "provisional-held_out-high-3035"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": -4.217297084551364,
+              "median": -2.58704999521001,
+              "q3": -0.679152703547186,
+              "iqr": 3.5381443810041784
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 0.03843357962497862,
+              "median": 1.319366383375126,
+              "q3": 3.0244592392500493,
+              "iqr": 2.9860256596250707
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": -0.5515521449871146,
+              "median": -0.21098105802736988,
+              "q3": -0.1552698303502671,
+              "iqr": 0.3962823146368475
+            }
+          },
+          {
+            "intensity": "high",
+            "heuristic": "latency-first",
+            "instance_ids": [
+              "provisional-held_out-high-3024",
+              "provisional-held_out-high-3025",
+              "provisional-held_out-high-3026",
+              "provisional-held_out-high-3027",
+              "provisional-held_out-high-3028",
+              "provisional-held_out-high-3029",
+              "provisional-held_out-high-3030",
+              "provisional-held_out-high-3031",
+              "provisional-held_out-high-3032",
+              "provisional-held_out-high-3033",
+              "provisional-held_out-high-3034",
+              "provisional-held_out-high-3035"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": 2.4153624064604617,
+              "median": 3.0919723540620785,
+              "q3": 4.816870734635271,
+              "iqr": 2.401508328174809
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 2.7099923715000074,
+              "median": 5.071614653624934,
+              "q3": 9.427423312125015,
+              "iqr": 6.7174309406250075
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": 0.9963248758758982,
+              "median": 1.2742702887373363,
+              "q3": 1.3270588746780898,
+              "iqr": 0.33073399880219156
+            }
+          },
+          {
+            "intensity": "high",
+            "heuristic": "energy-first",
+            "instance_ids": [
+              "provisional-held_out-high-3024",
+              "provisional-held_out-high-3025",
+              "provisional-held_out-high-3026",
+              "provisional-held_out-high-3027",
+              "provisional-held_out-high-3028",
+              "provisional-held_out-high-3029",
+              "provisional-held_out-high-3030",
+              "provisional-held_out-high-3031",
+              "provisional-held_out-high-3032",
+              "provisional-held_out-high-3033",
+              "provisional-held_out-high-3034",
+              "provisional-held_out-high-3035"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": -76.10803313496893,
+              "median": -73.60334972801627,
+              "q3": -71.93611751120577,
+              "iqr": 4.171915623763169
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 51.68369904300022,
+              "median": 54.41951627375016,
+              "q3": 56.91504957387514,
+              "iqr": 5.23135053087492
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": -74.5648345348331,
+              "median": -73.27928349174286,
+              "q3": -71.88769252357683,
+              "iqr": 2.677142011256265
+            }
+          },
+          {
+            "intensity": "high",
+            "heuristic": "balanced-equal",
+            "instance_ids": [
+              "provisional-held_out-high-3024",
+              "provisional-held_out-high-3025",
+              "provisional-held_out-high-3026",
+              "provisional-held_out-high-3027",
+              "provisional-held_out-high-3028",
+              "provisional-held_out-high-3029",
+              "provisional-held_out-high-3030",
+              "provisional-held_out-high-3031",
+              "provisional-held_out-high-3032",
+              "provisional-held_out-high-3033",
+              "provisional-held_out-high-3034",
+              "provisional-held_out-high-3035"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": 2.40504260110509,
+              "median": 3.064290797466114,
+              "q3": 4.887237349171092,
+              "iqr": 2.482194748066002
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 9.472152095000027,
+              "median": 11.038703001625052,
+              "q3": 13.76849152887489,
+              "iqr": 4.296339433874863
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": 0.9983595276869309,
+              "median": 1.3120468970935208,
+              "q3": 1.4632487232898166,
+              "iqr": 0.46488919560288566
+            }
+          },
+          {
+            "intensity": "high",
+            "heuristic": "balanced-makespan",
+            "instance_ids": [
+              "provisional-held_out-high-3024",
+              "provisional-held_out-high-3025",
+              "provisional-held_out-high-3026",
+              "provisional-held_out-high-3027",
+              "provisional-held_out-high-3028",
+              "provisional-held_out-high-3029",
+              "provisional-held_out-high-3030",
+              "provisional-held_out-high-3031",
+              "provisional-held_out-high-3032",
+              "provisional-held_out-high-3033",
+              "provisional-held_out-high-3034",
+              "provisional-held_out-high-3035"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": 2.351893869549956,
+              "median": 3.132961597466114,
+              "q3": 4.9774175042461675,
+              "iqr": 2.6255236346962114
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 8.744839128374991,
+              "median": 10.96031782112506,
+              "q3": 13.48379619699989,
+              "iqr": 4.738957068624899
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": 1.0606352040181437,
+              "median": 1.342901687468823,
+              "q3": 1.5416494674143986,
+              "iqr": 0.48101426339625486
+            }
+          },
+          {
+            "intensity": "high",
+            "heuristic": "balanced-energy",
+            "instance_ids": [
+              "provisional-held_out-high-3024",
+              "provisional-held_out-high-3025",
+              "provisional-held_out-high-3026",
+              "provisional-held_out-high-3027",
+              "provisional-held_out-high-3028",
+              "provisional-held_out-high-3029",
+              "provisional-held_out-high-3030",
+              "provisional-held_out-high-3031",
+              "provisional-held_out-high-3032",
+              "provisional-held_out-high-3033",
+              "provisional-held_out-high-3034",
+              "provisional-held_out-high-3035"
+            ],
+            "makespan_s": {
+              "n": 12,
+              "q1": 1.2112292499382624,
+              "median": 1.8922954867760469,
+              "q3": 3.529867936526034,
+              "iqr": 2.3186386865877715
+            },
+            "energy_j": {
+              "n": 12,
+              "q1": 13.295407751625078,
+              "median": 15.975368171500008,
+              "q3": 17.660084098749948,
+              "iqr": 4.36467634712487
+            },
+            "mean_latency_s": {
+              "n": 12,
+              "q1": 0.3969220006133136,
+              "median": 0.6617038904961108,
+              "q3": 1.0914655553040336,
+              "iqr": 0.6945435546907199
+            }
+          }
+        ],
+        "within_instance_fronts": [
+          {
+            "instance_id": "provisional-held_out-high-3024",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-high-3024-energy-first",
+              "provisional-held_out-high-3024-balanced-equal",
+              "provisional-held_out-high-3024-balanced-makespan",
+              "provisional-held_out-high-3024-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-high-3025",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-high-3025-energy-first",
+              "provisional-held_out-high-3025-balanced-equal",
+              "provisional-held_out-high-3025-balanced-makespan",
+              "provisional-held_out-high-3025-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-high-3026",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-high-3026-energy-first",
+              "provisional-held_out-high-3026-balanced-equal",
+              "provisional-held_out-high-3026-balanced-makespan",
+              "provisional-held_out-high-3026-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-high-3027",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-high-3027-energy-first",
+              "provisional-held_out-high-3027-balanced-equal",
+              "provisional-held_out-high-3027-balanced-makespan",
+              "provisional-held_out-high-3027-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-high-3028",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-high-3028-energy-first",
+              "provisional-held_out-high-3028-balanced-equal",
+              "provisional-held_out-high-3028-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-high-3029",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-high-3029-energy-first",
+              "provisional-held_out-high-3029-balanced-equal",
+              "provisional-held_out-high-3029-balanced-makespan",
+              "provisional-held_out-high-3029-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-high-3030",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-high-3030-latency-first",
+              "provisional-held_out-high-3030-energy-first",
+              "provisional-held_out-high-3030-balanced-equal",
+              "provisional-held_out-high-3030-balanced-makespan",
+              "provisional-held_out-high-3030-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-high-3031",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-high-3031-energy-first",
+              "provisional-held_out-high-3031-balanced-equal",
+              "provisional-held_out-high-3031-balanced-makespan",
+              "provisional-held_out-high-3031-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-high-3032",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-high-3032-energy-first",
+              "provisional-held_out-high-3032-balanced-makespan",
+              "provisional-held_out-high-3032-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-high-3033",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-high-3033-energy-first",
+              "provisional-held_out-high-3033-balanced-equal",
+              "provisional-held_out-high-3033-balanced-makespan",
+              "provisional-held_out-high-3033-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-high-3034",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-high-3034-latency-first",
+              "provisional-held_out-high-3034-energy-first",
+              "provisional-held_out-high-3034-balanced-equal",
+              "provisional-held_out-high-3034-balanced-makespan",
+              "provisional-held_out-high-3034-balanced-energy"
+            ]
+          },
+          {
+            "instance_id": "provisional-held_out-high-3035",
+            "full_non_dominated_run_ids": [
+              "provisional-held_out-high-3035-latency-first",
+              "provisional-held_out-high-3035-energy-first",
+              "provisional-held_out-high-3035-balanced-equal",
+              "provisional-held_out-high-3035-balanced-makespan",
+              "provisional-held_out-high-3035-balanced-energy"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

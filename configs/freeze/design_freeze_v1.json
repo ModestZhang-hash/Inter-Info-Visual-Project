@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0.0",
+  "freeze_version": "1",
+  "status": "frozen",
+  "read_only": true,
+  "held_out_results_read_before_freeze": false,
+  "approval": {
+    "member": "B",
+    "date": "2026-11-12",
+    "statement": "P9 execution authorization adopts these previously recorded provisional values after the pilot checks passed. The checkpoint rule was not changed."
+  },
+  "simulator_version": "topic3-simulator-p2-1",
+  "numeric_tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "energy_coefficients": [
+    {
+      "node_id": "edge-0",
+      "compute_capacity_cycles_per_s": 2000000000,
+      "active_compute_power_increment_w": 5,
+      "link_rate_bps": null,
+      "transfer_energy_j_per_mb": null
+    },
+    {
+      "node_id": "edge-1",
+      "compute_capacity_cycles_per_s": 3000000000,
+      "active_compute_power_increment_w": 6,
+      "link_rate_bps": 30000000,
+      "transfer_energy_j_per_mb": 0.2
+    },
+    {
+      "node_id": "edge-2",
+      "compute_capacity_cycles_per_s": 4000000000,
+      "active_compute_power_increment_w": 7,
+      "link_rate_bps": 30000000,
+      "transfer_energy_j_per_mb": 0.2
+    },
+    {
+      "node_id": "cloud-0",
+      "compute_capacity_cycles_per_s": 8000000000,
+      "active_compute_power_increment_w": 10,
+      "link_rate_bps": 10000000,
+      "transfer_energy_j_per_mb": 0.3
+    }
+  ],
+  "balanced_scales": {
+    "s_M": 21.242007085004264,
+    "s_E": 2.655653085448698,
+    "s_L": 1.6571213496481065
+  },
+  "heuristic_configs": [
+    "random",
+    "latency-first",
+    "energy-first",
+    "balanced-equal",
+    "balanced-makespan",
+    "balanced-energy"
+  ],
+  "random_seed": 11,
+  "dqn": {
+    "policy_config_id": "dqn-fixed",
+    "checkpoint_id": "provisional-dqn-seed8-episode500",
+    "seed": 8,
+    "epsilon": 0.1,
+    "gamma": 1,
+    "learning_rate": 0.001,
+    "episodes": 500,
+    "target_sync_rule": "After each training episode, copy online weights to the target network.",
+    "checkpoint_rule": "Online weights after episode 500. Intermediate weights were not compared.",
+    "inference": "greedy, no weight updates"
+  },
+  "seed_splits": {
+    "training": [
+      1000,
+      1001,
+      1002
+    ],
+    "pilot": [
+      2000,
+      2001,
+      2002
+    ],
+    "held_out": [
+      3000,
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008,
+      3009,
+      3010,
+      3011,
+      3012,
+      3013,
+      3014,
+      3015,
+      3016,
+      3017,
+      3018,
+      3019,
+      3020,
+      3021,
+      3022,
+      3023,
+      3024,
+      3025,
+      3026,
+      3027,
+      3028,
+      3029,
+      3030,
+      3031,
+      3032,
+      3033,
+      3034,
+      3035
+    ]
+  },
+  "evaluation": {
+    "intensities": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "held_out_instances_per_intensity": 12,
+    "configurations": 7,
+    "expected_complete_runs": 252
+  },
+  "pareto": {
+    "objectives_minimized": [
+      "makespan_s",
+      "energy_j",
+      "mean_latency_s"
+    ],
+    "official_front_requires_seven_complete_candidates": true,
+    "filters_do_not_recompute_the_reference": true,
+    "tolerance": {
+      "absolute": 1e-09,
+      "relative": 1e-09
+    }
+  },
+  "cases": {
+    "energy_under_latency_ceiling": {
+      "threshold_s": 1.5315414806069878,
+      "threshold_rule": "Median of the 18 heuristic mean_latency_s values on the three pilot instances.",
+      "selection": "Minimum energy_j among runs at or below the threshold; run_id ascending breaks ties. Report none when no run qualifies."
+    },
+    "dqn_minus_heuristic": "On one instance, subtract each heuristic M, E, and L from the DQN values and keep the full-space witness when one exists.",
+    "pair_versus_full": "Report a run whose pair label differs from its full-space label. On held-out data, take the first such instance in seed order and otherwise report that none exists.",
+    "intensity_comparison": "Summarize each intensity separately. Do not place runs from different instances in one Pareto set.",
+    "pilot_pair_full_example": {
+      "run_id": "provisional-pilot-low-2000-energy-first",
+      "pair": "makespan_s|mean_latency_s",
+      "full_non_dominated": true
+    }
+  }
+}

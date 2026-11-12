@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "provisional-held_out-medium-3012-dqn-fixed-8",
+  "instance_id": "provisional-held_out-medium-3012",
+  "manifest_id": "provisional-workload-held_out-v1",
+  "policy_config_id": "dqn-fixed",
+  "policy_seed": 8,
+  "simulator_version": "topic3-simulator-p2-1",
+  "dqn_checkpoint_id": "provisional-dqn-seed8-episode500",
+  "record_origin": "simulation",
+  "status": "complete",
+  "failure_reason": null,
+  "task_count": 80,
+  "makespan_s": 18.802790455994565,
+  "energy_j": 205.744781728,
+  "mean_latency_s": 1.297797994234034,
+  "event_log_path": "events/provisional-held_out-medium-3012-dqn-fixed-8.jsonl",
+  "metrics_source": "topic3.metrics.recompute_objectives"
+}

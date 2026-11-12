@@ -1,0 +1,635 @@
+{
+  "schema_version": "1.0.0",
+  "status": "pilot_complete",
+  "held_out_results_read": false,
+  "checkpoint_id": "provisional-dqn-seed8-episode500",
+  "checkpoint_weights_updated": false,
+  "simulator_version": "topic3-simulator-p2-1",
+  "pilot_instances": [
+    "provisional-pilot-low-2000",
+    "provisional-pilot-medium-2001",
+    "provisional-pilot-high-2002"
+  ],
+  "runs_requested": 21,
+  "runs_complete": 21,
+  "latency_ceiling_s": 1.5315414806069878,
+  "runs": [
+    {
+      "instance_id": "provisional-pilot-low-2000",
+      "intensity": "low",
+      "policy_config_id": "random",
+      "run_id": "provisional-pilot-low-2000-random-11",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 32.6487135115178,
+      "energy_j": 204.18282861024989,
+      "mean_latency_s": 1.1410369368245448,
+      "ledger_total": -26.37055379159068,
+      "independent_R": -26.37055379159066,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.04827350000050501,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-low-2000",
+      "intensity": "low",
+      "policy_config_id": "latency-first",
+      "run_id": "provisional-pilot-low-2000-latency-first",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 31.089408927344053,
+      "energy_j": 208.68183351225005,
+      "mean_latency_s": 0.643146641430063,
+      "ledger_total": -26.810641170480434,
+      "independent_R": -26.810641170480427,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.07522040000003472,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-low-2000",
+      "intensity": "low",
+      "policy_config_id": "energy-first",
+      "run_id": "provisional-pilot-low-2000-energy-first",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 85.21210159999998,
+      "energy_j": 151.8772206675003,
+      "mean_latency_s": 52.46208174754471,
+      "ledger_total": -30.953404069192516,
+      "independent_R": -30.953404069192505,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.05346060000010766,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-low-2000",
+      "intensity": "low",
+      "policy_config_id": "balanced-equal",
+      "run_id": "provisional-pilot-low-2000-balanced-equal",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 31.179700443772738,
+      "energy_j": 183.058440428,
+      "mean_latency_s": 0.7748287412656693,
+      "ledger_total": -23.62233879247222,
+      "independent_R": -23.622338792472213,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.12888550000025134,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-low-2000",
+      "intensity": "low",
+      "policy_config_id": "balanced-makespan",
+      "run_id": "provisional-pilot-low-2000-balanced-makespan",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 31.179700443772738,
+      "energy_j": 183.70909706400002,
+      "mean_latency_s": 0.7737820412764351,
+      "ledger_total": -23.703797628276213,
+      "independent_R": -23.703797628276213,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.12917279999965103,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-low-2000",
+      "intensity": "low",
+      "policy_config_id": "balanced-energy",
+      "run_id": "provisional-pilot-low-2000-balanced-energy",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 31.179700443772738,
+      "energy_j": 171.35860897450002,
+      "mean_latency_s": 1.2244904916474484,
+      "ledger_total": -22.244245013498926,
+      "independent_R": -22.244245013498915,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.1414866000013717,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-low-2000",
+      "intensity": "low",
+      "policy_config_id": "dqn-fixed",
+      "run_id": "provisional-pilot-low-2000-dqn-fixed-8",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 31.299014394298148,
+      "energy_j": 199.64812149749997,
+      "mean_latency_s": 1.1063024437625393,
+      "ledger_total": -25.773197966883046,
+      "independent_R": -25.77319796688304,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.05885359999956563,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "instance_id": "provisional-pilot-medium-2001",
+      "intensity": "medium",
+      "policy_config_id": "random",
+      "run_id": "provisional-pilot-medium-2001-random-11",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 18.626912943633027,
+      "energy_j": 216.35704843749997,
+      "mean_latency_s": 1.7067902059850142,
+      "ledger_total": -27.792412264758386,
+      "independent_R": -27.79241226475839,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.04883289999997942,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-medium-2001",
+      "intensity": "medium",
+      "policy_config_id": "latency-first",
+      "run_id": "provisional-pilot-medium-2001-latency-first",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 17.033278094873037,
+      "energy_j": 218.50461979400004,
+      "mean_latency_s": 0.9046924768860982,
+      "ledger_total": -27.875620799797524,
+      "independent_R": -27.875620799797524,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.084878600000593,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-medium-2001",
+      "intensity": "medium",
+      "policy_config_id": "energy-first",
+      "run_id": "provisional-pilot-medium-2001-energy-first",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 90.60320800000002,
+      "energy_j": 162.7214265287499,
+      "mean_latency_s": 71.81818069573299,
+      "ledger_total": -36.2926683744496,
+      "independent_R": -36.29266837444959,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.05137110000032408,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-medium-2001",
+      "intensity": "medium",
+      "policy_config_id": "balanced-equal",
+      "run_id": "provisional-pilot-medium-2001-balanced-equal",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 17.06620362529773,
+      "energy_j": 202.97894580449994,
+      "mean_latency_s": 0.9819063867311606,
+      "ledger_total": -25.942911408666998,
+      "independent_R": -25.94291140866699,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.1275002999991557,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-medium-2001",
+      "intensity": "medium",
+      "policy_config_id": "balanced-makespan",
+      "run_id": "provisional-pilot-medium-2001-balanced-makespan",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 16.898509502077385,
+      "energy_j": 204.26374607874996,
+      "mean_latency_s": 0.9333465566201774,
+      "ledger_total": -26.091778092298462,
+      "independent_R": -26.091778092298448,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.12656480000077863,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-medium-2001",
+      "intensity": "medium",
+      "policy_config_id": "balanced-energy",
+      "run_id": "provisional-pilot-medium-2001-balanced-energy",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 18.221455775427398,
+      "energy_j": 195.17501775949998,
+      "mean_latency_s": 1.5705262702878002,
+      "ledger_total": -25.0999053350194,
+      "independent_R": -25.099905335019393,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.13094009999986156,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-medium-2001",
+      "intensity": "medium",
+      "policy_config_id": "dqn-fixed",
+      "run_id": "provisional-pilot-medium-2001-dqn-fixed-8",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 17.73293274527014,
+      "energy_j": 206.87964868475007,
+      "mean_latency_s": 1.7831721258817148,
+      "ledger_total": -26.604160069582598,
+      "independent_R": -26.60416006958259,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.06407979999858071,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    },
+    {
+      "instance_id": "provisional-pilot-high-2002",
+      "intensity": "high",
+      "policy_config_id": "random",
+      "run_id": "provisional-pilot-high-2002-random-11",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 16.767259949327947,
+      "energy_j": 213.83133976949992,
+      "mean_latency_s": 3.2215702248178877,
+      "ledger_total": -27.750908428178036,
+      "independent_R": -27.750908428178022,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.047897000000375556,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-high-2002",
+      "intensity": "high",
+      "policy_config_id": "latency-first",
+      "run_id": "provisional-pilot-high-2002-latency-first",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 11.381685941368733,
+      "energy_j": 210.52222149924995,
+      "mean_latency_s": 1.5408364199608149,
+      "ledger_total": -26.912958781720945,
+      "independent_R": -26.912958781720935,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.08542549999947369,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-high-2002",
+      "intensity": "high",
+      "policy_config_id": "energy-first",
+      "run_id": "provisional-pilot-high-2002-energy-first",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 89.88666799999999,
+      "energy_j": 160.90425061874953,
+      "mean_latency_s": 78.06276331642756,
+      "ledger_total": -37.309445792347695,
+      "independent_R": -37.309445792347674,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.05082179999953951,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-high-2002",
+      "intensity": "high",
+      "policy_config_id": "balanced-equal",
+      "run_id": "provisional-pilot-high-2002-balanced-equal",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 11.311464873118734,
+      "energy_j": 204.46639228474993,
+      "mean_latency_s": 1.6510035795353304,
+      "ledger_total": -26.173899198888712,
+      "independent_R": -26.173899198888698,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.12245090000033088,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-high-2002",
+      "intensity": "high",
+      "policy_config_id": "balanced-makespan",
+      "run_id": "provisional-pilot-high-2002-balanced-makespan",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 11.013020624368734,
+      "energy_j": 204.83814473099994,
+      "mean_latency_s": 1.522246541253161,
+      "ledger_total": -26.18997799178246,
+      "independent_R": -26.189977991782445,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.12264569999933883,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-high-2002",
+      "intensity": "high",
+      "policy_config_id": "balanced-energy",
+      "run_id": "provisional-pilot-high-2002-balanced-energy",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 12.904340310635831,
+      "energy_j": 202.12597430025,
+      "mean_latency_s": 2.2258574783259015,
+      "ledger_total": -26.020762387198538,
+      "independent_R": -26.020762387198534,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.12420840000049793,
+      "checkpoint_id": null
+    },
+    {
+      "instance_id": "provisional-pilot-high-2002",
+      "intensity": "high",
+      "policy_config_id": "dqn-fixed",
+      "run_id": "provisional-pilot-high-2002-dqn-fixed-8",
+      "status": "complete",
+      "failure_reason": null,
+      "makespan_s": 14.729430679083206,
+      "energy_j": 217.01769005849997,
+      "mean_latency_s": 2.8230005085277523,
+      "ledger_total": -28.038702939451394,
+      "independent_R": -28.038702939451383,
+      "ledger_ok": true,
+      "accounting_ok": true,
+      "elapsed_s": 0.06049899999925401,
+      "checkpoint_id": "provisional-dqn-seed8-episode500"
+    }
+  ],
+  "fronts": [
+    {
+      "instance_id": "provisional-pilot-low-2000",
+      "intensity": "low",
+      "candidate_count": 7,
+      "full_non_dominated_run_ids": [
+        "provisional-pilot-low-2000-balanced-energy",
+        "provisional-pilot-low-2000-balanced-equal",
+        "provisional-pilot-low-2000-balanced-makespan",
+        "provisional-pilot-low-2000-energy-first",
+        "provisional-pilot-low-2000-latency-first"
+      ],
+      "pair_full_disagreements": [
+        {
+          "run_id": "provisional-pilot-low-2000-energy-first",
+          "pair": "makespan_s|mean_latency_s",
+          "full_non_dominated": true
+        },
+        {
+          "run_id": "provisional-pilot-low-2000-balanced-equal",
+          "pair": "makespan_s|energy_j",
+          "full_non_dominated": true
+        },
+        {
+          "run_id": "provisional-pilot-low-2000-balanced-equal",
+          "pair": "makespan_s|mean_latency_s",
+          "full_non_dominated": true
+        },
+        {
+          "run_id": "provisional-pilot-low-2000-balanced-makespan",
+          "pair": "makespan_s|energy_j",
+          "full_non_dominated": true
+        },
+        {
+          "run_id": "provisional-pilot-low-2000-balanced-makespan",
+          "pair": "makespan_s|mean_latency_s",
+          "full_non_dominated": true
+        },
+        {
+          "run_id": "provisional-pilot-low-2000-balanced-energy",
+          "pair": "makespan_s|mean_latency_s",
+          "full_non_dominated": true
+        }
+      ]
+    },
+    {
+      "instance_id": "provisional-pilot-medium-2001",
+      "intensity": "medium",
+      "candidate_count": 7,
+      "full_non_dominated_run_ids": [
+        "provisional-pilot-medium-2001-balanced-energy",
+        "provisional-pilot-medium-2001-balanced-equal",
+        "provisional-pilot-medium-2001-balanced-makespan",
+        "provisional-pilot-medium-2001-energy-first",
+        "provisional-pilot-medium-2001-latency-first"
+      ],
+      "pair_full_disagreements": [
+        {
+          "run_id": "provisional-pilot-medium-2001-latency-first",
+          "pair": "makespan_s|energy_j",
+          "full_non_dominated": true
+        },
+        {
+          "run_id": "provisional-pilot-medium-2001-energy-first",
+          "pair": "makespan_s|mean_latency_s",
+          "full_non_dominated": true
+        },
+        {
+          "run_id": "provisional-pilot-medium-2001-balanced-equal",
+          "pair": "makespan_s|mean_latency_s",
+          "full_non_dominated": true
+        },
+        {
+          "run_id": "provisional-pilot-medium-2001-balanced-energy",
+          "pair": "makespan_s|mean_latency_s",
+          "full_non_dominated": true
+        }
+      ]
+    },
+    {
+      "instance_id": "provisional-pilot-high-2002",
+      "intensity": "high",
+      "candidate_count": 7,
+      "full_non_dominated_run_ids": [
+        "provisional-pilot-high-2002-balanced-energy",
+        "provisional-pilot-high-2002-balanced-equal",
+        "provisional-pilot-high-2002-balanced-makespan",
+        "provisional-pilot-high-2002-energy-first"
+      ],
+      "pair_full_disagreements": [
+        {
+          "run_id": "provisional-pilot-high-2002-energy-first",
+          "pair": "makespan_s|mean_latency_s",
+          "full_non_dominated": true
+        },
+        {
+          "run_id": "provisional-pilot-high-2002-balanced-equal",
+          "pair": "makespan_s|mean_latency_s",
+          "full_non_dominated": true
+        },
+        {
+          "run_id": "provisional-pilot-high-2002-balanced-energy",
+          "pair": "makespan_s|mean_latency_s",
+          "full_non_dominated": true
+        }
+      ]
+    }
+  ],
+  "cases": {
+    "energy_under_latency_ceiling": [
+      {
+        "instance_id": "provisional-pilot-low-2000",
+        "selected_run_id": "provisional-pilot-low-2000-balanced-energy",
+        "energy_j": 171.35860897450002
+      },
+      {
+        "instance_id": "provisional-pilot-medium-2001",
+        "selected_run_id": "provisional-pilot-medium-2001-balanced-equal",
+        "energy_j": 202.97894580449994
+      },
+      {
+        "instance_id": "provisional-pilot-high-2002",
+        "selected_run_id": "provisional-pilot-high-2002-balanced-makespan",
+        "energy_j": 204.83814473099994
+      }
+    ],
+    "dqn_minus_heuristic": [
+      {
+        "instance_id": "provisional-pilot-low-2000",
+        "intensity": "low",
+        "differences": [
+          {
+            "heuristic": "random",
+            "makespan_s": -1.3496991172196502,
+            "energy_j": -4.5347071127499134,
+            "mean_latency_s": -0.03473449306200549
+          },
+          {
+            "heuristic": "latency-first",
+            "makespan_s": 0.20960546695409477,
+            "energy_j": -9.03371201475008,
+            "mean_latency_s": 0.46315580233247633
+          },
+          {
+            "heuristic": "energy-first",
+            "makespan_s": -53.913087205701835,
+            "energy_j": 47.770900829999675,
+            "mean_latency_s": -51.35577930378217
+          },
+          {
+            "heuristic": "balanced-equal",
+            "makespan_s": 0.1193139505254095,
+            "energy_j": 16.58968106949996,
+            "mean_latency_s": 0.33147370249687
+          },
+          {
+            "heuristic": "balanced-makespan",
+            "makespan_s": 0.1193139505254095,
+            "energy_j": 15.939024433499952,
+            "mean_latency_s": 0.33252040248610415
+          },
+          {
+            "heuristic": "balanced-energy",
+            "makespan_s": 0.1193139505254095,
+            "energy_j": 28.289512522999956,
+            "mean_latency_s": -0.11818804788490911
+          }
+        ]
+      },
+      {
+        "instance_id": "provisional-pilot-medium-2001",
+        "intensity": "medium",
+        "differences": [
+          {
+            "heuristic": "random",
+            "makespan_s": -0.8939801983628861,
+            "energy_j": -9.477399752749903,
+            "mean_latency_s": 0.07638191989670062
+          },
+          {
+            "heuristic": "latency-first",
+            "makespan_s": 0.699654650397104,
+            "energy_j": -11.62497110924997,
+            "mean_latency_s": 0.8784796489956166
+          },
+          {
+            "heuristic": "energy-first",
+            "makespan_s": -72.87027525472988,
+            "energy_j": 44.158222156000164,
+            "mean_latency_s": -70.03500856985127
+          },
+          {
+            "heuristic": "balanced-equal",
+            "makespan_s": 0.666729119972409,
+            "energy_j": 3.9007028802501225,
+            "mean_latency_s": 0.8012657391505542
+          },
+          {
+            "heuristic": "balanced-makespan",
+            "makespan_s": 0.8344232431927558,
+            "energy_j": 2.6159026060001054,
+            "mean_latency_s": 0.8498255692615374
+          },
+          {
+            "heuristic": "balanced-energy",
+            "makespan_s": -0.48852303015725695,
+            "energy_j": 11.704630925250086,
+            "mean_latency_s": 0.21264585559391458
+          }
+        ]
+      },
+      {
+        "instance_id": "provisional-pilot-high-2002",
+        "intensity": "high",
+        "differences": [
+          {
+            "heuristic": "random",
+            "makespan_s": -2.0378292702447407,
+            "energy_j": 3.186350289000046,
+            "mean_latency_s": -0.3985697162901354
+          },
+          {
+            "heuristic": "latency-first",
+            "makespan_s": 3.347744737714473,
+            "energy_j": 6.495468559250014,
+            "mean_latency_s": 1.2821640885669374
+          },
+          {
+            "heuristic": "energy-first",
+            "makespan_s": -75.15723732091678,
+            "energy_j": 56.11343943975044,
+            "mean_latency_s": -75.23976280789981
+          },
+          {
+            "heuristic": "balanced-equal",
+            "makespan_s": 3.4179658059644726,
+            "energy_j": 12.551297773750036,
+            "mean_latency_s": 1.171996928992422
+          },
+          {
+            "heuristic": "balanced-makespan",
+            "makespan_s": 3.7164100547144727,
+            "energy_j": 12.179545327500023,
+            "mean_latency_s": 1.3007539672745914
+          },
+          {
+            "heuristic": "balanced-energy",
+            "makespan_s": 1.8250903684473752,
+            "energy_j": 14.891715758249973,
+            "mean_latency_s": 0.5971430302018508
+          }
+        ]
+      }
+    ],
+    "pilot_pair_full_example": {
+      "run_id": "provisional-pilot-low-2000-energy-first",
+      "pair": "makespan_s|mean_latency_s",
+      "full_non_dominated": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "provisional-held_out-high-3025-balanced-equal",
+  "instance_id": "provisional-held_out-high-3025",
+  "manifest_id": "provisional-workload-held_out-v1",
+  "policy_config_id": "balanced-equal",
+  "policy_seed": null,
+  "simulator_version": "topic3-simulator-p2-1",
+  "dqn_checkpoint_id": null,
+  "record_origin": "simulation",
+  "status": "complete",
+  "failure_reason": null,
+  "task_count": 80,
+  "makespan_s": 10.893186152250003,
+  "energy_j": 198.8721803814999,
+  "mean_latency_s": 1.3666826974331265,
+  "event_log_path": "events/provisional-held_out-high-3025-balanced-equal.jsonl",
+  "metrics_source": "topic3.metrics.recompute_objectives"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "status": "provisional_not_frozen",
+  "held_out_used": false,
+  "gamma": 1,
+  "s_M": 21.242007085004264,
+  "s_E": 2.655653085448698,
+  "s_L": 1.6571213496481065,
+  "compute_cycles_scale": 1992060314,
+  "upload_bytes_scale": 1999611,
+  "return_bytes_scale": 199961,
+  "source_instance_ids": [
+    "provisional-training-low-1000",
+    "provisional-training-medium-1001",
+    "provisional-training-high-1002",
+    "provisional-pilot-low-2000",
+    "provisional-pilot-medium-2001",
+    "provisional-pilot-high-2002"
+  ],
+  "scale_source": "configs/provisional/balanced_scales.json",
+  "definitions": {
+    "compute_cycles_scale": "maximum compute_cycles across tasks in the listed training and pilot instances",
+    "upload_bytes_scale": "maximum upload_bytes across those tasks",
+    "return_bytes_scale": "maximum return_bytes across those tasks",
+    "time": "cpu_remaining_busy_s, channel_remaining_busy_s, and projected_completion_s are divided by s_M",
+    "energy": "projected_task_energy_j is divided by s_E",
+    "queue_length": "raw count of waiting jobs; the running job is not included"
+  },
+  "note": "Three training instances (seeds 1000-1002) and three pilot instances (seeds 2000-2002). Held-out instances are not read. Queue lengths stay raw. Values are provisional_not_frozen."
+}

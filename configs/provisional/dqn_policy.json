@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "status": "provisional_not_frozen",
+  "held_out_used": false,
+  "policy_config_id": "dqn-fixed",
+  "family": "dqn",
+  "seed": 8,
+  "seed_name": "PROVISIONAL_DQN_SEED",
+  "hidden_units": [64, 64],
+  "action_count": 4,
+  "input_size": 27,
+  "activation": "relu",
+  "initialization": "he_normal_biases_zero",
+  "initialization_order": "W1, then W2, then W3, using splitmix64-v1 normal draws. Biases stay zero and do not draw. The stream then samples replay.",
+  "optimizer": "sgd",
+  "learning_rate": 0.001,
+  "gamma": 1,
+  "loss": "mean of 0.5 * (Q(s,a) - target)^2",
+  "inference": "greedy",
+  "tie_break": "lowest action index, which follows manifest destination order",
+  "replay_capacity": 1024,
+  "target_network": "copied only by sync_target",
+  "training_updates": "train_step and train_from_replay only; choose does not update weights or consume the seed stream",
+  "feature_order": [
+    "compute_cycles_normalized",
+    "upload_bytes_normalized",
+    "return_bytes_normalized",
+    "for each destination in order: cpu_queue_length, channel_queue_length, cpu_remaining_busy_normalized, channel_remaining_busy_normalized, projected_completion_normalized, projected_task_energy_normalized"
+  ],
+  "checkpoint_id": null,
+  "note": "P8b provisional network. No episode training and no held-out inference. The seed, learning rate, and architecture are recorded, not frozen."
+}
