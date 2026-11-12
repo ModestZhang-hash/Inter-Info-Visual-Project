@@ -99,7 +99,7 @@ export function mountParallel(container, model, sharedState, controls = {}) {
       ? [...new Map([...candidates, ...selectedVisible].map(run => [run.run_id, run])).values()] : candidates).slice()
       .sort((a, b) => Number(selectedIds.has(a.run_id)) - Number(selectedIds.has(b.run_id)));
     if (summary) summary.textContent = workflow
-      ? `Matching: ${candidates.length} runs · Comparing: ${selectedIds.size} / 10 · ${onlySelected ? "Comparison lines" : "Displayed lines"}: ${runs.length} · ${selectedVisible.filter(run => !inside(run)).length} comparisons outside displayed axes`
+      ? `Matching: ${candidates.length} runs · Comparing: ${selectedIds.size} · ${onlySelected ? "Comparison lines" : "Displayed lines"}: ${runs.length} · ${selectedVisible.filter(run => !inside(run)).length} comparisons outside displayed axes`
       : `Selected: ${selectedIds.size} total · ${selectedVisible.length} / ${candidates.length} filter-visible · Displayed: ${runs.length} lines${selectedIds.size > selectedVisible.length ? ` · ${selectedIds.size - selectedVisible.length} selected hidden by filters` : ""}`;
     if (!workflow) updateBrushSummary(snapshot);
     OBJECTIVES.forEach((key, index) => {
@@ -213,7 +213,7 @@ export function mountParallel(container, model, sharedState, controls = {}) {
       empty.setAttribute("y", String(height / 2));
       empty.setAttribute("text-anchor", "middle");
       empty.textContent = onlySelected
-        ? workflow ? "No comparisons yet. Use Random 10, add runs from the results list, or turn off Only comparisons." : "No selected runs to display. Select runs in another view, brush an axis, or turn off Only selected."
+        ? workflow ? "No comparisons yet. Select a random sample, add runs from the results list, or turn off Only comparisons." : "No selected runs to display. Select runs in another view, brush an axis, or turn off Only selected."
         : "No complete runs within the current filters and displayed axes";
       svg.append(empty);
     }

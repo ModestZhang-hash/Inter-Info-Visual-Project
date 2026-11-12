@@ -100,7 +100,7 @@ describe("shared entry", { concurrency: 1 }, () => {
       assert.match(dom.elements.get("reference-status").textContent, /Incomplete/);
       assert.match(dom.elements.get("notice").textContent, /Incomplete reference set/);
       dom.elements.get("random-compare").listeners.click();
-      assert.equal(dom.elements.get("selection-count").textContent, "2 / 10");
+      assert.equal(dom.elements.get("selection-count").textContent, "2 selected");
       assert.equal(dom.elements.get("view3d").children[0].querySelectorAll("[data-run-id]").length, 2);
       assert.match(dom.elements.get("details-content").innerHTML, /Not calculated/);
       const page = readFileSync(new URL("../app/index.html", import.meta.url), "utf8");

@@ -63,14 +63,14 @@ test("application starts with the matrix and expands one cell from the archived 
     assert.doesNotMatch(elements.get("notice").textContent, /Unable to load|Import failed/);
     const firstSvg = elements.get("focused-plot").children[0].children[2];
     firstSvg.markers.find((marker) => marker.dataset.runId === "3a-demo-run-f").listeners.click({ shiftKey: false });
-    assert.equal(elements.get("selection-count").textContent, "1 / 10");
+    assert.equal(elements.get("selection-count").textContent, "1 selected");
     assert.match(elements.get("details-content").innerHTML, /3a-demo-run-g/);
     assert.match(elements.get("details-content").innerHTML, /Strictly better/);
     const nextSvg = elements.get("focused-plot").children[0].children[2];
     assert.equal(nextSvg.listeners.pointerdown, undefined);
     assert.equal(nextSvg.listeners.pointerup, undefined);
     assert.doesNotMatch(nextSvg.innerHTML, /class="brush"/);
-    assert.equal(elements.get("selection-count").textContent, "1 / 10");
+    assert.equal(elements.get("selection-count").textContent, "1 selected");
     assert.equal(elements.get("matching-count").textContent, "7");
   } finally {
     globalThis.document = priorDocument;

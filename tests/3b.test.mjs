@@ -9,7 +9,7 @@ import { binPairs } from "../app/shared/pair_density.mjs";
 import { createViewState } from "../app/shared/state.mjs";
 import { mountMatrix } from "../app/3b/matrix.mjs";
 import { axisYToValue, mountParallel, PARALLEL_LAYOUT, valueToAxisY } from "../app/3b/parallel.mjs";
-import { coincidentIds, mountView3d } from "../app/3b/view3d.mjs";
+import { coincidentIds, mountView3d, projectRun, projectNormalized, DEFAULT_CAMERA, constrainCamera } from "../app/3b/view3d.mjs";
 
 const fixture = JSON.parse(readFileSync(new URL("../examples/3a-demo/bundle.json", import.meta.url), "utf8"));
 const clone = () => structuredClone(fixture);
@@ -146,30 +146,37 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
   test("random comparisons sample without replacement and handle small or empty pools", () => {
     const ids = Array.from({ length: 500 }, (_, i) => `run-${i}`);
     const original = [...ids];
-    const sampled = randomComparisonIds(ids, () => 0.5);
+    const sampled = randomComparisonIds(ids, 10, () => 0.5);
     assert.equal(sampled.length, 10);
     assert.equal(new Set(sampled).size, 10);
     assert.ok(sampled.every(id => ids.includes(id)));
     assert.notDeepEqual(sampled, ids.slice(0, 10));
     assert.deepEqual(ids, original);
-    assert.deepEqual(randomComparisonIds([], () => 0), []);
-    assert.deepEqual(randomComparisonIds(["a", "b", "a"], () => 0), ["a", "b"]);
+    assert.deepEqual(randomComparisonIds([], 30, () => 0), []);
+    assert.deepEqual(randomComparisonIds(["a", "b", "a"], 30, () => 0), ["a", "b"]);
+    assert.equal(new Set(randomComparisonIds(ids, 123)).size, 123);
+    assert.equal(randomComparisonIds(ids, 900).length, 500);
+    assert.equal(randomComparisonIds(ids, 1).length, 1);
+    for (const invalid of [0, -1, 1.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1]) {
+      assert.throws(() => randomComparisonIds(ids, invalid), RangeError);
+    }
   });
-  test("exploration state intersects filters and atomically enforces ten independent comparisons", () => {
+  test("exploration state permits unlimited comparisons while isolating instances and failures", () => {
     const model = readBundle(structuredClone(stressFixture));
     const ids = model.runs.map(run => run.run_id);
     const state = createViewState(initialState(model).get(), { runs: [...model.runs,
       { ...model.runs[0], run_id: "foreign", instance_id: "other" }, { ...model.runs[0], run_id: "failed", status: "failed" }] });
     const axes = state.get().axis_ranges, labels = structuredClone(model.labels);
     assert.equal(state.get().filtered_run_ids.length, 500);
-    assert.equal(state.addComparisons(ids), false);
-    assert.deepEqual(state.get().comparison_run_ids, []);
+    assert.equal(state.addComparisons(ids), true);
+    assert.deepEqual(state.get().comparison_run_ids, ids);
+    state.compareRuns([]);
     assert.equal(state.addComparisons(ids.slice(0, 10)), true);
-    assert.equal(state.addComparisons([ids[10]]), false);
-    assert.deepEqual(state.get().comparison_run_ids, ids.slice(0, 10));
-    assert.equal(state.toggleComparison(ids[10]), false);
+    assert.equal(state.addComparisons([ids[10]]), true);
+    assert.deepEqual(state.get().comparison_run_ids, ids.slice(0, 11));
+    assert.equal(state.toggleComparison(ids[10]), true);
     assert.equal(state.get().inspected_run_id, ids[10]);
-    assert.match(state.get().comparison_error, /Cannot compare 11/);
+    assert.equal(state.get().comparison_error, "");
     assert.equal(state.toggleComparison("foreign"), false);
     assert.equal(state.toggleComparison("failed"), false);
     assert.equal(state.toggleComparison("unknown"), false);
@@ -235,8 +242,9 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
     assert.equal(lines().filter(line => line.dataset.selected === "true").length, 10);
     assert.ok(!container.children[0].children.some(node => /density/.test(node.getAttribute("class") ?? "")));
     const ids = state.get().comparison_run_ids;
+    const clicked = lines()[0].dataset.runId;
     lines()[0].listeners.click({});
-    assert.deepEqual(state.get().comparison_run_ids, ids);
+    assert.deepEqual(state.get().comparison_run_ids, [...ids, clicked]);
     assert.ok(state.get().inspected_run_id);
     assert.deepEqual(model.labels, before);
     unmount();
@@ -457,7 +465,7 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
     assert.equal(controls.clearBrushButton.listeners.click, undefined);
   }));
 
-  test("the fixed 3D projection keeps run identity and reports coincident points", () => withDocument((dom) => {
+  test("the interactive 3D projection keeps run identity and reports coincident points", () => withDocument((dom) => {
     const demo = readBundle(clone());
     const state = initialState(demo);
     const matrix = dom.document.createElement("div");
@@ -518,6 +526,77 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
     assert.deepEqual(overlapState.get().selected_run_ids, ["overlap-a", "overlap-b"]);
   }));
 
+  test("3D rotation and zoom preserve metrics, reference labels and shared state", () => withDocument(dom => {
+    const model = readBundle(clone()), state = initialState(model), view = dom.document.createElement("div");
+    const before = structuredClone(state.get()), raw = JSON.stringify(model.runs), labels = structuredClone([...model.labels.full]);
+    const unmount = mountView3d(view, model, state);
+    const svg = view.children[0], toolbar = view.children[1];
+    const button = action => toolbar.children.find(node => node.dataset.cameraAction === action);
+    const point = () => svg.querySelectorAll("[data-run-id]").find(node => node.dataset.runId === "3a-demo-run-f");
+    const initial = { ...point().dataset };
+    button("right").listeners.click();
+    assert.notEqual(point().dataset.x, initial.x);
+    const rotatedYaw = svg.dataset.yaw;
+    button("in").listeners.click();
+    assert.equal(Number(svg.dataset.zoom), 1.1);
+    assert.deepEqual(state.get(), before);
+    assert.equal(JSON.stringify(model.runs), raw);
+    assert.deepEqual([...model.labels.full], labels);
+    point().listeners.keydown({ key: "Enter", preventDefault() {} });
+    assert.deepEqual(state.get().selected_run_ids, ["3a-demo-run-f"]);
+    assert.equal(svg.dataset.yaw, rotatedYaw, "shared selection updates preserve the camera");
+    assert.equal(point().dataset.fullNonDominated, initial.fullNonDominated);
+    const expected = projectRun(model.runs.find(run => run.run_id === "3a-demo-run-f"), state.get().axis_ranges,
+      { yaw: Number(svg.dataset.yaw), pitch: Number(svg.dataset.pitch), zoom: Number(svg.dataset.zoom) });
+    assert.equal(Number(point().dataset.x), expected.x);
+    assert.equal(Number(point().dataset.y), expected.y);
+    button("reset").listeners.click();
+    assert.ok(Math.abs(Number(point().dataset.x) - Number(initial.x)) < 1e-10);
+    assert.deepEqual(state.get().selected_run_ids, ["3a-demo-run-f"]);
+    const selected = structuredClone(state.get());
+    const stale = point();
+    unmount();
+    stale.listeners.click({});
+    button("right").listeners.click();
+    assert.deepEqual(state.get(), selected, "disposed views cannot change shared state");
+  }));
+
+  test("3D pointer drag rotates without selecting; click and keyboard remain independent", () => withDocument(dom => {
+    const model = readBundle(clone()), state = initialState(model), view = dom.document.createElement("div");
+    mountView3d(view, model, state);
+    const svg = view.children[0], before = structuredClone(state.get());
+    const point = () => svg.querySelectorAll("[data-run-id]")[0];
+    svg.listeners.pointerdown({ button: 0, pointerId: 1, clientX: 100, clientY: 100 });
+    svg.listeners.pointermove({ pointerId: 1, clientX: 160, clientY: 130 });
+    svg.listeners.pointerup({ pointerId: 1 });
+    assert.notEqual(Number(svg.dataset.yaw), DEFAULT_CAMERA.yaw);
+    point().listeners.click({});
+    assert.deepEqual(state.get(), before, "release after dragging must not toggle a point");
+    svg.listeners.pointerdown({ button: 0, pointerId: 2, clientX: 100, clientY: 100 });
+    svg.listeners.pointerup({ pointerId: 2 });
+    const chosenId = point().dataset.runId;
+    point().listeners.click({});
+    assert.deepEqual(state.get().selected_run_ids, [chosenId]);
+    const yaw = svg.dataset.yaw;
+    svg.listeners.keydown({ target: svg, key: "ArrowLeft", preventDefault() {} });
+    assert.notEqual(svg.dataset.yaw, yaw);
+    const zoom = Number(svg.dataset.zoom);
+    svg.listeners.wheel({ deltaY: -100, preventDefault() {} });
+    assert.ok(Number(svg.dataset.zoom) > zoom);
+    svg.listeners.keydown({ target: svg, key: "Home", preventDefault() {} });
+    assert.equal(Number(svg.dataset.zoom), 1);
+    assert.deepEqual(state.get().selected_run_ids, [chosenId]);
+  }));
+
+  test("3D camera bounds and equal metric axes remain finite", () => {
+    assert.deepEqual(constrainCamera({ yaw: 0, pitch: 100, zoom: 100 }), { yaw: 0, pitch: 1.4, zoom: 1.6 });
+    const run = { makespan_s: 2, energy_j: 2, mean_latency_s: 2 };
+    const ranges = Object.fromEntries(Object.keys(run).map(key => [key, { min: 2, max: 2 }]));
+    const point = projectRun(run, ranges);
+    assert.ok(Object.values(point).every(Number.isFinite));
+    assert.deepEqual(projectNormalized(0.5, 0.5, 0.5), { x: 360, y: 240, depth: 0 });
+  });
+
   test("the integrated workflow separates filtering, comparison, inspection, and dataset loading", async () => {
     const priorDocument = globalThis.document, priorFetch = globalThis.fetch;
     const dom = createDom(); globalThis.document = dom.document;
@@ -528,7 +607,7 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
       const rows = () => elements.get("run-list").children[0].children[1].children;
       const action = (id, index) => rows().find(row => row.dataset.runId === id).children.at(-1).children[index].listeners.click();
       const assertCompare = ids => {
-        assert.equal(elements.get("selection-count").textContent, `${ids.length} / 10`);
+        assert.equal(elements.get("selection-count").textContent, `${ids.length} selected`);
         for (const key of ["parallel", "view3d"]) assert.deepEqual(elements.get(key).children[0].querySelectorAll("[data-run-id]")
           .filter(node => node.dataset.selected === "true").map(node => node.dataset.runId).sort(), [...ids].sort());
         for (const plot of scatters(elements.get("matrix"))) assert.deepEqual([...svgOf(plot).innerHTML.matchAll(/class="run-id-label"[^>]*>([^<]+)</g)].map(match => match[1]).sort(), [...ids].sort());
@@ -563,7 +642,12 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
       assert.equal(rows().length, 1);
       elements.get("select-all").listeners.click();
       const oldMarker = matrixSvg().markers[0];
+      elements.get("show-parallel").listeners.click();
       await elements.get("load-stress-demo").listeners.click();
+      assert.equal(elements.get("scatter-section").hidden, false);
+      assert.equal(elements.get("matrix-section").hidden, false);
+      assert.equal(elements.get("parallel-section").hidden, true);
+      assert.equal(elements.get("view3d-section").hidden, true);
       assertCompare([]);
       assert.equal(elements.get("matching-count").textContent, "500");
       assert.equal(rows().length, 20);
@@ -577,13 +661,32 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
       oldMarker.listeners.click({});
       assertCompare([]);
       elements.get("compare-matches").listeners.click();
-      assertCompare([]);
-      assert.match(elements.get("comparison-message").textContent, /Cannot compare 500.*Nothing was added/);
+      assertCompare(stressFixture.runs.map(run => run.run_id));
+      assert.equal(elements.get("comparison-message").textContent, "");
+      elements.get("random-count").value = "25";
       elements.get("random-compare").listeners.click();
       const randomIds = matrixSvg().querySelectorAll("[data-run-id]").map(node => node.dataset.runId);
-      assert.equal(new Set(randomIds).size, 10);
+      assert.equal(new Set(randomIds).size, 25);
       assertCompare(randomIds);
       assert.equal(elements.get("matching-count").textContent, "500");
+      for (const invalid of ["", "0", "-2", "1.5", "invalid"]) {
+        elements.get("random-count").value = invalid;
+        elements.get("random-compare").listeners.click();
+        assertCompare(randomIds);
+        assert.match(elements.get("random-feedback").textContent, /positive whole number/);
+      }
+      elements.get("random-count").value = "999";
+      elements.get("random-count").listeners.keydown({ key: "Enter", preventDefault() {} });
+      assertCompare(stressFixture.runs.map(run => run.run_id));
+      assert.match(elements.get("random-feedback").textContent, /selected all 500/);
+      elements.get("random-count").value = "25";
+      // Restore the earlier sample to keep following reset checks deterministic.
+      elements.get("clear-selection").listeners.click();
+      for (const id of randomIds) {
+        elements.get("run-search").value = id; elements.get("run-search").listeners.input();
+        action(id, 1);
+      }
+      elements.get("run-search").value = ""; elements.get("run-search").listeners.input();
       elements.get("reset-axes").listeners.click();
       assertCompare(randomIds);
       assert.match(elements.get("controls-feedback").textContent, /already at their defaults/);
@@ -607,12 +710,12 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
       }
       assert.equal(elements.get("matching-count").textContent, "500");
       action(firstTen[9], 1);
-      assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 500);
+      assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 9);
       action(firstTen[9], 1);
       assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 10);
       action(stressFixture.runs[10].run_id, 1);
-      assertCompare(firstTen);
-      assert.match(elements.get("comparison-message").textContent, /Cannot compare 11/);
+      assertCompare([...firstTen, stressFixture.runs[10].run_id]);
+      assert.equal(elements.get("comparison-message").textContent, "");
       action(firstTen[0], 0);
       assert.equal((elements.get("details-content").innerHTML.match(/class="detail-card"/g) ?? []).length, 1);
       assert.match(elements.get("details-content").innerHTML, /TEST DATA ONLY/);
@@ -632,7 +735,7 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
         assert.ok(!axis.children.some(node => ["pc-hit", "pc-brush"].includes(node.getAttribute("class"))));
       }
       for (const id of ["filter-summary", "reset-filters", "parallel-clear-brushes", "parallel-brush-count"]) assert.ok(!elements.has(id));
-      assertCompare(firstTen);
+      assertCompare([...firstTen, stressFixture.runs[10].run_id]);
       elements.get("clear-selection").listeners.click();
       assertCompare([]);
       assert.equal(elements.get("matching-count").textContent, "500");

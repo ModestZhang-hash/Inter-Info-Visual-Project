@@ -38,8 +38,6 @@ export function createViewState(initial, options = {}) {
   };
 }
 
-export const COMPARISON_LIMIT = 10;
-
 // Bound datasets enable the overview/filter/compare workflow. The legacy
 // selected_run_ids field is a synchronized alias for the comparison set.
 function createExplorationState(initial, records) {
@@ -61,11 +59,6 @@ function createExplorationState(initial, records) {
   const publish = () => { refresh(); listeners.forEach(listener => listener(get())); };
   const compare = ids => {
     const next = validIds(ids);
-    if (next.length > COMPARISON_LIMIT) {
-      current.comparison_error = `Cannot compare ${next.length} runs. The limit is ${COMPARISON_LIMIT}. Narrow the results or remove runs first. Nothing was added.`;
-      publish();
-      return false;
-    }
     current.comparison_run_ids = next;
     current.selected_run_ids = [...next];
     current.comparison_error = "";

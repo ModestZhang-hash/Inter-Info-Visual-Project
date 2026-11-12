@@ -1,10 +1,11 @@
-import { filteredRuns, comparisonRuns, COMPARISON_LIMIT } from "./state.mjs?v=workflow-1";
+import { filteredRuns, comparisonRuns } from "./state.mjs?v=unlimited-1";
 import { runLabel } from "./labels.mjs";
 
 export const PAGE_SIZE = 20;
-export function randomComparisonIds(ids, random = Math.random) {
+export function randomComparisonIds(ids, requestedCount = 10, random = Math.random) {
+  if (!Number.isSafeInteger(requestedCount) || requestedCount < 1) throw new RangeError("Enter a positive whole number.");
   const pool = [...new Set(ids)];
-  const count = Math.min(COMPARISON_LIMIT, pool.length);
+  const count = Math.min(requestedCount, pool.length);
   for (let i = 0; i < count; i++) {
     const j = i + Math.floor(random() * (pool.length - i));
     [pool[i], pool[j]] = [pool[j], pool[i]];
@@ -32,10 +33,13 @@ function button(label, action) {
 }
 
 export function mountRunList(container, model, state, controls) {
-  const { searchInput, scopeInput, prevButton, nextButton, pageSummary, basket, message, compareMatchesButton, randomCompareButton } = controls;
+  const { searchInput, scopeInput, prevButton, nextButton, pageSummary, basket, message, compareMatchesButton, randomCompareButton, randomCountInput, randomFeedback } = controls;
   let page = 0, lastFilter = "";
+  if (randomCountInput && !randomCountInput.value) randomCountInput.value = "10";
+  if (randomFeedback) randomFeedback.textContent = "";
   searchInput.value = ""; scopeInput.value = "matches";
   const render = snapshot => {
+    if (randomFeedback) randomFeedback.textContent = "";
     const key = snapshot.filtered_run_ids.join("|");
     if (key !== lastFilter) { page = 0; lastFilter = key; }
     const result = listPage(model, snapshot, searchInput.value, scopeInput.value, page);
@@ -52,8 +56,8 @@ export function mountRunList(container, model, state, controls) {
       item.append(button(`${id}${matching.has(id) ? "" : " (outside filter)"}`, () => state.inspectRun(id)), remove);
       basket.append(item);
     }
-    if (!snapshot.comparison_run_ids.length) basket.append(node("span", "No comparisons yet. Add individual runs below (maximum 10)."));
-    compareMatchesButton.textContent = `Add all ${snapshot.filtered_run_ids.length} matching runs (limit ${COMPARISON_LIMIT})`;
+    if (!snapshot.comparison_run_ids.length) basket.append(node("span", "No comparisons yet. Add runs below or select a random sample."));
+    compareMatchesButton.textContent = `Add all ${snapshot.filtered_run_ids.length} matching runs`;
     if (randomCompareButton) randomCompareButton.disabled = snapshot.filtered_run_ids.length === 0;
     const table = node("table"), head = node("thead"), header = node("tr"), body = node("tbody");
     for (const label of ["Run ID", "Configuration", "M (s) ↓", "E (J) ↓", "L (s) ↓", "Full 3D Pareto", "Actions"]) header.append(node("th", label));
@@ -83,10 +87,30 @@ export function mountRunList(container, model, state, controls) {
     [nextButton, "click", () => { page++; render(state.get()); }],
     [compareMatchesButton, "click", () => state.addComparisons(state.get().filtered_run_ids)],
   ];
-  if (randomCompareButton) listeners.push([randomCompareButton, "click", () => {
+  const selectRandom = () => {
     const ids = state.get().filtered_run_ids;
-    if (ids.length) state.compareRuns(randomComparisonIds(ids));
-  }]);
+    const requested = randomCountInput ? Number(randomCountInput.value) : 10;
+    const invalid = !Number.isSafeInteger(requested) || requested < 1;
+    randomCountInput?.setAttribute("aria-invalid", String(invalid));
+    if (invalid) {
+      if (randomFeedback) randomFeedback.textContent = "Enter a positive whole number. Comparisons were not changed.";
+      return;
+    }
+    if (!ids.length) {
+      if (randomFeedback) randomFeedback.textContent = "No matching runs are available.";
+      return;
+    }
+    const selected = randomComparisonIds(ids, requested);
+    state.compareRuns(selected);
+    if (randomFeedback) randomFeedback.textContent = requested > ids.length
+      ? `Requested ${requested}; selected all ${selected.length} available runs.`
+      : `Selected ${selected.length} random runs from ${ids.length} available runs.`;
+  };
+  if (randomCompareButton) listeners.push([randomCompareButton, "click", selectRandom]);
+  if (randomCountInput) {
+    listeners.push([randomCountInput, "keydown", event => { if (event.key === "Enter") { event.preventDefault(); selectRandom(); } }]);
+    listeners.push([randomCountInput, "input", () => { randomCountInput.setAttribute("aria-invalid", "false"); if (randomFeedback) randomFeedback.textContent = ""; }]);
+  }
   listeners.forEach(([el, event, handler]) => el.addEventListener(event, handler));
   const unsubscribe = state.subscribe(render);
   return () => { unsubscribe(); listeners.forEach(([el, event, handler]) => el.removeEventListener(event, handler)); };

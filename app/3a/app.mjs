@@ -1,12 +1,12 @@
 import { OBJECTIVES, PAIRS } from "./pareto.mjs";
 import { defaultAxisRanges, readBundle } from "./model.mjs";
-import { createViewState } from "../shared/state.mjs?v=click-toggle-1";
-import { mountRunList } from "../shared/run_list.mjs?v=random-10-1";
+import { createViewState } from "../shared/state.mjs?v=unlimited-1";
+import { mountRunList } from "../shared/run_list.mjs?v=unlimited-1";
 import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs";
 import { configLabel, runLabel } from "../shared/labels.mjs";
-import { mountMatrix, renderFocusedPair } from "../3b/matrix.mjs?v=no-brush-1";
-import { mountParallel } from "../3b/parallel.mjs?v=no-brush-1";
-import { mountView3d } from "../3b/view3d.mjs?v=click-toggle-1";
+import { mountMatrix, renderFocusedPair } from "../3b/matrix.mjs?v=unlimited-1";
+import { mountParallel } from "../3b/parallel.mjs?v=unlimited-1";
+import { mountView3d } from "../3b/view3d.mjs?v=unlimited-1";
 
 const META = {
   makespan_s: { short: "M", label: "Makespan M (s) ↓" },
@@ -62,7 +62,7 @@ function loadBundle(bundle) {
     mountRunList($("run-list"), model, state, {
       searchInput: $("run-search"), scopeInput: $("run-scope"), prevButton: $("runs-prev"), nextButton: $("runs-next"),
       pageSummary: $("runs-page"), basket: $("comparison-basket"), message: $("comparison-message"), compareMatchesButton: $("compare-matches"),
-      randomCompareButton: $("random-compare"),
+      randomCompareButton: $("random-compare"), randomCountInput: $("random-count"), randomFeedback: $("random-feedback"),
     }),
   ];
   unsubscribe = state.subscribe(render);
@@ -136,7 +136,7 @@ function render(snapshot) {
   const completeRuns = model.runs.filter((run) => run.status === "complete");
   const visible = completeRuns.filter((run) => snapshot.visible_policy_config_ids.includes(run.policy_config_id));
   $("run-count").textContent = `${visible.length} / ${completeRuns.length}`;
-  $("selection-count").textContent = `${snapshot.comparison_run_ids.length} / 10`;
+  $("selection-count").textContent = `${snapshot.comparison_run_ids.length} selected`;
   $("matching-count").textContent = String(snapshot.filtered_run_ids.length);
   $("selection-ids").textContent = snapshot.selected_run_ids.join(", ") || "None";
   $("reference-ids").textContent = snapshot.pareto_reference_run_ids.join(", ") || "None (demo or incomplete set)";
@@ -226,7 +226,7 @@ async function loadDemo(path, view) {
   } catch (error) { notice(`Demo load failed: ${error.message}`, true); }
   finally { controls.forEach(control => { control.disabled = false; }); }
 }
-$("load-stress-demo").addEventListener("click", () => loadDemo("../../examples/synthetic-stress-500/bundle.json", "parallel"));
+$("load-stress-demo").addEventListener("click", () => loadDemo("../../examples/synthetic-stress-500/bundle.json", "scatter"));
 $("load-small-demo").addEventListener("click", () => loadDemo("../../examples/3a-demo/bundle.json", "scatter"));
 
 $("bundle-file").addEventListener("change", async (event) => {

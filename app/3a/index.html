@@ -3,81 +3,117 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5f2">
   <title>Topic 3 · Linked Trade-off Analysis</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="../3b/style.css?v=lines-only-1">
+  <link rel="stylesheet" href="./workbench.css?v=3">
 </head>
 <body>
+  <a class="skip-link" href="#workspace">Skip to analysis</a>
   <header class="topbar">
-    <div><p class="eyebrow">CPS 5745 · TOPIC 3</p><h1>Linked Trade-off Analysis</h1><p class="subtitle">Makespan, task-related energy, and mean end-to-end latency on the same workload</p></div>
-    <label class="import">Import bundle.json<input id="bundle-file" type="file" accept="application/json,.json"></label>
+    <div class="brand"><h1>Linked Trade-off Analysis</h1><span class="course-label">CPS 5745 / Topic 3</span></div>
+    <nav class="header-links" aria-label="Page sections"><a href="#workspace">Analysis</a><a href="#results-section">Runs</a><a href="#details-section">Evidence</a></nav>
+    <label class="import">Import bundle<input id="bundle-file" type="file" accept="application/json,.json" aria-label="Import bundle.json"></label>
   </header>
   <main>
+    <section class="dataset-bar" aria-label="Dataset selection">
+      <div class="dataset-intro"><h2>Scheduling workbench</h2><p>Makespan, energy and latency on the same workload.</p></div>
+      <div class="dataset-actions" role="group" aria-label="Demo datasets">
+        <button id="load-small-demo" type="button">7-run manual demo</button>
+        <button id="load-stress-demo" type="button">500-run stress test</button>
+        <a href="?bundle=p3-training-low">2-run training slice</a>
+      </div>
+    </section>
     <section class="notice" id="notice" role="status"></section>
-    <div class="view-nav" role="group" aria-label="Demo datasets">
-      <button id="load-small-demo" type="button">Load 7-run manual demo</button>
-      <button id="load-stress-demo" type="button">Load 500-run synthetic TEST DATA</button>
-      <span class="cell-note">Loading a dataset clears filters and comparisons. Both demos are test fixtures, not experimental results.</span>
-    </div>
+    <p class="dataset-hint">Switching datasets resets comparisons. Manual and stress demos are test fixtures, not experimental results.</p>
     <section class="overview" aria-label="Data overview">
-      <div><span class="kicker">Instance</span><strong id="instance-id">—</strong></div>
-      <div><span class="kicker">Pareto reference</span><strong id="reference-status">—</strong></div>
+      <div class="instance-summary"><span class="kicker">Current instance</span><strong id="instance-id">—</strong></div>
+      <div class="reference-summary"><span class="kicker">Pareto reference</span><strong id="reference-status">—</strong></div>
       <div><span class="kicker">Visible / complete runs</span><strong id="run-count">—</strong></div>
-      <div><span class="kicker">Comparisons · maximum 10</span><strong id="selection-count">—</strong></div>
+      <div class="comparison-summary"><span class="kicker">In comparison</span><strong id="selection-count" aria-live="polite">—</strong></div>
+    </section>
+    <details class="metadata-disclosure"><summary>Dataset &amp; reference details</summary><div class="metadata-content">
       <div><span class="kicker">Comparison run IDs · shared across all views</span><strong id="selection-ids">None</strong></div>
       <div><span class="kicker">Matching runs</span><strong id="matching-count">—</strong></div>
       <div><span class="kicker">Formal reference run IDs</span><strong id="reference-ids">None</strong></div>
-    </section>
-    <section class="controls" aria-label="Configuration filters and axis ranges">
-      <div class="control-title"><h2>1. Explore and select</h2><div><button id="select-all" type="button" title="Show all Matrix runs: clear filters and comparisons, and restore axis ranges">Show all</button><button id="reset-axes" type="button" title="Restore default axis ranges; keep comparisons and visible configurations">Reset axes</button><button id="random-compare" type="button" title="Replace comparisons with up to 10 random matching runs">Random 10</button><button id="clear-selection" type="button">Clear comparisons</button></div></div>
-      <p id="controls-feedback" class="cell-note" role="status" aria-live="polite"></p>
-      <div class="control-grid"><fieldset><legend>Visible configurations</legend><div id="policy-filters" class="filters"></div></fieldset><fieldset><legend>Fixed axis ranges <small>Unchanged by filters</small></legend><div id="axis-controls" class="axis-controls"></div></fieldset></div>
-    </section>
-    <section class="legend" aria-label="Marker legend"><span><i class="mark projected"></i> Non-dominated in 2D projection</span><span><i class="mark full"></i> Non-dominated in 3D</span><span><i class="mark selected"></i> In comparison</span><span class="hint">Click a point or line to select or deselect it (maximum 10); its evidence opens below. No Shift key needed.</span></section>
-    <div class="view-nav" role="group" aria-label="Analysis view">
-      <button id="show-scatter" type="button" aria-pressed="true" aria-controls="scatter-section">Matrix</button>
-      <button id="show-parallel" type="button" aria-pressed="false" aria-controls="parallel-section">Parallel coordinates</button>
-      <button id="show-view3d" type="button" aria-pressed="false" aria-controls="view3d-section">3D comparison</button>
-      <a href="#results-section">Results and comparisons ↓</a>
-    </div>
-    <section id="scatter-section" aria-label="Scatterplots">
-      <section id="matrix-section" class="view-block"><h2>Scatterplot matrix</h2><p class="cell-note">Each point is one complete run. Colors and shapes identify configurations; outlines distinguish 2D and full 3D Pareto status. Click a point to select/deselect it and open its evidence. Comparison points remain visible independently of filters. When 10 runs are added to comparison, only those 10 points are shown; remove a comparison to restore the background. Expand a cell for closer inspection.</p><section id="matrix" class="matrix" aria-label="Scatterplot matrix"></section></section>
-      <section id="focused-section" class="view-block" hidden>
-        <div class="section-heading"><h2 id="focused-title">Expanded scatterplot</h2><button id="back-to-matrix" type="button">← Back to matrix</button></div>
-        <p class="cell-note">Expanded matrix cell · Same axes, data, and Pareto labels. Click a point to select/deselect and inspect evidence.</p>
-        <section id="focused-plot" class="focused-plot" aria-label="Expanded scatterplot"></section>
+    </div></details>
+    <div class="workspace" id="workspace">
+      <aside class="controls" aria-label="Configuration filters and axis ranges">
+        <div class="control-title"><h2>Compare runs</h2><p>Select runs across linked views.</p></div>
+        <div class="selection-tools">
+          <label class="random-count-label" for="random-count">Random sample size</label>
+          <input id="random-count" type="number" min="1" step="1" value="10" inputmode="numeric" aria-describedby="random-feedback">
+          <button id="random-compare" class="primary-action" type="button" title="Replace comparisons with a random sample of matching runs">Select random runs</button>
+          <p id="random-feedback" role="status" aria-live="polite"></p>
+          <button id="clear-selection" type="button">Clear comparisons</button>
+          <button id="select-all" type="button" title="Show all Matrix runs: clear comparisons, enable all configurations, and restore axis ranges">Show all</button>
+        </div>
+        <p id="controls-feedback" class="cell-note" role="status" aria-live="polite"></p>
+        <fieldset class="configuration-field"><legend>Visible configurations</legend><div id="policy-filters" class="filters"></div></fieldset>
+        <details class="axis-disclosure"><summary>Axis ranges</summary>
+          <p class="cell-note">Display bounds only. Pareto labels and stored values stay unchanged.</p>
+          <div id="axis-controls" class="axis-controls"></div>
+          <button id="reset-axes" type="button" title="Restore default axis ranges; keep comparisons and visible configurations">Reset axes</button>
+        </details>
+        <p class="control-footnote">Click a point or line to select or deselect it. Its record and dominance evidence appear below.</p>
+        <a class="text-link" href="#details-section">View run evidence ↓</a>
+      </aside>
+      <section class="analysis-surface" aria-label="Linked analysis views">
+        <div class="view-nav" role="group" aria-label="Analysis view">
+          <button id="show-scatter" type="button" aria-pressed="true" aria-controls="scatter-section">Matrix</button>
+          <button id="show-parallel" type="button" aria-pressed="false" aria-controls="parallel-section">Parallel coordinates</button>
+          <button id="show-view3d" type="button" aria-pressed="false" aria-controls="view3d-section">3D comparison</button>
+          <a href="#results-section">Browse runs ↓</a>
+        </div>
+        <section class="legend" aria-label="Marker legend"><span><i class="mark projected"></i> 2D non-dominated</span><span><i class="mark full"></i> 3D non-dominated</span><span><i class="mark selected"></i> In comparison</span></section>
+        <section id="scatter-section" aria-label="Scatterplots">
+          <section id="matrix-section" class="view-block">
+            <div class="plot-heading"><h2>Scatterplot matrix</h2><span>All objectives minimized ↓</span></div>
+            <p class="cell-note">One point, one complete run. Expand a cell to inspect a pair of objectives.</p>
+            <details class="view-help"><summary>Reading the matrix</summary><p>Colors and shapes identify configurations. Solid dark outlines show non-dominance in the current 2D projection; dashed gold rings show non-dominance in full M–E–L space. Click to select or deselect and inspect evidence. Comparison points remain visible independently of configuration visibility. When comparisons are selected, only those points are shown. Clear comparisons or use Show all to restore the background.</p></details>
+            <section id="matrix" class="matrix" aria-label="Scatterplot matrix"></section>
+          </section>
+          <section id="focused-section" class="view-block" hidden>
+            <div class="section-heading"><h2 id="focused-title">Expanded scatterplot</h2><button id="back-to-matrix" type="button">← Back to matrix</button></div>
+            <p class="cell-note">Same axes, data and Pareto labels. Click a point to select or deselect and inspect evidence.</p>
+            <section id="focused-plot" class="focused-plot" aria-label="Expanded scatterplot"></section>
+          </section>
+        </section>
+        <section id="parallel-section" class="view-block" hidden>
+          <div class="plot-heading"><h2 id="parallel-title">Parallel coordinates</h2><span>All objectives minimized ↓</span></div>
+          <p class="cell-note">Each line is one complete run. Click to select or deselect and open its evidence.</p>
+          <div class="parallel-controls"><label><input id="parallel-only-selected" type="checkbox"> Only comparisons</label><span id="parallel-count" role="status" aria-live="polite"></span></div>
+          <details class="view-help"><summary>Reading parallel coordinates</summary><p>Only comparisons is enabled by default. Enter a random sample size or add runs from the list. Turn it off to show faint background lines. Hover or focus a line for its ID, configuration symbol and raw metrics. Deselected lines disappear in comparison-only mode. Comparison membership is independent of configuration visibility; Pareto evidence uses the original reference set.</p></details>
+          <section id="parallel" class="parallel" aria-label="Parallel coordinates"></section>
+        </section>
+        <section id="view3d-section" class="view-block" hidden>
+          <div class="plot-heading"><h2>3D comparison</h2><span>Selected complete runs</span></div>
+          <p class="cell-note">Drag to rotate. Scroll to zoom. Click a point to toggle comparison and inspect its evidence.</p>
+          <details class="view-help"><summary>Reading the 3D view</summary><p>The camera rotates an orthographic view of M, E and L; values are scaled independently to the displayed axis ranges. Lower values are better on every axis, regardless of camera orientation. Dashed gold rings show full-space non-dominance. Only comparison runs are shown; add removed runs again from Matrix or the list. Rotation does not change metrics or Pareto labels. Hover a point for full-precision metrics and overlapping run IDs. Use the list to inspect identical vectors. Focus the plot and use arrow keys to rotate, +/− to zoom, or Home to reset; camera buttons are also available.</p></details>
+          <section id="view3d" class="view3d" aria-label="Interactive 3D comparison"></section>
+        </section>
       </section>
-    </section>
-    <section id="parallel-section" class="view-block" hidden>
-      <h2 id="parallel-title">Parallel coordinates</h2>
-      <p class="cell-note">All axes are minimized. Each line is one complete run. Click a line to select/deselect it and open its evidence. Only comparisons is enabled by default; use Random 10 or add runs from the results list. Turn it off to show faint background lines for the matching runs. Hover or focus a line for its run ID, strategy symbol, and raw metrics.</p>
-      <div class="parallel-controls">
-        <label><input id="parallel-only-selected" type="checkbox"> Only comparisons</label>
-        <span id="parallel-count" role="status" aria-live="polite"></span>
-      </div>
-      <p class="cell-note">Only comparisons hides the background; deselected lines disappear until you turn it off or add them again. Comparison runs persist outside filters; Pareto evidence always uses the original reference set.</p>
-      <section id="parallel" class="parallel" aria-label="Parallel coordinates"></section>
-    </section>
-    <section id="view3d-section" class="view-block" hidden><h2>3. Compare up to 10 runs in 3D</h2><p class="cell-note">Fixed oblique projection; no rotation. M runs right, E runs up, and L runs diagonally. Dashed gold rings show full-space non-dominance. Only comparison runs are shown. Deselected points disappear; add them again from Matrix or the results list. Click a point to deselect it and inspect its record; overlapping run IDs are listed in its tooltip. Use the comparison list to inspect a specific overlapping run.</p><section id="view3d" class="view3d" aria-label="Fixed 3D reference"></section></section>
+    </div>
     <section id="results-section" class="details" aria-label="Matching runs and comparison list">
-      <h2>2. Review results and choose comparisons</h2>
-      <p class="cell-note">Search affects this list only. Configuration visibility and comparison membership are separate. Runs outside the current filter remain in your comparison list. Random 10 replaces comparisons with a random sample of up to 10 matching runs, independent of list search and pagination. With fewer than 10 matches, all are selected. Table values are rounded; hover a value or open evidence for full precision.</p>
-      <div class="parallel-controls">
-        <label>Search list <input id="run-search" type="search" placeholder="Run ID or configuration"></label>
-        <label>List <select id="run-scope"><option value="matches">Matching runs</option><option value="comparisons">Comparison runs</option></select></label>
-        <button id="compare-matches" type="button">Add matching runs (limit 10)</button>
+      <div class="section-heading"><div><h2>Runs &amp; comparisons</h2><p class="cell-note">Choose individual runs, or review your current comparison set.</p></div><a class="text-link" href="#workspace">Back to analysis ↑</a></div>
+      <div class="parallel-controls results-tools">
+        <label>Search runs <input id="run-search" type="search" placeholder="Run ID or configuration"></label>
+        <label>Show <select id="run-scope"><option value="matches">Matching runs</option><option value="comparisons">Comparison runs</option></select></label>
+        <button id="compare-matches" type="button">Add matching runs</button>
       </div>
       <p id="comparison-message" class="warning" role="alert"></p>
       <div id="comparison-basket" class="comparison-basket" aria-label="Comparison basket"></div>
-      <div id="run-list" class="table-wrap"></div>
-      <div class="parallel-controls"><button id="runs-prev" type="button">Previous page</button><span id="runs-page" role="status"></span><button id="runs-next" type="button">Next page</button></div>
+      <div id="run-list" class="table-wrap" tabindex="0" aria-label="Run records table"></div>
+      <div class="parallel-controls pagination"><button id="runs-prev" type="button">Previous page</button><span id="runs-page" role="status"></span><button id="runs-next" type="button">Next page</button></div>
+      <details class="view-help"><summary>Selection and numeric precision</summary><p>Search affects this list only. Configuration visibility and comparison membership are independent. Select random runs replaces comparisons with the requested number of matching runs, regardless of list search or pagination. If the request exceeds the available runs, all available runs are selected. Sampling never duplicates a run. Table values are rounded. Hover a value or open evidence for full precision.</p></details>
     </section>
-    <section id="details-section" class="details" aria-label="Run details">
-      <div class="section-heading"><div><p class="eyebrow">TRACEABLE RECORD</p><h2>Run details and dominance evidence</h2></div><button id="export-csv" type="button">Export comparisons CSV</button></div>
+    <section id="details-section" class="details evidence-section" aria-label="Run details">
+      <div class="section-heading"><div><h2>Run details &amp; dominance evidence</h2><p class="cell-note">Full-precision metrics, reference-set comparisons and task-level records.</p></div><button id="export-csv" type="button">Export comparisons CSV</button></div>
       <div id="details-content" class="details-content"></div>
     </section>
   </main>
-  <footer>Shared comparisons · Up to 10 comparisons · One inspected record · Minimize all objectives · Energy excludes the continuous idle baseline</footer>
-  <script type="module" src="./app.mjs?v=b-work-merge-1"></script>
+  <footer><span>CPS 5745 · Edge–cloud scheduling</span><span>All objectives minimized · Energy excludes the continuous idle baseline</span></footer>
+  <script type="module" src="./app.mjs?v=unlimited-1"></script>
 </body>
 </html>

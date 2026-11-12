@@ -1,5 +1,5 @@
 import { runLabel } from "../shared/labels.mjs";
-import { filteredRuns, comparisonRuns, COMPARISON_LIMIT } from "../shared/state.mjs?v=workflow-1";
+import { filteredRuns, comparisonRuns } from "../shared/state.mjs?v=unlimited-1";
 import { drawPairScatter } from "../shared/pair_scatter.mjs?v=no-brush-1";
 import { POLICY_COLORS, stableConfigIndex } from "../shared/encoding.mjs";
 import { OBJECTIVES, PAIRS } from "../3a/pareto.mjs";
@@ -78,10 +78,10 @@ function scatterCell(model, sharedState, snapshot, xKey, yKey, onExpand) {
   const candidates = visibleRuns(model, snapshot);
   const comparing = comparisonRuns(model, snapshot);
   const workflow = Boolean(sharedState.filterRuns);
-  const comparisonOnly = workflow && comparing.length === COMPARISON_LIMIT;
+  const comparisonOnly = workflow && comparing.length > 0;
   const displayed = comparisonOnly ? comparing : workflow
     ? [...new Map([...candidates, ...comparing].map(run => [run.run_id, run])).values()] : candidates;
-  if (comparisonOnly) note.textContent += ` · Showing only ${COMPARISON_LIMIT} comparison runs; other runs are hidden`;
+  if (comparisonOnly) note.textContent += ` · Showing only ${comparing.length} comparison runs; other runs are hidden`;
   cell.append(caption, note, svg);
   drawPairScatter(svg, {
     runs: displayed,
