@@ -1,9 +1,9 @@
 """Paired summaries and the four frozen held-out cases.
 
 Differences are DQN minus heuristic on one instance. Quartiles split a sorted
-even-sized sample into two halves and take each half's median. No held-out
-instance is chosen for the single-instance DQN case, because the freeze did
-not name one. The pair-versus-full case uses the first held-out seed whose
+even-sized sample into two halves and take each half's median. Freeze version 2
+names the single-instance DQN case as the first held-out seed already listed
+in version 1. The pair-versus-full case uses the first held-out seed whose
 archived labels disagree.
 """
 
@@ -24,7 +24,7 @@ def analyze_p11(root: Path) -> dict:
     objectives = json.loads((root / "artifacts" / "workloads" / "provisional" / "p10_held_out" / "objectives.json").read_text(encoding="utf-8"))
     pareto = json.loads((root / "artifacts" / "workloads" / "provisional" / "p10_held_out" / "pareto.json").read_text(encoding="utf-8"))
     failures = json.loads((root / "artifacts" / "workloads" / "provisional" / "p10_held_out" / "failures.json").read_text(encoding="utf-8"))
-    freeze = json.loads((root / "configs" / "freeze" / "design_freeze_v1.json").read_text(encoding="utf-8"))
+    freeze = _load_freeze(root)
     if freeze["cases"]["energy_under_latency_ceiling"]["threshold_s"] != THRESHOLD_S:
         raise ValueError("P11 refused a latency ceiling that differs from the frozen value")
     if pareto.get("pooled_instances") is not False:
@@ -59,10 +59,7 @@ def analyze_p11(root: Path) -> dict:
         "non_dominated_counts": _counts(pareto, runs),
         "cases": {
             "energy_under_latency_ceiling": _energy_cases(by_instance, THRESHOLD_S),
-            "dqn_versus_heuristics_on_one_instance": {
-                "status": CASE_INSTANCE_UNREGISTERED,
-                "statement": "The freeze describes this case on one instance but does not name a held-out instance. No instance was selected after the held-out results were known.",
-            },
+            "dqn_versus_heuristics_on_one_instance": _dqn_case(freeze, differences, pareto, by_instance),
             "pair_versus_full": _pair_case(pareto, by_instance),
             "intensity_comparison": _intensity_comparison(pareto, differences),
         },
@@ -111,6 +108,55 @@ def _counts(pareto, runs):
         "space": "full",
         "instance_count": len(pareto["instances"]),
         "by_policy": [{"policy_config_id": policy, "count": len(ids), "instance_ids": ids} for policy, ids in counts.items()],
+    }
+
+
+def _load_freeze(root: Path) -> dict:
+    corrected = root / "configs" / "freeze" / "design_freeze_v2.json"
+    path = corrected if corrected.exists() else root / "configs" / "freeze" / "design_freeze_v1.json"
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _dqn_case(freeze, differences, pareto, by_instance):
+    rule = freeze["cases"]["dqn_minus_heuristic"]
+    if isinstance(rule, str):
+        return {
+            "status": CASE_INSTANCE_UNREGISTERED,
+            "statement": "The freeze describes this case on one instance but does not name a held-out instance. No instance was selected after the held-out results were known.",
+        }
+    seed = freeze["seed_splits"]["held_out"][0]
+    if rule.get("seed") != seed:
+        raise ValueError("The DQN case seed is not the first held-out seed stored in the freeze")
+    instance_id = f"provisional-held_out-{rule['intensity']}-{seed}"
+    if rule.get("instance_id") != instance_id:
+        raise ValueError("The DQN case instance does not match the first frozen held-out seed")
+    if instance_id not in by_instance:
+        raise ValueError(f"Archived runs do not include {instance_id}")
+    rows = [row for row in differences if row["instance_id"] == instance_id]
+    if len(rows) != len(HEURISTIC_IDS):
+        raise ValueError("The single-instance DQN case does not have one difference per heuristic")
+    front = next(item for item in pareto["instances"] if item["instance_id"] == instance_id)
+    dqn = _one(by_instance[instance_id], "dqn-fixed")
+    label = front["full"][dqn["run_id"]]
+    return {
+        "status": "reported",
+        "freeze_version": freeze["freeze_version"],
+        "selection_rule": "first seed in seed_splits.held_out from design freeze version 1",
+        "seed": seed,
+        "instance_id": instance_id,
+        "dqn_run_id": dqn["run_id"],
+        "full_non_dominated": label["non_dominated"],
+        "witness_run_ids": list(label["witness_run_ids"]),
+        "differences": [
+            {
+                "heuristic": row["heuristic"],
+                "heuristic_run_id": row["heuristic_run_id"],
+                "makespan_s": row["makespan_s"],
+                "energy_j": row["energy_j"],
+                "mean_latency_s": row["mean_latency_s"],
+            }
+            for row in rows
+        ],
     }
 
 

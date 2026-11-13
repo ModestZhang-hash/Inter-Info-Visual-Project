@@ -131,7 +131,8 @@ describe("shared entry", { concurrency: 1 }, () => {
       assert.deepEqual(state.get().selected_run_ids, ["3a-demo-run-f"]);
       assert.equal(parallel.children[0].querySelectorAll("[data-run-id]").find((line) => line.dataset.runId === "3a-demo-run-f").dataset.selected, "true");
       assert.equal(view.children[0].querySelectorAll("[data-run-id]").find((point) => point.dataset.runId === "3a-demo-run-f").dataset.selected, "true");
-      const matrixSvg = matrix.children[0].children.find((cell) => cell.dataset.x === "makespan_s" && cell.dataset.y === "energy_j").children.find((child) => child.tagName === "svg");
+      const matrixGrid = matrix.children[0].children.find((child) => child.dataset.role === "grid");
+      const matrixSvg = matrixGrid.children.find((cell) => cell.dataset.x === "makespan_s" && cell.dataset.y === "energy_j").children.find((child) => child.tagName === "svg");
       assert.match(matrixSvg.innerHTML, /3a-demo-run-f/);
       state.setVisibleConfigs(["fixture-a"]);
       assert.deepEqual(state.get().axis_ranges, axes);
@@ -155,10 +156,11 @@ describe("shared entry", { concurrency: 1 }, () => {
     try {
       await import("../app/app.mjs");
       assert.equal(requested, "../../examples/3a-demo/bundle.json");
-      assert.equal(dom.elements.get("matrix").children[0].children.length, 9);
+      const matrixGrid = dom.elements.get("matrix").children[0].children.find((child) => child.dataset.role === "grid");
+      assert.equal(matrixGrid.children.length, 9);
       assert.match(dom.elements.get("reference-ids").textContent, /None/);
       assert.match(dom.elements.get("notice").textContent, /not scheduler outputs/);
-      const svg = dom.elements.get("matrix").children[0].children.find(cell => cell.dataset.x === "makespan_s" && cell.dataset.y === "energy_j").children.find(child => child.tagName === "svg");
+      const svg = matrixGrid.children.find(cell => cell.dataset.x === "makespan_s" && cell.dataset.y === "energy_j").children.find(child => child.tagName === "svg");
       svg.querySelectorAll("[data-run-id]").find((marker) => marker.dataset.runId === "3a-demo-run-f").listeners.click({ shiftKey: false });
       assert.equal(dom.elements.get("selection-ids").textContent, "3a-demo-run-f");
       assert.match(dom.elements.get("details-content").innerHTML, /3a-demo-run-g/);

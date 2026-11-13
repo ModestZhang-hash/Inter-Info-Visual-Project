@@ -1,4 +1,8 @@
-export const POLICY_COLORS = ["#197b65", "#bf6845", "#596ab3", "#a0771f", "#8b5aa0", "#428b9d", "#7a8450"];
+/** Okabe–Ito, plus indigo in place of yellow so small marks stay visible on white. */
+export const POLICY_COLORS = ["#0072B2", "#D55E00", "#009E73", "#CC79A7", "#E69F00", "#56B4E9", "#332288"];
+export const MARK_STROKE_2D = "#111111";
+export const MARK_RING_3D = "#9B2242";
+export const MARK_RING_COMPARISON = "#111111";
 export const POLICY_SHAPES = ["●", "■", "◆", "▲", "⬟", "+", "×"];
 
 function compareIds(left, right) {

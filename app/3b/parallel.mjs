@@ -1,7 +1,7 @@
 import { filteredRuns, comparisonRuns } from "../shared/state.mjs?v=workflow-1";
 import { runLabel } from "../shared/labels.mjs";
 import { OBJECTIVES } from "../3a/pareto.mjs";
-import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs";
+import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs?v=ink-1";
 
 const META = {
   makespan_s: { short: "M", unit: "s", label: "Makespan M (s) ↓" },

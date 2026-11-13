@@ -40,9 +40,9 @@ legend small { font-weight: 400; color: #6a7c72; }
 .legend > span { display: flex; align-items: center; gap: 7px; }
 .legend .hint { color: #697d72; }
 .mark { width: 14px; height: 14px; border-radius: 50%; display: inline-block; background: #fff; }
-.mark.projected { border: 3px solid #153f39; }
-.mark.full { border: 3px dashed #b8751a; }
-.mark.selected { border: 3px solid #e1a131; }
+.mark.projected { border: 2px solid #111111; }
+.mark.full { border: 2px dashed #9b2242; }
+.mark.selected { border: 2px solid #111111; }
 .matrix { min-width: 0; }
 .matrix-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .matrix-cell, .matrix-diagonal { padding: 10px; min-width: 0; }
@@ -82,7 +82,7 @@ legend small { font-weight: 400; color: #6a7c72; }
 .parallel .pc-line { cursor: pointer; }
 .parallel .pc-line path { stroke-linejoin: round; stroke-linecap: round; }
 .parallel .pc-line.selected path { filter: drop-shadow(0 0 1px #fff); }
-.parallel .pc-shape { fill: #294f40; font-size: 13px; pointer-events: none; }
+.parallel .pc-shape { fill: #1a1a1a; font-size: 13px; pointer-events: none; }
 .parallel .pc-brush { fill: #43a88b2d; stroke: #268b70; stroke-dasharray: 5 3; }
 .parallel .pc-hit { fill: transparent; cursor: crosshair; }
 .parallel .pc-empty { fill: #657b70; font-size: 14px; }
@@ -92,9 +92,9 @@ legend small { font-weight: 400; color: #6a7c72; }
 .view3d .view3d-axis-label { fill: #345c4c; font-size: 13px; font-weight: 700; }
 .view3d .view3d-point { cursor: pointer; }
 .view3d .view3d-mark { stroke: #fff; stroke-width: 2; }
-.view3d .view3d-full { fill: none; stroke: #b8751a; stroke-width: 2.5; stroke-dasharray: 4 3; }
-.view3d .view3d-selected { fill: none; stroke: #d79a2a; stroke-width: 3; }
-.view3d .view3d-shape { fill: #294f40; font-size: 14px; pointer-events: none; }
+.view3d .view3d-full { fill: none; stroke: #9b2242; stroke-width: 2.5; stroke-dasharray: 4 3; }
+.view3d .view3d-selected { fill: none; stroke: #111111; stroke-width: 2; }
+.view3d .view3d-shape { fill: #1a1a1a; font-size: 14px; pointer-events: none; }
 .view3d .view3d-empty { fill: #657b70; font-size: 14px; }
 footer { text-align: center; color: #7c8e84; font-size: .76rem; padding: 0 20px 25px; }
 @media (max-width: 1100px) {

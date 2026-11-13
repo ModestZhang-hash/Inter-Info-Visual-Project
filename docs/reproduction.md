@@ -22,4 +22,4 @@ set PYTHONPATH=src
 
 页面从仓库根目录启动本地 HTTP 服务后打开。留出实例 `provisional-held_out-low-3000` 的地址是 `app/3a/index.html?bundle=p11-held-out-low-3000`。
 
-失败记录以 `p10_held_out/failures.json` 为准。当前 `failure_count` 为 0。尚未预先登记的单实例 DQN 对照案例保持 `instance_not_preregistered`，不事后补选实例。
+失败记录以 `p10_held_out/failures.json` 为准。当前 `failure_count` 为 0。单实例 DQN 对照使用 `design_freeze_v2.json`：实例是 v1 留出种子列表的第一项 `provisional-held_out-low-3000`。v1 保留，不改写。

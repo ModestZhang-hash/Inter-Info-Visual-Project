@@ -10,7 +10,7 @@
   "export": "Export comparisons CSV was activated for the selected latency-first run and did not report an empty comparison. The CSV columns are the stored instance_id, run_id, policy_config_id, status, and unrounded M, E, L shown in the evidence card.",
   "instance_switch": "Opening the 6-heuristic training check replaces the instance with provisional-training-low-1000, sets the selection to None, and shows 0 selected.",
   "unresolved": [
-    "The single-instance DQN-versus-heuristics case remains instance_not_preregistered.",
+    "The single-instance DQN-versus-heuristics case is reported for provisional-held_out-low-3000 under design_freeze_v2.json. The instance is the first held-out seed in version 1. Version 1 is unchanged.",
     "Member A has not added a separate held-out witness narrative beyond the existing 3A design notes."
   ]
 }

@@ -45,7 +45,24 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(summary["failure_count"], 0)
         self.assertFalse(summary["bootstrap_intervals"])
         self.assertFalse(summary["pooled_pareto"])
-        self.assertEqual(summary["cases"]["dqn_versus_heuristics_on_one_instance"]["status"], "instance_not_preregistered")
+        case = summary["cases"]["dqn_versus_heuristics_on_one_instance"]
+        self.assertEqual(case["status"], "reported")
+        self.assertEqual(case["freeze_version"], "2")
+        self.assertEqual(case["seed"], 3000)
+        self.assertEqual(case["instance_id"], "provisional-held_out-low-3000")
+        self.assertEqual(case["dqn_run_id"], "provisional-held_out-low-3000-dqn-fixed-8")
+        self.assertTrue(case["full_non_dominated"])
+        self.assertEqual(case["witness_run_ids"], [])
+        self.assertEqual([row["heuristic"] for row in case["differences"]], [
+            "random", "latency-first", "energy-first", "balanced-equal", "balanced-makespan", "balanced-energy",
+        ])
+        energy = next(row for row in case["differences"] if row["heuristic"] == "energy-first")
+        low3000 = [run for run in objectives["runs"] if run["instance_id"] == case["instance_id"]]
+        dqn = next(run for run in low3000 if run["policy_config_id"] == "dqn-fixed")
+        other = next(run for run in low3000 if run["policy_config_id"] == "energy-first")
+        self.assertEqual(energy["makespan_s"], dqn["makespan_s"] - other["makespan_s"])
+        self.assertEqual(energy["energy_j"], dqn["energy_j"] - other["energy_j"])
+        self.assertEqual(energy["mean_latency_s"], dqn["mean_latency_s"] - other["mean_latency_s"])
         pair = summary["cases"]["pair_versus_full"]
         self.assertEqual(pair["instance_id"], "provisional-held_out-low-3000")
         self.assertEqual(pair["third_objective"], "mean_latency_s")

@@ -6,7 +6,8 @@ test("application starts with the matrix and expands one cell from the archived 
   const bundle = JSON.parse(readFileSync(new URL("../examples/3a-demo/bundle.json", import.meta.url), "utf8"));
   const elements = new Map();
   class Element {
-    constructor() {
+    constructor(tag = "div") {
+      this.tagName = tag;
       this.children = [];
       this.dataset = {};
       this.style = {};
@@ -41,8 +42,8 @@ test("application starts with the matrix and expands one cell from the archived 
       if (!elements.has(id)) elements.set(id, new Element());
       return elements.get(id);
     },
-    createElement() { return new Element(); },
-    createElementNS() { return new Element(); },
+    createElement(tag = "div") { return new Element(tag); },
+    createElementNS(_namespace, tag) { return new Element(tag); },
   };
   globalThis.fetch = async (url) => {
     requested = url;
@@ -51,22 +52,23 @@ test("application starts with the matrix and expands one cell from the archived 
   try {
     await import("../app/3a/app.mjs");
     assert.equal(requested, "../../examples/3a-demo/bundle.json");
-    assert.equal(elements.get("matrix").children[0].children.length, 9);
+    const matrixGrid = elements.get("matrix").children[0].children.find((child) => child.dataset.role === "grid");
+    assert.equal(matrixGrid.children.length, 9);
     assert.equal(elements.get("focused-section").hidden, true);
-    const firstCell = elements.get("matrix").children[0].children.find(cell => cell.dataset.x === "makespan_s" && cell.dataset.y === "energy_j");
-    firstCell.children[0].children[0].listeners.click();
+    const firstCell = matrixGrid.children.find(cell => cell.dataset.x === "makespan_s" && cell.dataset.y === "energy_j");
+    firstCell.children.find((child) => child.tagName === "button").listeners.click();
     assert.equal(elements.get("matrix-section").hidden, true);
     assert.equal(elements.get("focused-section").hidden, false);
     assert.equal(elements.get("focused-plot").children.length, 1);
     assert.equal(elements.get("instance-id").textContent, "3a-demo-instance-001");
     assert.equal(elements.get("run-count").textContent, "7 / 7");
     assert.doesNotMatch(elements.get("notice").textContent, /Unable to load|Import failed/);
-    const firstSvg = elements.get("focused-plot").children[0].children[2];
+    const firstSvg = elements.get("focused-plot").children[0].children.find((child) => child.tagName === "svg");
     firstSvg.markers.find((marker) => marker.dataset.runId === "3a-demo-run-f").listeners.click({ shiftKey: false });
     assert.equal(elements.get("selection-count").textContent, "1 selected");
     assert.match(elements.get("details-content").innerHTML, /3a-demo-run-g/);
     assert.match(elements.get("details-content").innerHTML, /Strictly better/);
-    const nextSvg = elements.get("focused-plot").children[0].children[2];
+    const nextSvg = elements.get("focused-plot").children[0].children.find((child) => child.tagName === "svg");
     assert.equal(nextSvg.listeners.pointerdown, undefined);
     assert.equal(nextSvg.listeners.pointerup, undefined);
     assert.doesNotMatch(nextSvg.innerHTML, /class="brush"/);

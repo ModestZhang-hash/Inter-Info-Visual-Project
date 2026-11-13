@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#f4f5f2">
   <title>Topic 3 · Linked Trade-off Analysis</title>
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="../3b/style.css?v=lines-only-1">
-  <link rel="stylesheet" href="./workbench.css?v=3">
+  <link rel="stylesheet" href="../3b/style.css?v=ink-1">
+  <link rel="stylesheet" href="./workbench.css?v=ink-10">
 </head>
 <body>
   <a class="skip-link" href="#workspace">Skip to analysis</a>
@@ -71,14 +71,14 @@
         <section class="legend" aria-label="Marker legend"><span><i class="mark projected"></i> 2D non-dominated</span><span><i class="mark full"></i> 3D non-dominated</span><span><i class="mark selected"></i> In comparison</span></section>
         <section id="scatter-section" aria-label="Scatterplots">
           <section id="matrix-section" class="view-block">
-            <div class="plot-heading"><h2>Scatterplot matrix</h2><span>All objectives minimized ↓</span></div>
-            <p class="cell-note">One point, one complete run. Expand a cell to inspect a pair of objectives.</p>
-            <details class="view-help"><summary>Reading the matrix</summary><p>Colors and shapes identify configurations. Solid dark outlines show non-dominance in the current 2D projection; dashed gold rings show non-dominance in full M–E–L space. Click to select or deselect and inspect evidence. Comparison points remain visible independently of configuration visibility. When comparisons are selected, only those points are shown. Clear comparisons or use Show all to restore the background.</p></details>
+            <div class="plot-heading"><h2>Scatterplot matrix</h2><span>All objectives minimized</span></div>
+            <p class="cell-note">Lower triangle: M–E, M–L, and E–L. Diagonal panels are the marginal distribution of each objective. Click Expand, or the plot background, to enlarge a pair.</p>
+            <details class="view-help"><summary>Reading the matrix</summary><p>Shapes and colors identify configurations. A black outline means non-dominated on the plotted pair; a dashed rose ring means non-dominated in full M–E–L space; a solid black ring means the run is in the comparison set. Stored values are unrounded, and filters do not change the reference set. With more than 10 visible runs, each scatter draws one dot per run. Color is the objective that is not on the axes, from blue (lower) to red (higher). A larger comparison set stays in the list, so selection rings do not cover the cloud.</p></details>
             <section id="matrix" class="matrix" aria-label="Scatterplot matrix"></section>
           </section>
           <section id="focused-section" class="view-block" hidden>
             <div class="section-heading"><h2 id="focused-title">Expanded scatterplot</h2><button id="back-to-matrix" type="button">← Back to matrix</button></div>
-            <p class="cell-note">Same axes, data and Pareto labels. Click a point to select or deselect and inspect evidence.</p>
+            <p class="cell-note">Same stored values, ranges, and Pareto labels. Both axes are minimized. Click a point to add or remove it from the comparison.</p>
             <section id="focused-plot" class="focused-plot" aria-label="Expanded scatterplot"></section>
           </section>
         </section>
@@ -91,8 +91,8 @@
         </section>
         <section id="view3d-section" class="view-block" hidden>
           <div class="plot-heading"><h2>3D comparison</h2><span>Selected complete runs</span></div>
-          <p class="cell-note">Drag to rotate. Scroll to zoom. Click a point to toggle comparison and inspect its evidence.</p>
-          <details class="view-help"><summary>Reading the 3D view</summary><p>The camera rotates an orthographic view of M, E and L; values are scaled independently to the displayed axis ranges. Lower values are better on every axis, regardless of camera orientation. Dashed gold rings show full-space non-dominance. Only comparison runs are shown; add removed runs again from Matrix or the list. Rotation does not change metrics or Pareto labels. Hover a point for full-precision metrics and overlapping run IDs. Use the list to inspect identical vectors. Focus the plot and use arrow keys to rotate, +/− to zoom, or Home to reset; camera buttons are also available.</p></details>
+          <p class="cell-note">Drag to rotate. Scroll to zoom. Move the pointer to read M, E and L on the axes. Click a point to toggle comparison and inspect its evidence.</p>
+          <details class="view-help"><summary>Reading the 3D view</summary><p>The camera rotates an orthographic view of M, E and L. Tick marks follow each axis range, and the pointer lays a crosshair across the three axes. Hovering a point snaps that crosshair to the run. With more than 10 visible runs, every complete run is a small dot colored by task-related energy: blue is lower, red is higher. The scatterplot matrix remains the paired projection of the same runs. Selection rings appear only for a comparison set of at most 10 runs. Rotation does not change metrics or Pareto labels.</p></details>
           <section id="view3d" class="view3d" aria-label="Interactive 3D comparison"></section>
         </section>
       </section>
@@ -116,6 +116,6 @@
     </section>
   </main>
   <footer><span>CPS 5745 · Edge–cloud scheduling</span><span>All objectives minimized · Energy excludes the continuous idle baseline</span></footer>
-  <script type="module" src="./app.mjs?v=p11-3000"></script>
+  <script type="module" src="./app.mjs?v=ink-18"></script>
 </body>
 </html>

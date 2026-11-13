@@ -2,11 +2,11 @@ import { OBJECTIVES, PAIRS } from "./pareto.mjs";
 import { defaultAxisRanges, readBundle } from "./model.mjs";
 import { createViewState } from "../shared/state.mjs?v=unlimited-1";
 import { mountRunList } from "../shared/run_list.mjs?v=unlimited-1";
-import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs";
+import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs?v=ink-1";
 import { configLabel, runLabel } from "../shared/labels.mjs";
-import { mountMatrix, renderFocusedPair } from "../3b/matrix.mjs?v=unlimited-1";
-import { mountParallel } from "../3b/parallel.mjs?v=unlimited-1";
-import { mountView3d } from "../3b/view3d.mjs?v=unlimited-1";
+import { mountMatrix, renderFocusedPair } from "../3b/matrix.mjs?v=ink-18";
+import { mountParallel } from "../3b/parallel.mjs?v=ink-1";
+import { mountView3d } from "../3b/view3d.mjs?v=ink-17";
 
 const META = {
   makespan_s: { short: "M", label: "Makespan M (s) ↓" },
@@ -195,7 +195,7 @@ function openFocusedPair(xKey, yKey) {
   focusedPair = [xKey, yKey];
   $("matrix-section").hidden = true;
   $("focused-section").hidden = false;
-  $("focused-title").textContent = `X: ${META[xKey].short} · Y: ${META[yKey].short}`;
+  $("focused-title").textContent = `${META[xKey].label.replace(" ↓", "")} × ${META[yKey].label.replace(" ↓", "")}`;
   renderFocusedPair($("focused-plot"), model, state, xKey, yKey);
   $("back-to-matrix").focus?.();
 }

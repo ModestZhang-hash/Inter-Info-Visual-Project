@@ -3543,8 +3543,58 @@
       }
     ],
     "dqn_versus_heuristics_on_one_instance": {
-      "status": "instance_not_preregistered",
-      "statement": "The freeze describes this case on one instance but does not name a held-out instance. No instance was selected after the held-out results were known."
+      "status": "reported",
+      "freeze_version": "2",
+      "selection_rule": "first seed in seed_splits.held_out from design freeze version 1",
+      "seed": 3000,
+      "instance_id": "provisional-held_out-low-3000",
+      "dqn_run_id": "provisional-held_out-low-3000-dqn-fixed-8",
+      "full_non_dominated": true,
+      "witness_run_ids": [],
+      "differences": [
+        {
+          "heuristic": "random",
+          "heuristic_run_id": "provisional-held_out-low-3000-random-11",
+          "makespan_s": -0.7795035933750043,
+          "energy_j": -0.5542934752500059,
+          "mean_latency_s": 0.1692691596205107
+        },
+        {
+          "heuristic": "latency-first",
+          "heuristic_run_id": "provisional-held_out-low-3000-latency-first",
+          "makespan_s": 0.0,
+          "energy_j": -10.20320827300003,
+          "mean_latency_s": 0.5043255697248389
+        },
+        {
+          "heuristic": "energy-first",
+          "heuristic_run_id": "provisional-held_out-low-3000-energy-first",
+          "makespan_s": -54.73316816498438,
+          "energy_j": 50.29011047900002,
+          "mean_latency_s": -53.79758979469277
+        },
+        {
+          "heuristic": "balanced-equal",
+          "heuristic_run_id": "provisional-held_out-low-3000-balanced-equal",
+          "makespan_s": -0.14793866225000585,
+          "energy_j": 18.83322905099996,
+          "mean_latency_s": 0.3931307599143603
+        },
+        {
+          "heuristic": "balanced-makespan",
+          "heuristic_run_id": "provisional-held_out-low-3000-balanced-makespan",
+          "makespan_s": -0.14793866225000585,
+          "energy_j": 18.236778396249974,
+          "mean_latency_s": 0.4098937754639248
+        },
+        {
+          "heuristic": "balanced-energy",
+          "heuristic_run_id": "provisional-held_out-low-3000-balanced-energy",
+          "makespan_s": -0.14793866225000585,
+          "energy_j": 30.41386341924988,
+          "mean_latency_s": -0.06847732630807424
+        }
+      ]
     },
     "pair_versus_full": {
       "status": "reported",

@@ -52,7 +52,7 @@ const EN = {
   pairFull: "3D",
   dominanceLine: (projected, full, status) => `2D: ${status(projected)}; 3D: ${status(full)}`,
   fixtureSubtitle: "Hand-placed dominance demonstration; not an experimental front",
-  completeSubtitle: "Dark outline: non-dominated in this 2D projection; gold dashed halo: non-dominated in all three objectives",
+  completeSubtitle: "Black outline: non-dominated in this 2D projection; rose dashed ring: non-dominated in all three objectives",
   incompleteSubtitle: "Reference set incomplete; dominance status is hidden",
   emptyPlot: "No visible points in the current range or filter",
   horizontal: "X",

@@ -122,7 +122,9 @@ function initialState(model, visible = model.configs.map((item) => item.policy_c
 }
 
 function cells(container) {
-  return container.children[0].children;
+  const frame = container.children[0];
+  const grid = frame.dataset.role === "grid" ? frame : frame.children.find((child) => child.dataset.role === "grid");
+  return grid.children;
 }
 
 function scatters(container) {
@@ -274,33 +276,30 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
     const all = cells(container);
     assert.equal(all.length, 9);
     assert.equal(all.filter((item) => item.dataset.role === "diagonal").length, 3);
-    assert.equal(scatters(container).length, 6);
+    assert.equal(all.filter((item) => item.dataset.role === "empty").length, 3);
+    assert.equal(scatters(container).length, 3);
     for (const key of OBJECTIVES) {
       const diagonal = cell(container, key, key);
-      assert.equal(diagonal.querySelector("svg"), null);
-      assert.match(diagonal.children.map((child) => child.textContent).join(" "), /↓/);
+      assert.equal(diagonal.querySelector("svg").tagName, "svg");
+      assert.match(diagonal.querySelector("svg").innerHTML, /Count/);
+      assert.match(diagonal.querySelector("svg").innerHTML, new RegExp(key === "makespan_s" ? "M · n=" : key === "energy_j" ? "E · n=" : "L · n="));
     }
     const forward = cell(container, "makespan_s", "energy_j");
     const reverse = cell(container, "energy_j", "makespan_s");
     assert.equal(forward.dataset.pair, "makespan_s|energy_j");
     assert.equal(reverse.dataset.pair, forward.dataset.pair);
     assert.equal(forward.dataset.orientation, "canonical");
+    assert.equal(reverse.dataset.role, "empty");
     assert.equal(reverse.dataset.orientation, "reverse");
-    assert.match(reverse.children.map((child) => child.textContent).join(" "), /Reversed axes/);
+    assert.equal(svgOf(reverse), undefined);
+    assert.doesNotMatch(reverse.children.map((child) => child.textContent).join(" "), /Reversed axes/);
     const forwardMarkup = svgOf(forward).innerHTML;
-    const reverseMarkup = svgOf(reverse).innerHTML;
-    for (const runId of model.runs.map((run) => run.run_id)) {
-      assert.match(forwardMarkup, new RegExp(runId));
-      assert.match(reverseMarkup, new RegExp(runId));
-    }
-    assert.equal(markerStroke(forwardMarkup, "3a-demo-run-f"), "#ffffff");
-    assert.equal(markerStroke(reverseMarkup, "3a-demo-run-f"), "#ffffff");
-    assert.equal(
-      forwardMarkup.match(/stroke="#b8751a"/g).length,
-      reverseMarkup.match(/stroke="#b8751a"/g).length,
-    );
+    for (const runId of model.runs.map((run) => run.run_id)) assert.match(forwardMarkup, new RegExp(runId));
+    const fRun = model.runs.find((run) => run.run_id === "3a-demo-run-f");
+    assert.equal(markerStroke(forwardMarkup, "3a-demo-run-f"), POLICY_COLORS[stableConfigIndex(model.configs, fRun.policy_config_id)].toLowerCase());
+    assert.match(forwardMarkup, /stroke="#111111"/);
+    assert.ok(forwardMarkup.match(/stroke="#9B2242"/g).length > 0);
     assert.match(forwardMarkup, /3a-demo-run-f[\s\S]*E=5\.0925[\s\S]*2D: Dominated; 3D: Non-dominated/);
-    assert.match(reverseMarkup, /3a-demo-run-f[\s\S]*E=5\.0925[\s\S]*2D: Dominated; 3D: Non-dominated/);
     const labelBefore = structuredClone(model.labels.pairs.get("makespan_s|energy_j").get("3a-demo-run-f"));
     const axesBefore = structuredClone(state.get().axis_ranges);
     state.setVisibleConfigs(["fixture-g"]);
@@ -314,7 +313,7 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
     assert.deepEqual(model.labels.pairs.get("makespan_s|energy_j").get("3a-demo-run-f"), labelBefore);
     svgOf(cell(container, "makespan_s", "energy_j")).markers[0].listeners.click({ shiftKey: false });
     assert.deepEqual(state.get().selected_run_ids, ["3a-demo-run-g"]);
-    assert.match(svgOf(cell(container, "energy_j", "makespan_s")).innerHTML, /class="run-id-label"[\s\S]*3a-demo-run-g/);
+    assert.match(svgOf(cell(container, "makespan_s", "energy_j")).innerHTML, /class="run-id-label"[\s\S]*3a-demo-run-g/);
     svgOf(cell(container, "makespan_s", "mean_latency_s")).markers
       .find((marker) => marker.dataset.runId === "3a-demo-run-g").listeners.click({ shiftKey: true });
     assert.deepEqual(state.get().selected_run_ids, ["3a-demo-run-g"]);
@@ -610,7 +609,15 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
         assert.equal(elements.get("selection-count").textContent, `${ids.length} selected`);
         for (const key of ["parallel", "view3d"]) assert.deepEqual(elements.get(key).children[0].querySelectorAll("[data-run-id]")
           .filter(node => node.dataset.selected === "true").map(node => node.dataset.runId).sort(), [...ids].sort());
-        for (const plot of scatters(elements.get("matrix"))) assert.deepEqual([...svgOf(plot).innerHTML.matchAll(/class="run-id-label"[^>]*>([^<]+)</g)].map(match => match[1]).sort(), [...ids].sort());
+        for (const plot of scatters(elements.get("matrix"))) {
+          const svg = svgOf(plot);
+          if (ids.length > 10) {
+            assert.equal(svg.querySelectorAll("[data-run-id]").length, 0);
+            assert.match(svg.innerHTML, /class="jet-point"/);
+          } else {
+            assert.deepEqual([...svg.innerHTML.matchAll(/class="run-id-label"[^>]*>([^<]+)</g)].map(match => match[1]).sort(), [...ids].sort());
+          }
+        }
       };
       assert.equal(elements.get("matching-count").textContent, "7");
       assert.equal(elements.get("view3d").children[0].querySelectorAll("[data-run-id]").length, 0);
@@ -656,8 +663,9 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
       assert.ok(!elements.has("parallel-mode"));
       assert.ok(!elements.has("parallel-density-legend"));
       assert.match(elements.get("notice").textContent, /SYNTHETIC TEST DATA/);
-      assert.doesNotMatch(matrixSvg().innerHTML, /AGGREGATE:|data-bin-index/);
-      assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 500);
+      assert.match(matrixSvg().innerHTML, /class="jet-point"/);
+      assert.equal((matrixSvg().innerHTML.match(/class="jet-point"/g) ?? []).length, 500);
+      assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 0);
       oldMarker.listeners.click({});
       assertCompare([]);
       elements.get("compare-matches").listeners.click();
@@ -665,7 +673,7 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
       assert.equal(elements.get("comparison-message").textContent, "");
       elements.get("random-count").value = "25";
       elements.get("random-compare").listeners.click();
-      const randomIds = matrixSvg().querySelectorAll("[data-run-id]").map(node => node.dataset.runId);
+      const randomIds = elements.get("selection-ids").textContent.split(", ").filter(Boolean);
       assert.equal(new Set(randomIds).size, 25);
       assertCompare(randomIds);
       assert.equal(elements.get("matching-count").textContent, "500");
@@ -700,7 +708,8 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
       elements.get("select-all").listeners.click();
       assertCompare([]);
       assert.equal(elements.get("matching-count").textContent, "500");
-      assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 500);
+      assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 0);
+      assert.match(matrixSvg().innerHTML, /class="jet-point"/);
       assert.match(elements.get("controls-feedback").textContent, /Showing all runs/);
       const firstTen = stressFixture.runs.slice(0, 10).map(run => run.run_id);
       for (const id of firstTen) action(id, 1);
@@ -739,7 +748,8 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
       elements.get("clear-selection").listeners.click();
       assertCompare([]);
       assert.equal(elements.get("matching-count").textContent, "500");
-      assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 500);
+      assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 0);
+      assert.match(matrixSvg().innerHTML, /class="jet-point"/);
       elements.get("run-scope").value = "comparisons"; elements.get("run-scope").listeners.change();
       assert.equal(rows().length, 0);
       // Failed imports preserve the current model and controls.
