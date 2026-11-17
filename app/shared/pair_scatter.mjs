@@ -62,12 +62,13 @@ export function drawPairScatter(svg, options) {
   if (options.overviewRuns) html += `<text class="tick" x="${LEFT}" y="16">${bins.length ? `Bin counts: 0–${maxCount}` : "No runs in range"}</text>`;
   const jet = options.jetCloud;
   let jetCount = 0;
-  if (jet?.runs?.length && jet.max > jet.min) {
+  if (jet?.runs?.length && Number.isFinite(jet.min) && Number.isFinite(jet.max)) {
     const ordered = [...jet.runs].sort((a, b) => a[jet.key] - b[jet.key]);
+    const span = jet.max - jet.min;
     for (const run of ordered) {
       const x = px(run[xKey]), y = py(run[yKey]);
       if (x < LEFT || x > W - RIGHT || y < TOP || y > H - BOTTOM) continue;
-      const shade = (run[jet.key] - jet.min) / (jet.max - jet.min);
+      const shade = span === 0 ? 0.5 : (run[jet.key] - jet.min) / span;
       const tip = `${jet.label}: ${run[jet.key]}`;
       html += `<circle class="jet-point" data-jet-id="${xml(run.run_id)}" cx="${x}" cy="${y}" r="4.2" fill="${jetColor(shade)}" fill-opacity="0.82" tabindex="0" role="button" aria-label="${xml(tip)}"><title>${xml(tip)}</title></circle>`;
       jetCount += 1;

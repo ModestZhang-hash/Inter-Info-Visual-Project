@@ -1,12 +1,9 @@
 import { configLabel } from "../shared/labels.mjs";
 import { filteredRuns, comparisonRuns } from "../shared/state.mjs?v=splom-1";
-import { drawPairScatter, scatterMarker, PAIR_LAYOUT } from "../shared/pair_scatter.mjs?v=ink-9";
+import { drawPairScatter, scatterMarker, PAIR_LAYOUT } from "../shared/pair_scatter.mjs?v=ink-24";
 import { formatTick, niceTicks } from "../shared/axis_ticks.mjs";
 import { POLICY_COLORS, stableConfigIndex } from "../shared/encoding.mjs?v=ink-1";
 import { OBJECTIVES, PAIRS } from "../3a/pareto.mjs";
-
-const DENSITY_ABOVE = 10;
-const OVERLAY_LIMIT = 10;
 const AXIS_NAME = {
   makespan_s: "Makespan M (s)",
   energy_j: "Task-related energy E (J)",
@@ -124,22 +121,20 @@ function scatterCell(model, sharedState, snapshot, xKey, yKey, { onExpand, focus
   const candidates = visibleRuns(model, snapshot);
   const comparing = sharedState.filterRuns ? comparisonRuns(model, snapshot) : [];
   const workflow = Boolean(sharedState.filterRuns);
-  const dense = workflow && candidates.length > DENSITY_ABOVE;
-  const pooled = dense ? comparing : [...new Map([...candidates, ...comparing].map((run) => [run.run_id, run])).values()];
-  const tooMany = workflow && pooled.length > OVERLAY_LIMIT;
-  const displayed = tooMany ? [] : pooled;
-  const binRuns = tooMany ? (dense ? candidates : pooled) : dense ? candidates : undefined;
+  const pooled = [...new Map([...candidates, ...comparing].map((run) => [run.run_id, run])).values()];
+  const jetRuns = workflow ? candidates : undefined;
+  const displayed = workflow ? [] : pooled;
   const colorKey = OBJECTIVES.find((key) => key !== xKey && key !== yKey);
-  const cloudValues = (binRuns ?? []).map((run) => run[colorKey]).filter(Number.isFinite);
+  const cloudValues = (jetRuns ?? []).map((run) => run[colorKey]).filter(Number.isFinite);
   const jetMin = cloudValues.length ? Math.min(...cloudValues) : 0;
   const jetMax = cloudValues.length ? Math.max(...cloudValues) : 0;
-  cell.dataset.density = binRuns ? "jet" : "points";
-  cell.dataset.overlay = tooMany ? "counts" : "marks";
+  cell.dataset.density = jetRuns ? "jet" : "points";
+  cell.dataset.overlay = "jet";
   if (focused) {
     const caption = element("h3", "cell-caption");
     caption.textContent = `${SHORT[xKey]}–${SHORT[yKey]}`;
     const note = element("p", "cell-note");
-    note.textContent = binRuns
+    note.textContent = jetRuns
       ? `Each dot is one run. Color is ${AXIS_NAME[colorKey]}: blue is lower, red is higher.`
       : "One point, one complete run. Both axes are minimized.";
     cell.append(caption, note);
@@ -157,7 +152,7 @@ function scatterCell(model, sharedState, snapshot, xKey, yKey, { onExpand, focus
     runs: displayed,
     brushRuns: displayed,
     overviewRuns: undefined,
-    jetCloud: binRuns && jetMax > jetMin ? { runs: binRuns, key: colorKey, label: SHORT[colorKey], min: jetMin, max: jetMax } : undefined,
+    jetCloud: jetRuns?.length ? { runs: jetRuns, key: colorKey, label: SHORT[colorKey], min: jetMin, max: jetMax } : undefined,
     xKey,
     yKey,
     xRange: snapshot.axis_ranges[xKey],
@@ -185,7 +180,7 @@ function scatterCell(model, sharedState, snapshot, xKey, yKey, { onExpand, focus
     formatValue: formatTick,
     emptyLabel: "No matching runs in this range",
   });
-  if (binRuns && jetMax > jetMin) {
+  if (jetRuns?.length) {
     cell.dataset.scale = "jet";
     cell.append(colorScale(colorKey, jetMin, jetMax));
   }
@@ -231,7 +226,7 @@ function legend(model) {
     row.append(item);
   }
   const status = element("span", "legend-status");
-  status.innerHTML = `<i class="mark projected"></i> Dark outline: non-dominated on this pair <i class="mark full"></i> Dashed ring: non-dominated in M–E–L <i class="mark selected"></i> Solid ring: in comparison. On a large scatter, point color is the objective that is not on the axes: blue is lower, red is higher.`;
+  status.innerHTML = `<i class="mark projected"></i> Dark outline: non-dominated on this pair <i class="mark full"></i> Dashed ring: non-dominated in M–E–L <i class="mark selected"></i> Solid ring: in comparison. Scatter color is the objective that is not on the axes: blue is lower, red is higher.`;
   row.append(status);
   return row;
 }
@@ -265,11 +260,7 @@ export function mountMatrix(container, model, sharedState, { onExpand } = {}) {
       }
     }
     const note = element("p", "matrix-caption");
-    const comparingCount = snapshot.comparison_run_ids?.length ?? snapshot.selected_run_ids.length;
-    const dense = Boolean(sharedState.filterRuns) && visibleRuns(model, snapshot).length > DENSITY_ABOVE;
-    note.textContent = dense && comparingCount > OVERLAY_LIMIT
-      ? `${comparingCount} comparison runs stay in the list. Count bins stay on the matrix so the marks do not cover them. Select at most ${OVERLAY_LIMIT} runs to draw individual marks.`
-      : "All three objectives are minimized. The same variable shares one range down a column and across a row.";
+    note.textContent = "All three objectives are minimized. The same variable shares one range down a column and across a row. Scatter color is the objective that is not on the axes: blue is lower, red is higher.";
     frame.append(heads, grid, note, legend(model));
     container.replaceChildren(frame);
   };

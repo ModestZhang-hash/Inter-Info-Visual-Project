@@ -27,7 +27,7 @@ function createDom() {
       this.type = "";
       this.markers = null;
     }
-    set innerHTML(value) { this._html = value; this.markers = null; }
+    set innerHTML(value) { this._html = value; this.markers = null; this.jets = null; }
     get innerHTML() { return this._html; }
     append(...nodes) { this.children.push(...nodes); }
     replaceChildren(...nodes) { this.children = [...nodes]; }
@@ -36,6 +36,17 @@ function createDom() {
     addEventListener(name, callback) { this.listeners[name] = callback; }
     querySelector(selector) { return this.querySelectorAll(selector)[0] ?? null; }
     querySelectorAll(selector) {
+      if (selector === "[data-jet-id]") {
+        if (!this.jets) {
+          this.jets = [...this._html.matchAll(/data-jet-id="([^"]+)"/g)].map((match) => {
+            const marker = new Element("circle");
+            marker.dataset.jetId = match[1];
+            marker.dataset.runId = match[1];
+            return marker;
+          });
+        }
+        return this.jets;
+      }
       if (selector === "[data-run-id]") {
         const fromTree = [];
         const visit = (node) => {
@@ -161,7 +172,7 @@ describe("shared entry", { concurrency: 1 }, () => {
       assert.match(dom.elements.get("reference-ids").textContent, /None/);
       assert.match(dom.elements.get("notice").textContent, /not scheduler outputs/);
       const svg = matrixGrid.children.find(cell => cell.dataset.x === "makespan_s" && cell.dataset.y === "energy_j").children.find(child => child.tagName === "svg");
-      svg.querySelectorAll("[data-run-id]").find((marker) => marker.dataset.runId === "3a-demo-run-f").listeners.click({ shiftKey: false });
+      svg.querySelectorAll("[data-jet-id]").find((marker) => marker.dataset.runId === "3a-demo-run-f").listeners.click({ shiftKey: false });
       assert.equal(dom.elements.get("selection-ids").textContent, "3a-demo-run-f");
       assert.match(dom.elements.get("details-content").innerHTML, /3a-demo-run-g/);
       assert.match(dom.elements.get("details-content").innerHTML, /Strictly better/);

@@ -4,7 +4,7 @@ import { createViewState } from "../shared/state.mjs?v=unlimited-1";
 import { mountRunList } from "../shared/run_list.mjs?v=unlimited-1";
 import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs?v=ink-1";
 import { configLabel, runLabel } from "../shared/labels.mjs";
-import { mountMatrix, renderFocusedPair } from "../3b/matrix.mjs?v=ink-18";
+import { mountMatrix, renderFocusedPair } from "../3b/matrix.mjs?v=ink-24";
 import { mountParallel } from "../3b/parallel.mjs?v=ink-21";
 import { mountView3d } from "../3b/view3d.mjs?v=ink-23";
 
@@ -70,6 +70,7 @@ function loadBundle(bundle) {
   else if (next.referenceStatus === "fixture_only") notice(`Manual demo data: ${next.runs.length} fixed placements for checking interactions and dominance calculations. These are not scheduler outputs or formal experimental results.`);
   else if (next.referenceStatus === "incomplete_candidates") notice("Incomplete reference set: runs and event records are available, but default seven-candidate Pareto labels are withheld.");
   else notice("Seven complete candidates share one frozen instance. Dominance uses unrounded values and manifest tolerances; filters do not change the reference set.");
+  markInstance(next.instance.instance_id);
 }
 
 function renderControls() {
@@ -215,16 +216,135 @@ $("back-to-matrix").addEventListener("click", () => {
 showView("scatter");
 closeFocusedPair();
 
+const LEGACY_BUNDLES = {
+  "p3-training-low": "../../examples/p3-training-low/bundle.json",
+  "p6-six-heuristic": "../../examples/p6-six-heuristic/bundle.json",
+  "p11-held-out-low-3000": "../../examples/p11-held-out-low-3000/bundle.json",
+};
+let instanceButtons = [];
+
+function intensityName(value) {
+  return { low: "Low", medium: "Medium", high: "High" }[value] ?? value;
+}
+function setMenuOpen(open) {
+  const button = $("instance-menu-button");
+  const panel = $("instance-menu");
+  if (!button || !panel) return;
+  button.setAttribute?.("aria-expanded", open ? "true" : "false");
+  panel.hidden = !open;
+}
+function setDatasetSearch(search) {
+  const location = globalThis.location;
+  if (!location?.pathname || typeof globalThis.history?.replaceState !== "function") return;
+  globalThis.history.replaceState({}, "", `${location.pathname}${search}`);
+}
+function markInstance(instanceId) {
+  for (const button of instanceButtons) {
+    const current = button.dataset.instanceId === instanceId;
+    if (current) button.setAttribute?.("aria-current", "true");
+    else if (typeof button.removeAttribute === "function") button.removeAttribute("aria-current");
+    else button.setAttribute?.("aria-current", "false");
+  }
+}
+function renderInstanceMenu(catalog) {
+  const panel = $("instance-menu");
+  panel.replaceChildren();
+  instanceButtons = [];
+  for (const group of catalog.groups) {
+    const section = document.createElement("section");
+    section.className = "instance-menu-group";
+    const heading = document.createElement("h3");
+    heading.textContent = group.label;
+    section.append(heading);
+    for (const item of group.items) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "instance-option";
+      button.dataset.instanceId = item.instance_id;
+      const title = document.createElement("span");
+      title.className = "instance-option-title";
+      title.textContent = `${intensityName(item.intensity)} · ${item.seed}`;
+      const idLine = document.createElement("span");
+      idLine.className = "instance-option-id";
+      idLine.textContent = item.instance_id;
+      const status = document.createElement("span");
+      status.className = "instance-option-status";
+      status.textContent = item.status_label;
+      button.append(title, idLine, status);
+      button.addEventListener("click", () => loadCatalogItem(item));
+      instanceButtons.push(button);
+      section.append(button);
+    }
+    panel.append(section);
+  }
+}
+async function populateInstanceMenu() {
+  const button = $("instance-menu-button");
+  const panel = $("instance-menu");
+  if (!button || !panel) return null;
+  button.addEventListener("click", (event) => {
+    event.stopPropagation?.();
+    setMenuOpen(button.getAttribute?.("aria-expanded") !== "true");
+  });
+  document.addEventListener?.("keydown", (event) => {
+    if (event.key === "Escape") setMenuOpen(false);
+  });
+  document.addEventListener?.("click", (event) => {
+    const target = event.target;
+    if (target === button || panel.contains?.(target)) return;
+    setMenuOpen(false);
+  });
+  try {
+    const response = await fetch("../../examples/instances/catalog.json");
+    if (!response.ok) {
+      notice("Experimental instance list failed to load.", true);
+      return null;
+    }
+    const catalog = await response.json();
+    if (!Array.isArray(catalog?.groups)) return null;
+    renderInstanceMenu(catalog);
+    return catalog;
+  } catch {
+    return null;
+  }
+}
+function bundlePathFromLocation(catalog) {
+  const params = new URLSearchParams(globalThis.location?.search ?? "");
+  const instanceId = params.get("instance");
+  if (instanceId) {
+    const item = catalog?.groups?.flatMap((group) => group.items).find((entry) => entry.instance_id === instanceId);
+    if (!item) throw new Error(`Unknown instance: ${instanceId}`);
+    return item.bundle;
+  }
+  return LEGACY_BUNDLES[params.get("bundle")] ?? "../../examples/3a-demo/bundle.json";
+}
+async function loadCatalogItem(item) {
+  setMenuOpen(false);
+  const controls = [$("load-stress-demo"), $("load-small-demo"), $("bundle-file"), $("instance-menu-button")];
+  controls.forEach((control) => { if (control) control.disabled = true; });
+  try {
+    const response = await fetch(item.bundle);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    loadBundle(await response.json());
+    setDatasetSearch(`?instance=${encodeURIComponent(item.instance_id)}`);
+    showView("scatter");
+  } catch (error) {
+    notice(`Instance load failed: ${error.message}`, true);
+  } finally {
+    controls.forEach((control) => { if (control) control.disabled = false; });
+  }
+}
 async function loadDemo(path, view) {
-  const controls = [$("load-stress-demo"), $("load-small-demo"), $("bundle-file")];
-  controls.forEach(control => { control.disabled = true; });
+  const controls = [$("load-stress-demo"), $("load-small-demo"), $("bundle-file"), $("instance-menu-button")];
+  controls.forEach(control => { if (control) control.disabled = true; });
   try {
     const response = await fetch(path);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     loadBundle(await response.json());
+    setDatasetSearch("");
     showView(view);
   } catch (error) { notice(`Demo load failed: ${error.message}`, true); }
-  finally { controls.forEach(control => { control.disabled = false; }); }
+  finally { controls.forEach(control => { if (control) control.disabled = false; }); }
 }
 $("load-stress-demo").addEventListener("click", () => loadDemo("../../examples/synthetic-stress-500/bundle.json", "scatter"));
 $("load-small-demo").addEventListener("click", () => loadDemo("../../examples/3a-demo/bundle.json", "scatter"));
@@ -232,7 +352,10 @@ $("load-small-demo").addEventListener("click", () => loadDemo("../../examples/3a
 $("bundle-file").addEventListener("change", async (event) => {
   const file = event.target.files?.[0];
   if (!file) return;
-  try { loadBundle(JSON.parse(await file.text())); }
+  try {
+    loadBundle(JSON.parse(await file.text()));
+    setDatasetSearch("");
+  }
   catch (error) { notice(`Import failed: ${error.message}`, true); }
   event.target.value = "";
 });
@@ -265,14 +388,8 @@ $("export-csv").addEventListener("click", () => {
 });
 
 try {
-  const bundleKey = new URLSearchParams(globalThis.location?.search ?? "").get("bundle");
-  const path = bundleKey === "p3-training-low"
-    ? "../../examples/p3-training-low/bundle.json"
-    : bundleKey === "p6-six-heuristic"
-      ? "../../examples/p6-six-heuristic/bundle.json"
-      : bundleKey === "p11-held-out-low-3000"
-        ? "../../examples/p11-held-out-low-3000/bundle.json"
-        : "../../examples/3a-demo/bundle.json";
+  const catalog = await populateInstanceMenu();
+  const path = bundlePathFromLocation(catalog);
   const response = await fetch(path);
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   loadBundle(await response.json());

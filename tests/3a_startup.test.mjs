@@ -21,6 +21,17 @@ test("application starts with the matrix and expands one cell from the archived 
     append(...children) { this.children.push(...children); }
     replaceChildren(...children) { this.children = [...children]; }
     querySelectorAll(selector) {
+      if (selector === "[data-jet-id]") {
+        if (!this.jets) {
+          this.jets = [...this.innerHTML.matchAll(/data-jet-id="([^"]+)"/g)].map((match) => {
+            const marker = new Element();
+            marker.dataset.jetId = match[1];
+            marker.dataset.runId = match[1];
+            return marker;
+          });
+        }
+        return this.jets;
+      }
       if (selector !== "[data-run-id]") return [];
       this.markers = [...this.innerHTML.matchAll(/data-run-id="([^"]+)"/g)].map((match) => {
         const marker = new Element();
@@ -64,7 +75,7 @@ test("application starts with the matrix and expands one cell from the archived 
     assert.equal(elements.get("run-count").textContent, "7 / 7");
     assert.doesNotMatch(elements.get("notice").textContent, /Unable to load|Import failed/);
     const firstSvg = elements.get("focused-plot").children[0].children.find((child) => child.tagName === "svg");
-    firstSvg.markers.find((marker) => marker.dataset.runId === "3a-demo-run-f").listeners.click({ shiftKey: false });
+    firstSvg.jets.find((marker) => marker.dataset.runId === "3a-demo-run-f").listeners.click({ shiftKey: false });
     assert.equal(elements.get("selection-count").textContent, "1 selected");
     assert.match(elements.get("details-content").innerHTML, /3a-demo-run-g/);
     assert.match(elements.get("details-content").innerHTML, /Strictly better/);

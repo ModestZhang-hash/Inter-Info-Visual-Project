@@ -33,7 +33,7 @@ function createDom() {
       this.type = "";
       this.markers = null;
     }
-    set innerHTML(value) { this._html = value; this.markers = null; this.bins = null; }
+    set innerHTML(value) { this._html = value; this.markers = null; this.bins = null; this.jets = null; }
     get innerHTML() { return this._html; }
     append(...nodes) { this.children.push(...nodes); }
     replaceChildren(...nodes) { this.children = [...nodes]; }
@@ -48,6 +48,17 @@ function createDom() {
           const el = new Element("rect"); el.dataset.binIndex = match[1]; el.dataset.count = match[2]; return el;
         });
         return this.bins;
+      }
+      if (selector === "[data-jet-id]") {
+        if (!this.jets) {
+          this.jets = [...this._html.matchAll(/data-jet-id="([^"]+)"/g)].map((match) => {
+            const marker = new Element("circle");
+            marker.dataset.jetId = match[1];
+            marker.dataset.runId = match[1];
+            return marker;
+          });
+        }
+        return this.jets;
       }
       if (selector === "[data-run-id]") {
         const fromTree = [];
@@ -611,29 +622,26 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
           .filter(node => node.dataset.selected === "true").map(node => node.dataset.runId).sort(), [...ids].sort());
         for (const plot of scatters(elements.get("matrix"))) {
           const svg = svgOf(plot);
-          if (ids.length > 10) {
-            assert.equal(svg.querySelectorAll("[data-run-id]").length, 0);
-            assert.match(svg.innerHTML, /class="jet-point"/);
-          } else {
-            assert.deepEqual([...svg.innerHTML.matchAll(/class="run-id-label"[^>]*>([^<]+)</g)].map(match => match[1]).sort(), [...ids].sort());
-          }
+          assert.equal(svg.querySelectorAll("[data-run-id]").length, 0);
+          if (!svg.innerHTML.includes("No matching runs")) assert.match(svg.innerHTML, /class="jet-point"/);
         }
       };
       assert.equal(elements.get("matching-count").textContent, "7");
       assert.equal(elements.get("view3d").children[0].querySelectorAll("[data-run-id]").length, 7);
       const matrixSvg = () => svgOf(cell(elements.get("matrix"), "makespan_s", "energy_j"));
-      matrixSvg().markers.find(node => node.dataset.runId === "3a-demo-run-f").listeners.click({});
+      const clickMatrix = (id) => matrixSvg().querySelectorAll("[data-jet-id]").find((node) => node.dataset.runId === id).listeners.click({});
+      clickMatrix("3a-demo-run-f");
       assertCompare(["3a-demo-run-f"]);
       assert.match(elements.get("details-content").innerHTML, /M–E: <\/strong>Dominated/);
       assert.match(elements.get("details-content").innerHTML, /3a-demo-run-g/);
       elements.get("parallel").children[0].querySelectorAll("[data-run-id]")[0].listeners.click({});
       assertCompare([]);
-      matrixSvg().markers.find(node => node.dataset.runId === "3a-demo-run-f").listeners.click({});
+      clickMatrix("3a-demo-run-f");
       elements.get("view3d").children[0].querySelectorAll("[data-run-id]").find((node) => node.dataset.runId === "3a-demo-run-f").listeners.keydown({ key: "Enter", preventDefault() {} });
       assertCompare([]);
-      matrixSvg().markers.find(node => node.dataset.runId === "3a-demo-run-f").listeners.click({});
+      clickMatrix("3a-demo-run-f");
       assertCompare(["3a-demo-run-f"]);
-      matrixSvg().markers.find(node => node.dataset.runId === "3a-demo-run-f").listeners.click({});
+      clickMatrix("3a-demo-run-f");
       assertCompare([]);
       elements.get("parallel-only-selected").checked = false;
       elements.get("parallel-only-selected").listeners.change();
@@ -648,7 +656,7 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
       assert.equal(elements.get("details-content").innerHTML, originalEvidence);
       assert.equal(rows().length, 1);
       elements.get("select-all").listeners.click();
-      const oldMarker = matrixSvg().markers[0];
+      const oldMarker = matrixSvg().querySelectorAll("[data-jet-id]")[0];
       elements.get("show-parallel").listeners.click();
       await elements.get("load-stress-demo").listeners.click();
       assert.equal(elements.get("scatter-section").hidden, false);
@@ -715,13 +723,15 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
       for (const id of firstTen) action(id, 1);
       assertCompare(firstTen);
       for (const plot of scatters(elements.get("matrix"))) {
-        assert.deepEqual(svgOf(plot).querySelectorAll("[data-run-id]").map(node => node.dataset.runId).sort(), [...firstTen].sort());
+        const svg = svgOf(plot);
+        assert.equal(svg.querySelectorAll("[data-run-id]").length, 0);
+        assert.equal((svg.innerHTML.match(/class="jet-point"/g) ?? []).length, 500);
       }
       assert.equal(elements.get("matching-count").textContent, "500");
       action(firstTen[9], 1);
-      assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 9);
+      assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 0);
       action(firstTen[9], 1);
-      assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 10);
+      assert.equal(matrixSvg().querySelectorAll("[data-run-id]").length, 0);
       action(stressFixture.runs[10].run_id, 1);
       assertCompare([...firstTen, stressFixture.runs[10].run_id]);
       assert.equal(elements.get("comparison-message").textContent, "");

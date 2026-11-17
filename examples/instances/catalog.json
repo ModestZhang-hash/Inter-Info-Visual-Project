@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.0.0",
+  "groups": [
+    {
+      "id": "training",
+      "label": "Training",
+      "items": [
+        {
+          "instance_id": "provisional-training-low-1000",
+          "intensity": "low",
+          "seed": 1000,
+          "archived_runs": 6,
+          "reference": "incomplete",
+          "status_label": "6 archived runs",
+          "bundle": "../../examples/p6-six-heuristic/bundle.json"
+        },
+        {
+          "instance_id": "provisional-training-medium-1001",
+          "intensity": "medium",
+          "seed": 1001,
+          "archived_runs": 2,
+          "reference": "incomplete",
+          "status_label": "2 archived runs",
+          "bundle": "../../examples/instances/provisional-training-medium-1001/bundle.json"
+        },
+        {
+          "instance_id": "provisional-training-high-1002",
+          "intensity": "high",
+          "seed": 1002,
+          "archived_runs": 2,
+          "reference": "incomplete",
+          "status_label": "2 archived runs",
+          "bundle": "../../examples/instances/provisional-training-high-1002/bundle.json"
+        }
+      ]
+    },
+    {
+      "id": "pilot",
+      "label": "Pilot",
+      "items": [
+        {
+          "instance_id": "provisional-pilot-low-2000",
+          "intensity": "low",
+          "seed": 2000,
+          "archived_runs": 2,
+          "reference": "incomplete",
+          "status_label": "2 archived runs",
+          "bundle": "../../examples/instances/provisional-pilot-low-2000/bundle.json"
+        },
+        {
+          "instance_id": "provisional-pilot-medium-2001",
+          "intensity": "medium",
+          "seed": 2001,
+          "archived_runs": 2,
+          "reference": "incomplete",
+          "status_label": "2 archived runs",
+          "bundle": "../../examples/instances/provisional-pilot-medium-2001/bundle.json"
+        },
+        {
+          "instance_id": "provisional-pilot-high-2002",
+          "intensity": "high",
+          "seed": 2002,
+          "archived_runs": 2,
+          "reference": "incomplete",
+          "status_label": "2 archived runs",
+          "bundle": "../../examples/instances/provisional-pilot-high-2002/bundle.json"
+        }
+      ]
+    },
+    {
+      "id": "held-out-low",
+      "label": "Held-out · low",
+      "items": [
+        {
+          "instance_id": "provisional-held_out-low-3000",
+          "intensity": "low",
+          "seed": 3000,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/p11-held-out-low-3000/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-low-3001",
+          "intensity": "low",
+          "seed": 3001,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-low-3001/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-low-3002",
+          "intensity": "low",
+          "seed": 3002,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-low-3002/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-low-3003",
+          "intensity": "low",
+          "seed": 3003,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-low-3003/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-low-3004",
+          "intensity": "low",
+          "seed": 3004,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-low-3004/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-low-3005",
+          "intensity": "low",
+          "seed": 3005,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-low-3005/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-low-3006",
+          "intensity": "low",
+          "seed": 3006,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-low-3006/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-low-3007",
+          "intensity": "low",
+          "seed": 3007,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-low-3007/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-low-3008",
+          "intensity": "low",
+          "seed": 3008,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-low-3008/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-low-3009",
+          "intensity": "low",
+          "seed": 3009,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-low-3009/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-low-3010",
+          "intensity": "low",
+          "seed": 3010,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-low-3010/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-low-3011",
+          "intensity": "low",
+          "seed": 3011,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-low-3011/bundle.json"
+        }
+      ]
+    },
+    {
+      "id": "held-out-medium",
+      "label": "Held-out · medium",
+      "items": [
+        {
+          "instance_id": "provisional-held_out-medium-3012",
+          "intensity": "medium",
+          "seed": 3012,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-medium-3012/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-medium-3013",
+          "intensity": "medium",
+          "seed": 3013,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-medium-3013/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-medium-3014",
+          "intensity": "medium",
+          "seed": 3014,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-medium-3014/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-medium-3015",
+          "intensity": "medium",
+          "seed": 3015,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-medium-3015/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-medium-3016",
+          "intensity": "medium",
+          "seed": 3016,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-medium-3016/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-medium-3017",
+          "intensity": "medium",
+          "seed": 3017,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-medium-3017/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-medium-3018",
+          "intensity": "medium",
+          "seed": 3018,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-medium-3018/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-medium-3019",
+          "intensity": "medium",
+          "seed": 3019,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-medium-3019/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-medium-3020",
+          "intensity": "medium",
+          "seed": 3020,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-medium-3020/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-medium-3021",
+          "intensity": "medium",
+          "seed": 3021,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-medium-3021/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-medium-3022",
+          "intensity": "medium",
+          "seed": 3022,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-medium-3022/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-medium-3023",
+          "intensity": "medium",
+          "seed": 3023,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-medium-3023/bundle.json"
+        }
+      ]
+    },
+    {
+      "id": "held-out-high",
+      "label": "Held-out · high",
+      "items": [
+        {
+          "instance_id": "provisional-held_out-high-3024",
+          "intensity": "high",
+          "seed": 3024,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-high-3024/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-high-3025",
+          "intensity": "high",
+          "seed": 3025,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-high-3025/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-high-3026",
+          "intensity": "high",
+          "seed": 3026,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-high-3026/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-high-3027",
+          "intensity": "high",
+          "seed": 3027,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-high-3027/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-high-3028",
+          "intensity": "high",
+          "seed": 3028,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-high-3028/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-high-3029",
+          "intensity": "high",
+          "seed": 3029,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-high-3029/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-high-3030",
+          "intensity": "high",
+          "seed": 3030,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-high-3030/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-high-3031",
+          "intensity": "high",
+          "seed": 3031,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-high-3031/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-high-3032",
+          "intensity": "high",
+          "seed": 3032,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-high-3032/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-high-3033",
+          "intensity": "high",
+          "seed": 3033,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-high-3033/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-high-3034",
+          "intensity": "high",
+          "seed": 3034,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-high-3034/bundle.json"
+        },
+        {
+          "instance_id": "provisional-held_out-high-3035",
+          "intensity": "high",
+          "seed": 3035,
+          "archived_runs": 7,
+          "reference": "complete",
+          "status_label": "7 candidates",
+          "bundle": "../../examples/instances/provisional-held_out-high-3035/bundle.json"
+        }
+      ]
+    }
+  ]
+}

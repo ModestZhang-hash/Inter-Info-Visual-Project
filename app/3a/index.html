@@ -7,7 +7,7 @@
   <title>Topic 3 · Linked Trade-off Analysis</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="../3b/style.css?v=ink-1">
-  <link rel="stylesheet" href="./workbench.css?v=ink-13">
+  <link rel="stylesheet" href="./workbench.css?v=ink-14">
 </head>
 <body>
   <a class="skip-link" href="#workspace">Skip to analysis</a>
@@ -19,16 +19,17 @@
   <main>
     <section class="dataset-bar" aria-label="Dataset selection">
       <div class="dataset-intro"><h2>Scheduling workbench</h2><p>Makespan, energy and latency on the same workload.</p></div>
-      <div class="dataset-actions" role="group" aria-label="Demo datasets">
+      <div class="dataset-actions" role="group" aria-label="Datasets">
         <button id="load-small-demo" type="button">7-run manual demo</button>
         <button id="load-stress-demo" type="button">500-run stress test</button>
-        <a href="?bundle=p3-training-low">2-run training slice</a>
-        <a href="?bundle=p6-six-heuristic">6-heuristic training check</a>
-        <a href="?bundle=p11-held-out-low-3000">Held-out low-3000 case</a>
+        <div class="instance-menu">
+          <button id="instance-menu-button" type="button" aria-expanded="false" aria-controls="instance-menu">Experimental instances</button>
+          <div id="instance-menu" class="instance-menu-panel" hidden></div>
+        </div>
       </div>
     </section>
     <section class="notice" id="notice" role="status"></section>
-    <p class="dataset-hint">Switching datasets resets comparisons. Manual and stress demos are test fixtures, not experimental results.</p>
+    <p class="dataset-hint">Switching datasets resets comparisons. Manual and stress demos are test fixtures, not experimental results. Each experimental instance opens on its own.</p>
     <section class="overview" aria-label="Data overview">
       <div class="instance-summary"><span class="kicker">Current instance</span><strong id="instance-id">—</strong></div>
       <div class="reference-summary"><span class="kicker">Pareto reference</span><strong id="reference-status">—</strong></div>
@@ -73,7 +74,7 @@
           <section id="matrix-section" class="view-block">
             <div class="plot-heading"><h2>Scatterplot matrix</h2><span>All objectives minimized</span></div>
             <p class="cell-note">Lower triangle: M–E, M–L, and E–L. Diagonal panels are the marginal distribution of each objective. Click Expand, or the plot background, to enlarge a pair.</p>
-            <details class="view-help"><summary>Reading the matrix</summary><p>Shapes and colors identify configurations. A black outline means non-dominated on the plotted pair; a dashed rose ring means non-dominated in full M–E–L space; a solid black ring means the run is in the comparison set. Stored values are unrounded, and filters do not change the reference set. With more than 10 visible runs, each scatter draws one dot per run. Color is the objective that is not on the axes, from blue (lower) to red (higher). A larger comparison set stays in the list, so selection rings do not cover the cloud.</p></details>
+            <details class="view-help"><summary>Reading the matrix</summary><p>Each scatter dot is one run. Its color is the objective that is not on the axes: blue is lower, red is higher. Diagonal panels show the count of each objective. Stored values are unrounded, and filters do not change the reference set. Comparison membership stays in the list and does not add a second mark on the scatter.</p></details>
             <section id="matrix" class="matrix" aria-label="Scatterplot matrix"></section>
           </section>
           <section id="focused-section" class="view-block" hidden>
@@ -116,6 +117,6 @@
     </section>
   </main>
   <footer><span>CPS 5745 · Edge–cloud scheduling</span><span>All objectives minimized · Energy excludes the continuous idle baseline</span></footer>
-  <script type="module" src="./app.mjs?v=ink-23"></script>
+  <script type="module" src="./app.mjs?v=ink-25"></script>
 </body>
 </html>
