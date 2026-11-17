@@ -2,6 +2,7 @@ import { filteredRuns, comparisonRuns } from "../shared/state.mjs?v=workflow-1";
 import { runLabel } from "../shared/labels.mjs";
 import { OBJECTIVES } from "../3a/pareto.mjs";
 import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs?v=ink-1";
+import { formatTick, niceTicks } from "../shared/axis_ticks.mjs";
 
 const META = {
   makespan_s: { short: "M", unit: "s", label: "Makespan M (s) ↓" },
@@ -46,8 +47,15 @@ function formatRaw(value) {
   return Number.isFinite(value) ? String(value) : "—";
 }
 
-function displayTick(value) {
-  return Number.isFinite(value) ? Number(value.toPrecision(7)).toString() : "—";
+function axisTickValues(min, max) {
+  if (!(max > min)) return [min];
+  const span = max - min;
+  const values = [min];
+  for (const value of niceTicks(min, max, 4)) {
+    if (value - min > span * 0.14 && max - value > span * 0.14) values.push(value);
+  }
+  values.push(max);
+  return values;
 }
 
 function axisX(index) {
@@ -119,23 +127,30 @@ export function mountParallel(container, model, sharedState, controls = {}) {
       stem.setAttribute("y2", bottom);
       const name = element("text", "pc-axis-name");
       const anchor = index === 0 ? "start" : index === OBJECTIVES.length - 1 ? "end" : "middle";
-      name.setAttribute("x", index === 0 ? x - 46 : index === OBJECTIVES.length - 1 ? x + 46 : x);
-      name.setAttribute("y", "22");
+      name.setAttribute("x", index === 0 ? "12" : index === OBJECTIVES.length - 1 ? String(width - 12) : String(x));
+      name.setAttribute("y", "28");
       name.setAttribute("text-anchor", anchor);
-      name.textContent = META[key].label;
-      const tickAnchor = index === OBJECTIVES.length - 1 ? "end" : "start";
-      const tickX = index === OBJECTIVES.length - 1 ? x - 8 : x + 8;
-      const maxLabel = element("text", "pc-tick");
-      maxLabel.setAttribute("x", tickX);
-      maxLabel.setAttribute("y", top + 4);
-      maxLabel.setAttribute("text-anchor", tickAnchor);
-      maxLabel.textContent = displayTick(range.max);
-      const minLabel = element("text", "pc-tick");
-      minLabel.setAttribute("x", tickX);
-      minLabel.setAttribute("y", bottom + 4);
-      minLabel.setAttribute("text-anchor", tickAnchor);
-      minLabel.textContent = displayTick(range.min);
-      axis.append(stem, name, maxLabel, minLabel);
+      name.textContent = `${META[key].short} (${META[key].unit}) ↓`;
+      axis.setAttribute("aria-label", META[key].label);
+      const outsideLeft = index === 0;
+      let previousY = null;
+      for (const value of axisTickValues(range.min, range.max)) {
+        const y = valueToAxisY(value, range);
+        if (previousY !== null && Math.abs(previousY - y) < 18 && value !== range.max) continue;
+        previousY = y;
+        const mark = element("line", "pc-tick-mark");
+        mark.setAttribute("x1", String(x));
+        mark.setAttribute("x2", String(outsideLeft ? x - 6 : x + 6));
+        mark.setAttribute("y1", String(y));
+        mark.setAttribute("y2", String(y));
+        const label = element("text", "pc-tick");
+        label.setAttribute("x", String(outsideLeft ? x - 10 : x + 10));
+        label.setAttribute("y", String(y + 4));
+        label.setAttribute("text-anchor", outsideLeft ? "end" : "start");
+        label.textContent = formatTick(value);
+        axis.append(mark, label);
+      }
+      axis.append(stem, name);
       if (!workflow) {
       const preview = element("rect", "pc-brush");
       preview.dataset.brushPreview = key;
@@ -183,9 +198,9 @@ export function mountParallel(container, model, sharedState, controls = {}) {
       const path = element("path");
       path.setAttribute("d", `M${points.join(" L")}`);
       path.setAttribute("fill", "none");
-      path.setAttribute("stroke", selected ? color : "#84938e");
-      path.setAttribute("stroke-opacity", selected ? "1" : "0.22");
-      path.setAttribute("stroke-width", selected ? "3.5" : "1");
+      path.setAttribute("stroke", selected ? color : "#9aa39a");
+      path.setAttribute("stroke-opacity", selected ? "0.9" : "0.2");
+      path.setAttribute("stroke-width", selected ? "1.6" : "1");
       const glyph = element("text", "pc-shape");
       glyph.setAttribute("x", String(axisX(0) - 28));
       glyph.setAttribute("y", String(valueToAxisY(run.makespan_s, snapshot.axis_ranges.makespan_s) + 4));

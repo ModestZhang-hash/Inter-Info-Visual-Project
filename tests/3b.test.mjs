@@ -403,7 +403,7 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
     const lines = () => container.children[0].querySelectorAll("[data-run-id]");
     const path = line => line.children.find(child => child.tagName === "path");
     assert.equal(lines().length, 7);
-    assert.ok(lines().every(line => path(line).getAttribute("stroke") === "#84938e" && path(line).getAttribute("stroke-opacity") === "0.22"));
+    assert.ok(lines().every(line => path(line).getAttribute("stroke") === "#9aa39a" && path(line).getAttribute("stroke-opacity") === "0.2"));
     assert.match(controls.summary.textContent, /Selected: 0 total.*0 \/ 7 filter-visible.*Displayed: 7/);
     controls.onlySelectedInput.checked = true;
     controls.onlySelectedInput.listeners.change();
@@ -412,7 +412,7 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
     assert.deepEqual(state.get(), original);
     state.selectRuns(["3a-demo-run-f"]);
     assert.deepEqual(lines().map(line => line.dataset.runId), ["3a-demo-run-f"]);
-    assert.equal(path(lines()[0]).getAttribute("stroke-opacity"), "1");
+    assert.equal(path(lines()[0]).getAttribute("stroke-opacity"), "0.9");
     const index = stableConfigIndex(model.configs, "fixture-f");
     assert.equal(path(lines()[0]).getAttribute("stroke"), POLICY_COLORS[index % POLICY_COLORS.length]);
     controls.onlySelectedInput.checked = false;
@@ -522,7 +522,7 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
     assert.equal(clicked.dataset.coincident, "overlap-a|overlap-b");
     assert.match(clicked.children.find((child) => child.tagName === "title").textContent, /M=1 s, E=2 J, L=3 s/);
     clicked.listeners.click({ shiftKey: false });
-    assert.deepEqual(overlapState.get().selected_run_ids, ["overlap-a", "overlap-b"]);
+    assert.deepEqual(overlapState.get().selected_run_ids, ["overlap-b"]);
   }));
 
   test("3D rotation and zoom preserve metrics, reference labels and shared state", () => withDocument(dom => {
@@ -620,7 +620,7 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
         }
       };
       assert.equal(elements.get("matching-count").textContent, "7");
-      assert.equal(elements.get("view3d").children[0].querySelectorAll("[data-run-id]").length, 0);
+      assert.equal(elements.get("view3d").children[0].querySelectorAll("[data-run-id]").length, 7);
       const matrixSvg = () => svgOf(cell(elements.get("matrix"), "makespan_s", "energy_j"));
       matrixSvg().markers.find(node => node.dataset.runId === "3a-demo-run-f").listeners.click({});
       assertCompare(["3a-demo-run-f"]);
@@ -629,7 +629,7 @@ describe("3B scatterplot matrix", { concurrency: 1 }, () => {
       elements.get("parallel").children[0].querySelectorAll("[data-run-id]")[0].listeners.click({});
       assertCompare([]);
       matrixSvg().markers.find(node => node.dataset.runId === "3a-demo-run-f").listeners.click({});
-      elements.get("view3d").children[0].querySelectorAll("[data-run-id]")[0].listeners.keydown({ key: "Enter", preventDefault() {} });
+      elements.get("view3d").children[0].querySelectorAll("[data-run-id]").find((node) => node.dataset.runId === "3a-demo-run-f").listeners.keydown({ key: "Enter", preventDefault() {} });
       assertCompare([]);
       matrixSvg().markers.find(node => node.dataset.runId === "3a-demo-run-f").listeners.click({});
       assertCompare(["3a-demo-run-f"]);

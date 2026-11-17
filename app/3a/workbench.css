@@ -155,9 +155,19 @@ legend { padding: 0 8px 0 0; font-size: .8125rem; color: var(--ink); font-weight
 .focused-plot { max-width: 920px; margin: 16px 0 0; }
 .focused-plot .matrix-cell { padding: 12px 12px 4px; border: 1px solid #d0d0cc; border-radius: 0; }
 .parallel, .view3d { max-width: none; width: 100%; border: 1px solid var(--line); border-radius: 8px; box-shadow: none; padding: 12px 8px; overflow-x: auto; }
-.parallel svg { min-width: 680px; touch-action: pan-y; }
+.parallel svg { min-width: 0; width: 100%; touch-action: pan-y; }
+.parallel .pc-stem { stroke: #1a1a1a; stroke-width: 1.25; }
+.parallel .pc-tick-mark { stroke: #1a1a1a; stroke-width: 1; pointer-events: none; }
+.parallel .pc-axis-name, .parallel .pc-tick { fill: #1a1a1a; pointer-events: none; }
+.parallel .pc-axis-name { font-size: 12px; font-weight: 600; }
+.parallel .pc-tick { font-size: 11px; paint-order: stroke; stroke: #fff; stroke-width: 3px; }
+.parallel svg:has(.pc-line:hover) .pc-line path,
+.parallel svg:has(.pc-line:focus-visible) .pc-line path { stroke-opacity: 0.12; }
+.parallel svg:has(.pc-line:hover) .pc-line:hover path,
+.parallel svg:has(.pc-line:focus-visible) .pc-line:focus path { stroke: var(--policy-color); stroke-opacity: 1; stroke-width: 2.6; }
 .view3d svg { min-width: 0; max-height: 640px; min-height: 320px; cursor: grab; touch-action: none; user-select: none; }
 .view3d svg.rotating { cursor: grabbing; }
+.view3d .view3d-face { stroke: none; pointer-events: none; }
 .view3d .view3d-grid { stroke: #cfcfcb; stroke-width: 1; fill: none; pointer-events: none; }
 .view3d .view3d-axis { stroke: #1a1a1a; stroke-width: 1.25; pointer-events: none; }
 .view3d .view3d-tick-mark { stroke: #1a1a1a; stroke-width: 1; pointer-events: none; }

@@ -5,8 +5,8 @@ import { mountRunList } from "../shared/run_list.mjs?v=unlimited-1";
 import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs?v=ink-1";
 import { configLabel, runLabel } from "../shared/labels.mjs";
 import { mountMatrix, renderFocusedPair } from "../3b/matrix.mjs?v=ink-18";
-import { mountParallel } from "../3b/parallel.mjs?v=ink-1";
-import { mountView3d } from "../3b/view3d.mjs?v=ink-17";
+import { mountParallel } from "../3b/parallel.mjs?v=ink-21";
+import { mountView3d } from "../3b/view3d.mjs?v=ink-23";
 
 const META = {
   makespan_s: { short: "M", label: "Makespan M (s) ↓" },

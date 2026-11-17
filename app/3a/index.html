@@ -7,7 +7,7 @@
   <title>Topic 3 · Linked Trade-off Analysis</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="../3b/style.css?v=ink-1">
-  <link rel="stylesheet" href="./workbench.css?v=ink-10">
+  <link rel="stylesheet" href="./workbench.css?v=ink-13">
 </head>
 <body>
   <a class="skip-link" href="#workspace">Skip to analysis</a>
@@ -84,15 +84,15 @@
         </section>
         <section id="parallel-section" class="view-block" hidden>
           <div class="plot-heading"><h2 id="parallel-title">Parallel coordinates</h2><span>All objectives minimized ↓</span></div>
-          <p class="cell-note">Each line is one complete run. Click to select or deselect and open its evidence.</p>
+          <p class="cell-note">Each line is one complete run. Hover a line to emphasize it. Click to select or deselect and open its evidence.</p>
           <div class="parallel-controls"><label><input id="parallel-only-selected" type="checkbox"> Only comparisons</label><span id="parallel-count" role="status" aria-live="polite"></span></div>
-          <details class="view-help"><summary>Reading parallel coordinates</summary><p>Only comparisons is enabled by default. Enter a random sample size or add runs from the list. Turn it off to show faint background lines. Hover or focus a line for its ID, configuration symbol and raw metrics. Deselected lines disappear in comparison-only mode. Comparison membership is independent of configuration visibility; Pareto evidence uses the original reference set.</p></details>
+          <details class="view-help"><summary>Reading parallel coordinates</summary><p>Only comparisons is enabled by default. Enter a random sample size or add runs from the list. Turn it off to show faint background lines. Hover a line to draw it in its configuration color and fade the others. Hover or focus a line for its ID, configuration symbol and raw metrics. Deselected lines disappear in comparison-only mode. Comparison membership is independent of configuration visibility; Pareto evidence uses the original reference set.</p></details>
           <section id="parallel" class="parallel" aria-label="Parallel coordinates"></section>
         </section>
         <section id="view3d-section" class="view-block" hidden>
           <div class="plot-heading"><h2>3D comparison</h2><span>Selected complete runs</span></div>
           <p class="cell-note">Drag to rotate. Scroll to zoom. Move the pointer to read M, E and L on the axes. Click a point to toggle comparison and inspect its evidence.</p>
-          <details class="view-help"><summary>Reading the 3D view</summary><p>The camera rotates an orthographic view of M, E and L. Tick marks follow each axis range, and the pointer lays a crosshair across the three axes. Hovering a point snaps that crosshair to the run. With more than 10 visible runs, every complete run is a small dot colored by task-related energy: blue is lower, red is higher. The scatterplot matrix remains the paired projection of the same runs. Selection rings appear only for a comparison set of at most 10 runs. Rotation does not change metrics or Pareto labels.</p></details>
+          <details class="view-help"><summary>Reading the 3D view</summary><p>The camera rotates an orthographic view of M, E and L. Tick marks follow each axis range, and the pointer lays a crosshair across the three axes. Hovering a point snaps that crosshair to the run. Every complete run is a small dot colored by task-related energy: blue is lower, red is higher. The scatterplot matrix remains the paired projection of the same runs. Rotation does not change metrics or Pareto labels.</p></details>
           <section id="view3d" class="view3d" aria-label="Interactive 3D comparison"></section>
         </section>
       </section>
@@ -116,6 +116,6 @@
     </section>
   </main>
   <footer><span>CPS 5745 · Edge–cloud scheduling</span><span>All objectives minimized · Energy excludes the continuous idle baseline</span></footer>
-  <script type="module" src="./app.mjs?v=ink-18"></script>
+  <script type="module" src="./app.mjs?v=ink-23"></script>
 </body>
 </html>

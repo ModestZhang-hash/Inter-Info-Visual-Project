@@ -1,6 +1,5 @@
 import { runLabel } from "../shared/labels.mjs";
 import { comparisonRuns } from "../shared/state.mjs?v=workflow-1";
-import { POLICY_COLORS, POLICY_SHAPES, stableConfigIndex } from "../shared/encoding.mjs?v=ink-1";
 import { jetColor } from "../shared/pair_scatter.mjs?v=ink-9";
 import { formatTick, niceStep, niceTicks } from "../shared/axis_ticks.mjs";
 
@@ -247,6 +246,39 @@ export function mountView3d(container, model, sharedState) {
       energy_j: scaleTicks(ranges.energy_j.min, ranges.energy_j.max),
       mean_latency_s: scaleTicks(ranges.mean_latency_s.min, ranges.mean_latency_s.max),
     };
+    const far = (atZero, atOne) => project(...atZero).depth <= project(...atOne).depth ? 0 : 1;
+    const face = {
+      m: far([0, 0.5, 0.5], [1, 0.5, 0.5]),
+      e: far([0.5, 0, 0.5], [0.5, 1, 0.5]),
+      l: far([0.5, 0.5, 0], [0.5, 0.5, 1]),
+    };
+    const faceFill = (axis, value) => {
+      const origin = [0.5, 0.5, 0.5];
+      origin[axis] = value;
+      const outward = origin.slice();
+      outward[axis] = value < 0.5 ? value - 0.25 : value + 0.25;
+      const base = project(...origin);
+      const tip = project(...outward);
+      const dx = tip.x - base.x;
+      const dy = tip.y - base.y;
+      const len = Math.hypot(dx, dy) || 1;
+      const light = ((-dy) * 0.72 + (-dx) * 0.28) / len;
+      const gray = Math.round(206 + Math.max(0, Math.min(1, 0.5 + light * 0.5)) * 36);
+      return `rgb(${gray},${gray},${gray - 1})`;
+    };
+    const drawFace = (corners, axis, value) => {
+      const poly = element("polygon", "view3d-face");
+      poly.setAttribute("points", corners.map(([m, e, l]) => {
+        const point = project(m, e, l);
+        return `${point.x},${point.y}`;
+      }).join(" "));
+      poly.setAttribute("fill", faceFill(axis, value));
+      poly.setAttribute("pointer-events", "none");
+      svg.append(poly);
+    };
+    drawFace([[face.m, 0, 0], [face.m, 1, 0], [face.m, 1, 1], [face.m, 0, 1]], 0, face.m);
+    drawFace([[0, face.e, 0], [1, face.e, 0], [1, face.e, 1], [0, face.e, 1]], 1, face.e);
+    drawFace([[0, 0, face.l], [1, 0, face.l], [1, 1, face.l], [0, 1, face.l]], 2, face.l);
     // Box edges, then split lines on the three far faces, aligned with the axis ticks.
     for (let axis = 0; axis < 3; axis++) for (const a of [0, 1]) for (const b of [0, 1]) {
       const start = [0, 0, 0], end = [0, 0, 0];
@@ -255,12 +287,6 @@ export function mountView3d(container, model, sharedState) {
       end[axis] = 1;
       drawLine(project(...start), project(...end), "view3d-grid");
     }
-    const far = (atZero, atOne) => project(...atZero).depth <= project(...atOne).depth ? 0 : 1;
-    const face = {
-      m: far([0, 0.5, 0.5], [1, 0.5, 0.5]),
-      e: far([0.5, 0, 0.5], [0.5, 1, 0.5]),
-      l: far([0.5, 0.5, 0], [0.5, 0.5, 1]),
-    };
     const interior = (key) => ticks[key].filter((tick) => !tick.end);
     for (const tick of interior("mean_latency_s")) drawLine(project(face.m, 0, tick.t), project(face.m, 1, tick.t), "view3d-grid");
     for (const tick of interior("energy_j")) drawLine(project(face.m, tick.t, 0), project(face.m, tick.t, 1), "view3d-grid");
@@ -268,11 +294,12 @@ export function mountView3d(container, model, sharedState) {
     for (const tick of interior("makespan_s")) drawLine(project(tick.t, face.e, 0), project(tick.t, face.e, 1), "view3d-grid");
     for (const tick of interior("energy_j")) drawLine(project(0, tick.t, face.l), project(1, tick.t, face.l), "view3d-grid");
     for (const tick of interior("makespan_s")) drawLine(project(tick.t, 0, face.l), project(tick.t, 1, face.l), "view3d-grid");
-    const compared = sharedState.filterRuns ? comparisonRuns(model, snapshot) : visibleRuns(model, snapshot);
-    const population = sharedState.filterRuns ? visibleRuns(model, snapshot) : compared;
-    const cloud = population.length > 10;
-    const runs = cloud ? population : compared;
-    const compactMarks = cloud && compared.length > 10;
+    const visible = visibleRuns(model, snapshot);
+    const byId = new Map(visible.map((run) => [run.run_id, run]));
+    if (sharedState.filterRuns) {
+      for (const run of comparisonRuns(model, snapshot)) byId.set(run.run_id, run);
+    }
+    const runs = [...byId.values()];
     const colorKey = "energy_j";
     const colorSpan = snapshot.axis_ranges[colorKey].max - snapshot.axis_ranges[colorKey].min;
     let corner = [0, 0, 0], bestEdge = -Infinity;
@@ -289,7 +316,7 @@ export function mountView3d(container, model, sharedState) {
       coord[index] = t;
       return project(...coord);
     };
-    const rightLimit = cloud ? 640 : VIEW3D.width - 28;
+    const rightLimit = runs.length ? 640 : VIEW3D.width - 28;
     const occupied = [];
     const axisSide = (index) => {
       const start = axisPoint(index, 0);
@@ -338,21 +365,18 @@ export function mountView3d(container, model, sharedState) {
       placeLabel(axisPoint(index, 0.5), side, 0, 46, AXIS_LABELS[key], "view3d-axis-label", 42);
     });
     scene = { project, axisPoint, center, rightLimit, ranges };
-    if (cloud) appendJetScale(svg, snapshot.axis_ranges[colorKey]);
+    if (runs.length) appendJetScale(svg, snapshot.axis_ranges[colorKey]);
     placed = runs.map((run) => ({ run, point: projectRun(run, snapshot.axis_ranges, camera) }))
       .sort((a, b) => a.point.depth - b.point.depth || a.run.run_id.localeCompare(b.run.run_id));
     for (const item of placed) {
       const { run, point } = item;
-      const slot = stableConfigIndex(model.configs, run.policy_config_id);
       const selectedIds = new Set(snapshot.comparison_run_ids ?? snapshot.selected_run_ids ?? []);
       const selected = selectedIds.has(run.run_id);
       const full = model.labels.full.get(run.run_id)?.nonDominated;
       const cluster = coincidentIds(runs, snapshot.axis_ranges, run.run_id, camera);
-      const compact = cloud && (compactMarks || !selected);
-      item.compact = compact;
+      item.compact = true;
       const group = element("g", selected ? "view3d-point selected" : "view3d-point");
-      if (!compact || selected) group.dataset.runId = run.run_id;
-      else group.dataset.jetId = run.run_id;
+      group.dataset.runId = run.run_id;
       group.dataset.selected = selected ? "true" : "false";
       group.dataset.x = String(point.x);
       group.dataset.y = String(point.y);
@@ -366,46 +390,20 @@ export function mountView3d(container, model, sharedState) {
         + `M=${formatRaw(run.makespan_s)} s, E=${formatRaw(run.energy_j)} J, L=${formatRaw(run.mean_latency_s)} s`
         + `\n3D: ${full === undefined ? "Not calculated" : full ? "Non-dominated" : "Dominated"}${overlap}`;
       group.setAttribute("aria-label", title.textContent);
-      if (compact) {
-        const shade = colorSpan === 0 ? 0.5 : (run[colorKey] - snapshot.axis_ranges[colorKey].min) / colorSpan;
-        const dot = element("circle", "view3d-dot");
-        dot.setAttribute("cx", point.x);
-        dot.setAttribute("cy", point.y);
-        dot.setAttribute("r", "4.2");
-        dot.setAttribute("fill", jetColor(shade));
-        dot.setAttribute("fill-opacity", "0.86");
-        group.append(title, dot);
-      } else {
-        const color = POLICY_COLORS[slot % POLICY_COLORS.length];
-        if (full) {
-          const halo = element("circle", "view3d-full");
-          halo.setAttribute("cx", point.x);
-          halo.setAttribute("cy", point.y);
-          halo.setAttribute("r", "16");
-          group.append(halo);
-        }
-        if (selected) {
-          const ring = element("circle", "view3d-selected");
-          ring.setAttribute("cx", point.x);
-          ring.setAttribute("cy", point.y);
-          ring.setAttribute("r", "18");
-          group.append(ring);
-        }
-        const mark = element("circle", "view3d-mark");
-        mark.setAttribute("cx", point.x);
-        mark.setAttribute("cy", point.y);
-        mark.setAttribute("r", "8");
-        mark.setAttribute("fill", color);
-        const glyph = element("text", "view3d-shape");
-        glyph.setAttribute("x", point.x + 10);
-        glyph.setAttribute("y", point.y - 10);
-        glyph.textContent = POLICY_SHAPES[slot % POLICY_SHAPES.length];
-        group.append(title, mark, glyph);
-      }
+      const shade = colorSpan === 0 ? 0.5 : (run[colorKey] - snapshot.axis_ranges[colorKey].min) / colorSpan;
+      const dot = element("circle", "view3d-dot");
+      dot.setAttribute("cx", point.x);
+      dot.setAttribute("cy", point.y);
+      dot.setAttribute("r", "4.2");
+      dot.setAttribute("fill", jetColor(shade));
+      dot.setAttribute("fill-opacity", "0.86");
+      if (selected) dot.setAttribute("stroke", "#1a1a1a");
+      if (selected) dot.setAttribute("stroke-width", "1.4");
+      group.append(title, dot);
       const choose = (shift) => {
         if (disposed) return;
         if (sharedState.filterRuns) { sharedState.toggleComparison(run.run_id); return; }
-        const ids = shift ? [...sharedState.get().selected_run_ids, ...(compact ? [run.run_id] : cluster)] : (compact ? [run.run_id] : cluster);
+        const ids = shift ? [...sharedState.get().selected_run_ids, run.run_id] : [run.run_id];
         sharedState.selectRuns(ids);
       };
       group.addEventListener("click", (event) => { if (!suppressClick) choose(event.shiftKey); });
